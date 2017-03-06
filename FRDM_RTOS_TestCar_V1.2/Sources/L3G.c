@@ -107,6 +107,10 @@ void L3GenableDefault(void)
   // DR = 01 (200 Hz ODR); BW = 10 (50 Hz bandwidth); PD = 1 (normal mode); Zen = Yen = Xen = 1 (all axes enabled)
   L3GwriteReg(CTRL_REG1, 0x6F);
   
+  // 0b0000 0010 = 0x02
+  // I2C_FIFO overrun interrupt on DRDY/INT2 enable
+  L3GwriteReg(CTRL_REG3, 0x02);
+  
   //0x40 = 0b01000000
   // FIFO enable
   L3GwriteReg(CTRL_REG5, 0x40);
@@ -115,9 +119,10 @@ void L3GenableDefault(void)
   // FIFO Stream mode
   L3GwriteReg(FIFO_CTRL_REG, 0xE0);
   
-  // 0x24 = 0b00100100	-> cut off 0.9Hz
-  // 0x21 				-> cut off 7.2Hz
-  // 0x20 = 0b00100000	-> cut off 13.5Hz
+  // 0x24 = 0b0010 0100	-> cut off 0.9Hz
+  // 0x21 = 0b0010 0001 -> cut off 7.2Hz
+  // 0x20 = 0b0010 0000	-> cut off 13.5Hz
+  // 0x07 = 0b0000 0111 -> cut off 0.09Hz
   //High pass filter: Normal Mode/  cut off 0.9Hz
   L3GwriteReg(CTRL_REG2, 0x07);
 }
