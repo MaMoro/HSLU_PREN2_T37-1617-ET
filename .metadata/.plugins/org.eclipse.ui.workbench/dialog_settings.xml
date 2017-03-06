@@ -14,13 +14,13 @@
 		<list key="textEntries">
 		</list>
 	</section>
-	<section name="NewWizardAction">
-	</section>
 	<section name="ZipFileImportWizard">
 		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="C:\Eigene Dateien\Schule\HSLU\Semester 4\PREN2\Github\HSLU_PREN2_T37-1617-ET\FRDM_RTOS_TestCar_V1.2.zip"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>

@@ -12,11 +12,15 @@
 #include "VL6180X.h"
 #include "CLS1.h"
 #include "FRTOS1.h"
+#include "driving.h"
 
 uint8_t state;
-char leftParcour;
+bool leftParcour;
 
 void startCommunication(void){
+	uint8_t i;
+	int16_t angelX;
+	int16_t angelZ;
 	while(VL_Init()!=ERR_OK){
 		VL_Init();
 	}
@@ -25,23 +29,32 @@ void startCommunication(void){
 	calculateOffset();
 	RED_Put(0);
 	
-	leftParcour = 1;
+	leftParcour = 1;		// temporär
+	state = 1;				// temporär
 	
-	
-	state = 1;		//default = 0
 	//Main part
 	for(;;){
-		uint8_t i;
 		for(i=0; i<32; i++){
 			L3Gread('x');
+			L3Gread('z');
 		}
-		refreshTasks();
-		vTaskDelay(pdMS_TO_TICKS(120));
+		L3GgetDegree('x', &angelX);
+		L3GgetDegree('z', &angelZ);
+		
+
 		
 		//read();
 		//write();
 		
+		FRTOS1_taskENTER_CRITICAL();
+		CLS1_SendNum16s(angelX, CLS1_GetStdio()->stdOut);
+		CLS1_SendStr(", ", CLS1_GetStdio()->stdOut);
+		CLS1_SendNum16s(angelZ, CLS1_GetStdio()->stdOut);
+		CLS1_SendStr("\n\r", CLS1_GetStdio()->stdOut);
+		FRTOS1_taskEXIT_CRITICAL();
 		
+		refreshTasks();
+		vTaskDelay(pdMS_TO_TICKS(120));
 	}
 }
 
@@ -51,9 +64,10 @@ void taskDone(uint8_t taskNbr){
 
 void refreshTasks(void){
 	  switch(state){
-	  case 1: CreateTask2();	// drive to stair
+	  case 1: initDriving(4, 0, 1, 40, 0, 10, leftParcour);
+		  	  CreateTask2();	// drive to stair
 	  break;
-	  case 2: CreateTask3(leftParcour);	// drive over stair to entanglement (verschränkung)
+	  case 2: CreateTask3();	// drive over stair to entanglement (verschränkung)
 	  break;
 	  case 3: CreateTask4();	// drive throught turningpoint to gully
 	  break;

@@ -1,0 +1,11 @@
+-mcpu=cortex-m0
+-mthumb
+-mfloat-abi=soft
+-g3
+-gdwarf-2
+-gstrict-dwarf
+-x assembler-with-cpp
+-I"C:/Eigene Dateien/Schule/HSLU/Semester 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code"
+-Wall
+-c
+-fmessage-length=0

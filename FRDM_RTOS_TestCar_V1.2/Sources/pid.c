@@ -83,10 +83,6 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	}
 	*corr = correction;
 	
-	FRTOS1_taskENTER_CRITICAL();
-	CLS1_SendNum16s(angel, CLS1_GetStdio()->stdOut);
-	CLS1_SendStr("\n\r", CLS1_GetStdio()->stdOut);
-	FRTOS1_taskEXIT_CRITICAL();
 	
 	return ERR_OK;
 }

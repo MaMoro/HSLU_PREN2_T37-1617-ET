@@ -14,8 +14,9 @@
  * @param [in] startupTime time from 0 to speed
  * @param [in] frontdistance drive until this range is detected
  */
-void driveToStair(int8_t speed, uint8_t startupTime, uint16_t frontdistance);
-void driveOverStair(uint8_t device, int8_t speed, uint8_t optRange, uint8_t kp, uint8_t ki, uint8_t kd);
+void driveToStair(int8_t speed, uint8_t optRange, uint8_t startupTime, uint16_t frontdistance);
+void driveOverStair(int8_t speed, uint8_t optRange);
+void initDriving(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG, bool isLeftParcour);
 
 
 #endif /* DRIVING_H_ */
