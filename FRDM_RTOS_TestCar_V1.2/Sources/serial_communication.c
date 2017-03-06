@@ -14,6 +14,7 @@
 #include "FRTOS1.h"
 
 uint8_t state;
+char leftParcour;
 
 void startCommunication(void){
 	while(VL_Init()!=ERR_OK){
@@ -23,6 +24,8 @@ void startCommunication(void){
 	RED_Put(1);
 	calculateOffset();
 	RED_Put(0);
+	
+	leftParcour = 1;
 	
 	
 	state = 1;		//default = 0
@@ -50,7 +53,7 @@ void refreshTasks(void){
 	  switch(state){
 	  case 1: CreateTask2();	// drive to stair
 	  break;
-	  case 2: CreateTask3();	// drive over stair to entanglement (verschränkung)
+	  case 2: CreateTask3(leftParcour);	// drive over stair to entanglement (verschränkung)
 	  break;
 	  case 3: CreateTask4();	// drive throught turningpoint to gully
 	  break;

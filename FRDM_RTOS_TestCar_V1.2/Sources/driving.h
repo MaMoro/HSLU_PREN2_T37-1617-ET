@@ -10,9 +10,8 @@
 
 /*
  * Drive stright to the stair
- * @param [in] speedL speed of the left motor
- * @param [in] speedR speed of the right motor
- * @param [in] startupTime time from 0 to speedL/speedR
+ * @param [in] speed, speed of the motors
+ * @param [in] startupTime time from 0 to speed
  * @param [in] frontdistance drive until this range is detected
  */
 void driveToStair(int8_t speed, uint8_t startupTime, uint16_t frontdistance);

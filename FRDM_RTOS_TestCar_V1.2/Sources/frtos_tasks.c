@@ -71,12 +71,18 @@ static portTASK_FUNCTION(Task2Task, pvParameters) {
 static portTASK_FUNCTION(Task3Task, pvParameters) {
 
   /* Write your task initialization code here ... */
-(void) pvParameters;
+char* leftParcour = (char*)pvParameters;
   //for(;;) {
     /* Write your task code here ... */
 	  
 		vTaskDelay(pdMS_TO_TICKS(1));
-		driveOverStair(1, 50, 150, 30, 0, 90);
+		if(*leftParcour){
+			driveOverStair(1, 50, 150, 30, 0, 90);
+		}
+		else{
+			driveOverStair(2, 50, 150, 30, 0, 90);
+		}
+		
 
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
@@ -179,13 +185,13 @@ void CreateTask2(void){
 	Task2Started = 1;
 }
 
-void CreateTask3(void){
+void CreateTask3(char leftParcour){
 	if(!Task3Started){
 	  if (FRTOS1_xTaskCreate(
 		 Task3Task,  /* pointer to the task */
 		  "Task3", /* task name for kernel awareness debugging */
 		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
-		  (void*)NULL, /* optional task startup argument */
+		  (void*)&leftParcour, /* optional task startup argument */
 		  tskIDLE_PRIORITY + 4,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {

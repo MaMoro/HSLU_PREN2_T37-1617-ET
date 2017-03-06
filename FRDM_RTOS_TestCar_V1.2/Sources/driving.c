@@ -61,7 +61,7 @@ void driveOverStair(uint8_t device, int8_t speed, uint8_t optRange, uint8_t kp, 
 	do{
 		err = calcPID(3, 40, 0, 10, 0, &corrGyro);
 		if(err == ERR_OK){
-			err = calcPID(1, 4, 0, 1, optRange, &corrToF);
+			err = calcPID(device, 4, 0, 1, optRange, &corrToF);
 		}
 		
 		if(err == ERR_OK){

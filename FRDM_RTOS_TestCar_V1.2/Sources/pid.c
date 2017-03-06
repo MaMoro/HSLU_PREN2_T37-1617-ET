@@ -61,9 +61,7 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 			*corr = 0;
 			return ERR_RANGE;
 		}
-		if(device==0){
-			value = value/sin(angel*PI/180);
-		}else{
+		if(device!=0){
 			value = value/cos(angel*PI/180);
 		}
 	}
