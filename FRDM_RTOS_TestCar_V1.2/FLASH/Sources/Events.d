@@ -62,6 +62,9 @@ Sources/Events.o: ../Sources/Events.c \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.h \
+ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.h \
+ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h \
+ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h \
@@ -226,6 +229,12 @@ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/F
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.h:
 
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.h:
+
+C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.h:
+
+C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h:
+
+C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h:
 
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h:
 

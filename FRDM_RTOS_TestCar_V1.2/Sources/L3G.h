@@ -92,6 +92,8 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
    void L3GreadTemp(void);
    void L3GgetDegree(char dim, int16_t* value);
    void L3Gread(char dim);
+   void L3GSetAngel(char dimension, int16_t value);
+   void L3GgetVMax(char dim, int32_t* value);
 
 
 #endif /* L3G_H_ */

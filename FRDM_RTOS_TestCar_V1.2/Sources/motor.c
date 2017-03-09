@@ -180,7 +180,7 @@ void motorStartupLeft(int8_t value, uint8_t time){
  *  @param [in] time
  *  time in witch the motor has to reach the speed of value (in ms)
  */
-void motorsStartup(int16_t valueLeft, int16_t valueRight, uint8_t time){
+void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 	if(valueLeft>127){
 		valueLeft = 127;
 	}else if(valueLeft<-127){
@@ -197,7 +197,9 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint8_t time){
 	int8_t incrementLeft = (valueLeft - pwmLeft)/time;
 	int8_t incrementRight = (valueRight - pwmRight)/time;
 	uint8_t i;
-		for(i = 0; i < time; i++){
+		for(i = 1; i <= time; i++){
+			//motorSetPWMRight(pwmRight+incrementRight*i);
+			//motorSetPWMLeft(pwmLeft+incrementLeft*i);
 			motorIncrementPWMLeft(incrementLeft);	
 			motorIncrementPWMRight(incrementRight);
 			vTaskDelay(pdMS_TO_TICKS(1));

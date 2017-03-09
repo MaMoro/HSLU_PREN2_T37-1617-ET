@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-07, 19:23, # CodeGen: 40
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -23,7 +23,7 @@
 **            Period device                                : TPM0_MOD
 **            Period                                       : 50.001526 ms
 **            Interrupt                                    : Disabled
-**          Channel list                                   : 1
+**          Channel list                                   : 2
 **            Channel 0                                    : 
 **              Mode                                       : Compare
 **                Compare                                  : TPM0_C2V
@@ -32,6 +32,16 @@
 **                  Output on overrun                      : Clear
 **                  Initial state                          : Low
 **                  Output pin                             : PTD2/SPI0_MOSI/UART2_RX/TPM0_CH2/SPI0_MISO
+**                  Output pin signal                      : 
+**                Interrupt                                : Disabled
+**            Channel 1                                    : 
+**              Mode                                       : Compare
+**                Compare                                  : TPM0_C3V
+**                Offset                                   : 0 ms
+**                Output on compare                        : Set
+**                  Output on overrun                      : Clear
+**                  Initial state                          : Low
+**                  Output pin                             : PTD3/SPI0_MISO/UART2_TX/TPM0_CH3/SPI0_MOSI
 **                  Output pin signal                      : 
 **                Interrupt                                : Disabled
 **          Initialization                                 : 
@@ -118,10 +128,10 @@ extern "C" {
 #endif 
 
 /* List of channels used by component */
-static const uint8_t ChannelDevice[TU2_NUMBER_OF_CHANNELS] = {0x02U};
+static const uint8_t ChannelDevice[TU2_NUMBER_OF_CHANNELS] = {0x02U,0x03U};
 
 /* Table of channels mode / 0 - compare mode, 1 - capture mode */
-static const uint8_t ChannelMode[TU2_NUMBER_OF_CHANNELS] = {0x00U};
+static const uint8_t ChannelMode[TU2_NUMBER_OF_CHANNELS] = {0x00U,0x00U};
 
 
 typedef struct {
@@ -134,8 +144,8 @@ typedef TU2_TDeviceData *TU2_TDeviceDataPtr; /* Pointer to the device data struc
 /* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static TU2_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
 
-#define AVAILABLE_PIN_MASK (LDD_TPinMask)(TU2_CHANNEL_0_PIN)
-#define LAST_CHANNEL 0x00U
+#define AVAILABLE_PIN_MASK (LDD_TPinMask)(TU2_CHANNEL_0_PIN | TU2_CHANNEL_1_PIN)
+#define LAST_CHANNEL 0x01U
 
 /* Internal method prototypes */
 /*
@@ -204,8 +214,19 @@ LDD_TDeviceData* TU2_Init(LDD_TUserData *UserDataPtr)
   TPM0_C2SC = (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK | TPM_CnSC_ELSA_MASK); /* Set up channel status and control register */
   /* TPM0_C2V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0 */
   TPM0_C2V = TPM_CnV_VAL(0x00);        /* Set up channel value register */
+  /* TPM0_C3SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,MSB=1,MSA=0,ELSB=1,ELSA=1,??=0,DMA=0 */
+  TPM0_C3SC = (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK | TPM_CnSC_ELSA_MASK); /* Set up channel status and control register */
+  /* TPM0_C3V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0 */
+  TPM0_C3V = TPM_CnV_VAL(0x00);        /* Set up channel value register */
   /* PORTD_PCR2: ISF=0,MUX=4 */
   PORTD_PCR2 = (uint32_t)((PORTD_PCR2 & (uint32_t)~(uint32_t)(
+                PORT_PCR_ISF_MASK |
+                PORT_PCR_MUX(0x03)
+               )) | (uint32_t)(
+                PORT_PCR_MUX(0x04)
+               ));
+  /* PORTD_PCR3: ISF=0,MUX=4 */
+  PORTD_PCR3 = (uint32_t)((PORTD_PCR3 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x03)
                )) | (uint32_t)(

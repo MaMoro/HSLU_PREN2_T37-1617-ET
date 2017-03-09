@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-07, 19:23, # CodeGen: 40
 **     Abstract    :
 **
 **     Settings    :
@@ -92,6 +92,8 @@
 #include "PWM_Gyro.h"
 #include "PwmLdd3.h"
 #include "TU2.h"
+#include "PWM_Servo.h"
+#include "PwmLdd4.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -899,6 +901,8 @@ void PE_low_level_init(void)
   (void)TofCE3_Init(NULL);
   /* ### PWM_LDD "PwmLdd3" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)PwmLdd3_Init(NULL);
+  /* ### PWM_LDD "PwmLdd4" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)PwmLdd4_Init(NULL);
 }
   /* Flash configuration field */
   __attribute__ ((section (".cfmconfig"))) const uint8_t _cfm[0x10] = {

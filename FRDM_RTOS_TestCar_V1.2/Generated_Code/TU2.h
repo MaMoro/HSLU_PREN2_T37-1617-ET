@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-07, 19:23, # CodeGen: 40
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -23,7 +23,7 @@
 **            Period device                                : TPM0_MOD
 **            Period                                       : 50.001526 ms
 **            Interrupt                                    : Disabled
-**          Channel list                                   : 1
+**          Channel list                                   : 2
 **            Channel 0                                    : 
 **              Mode                                       : Compare
 **                Compare                                  : TPM0_C2V
@@ -32,6 +32,16 @@
 **                  Output on overrun                      : Clear
 **                  Initial state                          : Low
 **                  Output pin                             : PTD2/SPI0_MOSI/UART2_RX/TPM0_CH2/SPI0_MISO
+**                  Output pin signal                      : 
+**                Interrupt                                : Disabled
+**            Channel 1                                    : 
+**              Mode                                       : Compare
+**                Compare                                  : TPM0_C3V
+**                Offset                                   : 0 ms
+**                Output on compare                        : Set
+**                  Output on overrun                      : Clear
+**                  Initial state                          : Low
+**                  Output pin                             : PTD3/SPI0_MISO/UART2_TX/TPM0_CH3/SPI0_MOSI
 **                  Output pin signal                      : 
 **                Interrupt                                : Disabled
 **          Initialization                                 : 
@@ -135,10 +145,11 @@ extern "C" {
 #define TU2_CNT_INP_FREQ_R_0 1310720.778463285F /* Counter input frequency in Hz */
 #define TU2_CNT_INP_FREQ_COUNT 0U      /* Count of predefined counter input frequencies */
 #define TU2_PERIOD_TICKS   0x00010000UL /* Initialization value of period in 'counter ticks' */
-#define TU2_NUMBER_OF_CHANNELS 0x01U   /* Count of predefined channels */
+#define TU2_NUMBER_OF_CHANNELS 0x02U   /* Count of predefined channels */
 #define TU2_COUNTER_WIDTH  0x10U       /* Counter width in bits  */
 #define TU2_COUNTER_DIR    DIR_UP      /* Direction of counting */
 #define TU2_OFFSET_0_TICKS 0x00ul      /* Initialization value of offset as 'counter ticks' for channel 0 */
+#define TU2_OFFSET_1_TICKS 0x00ul      /* Initialization value of offset as 'counter ticks' for channel 1 */
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
 #define TU2_PRPH_BASE_ADDRESS  0x40038000U
   

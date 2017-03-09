@@ -25,9 +25,6 @@
 #define D20_WHO_ID      0xD4
 #define L3G4200D_WHO_ID 0xD3
 
-#define OFFSETX 0
-#define OFFSETY 0
-#define OFFSETZ 0
 #define MAXOFFSET 20
 
 #define FULLSCALE 500		// 250, 500, 2000 °/s
@@ -49,6 +46,9 @@ sa0State_t sa0;
 gyro_t gyro;
 int16_t vX[NBROFFSET],vY[NBROFFSET],vZ[NBROFFSET];
 int16_t writingPos;
+int8_t OffsetX;
+int8_t OffsetY;
+int8_t OffsetZ;
 
 // Public Methods //////////////////////////////////////////////////////////////
 
@@ -57,9 +57,9 @@ void L3Ginit(void){
 	address = D20_SA0_HIGH_ADDRESS;
 	sa0 = sa0_high;
 	L3GenableDefault();
-	gyro.offsetX = OFFSETX;
-	gyro.offsetY = OFFSETY;
-	gyro.offsetZ = OFFSETZ;
+	gyro.offsetX = OffsetX;
+	gyro.offsetY = OffsetY;
+	gyro.offsetZ = OffsetZ;
 	gyro.vX = 0;
 	gyro.vY = 0;
 	gyro.vZ = 0;
@@ -203,6 +203,7 @@ void L3Gread(char dim){
 
 }
 
+
 void L3GgetDegree(char dim, int16_t* value){
 	switch(dim){
 	case 'x':;
@@ -244,9 +245,9 @@ void calculateOffset(void){
 		vZ[writingPos]=(int16_t)gyro.vZ;
 		WAIT1_Waitms(4);
 	}
-	qsort(&vX[0], NBROFFSET, sizeof(int16_t), cmpfunc);
-	qsort(&vY[0], NBROFFSET, sizeof(int16_t), cmpfunc);
-	qsort(&vZ[0], NBROFFSET, sizeof(int16_t), cmpfunc);
+	qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+	qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+	qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 	gyro.offsetX += vX[NBROFFSET/2];
 	gyro.offsetY += vY[NBROFFSET/2];
 	gyro.offsetZ += vZ[NBROFFSET/2];
@@ -254,9 +255,9 @@ void calculateOffset(void){
 	gyro.y = 0;
 	gyro.z = 0;
 	
-#define OFFSETX gyro.offsetX
-#define OFFSETY gyro.offsetY
-#define OFFSETZ gyro.offsetZ
+	OffsetX = gyro.offsetX;
+	OffsetY = gyro.offsetY;
+	OffsetZ = gyro.offsetZ;
 	
 	writingPos = 0;
 
@@ -279,21 +280,35 @@ void refreshMovingOffset(void){
 	vZ[writingPos] = gyro.vZ;
 	if(++writingPos  >= NBROFFSET){
 		writingPos = 0;
-		qsort(&vX[0], NBROFFSET, sizeof(int16_t), cmpfunc);
-		qsort(&vY[0], NBROFFSET, sizeof(int16_t), cmpfunc);
-		qsort(&vZ[0], NBROFFSET, sizeof(int16_t), cmpfunc);
-		int32_t newOffsetx = gyro.offsetX+vX[NBROFFSET/2];
-		int32_t offsetX = vX[NBROFFSET/2];
-		if((gyro.offsetX+vX[NBROFFSET/2])<(OFFSETX+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(OFFSETX-MAXOFFSET)){
+		qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+		qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+		qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+		if((gyro.offsetX+vX[NBROFFSET/2])<(OffsetX+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(OffsetX-MAXOFFSET)){
 			gyro.offsetX += vX[NBROFFSET/2];
 		}
-		if((gyro.offsetY+vY[NBROFFSET/2])<(OFFSETY+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(OFFSETY-MAXOFFSET)){
+		if((gyro.offsetY+vY[NBROFFSET/2])<(OffsetY+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(OffsetY-MAXOFFSET)){
 			gyro.offsetY += vY[NBROFFSET/2];
 		}
-		if((gyro.offsetZ+vZ[NBROFFSET/2])<(OFFSETZ+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(OFFSETZ-MAXOFFSET)){
+		if((gyro.offsetZ+vZ[NBROFFSET/2])<(OffsetZ+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(OffsetZ-MAXOFFSET)){
 			gyro.offsetZ += vZ[NBROFFSET/2];
 		}
 	}
 	
+}
+
+void L3GSetAngel(char dimension, int16_t value){
+	switch(dimension){
+	case 'X': ;
+	case 'x': gyro.x = (int32_t)value;
+	break;
+	case 'Y': ;
+	case 'y': gyro.y = (int32_t)value;
+	break;
+	case 'Z': ;
+	case 'z': gyro.z = (int32_t)value;
+	break;
+	default: ; //error;
+	break;
+	}
 }
 

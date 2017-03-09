@@ -49,20 +49,18 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	default: value = 0;
 			err = ERR_VALUE;
 	}
-	
+	if(err != ERR_OK){
+	return err;
+	}
 	L3GgetDegree('x', &angel);
 	
-	if(err != ERR_OK){
-		return err;
-	}
-	
 	if(device==0 || device==1 || device==2){
-		if(value==255 || value<0){
+		if(value==255 || value<=0){
 			*corr = 0;
 			return ERR_RANGE;
 		}
 		if(device!=0){
-			value = value/cos(angel*PI/180);
+			value = value*cos(angel*PI/180);
 		}
 	}
 	else{
@@ -74,13 +72,17 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	if(kI != 0){
 		pid[device].integ += value;
 	}
-	correction = kP*pid[device].dev/16 + kD*(pid[device].dev-pid[device].devOld)/16 + kI*pid[device].integ/16;
 	
-	if(correction>127){
-		correction = 127;
-	}else if(correction<-127){
-		correction = -127;
+	correction = kP*pid[device].dev + kD*(pid[device].dev-pid[device].devOld) + kI*pid[device].integ;
+	correction /= 16;
+	
+	
+	if(correction>255){
+		correction = 255;
+	}else if(correction<-255){
+		correction = -255;
 	}
+	
 	*corr = correction;
 	
 	

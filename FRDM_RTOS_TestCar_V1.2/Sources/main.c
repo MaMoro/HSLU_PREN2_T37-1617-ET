@@ -40,6 +40,8 @@
 #include "PWM_Gyro.h"
 #include "PwmLdd3.h"
 #include "TU2.h"
+#include "PWM_Servo.h"
+#include "PwmLdd4.h"
 #include "UTIL1.h"
 #include "GI2C1.h"
 #include "AS1.h"

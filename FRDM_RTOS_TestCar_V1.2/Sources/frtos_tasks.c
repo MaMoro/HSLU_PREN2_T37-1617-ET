@@ -56,10 +56,9 @@ static portTASK_FUNCTION(Task2Task, pvParameters) {
     /* Write your task code here ... */
 
 	  driveToStair(50, 150, 10, 200);
+	  vTaskDelay(pdMS_TO_TICKS(1));
 	  FRTOS1_vTaskSuspend(NULL);
-	  for(;;){
-		  vTaskDelay(pdMS_TO_TICKS(1000));
-	  }
+
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
      */
@@ -75,13 +74,10 @@ static portTASK_FUNCTION(Task3Task, pvParameters) {
   //for(;;) {
     /* Write your task code here ... */
 	  
-		vTaskDelay(pdMS_TO_TICKS(1));
-		driveOverStair(50, 150);
 		
+		driveOverStair(30, 150);
+		vTaskDelay(pdMS_TO_TICKS(1));
 		FRTOS1_vTaskSuspend(NULL);
-		for(;;){
-		  vTaskDelay(pdMS_TO_TICKS(1000));
-		}
 
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
@@ -95,13 +91,15 @@ static portTASK_FUNCTION(Task4Task, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
-  for(;;) {
+  //for(;;) {
     /* Write your task code here ... */
-
+	  driveToTurningPlace(50, 150);
+	  vTaskDelay(pdMS_TO_TICKS(1));
+	  FRTOS1_vTaskSuspend(NULL);
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
      */
-  }
+  //}
   /* Destroy the task */
   vTaskDelete(Task4Task);
 }
@@ -110,13 +108,16 @@ static portTASK_FUNCTION(Task5Task, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
-  for(;;) {
+  //for(;;) {
     /* Write your task code here ... */
 
+	driveThroughtTurningPlace(50,150);
+	vTaskDelay(pdMS_TO_TICKS(1));
+	FRTOS1_vTaskSuspend(NULL);
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
      */
-  }
+  //}
   /* Destroy the task */
   vTaskDelete(Task5Task);
 }

@@ -52,7 +52,8 @@ Generated_Code/Cpu.o: ../Generated_Code/Cpu.c \
  ../Generated_Code/RED.h ../Generated_Code/LEDpin4.h \
  ../Generated_Code/BitIoLdd4.h ../Generated_Code/TofCE3.h \
  ../Generated_Code/PWM_Gyro.h ../Generated_Code/PwmLdd3.h \
- ../Generated_Code/TU2.h \
+ ../Generated_Code/TU2.h ../Generated_Code/PWM_Servo.h \
+ ../Generated_Code/PwmLdd4.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/Events.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_Types.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_Error.h \
@@ -68,6 +69,8 @@ Generated_Code/Cpu.o: ../Generated_Code/Cpu.c \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Gyro.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.h \
+ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.h \
+ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.h \
  C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.h \
@@ -243,6 +246,10 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/ADC_PDD.h:
 
 ../Generated_Code/TU2.h:
 
+../Generated_Code/PWM_Servo.h:
+
+../Generated_Code/PwmLdd4.h:
+
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/Events.h:
 
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_Types.h:
@@ -272,6 +279,10 @@ C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/F
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.h:
 
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.h:
+
+C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.h:
+
+C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h:
 
 C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h:
 

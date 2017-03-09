@@ -25,7 +25,7 @@ void motorSetPWMRight(int8_t value);
 void motorIncrementPWMRight(int8_t value);
 void motorStartupLeft(int8_t value, uint8_t time);
 void motorStartupRight(int8_t value, uint8_t time);
-void motorsStartup(int16_t valueLeft, int16_t valueRight, uint8_t time);
+void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time);
 
 
 
