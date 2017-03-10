@@ -22,6 +22,7 @@
 #define TOFRIGHT 2
 #define GYRO 3
 #define PI 3.14159265
+#define DELAY 15	// in ms
 
 bool leftParcour;
 uint8_t kpToF, kiToF, kdToF;
@@ -68,7 +69,7 @@ void driveToStair(int8_t speed, uint8_t optRange, uint8_t startupTime, uint16_t 
 		 }
 		 
 		 refreshMovingOffset();
-		 vTaskDelay(pdMS_TO_TICKS(12));
+		 vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	motorsStartup(0, 0, 0);
 	RED_Put(0);
@@ -98,11 +99,8 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 		if(err == ERR_OK){
 			err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
 		}
-		
-		if(err == ERR_OK){
-			motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
-		}
-		else{
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
+		if(err != ERR_OK){
 			motorsStartup(0, 0, 0);		// error
 		}
 		
@@ -115,19 +113,22 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 		}
 		else if(stairState == 1 && angel < 5 && angel > -5){
 			stairState = 2;	// on top of the stair
+			L3GSetAngel('z', 0);
 			RED_Put(1);
+			speed -= 20;
 		}
 		else if(stairState == 2 && angel >= 25){
 			stairState = 3; // stair downwards
 			LED_GREEN_Put(0);
 		}
-		else if(stairState == 3 && angel < 5 && angel > -5){
+		else if(stairState == 3 && angel < 10 && angel > -10){
 			stairState = 4; // stair done
+			L3GSetAngel('z', 0);
 			RED_Put(0);
 			vTaskDelay(pdMS_TO_TICKS(20));
 			done = 1;
 		}
-		vTaskDelay(pdMS_TO_TICKS(12));
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	while(!done);
 	/* \todo stop doesnt work with 10ms*/
@@ -158,12 +159,9 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 		if(err == ERR_OK){
 			err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
 		}
-		
-		if(err == ERR_OK){
-			motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
-		}
-		else{
-			motorsStartup(0, 0, 0);		// error
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
+		if(err != ERR_OK){
+			//motorsStartup(0, 0, 0);		// error
 		}
 		
 		// stop condition
@@ -173,7 +171,7 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 			done = 1;
 		}
 		
-		vTaskDelay(pdMS_TO_TICKS(12));
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	while(!done);
 	
@@ -189,8 +187,9 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t frontdistance){
 	uint8_t done = 0;
 	int16_t corrGyro = 0;
 	int16_t optAngel = 0;
-	int8_t actualSpeed = speed;
+	int8_t actualSpeed = 0;
 	uint8_t partState = 0;
+	uint8_t count = 0;
 	RED_Put(0);
 	LED_GREEN_Put(1);
 	motorsStartup(speed, speed, 2);
@@ -204,15 +203,38 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t frontdistance){
 			 // error
 		 }
 		 
-		 // check if stair is detected
-		 VL_GetDistance(TOFFRONT, &range);
-		 if(range <= frontdistance && range > 0){
-			 LED_GREEN_Put(0);
-			 RED_Put(1);
-			 done = 1;
+		 // check end condition
+		 if(corrGyro<5 && corrGyro >-5){
+			 count++;
+		 }
+		 if(count >= 10){
+			 partState = 1;
+			 count = 0;
 		 }
 		 
-		 vTaskDelay(pdMS_TO_TICKS(12));
+		 vTaskDelay(pdMS_TO_TICKS(DELAY));
+	}
+	
+	while(partState == 1){
+		// Motor-Regulation
+				 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel+90, &corrGyro);
+				 if(err == ERR_OK){
+					 motorsStartup(actualSpeed-corrGyro, actualSpeed+corrGyro, 2);
+				 }
+				 else{
+					 // error
+				 }
+				 
+				 // check end condition
+				 if(corrGyro<5 && corrGyro >-5){
+					 count++;
+				 }
+				 if(count >= 10){
+					 partState = 1;
+					 count = 0;
+				 }
+				 
+				 vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	motorsStartup(0, 0, 0);
 	RED_Put(0);

@@ -75,7 +75,7 @@ static portTASK_FUNCTION(Task3Task, pvParameters) {
     /* Write your task code here ... */
 	  
 		
-		driveOverStair(30, 150);
+		driveOverStair(50, 150);
 		vTaskDelay(pdMS_TO_TICKS(1));
 		FRTOS1_vTaskSuspend(NULL);
 

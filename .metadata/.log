@@ -1,14 +1,1088 @@
-!SESSION 2017-03-09 18:17:31.542 -----------------------------------------------
+!SESSION 2017-03-10 09:40:00.794 -----------------------------------------------
 eclipse.buildId=I20070613-1755
 java.version=1.6.0_15
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
-This is a continuation of log file C:\Eigene Dateien\Schule\HSLU\Semester 4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_9.log
-Created Time: 2017-03-09 22:28:18.538
+This is a continuation of log file C:\Eigene Dateien\Schule\HSLU\Semester 4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_1.log
+Created Time: 2017-03-10 11:38:14.667
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.538
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.668
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/pid.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.683
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Sources/Events.o: ../Sources/Events.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #1 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Events.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Events.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/L3G.o: ../Sources/L3G.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #2 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/L3G.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/L3G.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/VL6180X.o: ../Sources/VL6180X.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #3 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/VL6180X.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/VL6180X.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/driving.o: ../Sources/driving.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #4 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/driving.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/driving.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/frtos_tasks.o: ../Sources/frtos_tasks.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #5 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/frtos_tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/frtos_tasks.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/main.o: ../Sources/main.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #6 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/main.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/motor.o: ../Sources/motor.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #7 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/motor.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/motor.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/pid.o: ../Sources/pid.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #8 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/pid.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/pid.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/sa_mtb.o: ../Sources/sa_mtb.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #9 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.684
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/sa_mtb.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.690
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Sources/Events.o: ../Sources/Events.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #1 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Events.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Events.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/L3G.o: ../Sources/L3G.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #2 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/L3G.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/L3G.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/VL6180X.o: ../Sources/VL6180X.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #3 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/VL6180X.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/VL6180X.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/driving.o: ../Sources/driving.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #4 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/driving.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/driving.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/frtos_tasks.o: ../Sources/frtos_tasks.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #5 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/frtos_tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/frtos_tasks.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/main.o: ../Sources/main.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #6 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/main.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/motor.o: ../Sources/motor.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #7 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/motor.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/motor.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/pid.o: ../Sources/pid.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #8 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/pid.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/pid.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/sa_mtb.o: ../Sources/sa_mtb.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #9 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/sa_mtb.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/sa_mtb.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/serial_communication.o: ../Sources/serial_communication.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #10 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.691
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/serial_communication.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.748
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #11 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.750
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_end.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.757
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #11 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Project_Settings/Startup_Code/__arm_end.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Project_Settings/Startup_Code/__arm_end.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Project_Settings/Startup_Code/__arm_start.o: ../Project_Settings/Startup_Code/__arm_start.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #12 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.758
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_start.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.788
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.789
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/AD1.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.792
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AD1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AD1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.794
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.797
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AD1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AD1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.798
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/ASerialLdd1.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.802
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AD1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AD1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AdcLdd1.o: ../Generated_Code/AdcLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #16 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.803
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/AdcLdd1.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.806
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AD1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AD1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AdcLdd1.o: ../Generated_Code/AdcLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #16 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AdcLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AdcLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #17 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.807
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd3.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.811
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AD1.o: ../Generated_Code/AD1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AD1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AD1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/AdcLdd1.o: ../Generated_Code/AdcLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #16 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AdcLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AdcLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #17 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #18 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.812
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -46,7 +1120,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.543
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.815
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -137,7 +1211,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.544
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.816
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -175,7 +1249,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.548
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.820
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -274,7 +1348,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.549
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.821
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -312,7 +1386,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.553
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.825
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -419,7 +1493,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.554
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.826
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -457,7 +1531,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.557
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.829
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -572,7 +1646,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.559
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.831
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Cpu.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -610,7 +1684,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.562
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.834
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -733,7 +1807,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.563
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.836
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -771,7 +1845,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.567
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.840
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -902,7 +1976,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.568
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.841
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -940,7 +2014,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.572
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.844
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -1079,7 +2153,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.573
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.846
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1117,7 +2191,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.577
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.853
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -1264,7 +2338,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.578
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.854
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1302,7 +2376,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.582
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.858
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -1457,7 +2531,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.584
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.859
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/KSDK1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1495,7 +2569,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.588
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.862
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -1658,7 +2732,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.589
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.863
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LED_GREEN.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1696,7 +2770,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.593
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.867
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -1867,7 +2941,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.594
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.868
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1905,7 +2979,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.598
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.872
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -2084,7 +3158,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.599
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.873
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2122,7 +3196,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.603
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.877
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -2309,7 +3383,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.604
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.878
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_LDD.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2347,7 +3421,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.609
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.881
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -2542,7 +3616,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.610
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.883
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Gyro.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2580,7 +3654,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.615
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.886
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -2783,7 +3857,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.616
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.887
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2821,7 +3895,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.625
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.891
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -3032,7 +4106,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.627
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.892
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3070,7 +4144,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.632
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.895
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -3289,7 +4363,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.632
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.897
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3327,7 +4401,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.632
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.900
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -3554,7 +4628,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.632
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.901
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3592,7 +4666,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.642
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.905
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -3827,7 +4901,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.644
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.906
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3865,7 +4939,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.648
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.909
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -4108,7 +5182,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.649
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.912
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4146,7 +5220,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.653
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.916
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -4397,7 +5471,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.655
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.917
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4435,7 +5509,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.659
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.920
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -4694,7 +5768,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.660
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.922
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/RED.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4732,7 +5806,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.664
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.928
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -4999,7 +6073,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.665
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.930
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TSK1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5037,7 +6111,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.670
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.933
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -5312,7 +6386,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.672
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.934
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5350,7 +6424,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.676
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.938
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -5633,7 +6707,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.677
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.939
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5671,7 +6745,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.681
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.943
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -5962,7 +7036,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.682
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.944
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6000,7 +7074,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.686
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.947
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -6299,7 +7373,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.687
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.949
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6337,7 +7411,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.692
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.952
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -6644,7 +7718,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.693
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.954
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6682,7 +7756,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.697
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.957
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -6997,7 +8071,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.698
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.958
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7035,7 +8109,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.706
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.962
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -7358,7 +8432,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.708
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.963
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Vectors.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7396,7 +8470,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.711
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.966
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -7727,7 +8801,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.713
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.968
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7765,7 +8839,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.717
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.971
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -8104,7 +9178,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.719
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.973
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/croutine.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8142,7 +9216,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.723
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.976
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -8489,7 +9563,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.724
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.977
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8527,7 +9601,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.729
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.981
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -8882,7 +9956,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.730
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.982
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8920,7 +9994,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.734
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.986
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -9283,7 +10357,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.735
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.987
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9321,7 +10395,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.739
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.991
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -9692,7 +10766,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.740
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.992
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9730,7 +10804,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.744
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:14.999
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -10109,7 +11183,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.746
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.000
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10147,7 +11221,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.750
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.004
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -10534,7 +11608,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.752
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.005
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_5.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10572,7 +11646,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.756
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.008
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -10967,7 +12041,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.757
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.010
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/list.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11005,7 +12079,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.761
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.014
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -11408,7 +12482,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.763
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.016
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/port.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11446,7 +12520,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.765
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.018
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -11857,7 +12931,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.767
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.020
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/portasm.s
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11895,7 +12969,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.771
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.023
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -12314,7 +13388,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.772
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.025
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12352,7 +13426,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.777
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.029
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -12779,7 +13853,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.778
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.030
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/tasks.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12817,7 +13891,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.786
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.034
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AD1.o: ../Generated_Code/AD1.c
 	@echo 'Building file: $<'
@@ -13252,7 +14326,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:18.787
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.035
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13290,7 +14364,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-09 22:28:19.009
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 11:38:15.283
 !MESSAGE Cannot decode string # Tool invocations
 FRDM_RTOS_TestCar_V1.2.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
 	@echo 'Building target: $@'
@@ -13332,3 +14406,63 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2017-03-10 13:01:35.626 -----------------------------------------------
+eclipse.buildId=I20070613-1755
+java.version=1.6.0_15
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:38.291
+!MESSAGE NLS missing message: ContentTypes_errorDialogAlreadyExists in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:01:45.145
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 13:01:46.471
+!MESSAGE Environment Variable Dependency not resolved for 'ARMGNUDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 13:01:46.471
+!MESSAGE Environment Variable Dependency not resolved for 'ARMSummonDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 13:01:46.471
+!MESSAGE Environment Variable Dependency not resolved for 'ARMYagartoDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-10 13:01:46.471
+!MESSAGE Environment Variable Dependency not resolved for 'ARMdevkitProDirEnv'.
+
+!ENTRY com.freescale.processorexpert.core 1 0 2017-03-10 13:01:46.502
+!MESSAGE Plugin com.freescale.processorexpert.core.service ProcessorExpertServiceProvider
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-03-10 13:01:52.746
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.0/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-03-10 13:01:52.747
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.0/patches' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-03-10 13:01:53.149
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.1/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-03-10 13:01:53.149
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.1/patches' does not exist
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:02:28.702
+!MESSAGE NLS unused message: trace_trigger_dv_error_title in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY org.eclipse.osgi 2 1 2017-03-10 13:02:28.702
+!MESSAGE NLS unused message: trace_trigger_dv_error_message in: com.freescale.sa.mcu.analysispoints.nls.ui

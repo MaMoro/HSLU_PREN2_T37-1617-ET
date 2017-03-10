@@ -303,7 +303,7 @@
     </GenFiles>
     <SignalListFile>Documentation\FRDM_RTOS_TestCar_V1.2_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>31</ProjectModificationStamp>
+    <ProjectModificationStamp>33</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>

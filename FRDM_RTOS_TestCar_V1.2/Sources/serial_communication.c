@@ -21,6 +21,7 @@ void startCommunication(void){
 	uint8_t i = 0;
 	int16_t angelX = 0;
 	int16_t angelZ = 0;
+	vTaskDelay(pdMS_TO_TICKS(1000));
 	while(VL_Init()!=ERR_OK){
 		VL_Init();
 	}
@@ -41,7 +42,7 @@ void startCommunication(void){
 			}
 		}
 		L3GgetDegree('x', &angelX);
-		if(state == 2){
+		if(state == 2 || state == 1){
 			L3GgetDegree('z', &angelZ);
 		}
 		
@@ -57,7 +58,7 @@ void startCommunication(void){
 		
 		refreshTasks();
 		
-		vTaskDelay(pdMS_TO_TICKS(120));
+		vTaskDelay(pdMS_TO_TICKS(100));
 	}
 }
 
@@ -74,7 +75,7 @@ void refreshTasks(void){
 	  break;
 	  case 3: CreateTask4();	// drive over gully to seesaw 
 	  break;
-	  case 4: //CreateTask5();	// drive throught turningpoint to gully 
+	  case 4: CreateTask5();	// drive throught turningpoint to gully 
 	  break;
 	  case 5: CreateTask6();	// drive over gully to seesaw 
 	  break;
