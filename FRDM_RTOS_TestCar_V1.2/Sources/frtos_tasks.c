@@ -111,7 +111,7 @@ static portTASK_FUNCTION(Task5Task, pvParameters) {
   //for(;;) {
     /* Write your task code here ... */
 
-	driveThroughtTurningPlace(50,150);
+	driveThroughtTurningPlace(50, 190, 200);
 	vTaskDelay(pdMS_TO_TICKS(1));
 	FRTOS1_vTaskSuspend(NULL);
     /* You can use a task delay like

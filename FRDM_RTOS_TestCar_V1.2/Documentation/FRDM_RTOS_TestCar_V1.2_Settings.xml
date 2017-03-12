@@ -617,7 +617,7 @@ PE_DEBUGHALT();
         </group>
         <group name="FreeRTOS task">
           <Task_name v="Task5" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
+          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="200" />
           <Initial_Priority v="5" />
         </group>
         <group name="FreeRTOS task">
@@ -1807,9 +1807,9 @@ Autoselect
     <Enabled v="Y" />
     <Properties>
       <Component_name v="CI2C1" />
-      <I2C_channel v="I2C0" />
+      <I2C_channel v="I2C1" />
       <boolgroup name="Interrupt service" v="Enabled">
-        <Interrupt v="INT_I2C0" />
+        <Interrupt v="INT_I2C1" />
         <Interrupt_priority v="medium priority" />
       </boolgroup>
       <group name="Settings">
@@ -1823,10 +1823,10 @@ Autoselect
         <boolgroup name="SLAVE mode" v="Disabled" />
         <group name="Pins">
           <group name="SDA pin">
-            <SDA_pin v="CMP0_IN3/PTC9/I2C0_SDA/TPM0_CH5" />
+            <SDA_pin v="PTC11/I2C1_SDA" />
           </group>
           <group name="SCL pin">
-            <SCL_pin v="CMP0_IN2/PTC8/I2C0_SCL/TPM0_CH4" />
+            <SCL_pin v="PTC10/I2C1_SCL" />
           </group>
           <High_drive_select v="Disabled" />
           <Input_Glitch_filter v="0" />

@@ -33,7 +33,7 @@ Generated_Code/TSK1.o: ../Generated_Code/TSK1.c \
  ../Generated_Code/list.h ../Generated_Code/semphr.h \
  ../Generated_Code/queue.h ../Generated_Code/event_groups.h \
  ../Generated_Code/timers.h \
- C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/frtos_tasks.h
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/frtos_tasks.h
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -123,4 +123,4 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/wchar_t.h:
 
 ../Generated_Code/timers.h:
 
-C:/Eigene\ Dateien/Schule/HSLU/Semester\ 4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/frtos_tasks.h:
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Sources/frtos_tasks.h:

@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-12, 10:45, # CodeGen: 53
 **     Abstract    :
 **
 **     Settings    :
@@ -381,10 +381,10 @@ PE_ISR(Cpu_ivINT_LLW);
 ** ===================================================================
 */
 
-PE_ISR(Cpu_ivINT_I2C1);
+PE_ISR(Cpu_ivINT_I2C0);
 /*
 ** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_I2C1 (component MKL25Z128LK4)
+**     Method      :  Cpu_Cpu_ivINT_I2C0 (component MKL25Z128LK4)
 **
 **     Description :
 **         This ISR services an unused interrupt/exception vector.

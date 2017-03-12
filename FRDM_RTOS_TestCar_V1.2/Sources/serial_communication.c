@@ -25,6 +25,7 @@ void startCommunication(void){
 	while(VL_Init()!=ERR_OK){
 		VL_Init();
 	}
+	// Gyro Init
 	L3Ginit();
 	RED_Put(1);
 	calculateOffset();
@@ -45,6 +46,8 @@ void startCommunication(void){
 		if(state == 2 || state == 1){
 			L3GgetDegree('z', &angelZ);
 		}
+		
+		
 		
 		//read();
 		//write();
@@ -68,7 +71,7 @@ void taskDone(uint8_t taskNbr){
 
 void refreshTasks(void){
 	  switch(state){
-	  case 1: initDriving(11, 0, 3, 30, 0, 40, leftParcour);
+	  case 1: initDriving(11, 0, 3, 30, 0, 40, leftParcour);	//11 0 3 30 0 40
 		  	  CreateTask2();	// drive to stair
 	  break;
 	  case 2: CreateTask3();	// drive over stair to entanglement (verschränkung)

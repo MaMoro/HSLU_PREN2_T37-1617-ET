@@ -6,7 +6,7 @@
 **     Component   : I2C_LDD
 **     Version     : Component 01.016, Driver 01.07, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-12, 10:45, # CodeGen: 53
 **     Abstract    :
 **          This component encapsulates the internal I2C communication
 **          interface. The implementation of the interface is based
@@ -26,9 +26,9 @@
 **            - General call address detection provided
 **     Settings    :
 **          Component name                                 : CI2C1
-**          I2C channel                                    : I2C0
+**          I2C channel                                    : I2C1
 **          Interrupt service                              : Enabled
-**            Interrupt                                    : INT_I2C0
+**            Interrupt                                    : INT_I2C1
 **            Interrupt priority                           : medium priority
 **          Settings                                       : 
 **            Mode selection                               : MASTER
@@ -39,10 +39,10 @@
 **            SLAVE mode                                   : Disabled
 **            Pins                                         : 
 **              SDA pin                                    : 
-**                SDA pin                                  : CMP0_IN3/PTC9/I2C0_SDA/TPM0_CH5
+**                SDA pin                                  : PTC11/I2C1_SDA
 **                SDA pin signal                           : 
 **              SCL pin                                    : 
-**                SCL pin                                  : CMP0_IN2/PTC8/I2C0_SCL/TPM0_CH4
+**                SCL pin                                  : PTC10/I2C1_SCL
 **                SCL pin signal                           : 
 **              High drive select                          : Disabled
 **              Input Glitch filter                        : 0
@@ -165,7 +165,7 @@ extern "C" {
 
 
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
-#define CI2C1_PRPH_BASE_ADDRESS  0x40066000U
+#define CI2C1_PRPH_BASE_ADDRESS  0x40067000U
   
 /* Methods configuration constants - generated for all enabled component's methods */
 #define CI2C1_Init_METHOD_ENABLED      /*!< Init method of the component CI2C1 is enabled (generated) */

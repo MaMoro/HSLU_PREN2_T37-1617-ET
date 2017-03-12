@@ -24,7 +24,7 @@ by the component.
     0x80000080
  </td><td>NVIC_IPR3 register, peripheral AdcLdd1.</td></tr>
 <tr><td>0xE000E100</td><td>NVIC_ISER</td><td>
-    0x00009100
+    0x00009200
  </td><td>NVIC_ISER register, peripheral AdcLdd1.</td></tr>
 <tr><td>0x4004A000</td><td>PORTB_PCR0</td><td>
     0x00000000
@@ -243,7 +243,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00009100</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00009200</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>SETENA</td><td>0x00</td><td>Interrupt set enable bits</td>

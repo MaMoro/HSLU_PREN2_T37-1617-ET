@@ -19,7 +19,7 @@ by the component.
 <tr><td colspan="4" class="ttitle1">ASerialLdd1 Initialization</td></tr>
 <tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
 <tr><td>0x40048034</td><td>SIM_SCGC4</td><td>
-    0x00000440
+    0x00000480
  </td><td>SIM_SCGC4 register, peripheral ASerialLdd1.</td></tr>
 <tr><td>0x40049004</td><td>PORTA_PCR1</td><td>
     0x00000200
@@ -31,7 +31,7 @@ by the component.
     0x00000080
  </td><td>NVIC_IPR3 register, peripheral ASerialLdd1.</td></tr>
 <tr><td>0xE000E100</td><td>NVIC_ISER</td><td>
-    0x00001100
+    0x00001200
  </td><td>NVIC_ISER register, peripheral ASerialLdd1.</td></tr>
 <tr><td>0x4006A002</td><td>UART0_C1</td><td>
     0x00000000
@@ -98,7 +98,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048034</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000440</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000480</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0xF0000030</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>23</td><td>SPI1</td><td>0x00</td><td>SPI1 Clock Gate Control</td>
@@ -108,8 +108,8 @@ registers of the peripheral(s) configured by the component.
 <tr><td>12</td><td>UART2</td><td>0x00</td><td>UART2 Clock Gate Control</td>
 <tr><td>11</td><td>UART1</td><td>0x00</td><td>UART1 Clock Gate Control</td>
 <tr><td>10</td><td>UART0</td><td>0x01</td><td>UART0 Clock Gate Control</td>
-<tr><td>7</td><td>I2C1</td><td>0x00</td><td>I2C1 Clock Gate Control</td>
-<tr><td>6</td><td>I2C0</td><td>0x01</td><td>I2C0 Clock Gate Control</td>
+<tr><td>7</td><td>I2C1</td><td>0x01</td><td>I2C1 Clock Gate Control</td>
+<tr><td>6</td><td>I2C0</td><td>0x00</td><td>I2C0 Clock Gate Control</td>
 </tr></table>
 <div class="reghdr1">PORTA_PCR1</div>
 <div class="regdiag">
@@ -307,7 +307,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00001100</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00001200</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>SETENA</td><td>0x00</td><td>Interrupt set enable bits</td>

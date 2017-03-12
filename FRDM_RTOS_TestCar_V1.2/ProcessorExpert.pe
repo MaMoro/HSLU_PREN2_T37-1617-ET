@@ -3,8 +3,8 @@
   <Header>
     <Name>FRDM_RTOS_TestCar_V1.2</Name>
     <SavedBy>pirzi</SavedBy>
-    <ModificationStamp>33</ModificationStamp>
-    <Date>2017-03-10</Date>
+    <ModificationStamp>38</ModificationStamp>
+    <Date>2017-03-12</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.0.RT6_b1411-0406</PEversion>
   </Header>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>71</ProjectCompNumb>
+    <ProjectCompNumb>91</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7150,7 +7150,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
+        <Value>200</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -21234,7 +21234,7 @@
         <ItemSymbol>Ser</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>I2C0</Value>
+        <Value>I2C1</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -21255,7 +21255,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Int</ItemSymbol>
-        <Value>INT_I2C0</Value>
+        <Value>INT_I2C1</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>InitPriority</ItemSymbol>
@@ -21448,7 +21448,7 @@
         <ItemSymbol>SDA</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>CMP0_IN3/PTC9/I2C0_SDA/TPM0_CH5</Value>
+        <Value>PTC11/I2C1_SDA</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -21472,7 +21472,7 @@
         <ItemSymbol>SCL</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>CMP0_IN2/PTC8/I2C0_SCL/TPM0_CH4</Value>
+        <Value>PTC10/I2C1_SCL</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>

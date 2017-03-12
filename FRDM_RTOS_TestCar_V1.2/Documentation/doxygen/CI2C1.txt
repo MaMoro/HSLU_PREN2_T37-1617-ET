@@ -29,38 +29,38 @@ by the component.
 <tr><td colspan="4" class="ttitle1">CI2C1 Initialization</td></tr>
 <tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
 <tr><td>0x40048034</td><td>SIM_SCGC4</td><td>
-    0x00000040
- </td><td>SIM_SCGC4 register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066002</td><td>I2C0_C1</td><td>
-    0x00000000
- </td><td>I2C0_C1 register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066006</td><td>I2C0_FLT</td><td>
-    0x00000040
- </td><td>I2C0_FLT register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066003</td><td>I2C0_S</td><td>
-    0x00000082
- </td><td>I2C0_S register, peripheral CI2C1.</td></tr>
-<tr><td>0x4004B024</td><td>PORTC_PCR9</td><td>
-    0x00000200
- </td><td>PORTC_PCR9 register, peripheral CI2C1.</td></tr>
-<tr><td>0x4004B020</td><td>PORTC_PCR8</td><td>
-    0x00000200
- </td><td>PORTC_PCR8 register, peripheral CI2C1.</td></tr>
-<tr><td>0xE000E408</td><td>NVIC_IPR2</td><td>
     0x00000080
+ </td><td>SIM_SCGC4 register, peripheral CI2C1.</td></tr>
+<tr><td>0x40067002</td><td>I2C1_C1</td><td>
+    0x00000000
+ </td><td>I2C1_C1 register, peripheral CI2C1.</td></tr>
+<tr><td>0x40067006</td><td>I2C1_FLT</td><td>
+    0x00000040
+ </td><td>I2C1_FLT register, peripheral CI2C1.</td></tr>
+<tr><td>0x40067003</td><td>I2C1_S</td><td>
+    0x00000082
+ </td><td>I2C1_S register, peripheral CI2C1.</td></tr>
+<tr><td>0x4004B02C</td><td>PORTC_PCR11</td><td>
+    0x00000200
+ </td><td>PORTC_PCR11 register, peripheral CI2C1.</td></tr>
+<tr><td>0x4004B028</td><td>PORTC_PCR10</td><td>
+    0x00000200
+ </td><td>PORTC_PCR10 register, peripheral CI2C1.</td></tr>
+<tr><td>0xE000E408</td><td>NVIC_IPR2</td><td>
+    0x00008000
  </td><td>NVIC_IPR2 register, peripheral CI2C1.</td></tr>
 <tr><td>0xE000E100</td><td>NVIC_ISER</td><td>
-    0x00000100
+    0x00000200
  </td><td>NVIC_ISER register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066005</td><td>I2C0_C2</td><td>
+<tr><td>0x40067005</td><td>I2C1_C2</td><td>
     0x00000000
- </td><td>I2C0_C2 register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066008</td><td>I2C0_SMB</td><td>
+ </td><td>I2C1_C2 register, peripheral CI2C1.</td></tr>
+<tr><td>0x40067008</td><td>I2C1_SMB</td><td>
     0x00000008
- </td><td>I2C0_SMB register, peripheral CI2C1.</td></tr>
-<tr><td>0x40066001</td><td>I2C0_F</td><td>
+ </td><td>I2C1_SMB register, peripheral CI2C1.</td></tr>
+<tr><td>0x40067001</td><td>I2C1_F</td><td>
     0x00000022
- </td><td>I2C0_F register, peripheral CI2C1.</td></tr>
+ </td><td>I2C1_F register, peripheral CI2C1.</td></tr>
 </table>
 <br/>
 \page CI2C1_regs_details Register Initialization Details
@@ -114,7 +114,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048034</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000040</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0xF0000030</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>23</td><td>SPI1</td><td>0x00</td><td>SPI1 Clock Gate Control</td>
@@ -124,10 +124,10 @@ registers of the peripheral(s) configured by the component.
 <tr><td>12</td><td>UART2</td><td>0x00</td><td>UART2 Clock Gate Control</td>
 <tr><td>11</td><td>UART1</td><td>0x00</td><td>UART1 Clock Gate Control</td>
 <tr><td>10</td><td>UART0</td><td>0x00</td><td>UART0 Clock Gate Control</td>
-<tr><td>7</td><td>I2C1</td><td>0x00</td><td>I2C1 Clock Gate Control</td>
-<tr><td>6</td><td>I2C0</td><td>0x01</td><td>I2C0 Clock Gate Control</td>
+<tr><td>7</td><td>I2C1</td><td>0x01</td><td>I2C1 Clock Gate Control</td>
+<tr><td>6</td><td>I2C0</td><td>0x00</td><td>I2C0 Clock Gate Control</td>
 </tr></table>
-<div class="reghdr1">I2C0_C1</div>
+<div class="reghdr1">I2C1_C1</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -148,7 +148,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066002</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067002</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -161,7 +161,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>1</td><td>WUEN</td><td>0x00</td><td>Wakeup Enable</td>
 <tr><td>0</td><td>DMAEN</td><td>0x00</td><td>DMA Enable</td>
 </tr></table>
-<div class="reghdr1">I2C0_FLT</div>
+<div class="reghdr1">I2C1_FLT</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -180,7 +180,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066006</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067006</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000040</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -189,7 +189,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>5</td><td>STOPIE</td><td>0x00</td><td>I2C Bus Stop Interrupt Enable</td>
 <tr><td>0 - 4</td><td>FLT</td><td>0x00</td><td>I2C Programmable Filter Factor</td>
 </tr></table>
-<div class="reghdr1">I2C0_S</div>
+<div class="reghdr1">I2C1_S</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -210,7 +210,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066003</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067003</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000082</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000080</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -223,7 +223,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>1</td><td>IICIF</td><td>0x01</td><td>Interrupt Flag</td>
 <tr><td>0</td><td>RXAK</td><td>0x00</td><td>Receive Acknowledge</td>
 </tr></table>
-<div class="reghdr1">PORTC_PCR9</div>
+<div class="reghdr1">PORTC_PCR11</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -267,7 +267,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004B024</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004B02C</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000200</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -280,7 +280,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>1</td><td>PE</td><td>0x00</td><td>Pull Enable</td>
 <tr><td>0</td><td>PS</td><td>0x00</td><td>Pull Select</td>
 </tr></table>
-<div class="reghdr1">PORTC_PCR8</div>
+<div class="reghdr1">PORTC_PCR10</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -324,7 +324,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004B020</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004B028</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000200</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -374,13 +374,13 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E408</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00008000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>24 - 31</td><td>PRI_11</td><td>0x00</td><td>Priority of interrupt 11</td>
 <tr><td>16 - 23</td><td>PRI_10</td><td>0x00</td><td>Priority of interrupt 10</td>
-<tr><td>8 - 15</td><td>PRI_9</td><td>0x00</td><td>Priority of interrupt 9</td>
-<tr><td>0 - 7</td><td>PRI_8</td><td>0x80</td><td>Priority of interrupt 8</td>
+<tr><td>8 - 15</td><td>PRI_9</td><td>0x80</td><td>Priority of interrupt 9</td>
+<tr><td>0 - 7</td><td>PRI_8</td><td>0x00</td><td>Priority of interrupt 8</td>
 </tr></table>
 <div class="reghdr1">NVIC_ISER</div>
 <div class="regdiag">
@@ -419,12 +419,12 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000100</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000200</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>SETENA</td><td>0x00</td><td>Interrupt set enable bits</td>
 </tr></table>
-<div class="reghdr1">I2C0_C2</div>
+<div class="reghdr1">I2C1_C2</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -444,7 +444,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066005</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067005</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -455,7 +455,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>3</td><td>RMEN</td><td>0x00</td><td>Range Address Matching Enable</td>
 <tr><td>0 - 2</td><td>AD</td><td>0x00</td><td>Slave Address</td>
 </tr></table>
-<div class="reghdr1">I2C0_SMB</div>
+<div class="reghdr1">I2C1_SMB</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -476,7 +476,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066008</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067008</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000008</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -489,7 +489,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>1</td><td>SHTF2</td><td>0x00</td><td>SCL High Timeout Flag 2</td>
 <tr><td>0</td><td>SHTF2IE</td><td>0x00</td><td>SHTF2 Interrupt Enable</td>
 </tr></table>
-<div class="reghdr1">I2C0_F</div>
+<div class="reghdr1">I2C1_F</div>
 <div class="regdiag">
 <table class="regtbl">
 <tr class="trd1r">
@@ -507,7 +507,7 @@ registers of the peripheral(s) configured by the component.
 </table>
         
 </div>
-<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40066001</td></tr>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067001</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000022</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
@@ -519,9 +519,9 @@ registers of the peripheral(s) configured by the component.
 \page CI2C1_settings Component Settings
 \code
 **          Component name                                 : CI2C1
-**          I2C channel                                    : I2C0
+**          I2C channel                                    : I2C1
 **          Interrupt service                              : Enabled
-**            Interrupt                                    : INT_I2C0
+**            Interrupt                                    : INT_I2C1
 **            Interrupt priority                           : medium priority
 **          Settings                                       : 
 **            Mode selection                               : MASTER
@@ -532,10 +532,10 @@ registers of the peripheral(s) configured by the component.
 **            SLAVE mode                                   : Disabled
 **            Pins                                         : 
 **              SDA pin                                    : 
-**                SDA pin                                  : CMP0_IN3/PTC9/I2C0_SDA/TPM0_CH5
+**                SDA pin                                  : PTC11/I2C1_SDA
 **                SDA pin signal                           : 
 **              SCL pin                                    : 
-**                SCL pin                                  : CMP0_IN2/PTC8/I2C0_SCL/TPM0_CH4
+**                SCL pin                                  : PTC10/I2C1_SCL
 **                SCL pin signal                           : 
 **              High drive select                          : Disabled
 **              Input Glitch filter                        : 0
