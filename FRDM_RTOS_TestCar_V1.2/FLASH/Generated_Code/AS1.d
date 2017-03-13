@@ -68,11 +68,18 @@ Generated_Code/AS1.o: ../Generated_Code/AS1.c \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.h \
- C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C1.h \
- C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/ASerialLdd1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.h \
@@ -249,15 +256,29 @@ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRD
 
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.h:
 
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT1.h:
+
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.h:
 
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.h:
 
-C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h:
-
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C1.h:
-
-C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h:
 
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.h:
 

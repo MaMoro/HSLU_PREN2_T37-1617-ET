@@ -629,7 +629,6 @@ uint8_t VL_Init(void) {
 
 uint8_t VL_GetDistance(uint8_t deviceNbr, int16_t* deviceRange){
 	  uint8_t res = ERR_OK;
-	  int errCntr = 0;
 	 
 	    if (initDevices) {
 	      do {
@@ -651,7 +650,6 @@ uint8_t VL_GetDistance(uint8_t deviceNbr, int16_t* deviceRange){
 		 res = VL_ReadRangeSingle(ToFDevice[deviceNbr].i2cAddr, &range);
 		 if (res!=ERR_OK) {
 		   //CLS1_SendStr("ToF FAILED!\r\n", CLS1_GetStdio()->stdErr);
-		   errCntr++;
 		   GI2C1_Deinit();
 		   GI2C1_Init();
 		   initDevices = TRUE; /* re-init devices */

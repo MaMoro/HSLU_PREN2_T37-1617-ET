@@ -14,6 +14,7 @@ void startCommunication(void);
 
 void refreshTasks(void);
 void taskDone(uint8_t taskNbr);
+void readGyro(void);
 
 
 #endif /* SERIAL_COMMUNICATION_H_ */

@@ -9,8 +9,30 @@
 #include "GI2C1.h"
 #include "WAIT1.h"
 #include <stdlib.h>
+#include <math.h>
+
 
 // Defines ////////////////////////////////////////////////////////////////
+
+#define TOFFRONT 0
+#define TOFLEFT 1
+#define TOFRIGHT 2
+#define GYRO 3
+
+#define PI 3.14159265
+#define MMA1 1
+
+#define VL_COMP	0	// compensation of drift by checking if the distances right + left == the parcour width - car width
+#define TOFDISTANCE 200	// the distance between the two ToF's from the side
+/* \todo set the right TOFDISTANCE */
+
+#if VL_COMP
+#include "VL6180X"
+#endif
+
+#if MMA1
+	#include "MMA1.h"
+#endif
 
 // IIC two-wire interface uses a 7-bit number for the address,
 // and sets the last bit correctly based on reads and writes
@@ -162,12 +184,22 @@ void L3Greadxyz(void)
   gyro.x += gyro.vX;
   gyro.y += gyro.vY;
   gyro.z += gyro.vZ;
+  
+#if MMA1
+  combineAccel();
+#endif
+  
+#if VL_COMP
+  compensateDriftVL();
+#endif
+  
 }
 
 void L3Gread(char dim){
 	uint8_t value[2];
 	uint8_t i;
 	uint8_t reg;
+	 
 	switch(dim){
 	case 'x':;
 	case 'X': reg = OUT_X_L;
@@ -189,6 +221,10 @@ void L3Gread(char dim){
 	case 'x':;
 	case 'X': 	gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
 				gyro.x += gyro.vX;
+				#if VL_COMP
+					compensateDriftVL();
+				#endif
+  
 	break;
 	case 'y':;
 	case 'Y': 	gyro.vY = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetY;
@@ -197,6 +233,11 @@ void L3Gread(char dim){
 	case 'z':;
 	case 'Z': 	gyro.vZ = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetZ;
 				gyro.z += gyro.vZ;
+				
+				#if MMA1
+					combineAccel();
+				#endif
+				 
 	break;
 	default:; // error
 	break;
@@ -205,7 +246,8 @@ void L3Gread(char dim){
 }
 
 
-void L3GgetDegree(char dim, int16_t* value){
+int8_t L3GgetDegree(char dim, int16_t* value){
+	int8_t err = ERR_OK;
 	switch(dim){
 	case 'x':;
 	case 'X':*value = gyro.x/1000;
@@ -221,9 +263,12 @@ void L3GgetDegree(char dim, int16_t* value){
 	}
 	if(*value>180){
 		*value-=360;
-	}else if(*value<-180){
+		err = ERR_OVERFLOW; 
+	}else if(*value<=-180){
 		*value+=360;
+		err = ERR_OVERFLOW;
 	}
+	return err;
 }
 /*
  * Read temperature from the sensor
@@ -238,12 +283,13 @@ void L3GreadTemp(void){
 // the offset is +/- 10% max of +/-250dps fullscale -> Sensitivity = 8.75mdps/digit
 //offsetMAX = 2^16*8.75*0.1/2 = +/- 28'672
 void calculateOffset(void){
+	uint16_t i;
 	
-	for(writingPos=0;writingPos<NBROFFSET;writingPos++){
+	for(i=0;i<NBROFFSET;i++){
 		L3Greadxyz();
-		vX[writingPos]=(int16_t)gyro.vX;
-		vY[writingPos]=(int16_t)gyro.vY;
-		vZ[writingPos]=(int16_t)gyro.vZ;
+		vX[i]=(int16_t)gyro.vX;
+		vY[i]=(int16_t)gyro.vY;
+		vZ[i]=(int16_t)gyro.vZ;
 		WAIT1_Waitms(4);
 	}
 	qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
@@ -259,9 +305,6 @@ void calculateOffset(void){
 	OffsetX = gyro.offsetX;
 	OffsetY = gyro.offsetY;
 	OffsetZ = gyro.offsetZ;
-	
-	writingPos = 0;
-
 }
 
 
@@ -275,30 +318,51 @@ gyro_t* getG(void){
 	return &gyro;
 }
 
-void refreshMovingOffset(void){
-	vX[writingPos] = gyro.vX;
-	vY[writingPos] = gyro.vY;
-	vZ[writingPos] = gyro.vZ;
-	if(++writingPos  >= NBROFFSET){
-		writingPos = 0;
-		qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-		qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-		qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-		if((gyro.offsetX+vX[NBROFFSET/2])<(OffsetX+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(OffsetX-MAXOFFSET)){
-			gyro.offsetX += vX[NBROFFSET/2];
-		}
-		if((gyro.offsetY+vY[NBROFFSET/2])<(OffsetY+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(OffsetY-MAXOFFSET)){
-			gyro.offsetY += vY[NBROFFSET/2];
-		}
-		if((gyro.offsetZ+vZ[NBROFFSET/2])<(OffsetZ+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(OffsetZ-MAXOFFSET)){
-			gyro.offsetZ += vZ[NBROFFSET/2];
-		}
+void refreshMovingOffset(char dim){
+	static uint16 iX;
+	static uint16 iY;
+	static uint16 iZ;
+	
+	switch(dim){
+	case 'x':;
+	case 'X':	vX[iX] = gyro.vX;
+				if(++iX  >= NBROFFSET){
+					iX = 0;
+					qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+					if((gyro.offsetX+vX[NBROFFSET/2])<(OffsetX+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(OffsetX-MAXOFFSET)){
+						gyro.offsetX += vX[NBROFFSET/2];
+					}
+				}
+	break;
+	case 'y':;
+	case 'Y':	vY[iY] = gyro.vY;
+				if(++iY  >= NBROFFSET){
+					iY = 0;
+					qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+					if((gyro.offsetY+vY[NBROFFSET/2])<(OffsetY+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(OffsetY-MAXOFFSET)){
+						gyro.offsetY += vY[NBROFFSET/2];
+					}
+				}
+	break;
+	case 'z':;
+	case 'Z': 	vZ[iZ] = gyro.vZ;
+				if(++iZ  >= NBROFFSET){
+					iZ = 0;
+					qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
+					if((gyro.offsetZ+vZ[NBROFFSET/2])<(OffsetZ+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(OffsetZ-MAXOFFSET)){
+						gyro.offsetZ += vZ[NBROFFSET/2];
+					}
+				}
+	break;
+	default: ; // error
 	}
+	
+
 	
 }
 
-void L3GSetAngel(char dimension, int16_t value){
-	switch(dimension){
+void L3GSetAngel(char dim, int16_t value){
+	switch(dim){
 	case 'X': ;
 	case 'x': gyro.x = (int32_t)value;
 	break;
@@ -313,3 +377,43 @@ void L3GSetAngel(char dimension, int16_t value){
 	}
 }
 
+#if MMA1
+void combineAccel(void){
+	   float xyzAccel[3];
+	   float pitch;
+	   static uint8_t accelCounter;
+	  
+	  if(accelCounter >=32){
+		  xyzAccel[1] = (float)MMA1_GetXmg()*PI/1000;
+		  xyzAccel[2] = (float)MMA1_GetYmg()*PI/1000;
+		  xyzAccel[3] = (float)MMA1_GetZmg()*PI/1000;
+		  
+		  //calc pitch in degree
+		  pitch = atan(xyzAccel[1]/sqrt(xyzAccel[2]*xyzAccel[2]+xyzAccel[3]*xyzAccel[3]))*180/PI; 
+		  
+		  // set new pitch to register
+		  gyro.z = gyro.z*0.95 + (int32_t)(pitch*50); 		// pitch*50 => pitch*1000*0.05;
+		  accelCounter = 0;
+	  }
+	  accelCounter++;
+}
+#endif
+
+#if VL_COMP
+void compensateDriftVL(void){
+	int16_t rangeLeft, rangeRight;
+	int16_t fullwidth;
+	
+	VL_GetDistance(TOFRIGHT, &rangeRight);
+	VL_GetDistance(TOFLEFT, &rangeLeft);
+	
+	if(rangeLeft>0 && rangeLeft<255 && rangeRight>0 && rangeRight<255){
+		fullwidth = rangeLeft + rangeRight + TOFDISTANCE;
+		if(fullwidth >= 395 || fullwidth <= 405){
+			gyro.x = 0;
+		}
+	}
+	
+	
+}
+#endif

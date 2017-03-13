@@ -32,6 +32,9 @@ Sources/serial_communication.o: ../Sources/serial_communication.c \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd4.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/GPIO_PDD.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/LED_GREEN.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin3.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd3.h \
  ../Sources/VL6180X.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h \
@@ -59,7 +62,22 @@ Sources/serial_communication.o: ../Sources/serial_communication.c \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.h \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.h \
- ../Sources/driving.h
+ ../Sources/driving.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cmath \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cfloat \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_t.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/float.ARM.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_api.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_misra_types.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_inlines.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_config.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/math.ARM.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cerrno
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -129,6 +147,12 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/GPIO_PDD.h:
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h:
 
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/LED_GREEN.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin3.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd3.h:
+
 ../Sources/VL6180X.h:
 
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.h:
@@ -184,3 +208,33 @@ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRD
 C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.h:
 
 ../Sources/driving.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cmath:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cfloat:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_t.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/float.ARM.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_api.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_misra_types.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_inlines.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_config.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/math.ARM.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cerrno:

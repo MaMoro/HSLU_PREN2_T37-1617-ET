@@ -30,29 +30,30 @@ int8_t factor;
 uint8_t device;
 
 //Task2
-void driveToStair(int8_t speed, uint8_t optRange, uint8_t startupTime, uint16_t frontdistance){
+void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance){
 	uint8_t err;
 	uint8_t done = 0;
 	int16_t range = 0;
 	int16_t corrGyro = 0;
 	int16_t corrToF = 0;
 	
-	RED_Put(0);
 	LED_GREEN_Put(1);
-	motorsStartup(speed, speed, startupTime);
 	while(!done){
 		// Motor-Regulation
 		 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, 0, &corrGyro);
-		 if(err == ERR_OK){
-			 err = calcPID(device,kpToF, kiToF, kdToF, optRange, &corrToF);
-			 	 if(err != ERR_OK){
-			 		 corrToF = 0;
-			 	 }
-			 motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
+		 if(err != ERR_OK){
+			 corrGyro = 0;
+			// error 
 		 }
-		 else{
+		 err = calcPID(device,kpToF, kiToF, kdToF, optRange, &corrToF);
+		 if(err != ERR_OK){
+			 corrToF = 0;
 			 // error
 		 }
+		 motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+
+			 
+		 refreshMovingOffset('x');
 		 
 		 // check if stair is detected
 		 VL_GetDistance(TOFFRONT, &range);
@@ -62,7 +63,6 @@ void driveToStair(int8_t speed, uint8_t optRange, uint8_t startupTime, uint16_t 
 			 done = 1;
 		 }
 		 
-		 refreshMovingOffset();
 		 vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	motorsStartup(0, 0, 0);
@@ -76,51 +76,54 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 	int16_t corrToF = 0;
 	int16_t corrGyro = 0;
 	uint8_t stairState = 0;
-	int16_t angel;
+	int16_t angel = 0;
 	uint8_t done = 0;
-	L3GSetAngel('z', 0);
-	motorsStartup(speed,speed,0);
-	do{
+
+	while(!done){
 		// Regulate Motors
 		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, 0, &corrGyro);
-		if(err == ERR_OK){
-			err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
-		}
-		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
 		if(err != ERR_OK){
-			motorsStartup(0, 0, 0);		// error
+			corrGyro = 0;
+			//error
 		}
+		err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
+		if(err != ERR_OK){
+			corrToF = 0;
+			// error
+		}
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 		
-		//
+		/* \todo test if it helps to avoid drift */
+		refreshMovingOffset('x'); // Test if good or not
 		
 		L3GgetDegree('Z', &angel);
+		// stair upwards
 		if(stairState == 0 && angel <= -25){
-			stairState = 1;	// stair upwards
+			stairState = 1;	
 			LED_GREEN_Put(1);
 		}
+		// on top of the stair
 		else if(stairState == 1 && angel < 5 && angel > -5){
-			stairState = 2;	// on top of the stair
+			stairState = 2;	
 			L3GSetAngel('z', 0);
 			RED_Put(1);
 			speed -= 20;
 		}
+		// stair downwards
 		else if(stairState == 2 && angel >= 25){
-			stairState = 3; // stair downwards
+			stairState = 3; 
 			LED_GREEN_Put(0);
 		}
-		else if(stairState == 3 && angel < 10 && angel > -10){
-			stairState = 4; // stair done
-			L3GSetAngel('z', 0);
+		// stair done
+		else if(stairState == 3 && angel < 10 && angel > -10){ 
 			RED_Put(0);
 			vTaskDelay(pdMS_TO_TICKS(20));
 			done = 1;
 		}
 		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
-	while(!done);
-	/* \todo stop doesnt work with 10ms*/
-	motorsStartup(0, 0, 0);
 	
+	motorsStartup(0, 0, 0);
 	taskDone(3);
 }
 
@@ -133,16 +136,22 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 	int16_t ToFLeft;
 	int16_t ToFRight;
 	motorsStartup(speed,speed,0);
-	do{
+	while(!done){
 		// Regulate Motors
 		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, 0, &corrGyro);
-		if(err == ERR_OK){
-			err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
-		}
-		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
 		if(err != ERR_OK){
-			//motorsStartup(0, 0, 0);		// error
+			corrGyro = 0;
+			//error
 		}
+		err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
+		if(err != ERR_OK){
+			corrToF = 0;
+			// error
+		}
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+		
+		/* \todo test if it helps to avoid drift */
+		refreshMovingOffset('x'); // Test if good or not
 		
 		// stop condition
 		VL_GetDistance(TOFRIGHT, &ToFRight);
@@ -153,16 +162,14 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 		
 		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
-	while(!done);
 	
 	motorsStartup(0, 0, 0);
-	
 	taskDone(4);
 }
 
 //Task5
 void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdistance){
-	int16_t range = 0;
+	int16_t range = 0, rangeOld = 0;
 	uint8_t err = ERR_OK;
 	int16_t corrGyro = 0;
 	int16_t optAngel = 0;
@@ -171,23 +178,22 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 	uint16_t count = 0;
 	uint16_t time = 1000; // drive for 1 seconds over the end
 
-	motorsStartup(speed, speed, 2);
-	
 	
 	// drive straight for defined time
 	while(partState == 0){
+		LED_GREEN_Put(1);
 		// Motor-Regulation
 		 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
-		 if(err == ERR_OK){
-			 motorsStartup(speed-corrGyro, speed+corrGyro, 2);
-		 }
-		 else{
+		 if(err != ERR_OK){
+			 corrGyro = 0;
 			 // error
 		 }
+		 motorsStartup(speed-corrGyro, speed+corrGyro, 0);
 		 
 		 // check end condition
 		 count++;
 		 if(count >= (time/DELAY)){
+			 LED_GREEN_Put(0);
 			 partState = 1;
 			 motorsStartup(0, 0, 0);
 			 count = 0;
@@ -200,37 +206,44 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 	optAngel = -90*factor;
 	while(partState == 1){
 		// Motor-Regulation
-			 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
-			 if(err == ERR_OK){
-				 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
-			 }
-			 else{
-				 // error
-			 }
-			 
-			 // check end condition
-			 if(corrGyro <= 5){
-				 motorsStartup(0, 0, 0);
-				 partState = 2;
-			 }
-			 
-			 vTaskDelay(pdMS_TO_TICKS(DELAY));
+		RED_Put(1);
+		 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
+		 if(err != ERR_OK){
+			 corrGyro = 0;
+			 count--;
+			 // error
+		 }
+		 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
+		 
+		 // check end condition
+		 if(corrGyro <= 5 && corrGyro >= -5){
+			 count++;
+		 }
+		 if(count >= 10){
+			 RED_Put(0);
+			 count = 0;
+			 motorsStartup(0, 0, 0);
+			 partState = 2;
+		 }
+		 
+		 vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	
 	// drive to the wall
-	while(partState ==2){
+	while(partState == 2){
+		LED_GREEN_Put(1);
 		 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
 		 if(err == ERR_OK){
-			 motorsStartup(speed-corrGyro, speed+corrGyro, 2);
-		 }
-		 else{
+			 corrGyro = 0;
 			 // error
 		 }
-		
+		 motorsStartup(speed-corrGyro, speed+corrGyro, 0);
+
 		
 		// check end condition
 		VL_GetDistance(TOFFRONT, &range);
 		if(range <= frontdistance && range > 0){
+			LED_GREEN_Put(0);
 			motorsStartup(0, 0, 0);
 			partState = 3;
 		}
@@ -239,17 +252,22 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 	// turn 90 degree
 	optAngel = -180*factor;
 	while(partState == 3){
+		RED_Put(1);
 		// Motor-Regulation
 			 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
-			 if(err == ERR_OK){
-				 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
-			 }
-			 else{
+			 if(err != ERR_OK){
+				 corrGyro = 0;
+				 count--;
 				 // error
 			 }
+			 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
 			 
 			 // check end condition
-			 if(corrGyro <= 5){
+			 if(corrGyro <= 5 && corrGyro >= -5){
+				 count++;
+			 }
+			 if(count >= 10){
+				 RED_Put(0);
 				 motorsStartup(0, 0, 0);
 				 partState = 4;
 			 }
@@ -257,22 +275,100 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 			 vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	
-	//drive further
+	//drive to the door
+	range = 0;
 	while(partState == 4){
-		
+		LED_GREEN_Put(1);
 		// Regulate Motors
 		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
-		if(err == ERR_OK){
-			err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
-		}
-		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 2);
 		if(err != ERR_OK){
-			//motorsStartup(0, 0, 0);		// error
-		}	
-			
+			corrGyro = 0;
+			// error
+		}
+		err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);	
+		if(err != ERR_OK){
+			corrToF = 0;
+			// error
+		}
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+		
+		//end condition
+		rangeOld = range;
+		VL_GetDistance(device, &range);
+		if((rangeOld-range) >= 45 && (rangeOld-range)<=55){
+			partState = 5;
+		}		
 	}
+	// drive throught the door
+	rangeOld = 0;
+	while(partState == 5){
+		RED_Put(1);
+		// Regulate Motors
+		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
+		if(err != ERR_OK){
+			corrGyro = 0;
+			// error
+		}
+		err = calcPID(device, kpToF, kiToF, kdToF, optRange-50, &corrToF);	
+		if(err != ERR_OK){
+			corrToF = 0;
+			// error
+		}
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+		
+		rangeOld = range;
+		VL_GetDistance(device, &range);
+		if((range-rangeOld) >= 45 && (rangeOld-range)<=55){
+			RED_Put(0);
+			LED_GREEN_Put(0);
+			partState = 6;
+		}
+		
+	}
+	
 		motorsStartup(0, 0, 0);
 		taskDone(5);
+}
+
+//Task6
+void driveToEndZone(int8_t speed, uint8_t optRange, uint8_t frontdistance){
+	uint8_t err = ERR_OK;
+	int16_t corrToF = 0;
+	int16_t corrGyro = 0;
+	uint8_t done = 0;
+	int16_t range;
+	while(!done){
+		// Regulate Motors
+		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, -180*factor, &corrGyro);
+		if(err != ERR_OK){
+			corrGyro = 0;
+			//error
+		}
+		err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
+		if(err != ERR_OK){
+			corrToF = 0;
+			// error
+		}
+		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+		
+		/* \todo test if it helps to avoid drift */
+		refreshMovingOffset('x'); // Test if good or not
+		
+		 // stop condition
+		 VL_GetDistance(TOFFRONT, &range);
+		 if(range <= frontdistance && range > 0){
+			 done = 1;
+		 }
+		
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
+	}
+	
+	motorsStartup(0, 0, 0);
+	taskDone(6);
+}
+
+void pushTheButton(uint8_t number, uint8_t fronddistance){
+	
 }
 
 void initDriving(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG, bool leftParcour){

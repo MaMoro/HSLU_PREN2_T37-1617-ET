@@ -50,7 +50,21 @@ Sources/L3G.o: ../Sources/L3G.c \
  C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdlib.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstdlib \
- C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/div_t.h
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/div_t.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cmath \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cfloat \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_t.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/float.ARM.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_api.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_misra_types.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_inlines.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_config.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/math.ARM.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cerrno \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h \
+ C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -155,3 +169,31 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdlib.h:
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstdlib:
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/div_t.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cmath:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cfloat:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_t.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/float.ARM.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_api.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_misra_types.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_inlines.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/math_config.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/math.ARM.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cerrno:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.h:
+
+C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.h:

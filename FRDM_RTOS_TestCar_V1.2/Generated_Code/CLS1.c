@@ -6,14 +6,14 @@
 **     Component   : Shell
 **     Version     : Component 01.085, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-12, 22:00, # CodeGen: 58
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CLS1
 **          Echo                                           : no
 **          Prompt                                         : "CMD> "
-**          Project Name                                   : My Project Name
+**          Project Name                                   : Choegeliwaegeli
 **          Silent Mode Prefix                             : #
 **          Buffer Size                                    : 48
 **          Blocking Send                                  : Enabled
@@ -318,7 +318,7 @@ uint8_t CLS1_ParseCommand(const uint8_t *cmd, bool *handled, CLS1_ConstStdIOType
     CLS1_SendStr((unsigned char*)"\r\n", io->stdOut);
     CLS1_SendStr((unsigned char*)CLS1_DASH_LINE, io->stdOut);
     CLS1_SendStr((unsigned char*)"\r\n", io->stdOut);
-    CLS1_SendStr((unsigned char*)"My Project Name", io->stdOut);
+    CLS1_SendStr((unsigned char*)"Choegeliwaegeli", io->stdOut);
     CLS1_SendStr((unsigned char*)"\r\n", io->stdOut);
     CLS1_SendStr((unsigned char*)CLS1_DASH_LINE, io->stdOut);
     CLS1_SendStr((unsigned char*)"\r\n", io->stdOut);

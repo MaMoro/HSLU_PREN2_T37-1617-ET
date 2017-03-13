@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include "serial_communication.h"
 #include "driving.h"
+#include "serial_communication.h"
 
 uint8_t Task2Started;
 uint8_t Task3Started;
@@ -31,6 +32,7 @@ uint8_t Task4Started;
 uint8_t	Task5Started;
 uint8_t Task6Started;
 uint8_t Task7Started;
+uint8_t GyroTaskStarted;
 
 static portTASK_FUNCTION(Task1Task, pvParameters) {
 
@@ -55,7 +57,7 @@ static portTASK_FUNCTION(Task2Task, pvParameters) {
   //for(;;) {
     /* Write your task code here ... */
 
-	  driveToStair(50, 150, 10, 200);
+	  driveToStair(50, 150, 200);
 	  vTaskDelay(pdMS_TO_TICKS(1));
 	  FRTOS1_vTaskSuspend(NULL);
 
@@ -126,13 +128,15 @@ static portTASK_FUNCTION(Task6Task, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
-  for(;;) {
+  //for(;;) {
     /* Write your task code here ... */
-
+	driveToEndZone(50, 150);
+	vTaskDelay(pdMS_TO_TICKS(1));
+	FRTOS1_vTaskSuspend(NULL);
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
      */
-  }
+  //}
   /* Destroy the task */
   vTaskDelete(Task6Task);
 }
@@ -141,8 +145,29 @@ static portTASK_FUNCTION(Task7Task, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
-  for(;;) {
+  //for(;;) {
     /* Write your task code here ... */
+	pushTheButton(3, 190);
+	vTaskDelay(pdMS_TO_TICKS(1));
+	vTaskSuspend(NULL);
+
+    /* You can use a task delay like
+       vTaskDelay(1000/portTICK_RATE_MS);
+     */
+  //}
+  /* Destroy the task */
+  vTaskDelete(Task7Task);
+}
+
+
+static portTASK_FUNCTION(GyroTask, pvParameters) {
+
+  /* Write your task initialization code here ... */
+(void) pvParameters;
+  	for(;;) {
+    /* Write your task code here ... */
+	
+  		readGyro();
 
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);
@@ -158,7 +183,7 @@ void CreateTasks(void) {
 	  "Task1", /* task name for kernel awareness debugging */
 	  configMINIMAL_STACK_SIZE + 0, /* task stack size */
 	  (void*)NULL, /* optional task startup argument */
-	  tskIDLE_PRIORITY + 4,  /* initial priority */
+	  tskIDLE_PRIORITY + 3,  /* initial priority */
 	  (xTaskHandle*)NULL /* optional task handle to create */
 	) != pdPASS) {
 	  /*lint -e527 */
@@ -273,5 +298,23 @@ void CreateTask7(void){
 	  }
 	}
 	Task7Started = 1;
+}
+
+void CreateGyroTask(void){
+	if(!GyroTaskStarted){
+	  if (FRTOS1_xTaskCreate(
+		 GyroTask,  /* pointer to the task */
+		  "Gyro", /* task name for kernel awareness debugging */
+		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  (void*)NULL, /* optional task startup argument */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
+		  (xTaskHandle*)NULL /* optional task handle to create */
+		) != pdPASS) {
+		  /*lint -e527 */
+		  for(;;){}; /* error! probably out of memory */
+		  /*lint +e527 */
+	  }
+	}
+	GyroTaskStarted = 1;
 }
 

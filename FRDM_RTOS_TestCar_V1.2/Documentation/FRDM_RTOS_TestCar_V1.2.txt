@@ -913,6 +913,126 @@ Module "PWM_Servo" (component PWM)
                 16-bit unsigned integer number. The method is available only if it is not selected list of predefined values in 
                 <Starting pulse width> property.
 
+Module "MMA1"      (component MMA8451Q)
+   - MMA1_Enable -Enables the device with setting the ACTIVE bit in the CTRL register 1
+   - MMA1_Disable -Disables the device with clearing the ACTIVE bit in the CTRL register 1
+   - MMA1_isEnabled -Returns the status of the the ACTIVE bit in the CTRL register 1
+   - MMA1_SwReset -Perform a software reset using the rst bit in the CTRL register 2
+   - MMA1_ReadReg8 -Reads an 8bit device register
+   - MMA1_WriteReg8 -Write an 8bit device register
+   - MMA1_GetX -Retrieves the value for the X axis. The value is adjusted with the zero calibration value (0 for 0 g, negative 
+                for negative acceleration and positive for positive acceleration).
+   - MMA1_GetY -Retrieves the value for the Y axis. The value is adjusted with the zero calibration value (0 for 0 g, negative 
+                for negative acceleration and positive for positive acceleration).
+   - MMA1_GetZ -Retrieves the value for the Z axis. The value is adjusted with the zero calibration value (0 for 0 g, negative 
+                for negative acceleration and positive for positive acceleration).
+   - MMA1_GetRaw8XYZ -Returns in an array the x, y and z accelerometer as 8bit values.
+   - MMA1_CalibrateX1g -Performs a calibration of the sensor. It is assumed that the Y and Z sensors have 0 g, and the X sensor 
+                has 1 g.
+   - MMA1_CalibrateY1g -Performs a calibration of the sensor. It is assumed that the X and Z sensors have 0 g, and the Y sensor 
+                has 1 g.
+   - MMA1_CalibrateZ1g -Performs a calibration of the sensor. It is assumed that the X and Y sensors have 0 g, and the Z sensor 
+                has 1 g.
+   - MMA1_GetXmg -Returns the X value in mg
+   - MMA1_GetYmg -Returns the Y value in mg
+   - MMA1_GetZmg -Returns the Z value in mg
+   - MMA1_MeasureGetRawX -Performs a measurement on X channel and returns the raw value.
+   - MMA1_MeasureGetRawY -Performs a measurement on Y channel and returns the raw value.
+   - MMA1_MeasureGetRawZ -Performs a measurement on Z channel and returns the raw value.
+   - MMA1_GetXOffset -Returns the offset applied to the X value.
+   - MMA1_GetYOffset -Returns the offset applied to the Y value.
+   - MMA1_GetZOffset -Returns the offset applied to the Z value.
+   - MMA1_GetX1gValue -Returns the value for 1g for channel  X.
+   - MMA1_GetY1gValue -Returns the value for 1g for channel  Y.
+   - MMA1_GetZ1gValue -Returns the value for 1g for channel  Z.
+   - MMA1_SetFastMode -Turns the F_READ (Fast Read Mode) on or off
+   - MMA1_WhoAmI -Returns the value of the WHO_AM_I (0x0D) register
+   - MMA1_Init -Initializes the device driver
+   - MMA1_Deinit -Counterpart to Init() method.
+
+Module "GI2C2"     (component GenericI2C)
+   - GI2C2_SelectSlave -Selects the slave device on the bus. Method might use a semaphore to protect bus access.
+   - GI2C2_UnselectSlave -Unselects the device. Method will release a used a semaphore.
+   - GI2C2_RequestBus -Starts a critical section for accessing the bus.
+   - GI2C2_ReleaseBus -Finishes a critical section for accessing the bus.
+   - GI2C2_WriteBlock -Write a block to the device.
+   - GI2C2_ReadBlock -Read from the device a block.
+   - GI2C2_ReadAddress -Read from the device. This writes (S+i2cAddr+0), (memAddr), (Sr+i2cAddr+1), (data)...(data+P)
+   - GI2C2_WriteAddress -Write to the device: (S+i2cAddr+0), (memAddr), (data)...(data+P)
+   - GI2C2_ReadByteAddress8 -Read a byte from the device using an 8bit memory address. This writes (S+i2cAddr+0), (memAddr), 
+                (Sr+i2cAddr+1), (data)...(data+P)
+   - GI2C2_WriteByteAddress8 -Write a byte to the device using an 8bit memory address: (S+i2cAddr+0), (memAddr), (data)...
+                (data+P)
+   - GI2C2_ProbeACK -Accesses the bus to check if the device responds with an ACK (ACK polling).
+   - GI2C2_GetSemaphore -Returns the currently allocated semaphore.
+   - GI2C2_ScanDevice -Checks if a device responds on the bus with an ACK.
+   - GI2C2_Deinit -Deinitializes the driver.
+   - GI2C2_Init -Initializes the driver.
+
+Module "CI2C2"     (component I2C_LDD)
+   - CI2C2_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
+                interrupt priority, sets pin routing, sets timing, etc.   If the "Enable in init. code" is set to "yes" value 
+                then the device is also enabled(see the description of the Enable() method). In this case the Enable() method 
+                is not necessary and needn't to be generated.    This method can be called only once. Before the second call of 
+                Init() the Deinit() must be called first.
+   - CI2C2_Deinit -Deinitializes the device. Switches off the device, frees the device data structure memory, interrupts 
+                vectors, etc.
+   - CI2C2_MasterSendBlock -This method writes one (7-bit addressing) or two (10-bit addressing) slave address bytes inclusive 
+                of R/W bit = 0 to the I2C bus and then writes the block of characters to the bus. The slave address must be 
+                specified before, by the "SelectSlaveDevice" method or in component initialization section, "Target slave 
+                address init" property. If the method returns ERR_OK, it doesn't mean that transmission was successful. The 
+                state of transmission is detectable by means of events (OnMasterSendComplete or OnError). Data to be sent are 
+                not copied to an internal buffer and remains in the original location. Therefore the content of the buffer 
+                should not be changed until the transmission is complete. Event "OnMasterBlockSent"can be used to detect the 
+                end of the transmission. This method is available only for the MASTER or MASTER - SLAVE mode.
+   - CI2C2_MasterReceiveBlock -This method writes one (7-bit addressing) or two (10-bit addressing) slave address bytes 
+                inclusive of R/W bit = 1 to the I2C bus and then receives the block of characters from the bus. The slave 
+                address must be specified before, by the "SelectSlaveDevice" method or in component initialization section, 
+                "Target slave address init" property. If the method returns ERR_OK, it doesn't mean that reception was 
+                successful. The state of reception is detectable by means of events (OnMasterSendComplete  or OnError). Data to 
+                be received are not copied to an internal buffer and remains in the original location. Therefore the content of 
+                the buffer should not be changed until the transmission is complete. Event "OnMasterBlockReceived"can be used 
+                to detect the end of the reception. This method is available only for the MASTER or MASTER - SLAVE mode.
+   - CI2C2_SelectSlaveDevice -This method selects a new slave for communication by its 7-bit slave, 10-bit address or general 
+                call value. Any send or receive method directs to or from selected device, until a new slave device is selected 
+                by this method. This method is available for the MASTER mode.
+
+Module "DIR_LEFT1" (component BitIO_LDD)
+   - DIR_LEFT1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and 
+                sets interrupt priority, sets pin routing, sets timing, etc. If the "Enable in init. code" is set to "yes" 
+                value then the device is also enabled(see the description of the Enable() method). In this case the Enable() 
+                method is not necessary and needn't to be generated.
+   - DIR_LEFT1_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is read and returned (see <Safe mode> 
+                property for limitations). This method cannot be disabled if direction is [input].
+   - DIR_LEFT1_PutVal -The specified output value is set. If the direction is <b>input</b>, the component saves the value to a 
+                memory or a register and this value will be written to the pin after switching to the output mode (using 
+                <tt>SetDir(TRUE)</tt>; see <a href="BitIOProperties.html#SafeMode">Safe mode</a> property for limitations). If 
+                the direction is <b>output</b>, it writes the value to the pin. (Method is available only if the direction = 
+                <u><tt>output</tt></u> or <u><tt>input/output</tt></u>).
+   - DIR_LEFT1_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - DIR_LEFT1_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
+Module "DIR_RIGHT1" (component BitIO_LDD)
+   - DIR_RIGHT1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and 
+                sets interrupt priority, sets pin routing, sets timing, etc. If the "Enable in init. code" is set to "yes" 
+                value then the device is also enabled(see the description of the Enable() method). In this case the Enable() 
+                method is not necessary and needn't to be generated.
+   - DIR_RIGHT1_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is read and returned (see <Safe mode> 
+                property for limitations). This method cannot be disabled if direction is [input].
+   - DIR_RIGHT1_PutVal -The specified output value is set. If the direction is <b>input</b>, the component saves the value to a 
+                memory or a register and this value will be written to the pin after switching to the output mode (using 
+                <tt>SetDir(TRUE)</tt>; see <a href="BitIOProperties.html#SafeMode">Safe mode</a> property for limitations). If 
+                the direction is <b>output</b>, it writes the value to the pin. (Method is available only if the direction = 
+                <u><tt>output</tt></u> or <u><tt>input/output</tt></u>).
+   - DIR_RIGHT1_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is 
+                available only if the direction = _[output]_ or _[input/output]_.
+   - DIR_RIGHT1_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only 
+                if the direction = _[output]_ or _[input/output]_.
+
 Module "Cpu"       (component MKL25Z128LK4)
 
 ===================================================================================

@@ -9,5 +9,6 @@ void CreateTask4(void);
 void CreateTask5(void);
 void CreateTask6(void);
 void CreateTask7(void);
+void CreateGyroTask(void);
 
 #endif

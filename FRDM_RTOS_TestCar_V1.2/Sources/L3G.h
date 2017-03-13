@@ -88,12 +88,13 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
    gyro_t* getG(void);
    void calculateOffset(void);
    int16_t cmpfunc (const void * a, const void * b);
-   void refreshMovingOffset(void);
+   void refreshMovingOffset(char dim);
    void L3GreadTemp(void);
-   void L3GgetDegree(char dim, int16_t* value);
+   int8_t L3GgetDegree(char dim, int16_t* value);
    void L3Gread(char dim);
-   void L3GSetAngel(char dimension, int16_t value);
-   void L3GgetVMax(char dim, int32_t* value);
+   void L3GSetAngel(char dim, int16_t value);
+   void combineAccel(void);
+   void compensateDriftVL(void);
 
 
 #endif /* L3G_H_ */
