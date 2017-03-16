@@ -13,6 +13,11 @@
 typedef enum deviceType { device_4200D, device_D20, device_D20H, device_auto }deviceType_t;
 typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
 
+#define TOFFRONT 0
+#define TOFLEFT 1
+#define TOFRIGHT 2
+#define GYRO 3
+
 // register addresses
    enum L3GregAddr
    {

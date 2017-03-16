@@ -167,7 +167,15 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
   	for(;;) {
     /* Write your task code here ... */
 	
-  		readGyro();
+  		uint8_t i;
+  		//read the gyro
+  		for(i=0; i<32; i++){
+  			L3Gread('x');
+  			if(comGetState() == 2){
+  				L3Gread('z');
+  			}
+  		}
+  		vTaskDelay(pdMS_TO_TICKS(100));
 
     /* You can use a task delay like
        vTaskDelay(1000/portTICK_RATE_MS);

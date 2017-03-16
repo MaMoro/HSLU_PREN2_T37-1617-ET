@@ -10,7 +10,7 @@
 
 #include "PE_Types.h"
 
-#define SCALING 0 // 0: scaling disabled 1: scaling 1, 2: scaling 2, 3: scaling 3
+#define SCALING 1 // 0: scaling disabled 1: scaling 1, 2: scaling 2, 3: scaling 3
 
 #define VL_MULTIPLE_DEVICES  3  /* set to greater zero with the number of devices */
 
@@ -19,6 +19,8 @@
 typedef struct {
   int16_t mm; /* distance in mm, negative values are error values */
   uint8_t i2cAddr; /* I2C device address */
+  uint8_t scaling;	//Scaling of the range 1, 2, 3
+  uint8_t ptp_offset;
 } DIST_ToF_DeviceDesc;
 
 enum regAddr {
@@ -149,7 +151,7 @@ uint8_t VL_ChipEnable(uint8_t deviceNo, bool on);
 uint8_t VL_SetI2CDeviceAddress(uint8_t deviceNo, uint8_t i2cDeviceAddress);
 
 #if(SCALING)
-uint8_t VL6180XsetScaling(uint8_t new_scaling, uint8_t i2cDeviceAddress);
+uint8_t VL6180XsetScaling(uint8_t new_scaling, uint8_t deviceNbr);
 #endif
 
 uint8_t VL_InitDevice(uint8_t i2cDeviceAddress);

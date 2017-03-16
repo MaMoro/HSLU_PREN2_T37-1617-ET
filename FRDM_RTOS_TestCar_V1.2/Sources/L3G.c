@@ -14,20 +14,17 @@
 
 // Defines ////////////////////////////////////////////////////////////////
 
-#define TOFFRONT 0
-#define TOFLEFT 1
-#define TOFRIGHT 2
-#define GYRO 3
+
 
 #define PI 3.14159265
 #define MMA1 1
 
 #define VL_COMP	0	// compensation of drift by checking if the distances right + left == the parcour width - car width
-#define TOFDISTANCE 200	// the distance between the two ToF's from the side
+#define TOFDISTANCE 120	// the distance between the two ToF's from the side
 /* \todo set the right TOFDISTANCE */
 
 #if VL_COMP
-#include "VL6180X"
+	#include "VL6180X.h"
 #endif
 
 #if MMA1
@@ -49,15 +46,15 @@
 
 #define MAXOFFSET 20
 
-#define FULLSCALE 500		// 250, 500, 2000 °/s
+#define FULLSCALE 250		// 250, 500, 2000 °/s
 
 #define NBROFFSET 200
 
 #if(FULLSCALE == 250)
-#define SENSITIVITY (20000/875)		// Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
+#define SENSITIVITY (20000/820)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
 #endif
 #if(FULLSCALE == 500)
-#define SENSITIVITY (2000/175)		// Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
+#define SENSITIVITY (2000/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
 #endif
 #if(FULLSCALE == 2000)
 #define SENSITIVITY (20/7)			// Sensitivity is 70mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/70 = 10/7
@@ -71,6 +68,7 @@ int16_t writingPos;
 int8_t OffsetX;
 int8_t OffsetY;
 int8_t OffsetZ;
+int16_t fullwidth;
 
 // Public Methods //////////////////////////////////////////////////////////////
 
@@ -402,14 +400,14 @@ void combineAccel(void){
 #if VL_COMP
 void compensateDriftVL(void){
 	int16_t rangeLeft, rangeRight;
-	int16_t fullwidth;
+	
 	
 	VL_GetDistance(TOFRIGHT, &rangeRight);
 	VL_GetDistance(TOFLEFT, &rangeLeft);
 	
 	if(rangeLeft>0 && rangeLeft<255 && rangeRight>0 && rangeRight<255){
 		fullwidth = rangeLeft + rangeRight + TOFDISTANCE;
-		if(fullwidth >= 395 || fullwidth <= 405){
+		if(fullwidth == 400){
 			gyro.x = 0;
 		}
 	}

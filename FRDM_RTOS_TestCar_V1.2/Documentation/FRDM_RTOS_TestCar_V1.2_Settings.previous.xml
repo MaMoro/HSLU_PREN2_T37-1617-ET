@@ -775,8 +775,8 @@ PE_DEBUGHALT();
         <Interrupt_TxD_priority v="medium priority" />
         <Interrupt_Error v="INT_UART0" />
         <Interrupt_Error_priority v="medium priority" />
-        <Input_buffer_size v="48" />
-        <Output_buffer_size v="128" />
+        <Input_buffer_size v="32" />
+        <Output_buffer_size v="64" />
         <group name="Handshake">
           <boolgroup name="CTS" v="Disabled" />
           <boolgroup name="RTS" v="Disabled" />
@@ -990,7 +990,7 @@ PE_DEBUGHALT();
       <Component_name v="CLS1" />
       <Echo v="no" />
       <Prompt v="&amp;quot;CMD&amp;gt; &amp;quot;" />
-      <Project_Name v="My Project Name" />
+      <Project_Name v="Choegeliwaegeli" />
       <Silent_Mode_Prefix v="#" />
       <Buffer_Size v="48" />
       <boolgroup name="Blocking Send" v="Enabled">

@@ -55,7 +55,8 @@ Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c \
  ../Generated_Code/TU2.h ../Generated_Code/PWM_Servo.h \
  ../Generated_Code/PwmLdd4.h ../Generated_Code/MMA1.h \
  ../Generated_Code/GI2C2.h ../Generated_Code/CI2C2.h \
- ../Generated_Code/DIR_LEFT1.h ../Generated_Code/DIR_RIGHT1.h
+ ../Generated_Code/DIR_LEFT1.h ../Generated_Code/DIR_RIGHT1.h \
+ ../Generated_Code/Watermark.h
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -224,3 +225,5 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/ADC_PDD.h:
 ../Generated_Code/DIR_LEFT1.h:
 
 ../Generated_Code/DIR_RIGHT1.h:
+
+../Generated_Code/Watermark.h:

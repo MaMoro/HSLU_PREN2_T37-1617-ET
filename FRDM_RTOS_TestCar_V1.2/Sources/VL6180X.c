@@ -26,7 +26,7 @@ static uint16_t const ScalerValues[] = {0, 253, 127, 84};
 static uint8_t scaling = 1;
 bool initDevices = TRUE;
 
-static uint8_t ptp_offset = 1;
+//static uint8_t ptp_offset = 1;
 static DIST_ToF_DeviceDesc ToFDevice[VL_MULTIPLE_DEVICES]; /* ToF sensor distance in millimeters */
 
 static void VL_OnError(VL_Enum_Error error) {
@@ -268,23 +268,25 @@ uint8_t VL6180X_readLux(uint8_t i2cDeviceAddress, VL6180X_ALS_GAIN gain, float *
 // resolution.
 // Implemented using ST's VL6180X API as a reference (STSW-IMG003); see
 // VL6180x_UpscaleSetScaling() in vl6180x_api.c.
-uint8_t VL6180XsetScaling(uint8_t new_scaling, uint8_t i2cDeviceAddress)
+uint8_t VL6180XsetScaling(uint8_t new_scaling, uint8_t deviceNbr)
 {
 	uint8_t res = ERR_OK;
 	uint8_t rce;
   uint8_t const DefaultCrosstalkValidHeight = 20; // default value of SYSRANGE__CROSSTALK_VALID_HEIGHT
   // do nothing if scaling value is invalid
   if (new_scaling < 1 || new_scaling > 3) { return   VL_ON_ERROR_SET_SCALING; }
-  scaling = new_scaling;
-  VL_WriteReg16(i2cDeviceAddress, RANGE_SCALER, ScalerValues[scaling]);
+  VL_WriteReg16(ToFDevice[deviceNbr].i2cAddr, RANGE_SCALER, ScalerValues[new_scaling]);
   // apply scaling on part-to-part offset
-  VL_WriteReg8(i2cDeviceAddress, SYSRANGE__PART_TO_PART_RANGE_OFFSET, ptp_offset / scaling);
+  VL_WriteReg8(ToFDevice[deviceNbr].i2cAddr, SYSRANGE__PART_TO_PART_RANGE_OFFSET, ToFDevice[deviceNbr].ptp_offset / new_scaling);
   // apply scaling on CrossTalkValidHeight
-  VL_WriteReg8(i2cDeviceAddress, SYSRANGE__CROSSTALK_VALID_HEIGHT, DefaultCrosstalkValidHeight / scaling);
+  VL_WriteReg8(ToFDevice[deviceNbr].i2cAddr, SYSRANGE__CROSSTALK_VALID_HEIGHT, DefaultCrosstalkValidHeight / scaling);
   // This function does not apply scaling to RANGE_IGNORE_VALID_HEIGHT.
   // enable early convergence estimate only at 1x scaling
-  res = VL_ReadReg8(i2cDeviceAddress, SYSRANGE__RANGE_CHECK_ENABLES, &rce);
-  VL_WriteReg8(i2cDeviceAddress, SYSRANGE__RANGE_CHECK_ENABLES, (rce & 0xFE) | (scaling == 1));
+  res = VL_ReadReg8(ToFDevice[deviceNbr].i2cAddr, SYSRANGE__RANGE_CHECK_ENABLES, &rce);
+  VL_WriteReg8(ToFDevice[deviceNbr].i2cAddr, SYSRANGE__RANGE_CHECK_ENABLES, (rce & 0xFE) | (new_scaling == 1));
+  if(res == ERR_OK){
+	  ToFDevice[deviceNbr].scaling = new_scaling;
+  }
   return res;
 }
 #endif
@@ -586,6 +588,8 @@ uint8_t VL_Init(void) {
 	  for(i=0;i<VL_MULTIPLE_DEVICES;i++) {
 	    ToFDevice[i].mm = 0;
 	    ToFDevice[i].i2cAddr = VL6180X_DEFAULT_I2C_ADDRESS+1+i; /* make sure they are *not* at the default address! */
+	    ToFDevice[i].scaling = 1;
+	    ToFDevice[i].ptp_offset = 0;
 	  }
 	  /* disable all devices (CE pin LOW): we will bring them up later one by one.... */
 	  for(i=0;i<VL_MULTIPLE_DEVICES;i++) {
@@ -603,7 +607,12 @@ uint8_t VL_Init(void) {
 	    }
 	  }
 	  /* at this time all devices are enabled (CE pin HIGH) and have unique I2C addresses */
+	  
 	  for(i=0;i<VL_MULTIPLE_DEVICES;i++) {
+		  res = VL_ReadReg8(ToFDevice[i].i2cAddr, SYSRANGE__PART_TO_PART_RANGE_OFFSET , &ToFDevice[i].ptp_offset);
+		  if(res!=ERR_OK){
+			  // error
+		  }
 	    res = VL_InitAndConfigureDevice(ToFDevice[i].i2cAddr);
 	    if (res!=ERR_OK) {
 	      //CLS1_SendStr("ERROR: Failed init of TOF device: ", CLS1_GetStdio()->stdErr);
@@ -611,18 +620,9 @@ uint8_t VL_Init(void) {
 	      //CLS1_SendStr("\r\n", CLS1_GetStdio()->stdErr);
 	      return res;
 	    }
+	    uint16_t rangescaler;
+	    res = VL_ReadReg16(ToFDevice[i].i2cAddr, RANGE_SCALER, &rangescaler);
 	  }
-	#if(SCALING)
-	  for(i=0;i<VL_MULTIPLE_DEVICES;i++){
-		  res = VL6180XsetScaling(SCALING, ToFDevice[i].i2cAddr);
-		  if(res != ERR_OK){
-		      //CLS1_SendStr("ERROR: Failed scaling of TOF device: ", CLS1_GetStdio()->stdErr);
-		      //CLS1_SendNum8u(i, CLS1_GetStdio()->stdErr);
-		      //CLS1_SendStr("\r\n", CLS1_GetStdio()->stdErr);
-		      return res;
-		  }
-	  }
-	#endif
 	  initDevices = FALSE;
 	  return ERR_OK;
 }
@@ -655,12 +655,8 @@ uint8_t VL_GetDistance(uint8_t deviceNbr, int16_t* deviceRange){
 		   initDevices = TRUE; /* re-init devices */
 		   return res;
 		 }
-		 if(SCALING){
-		  ToFDevice[deviceNbr].mm = range*SCALING;
-		 }
-		 else{
-		  ToFDevice[deviceNbr].mm = range;
-		 }
+		 ToFDevice[deviceNbr].mm = range*ToFDevice[deviceNbr].scaling;
+
 		 *deviceRange = ToFDevice[deviceNbr].mm;
 		 return res;
 	       

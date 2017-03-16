@@ -1,4 +1,4 @@
 activeuserprofiles=LAPTOP-N8HU1KBH;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=pirzi
-useridperkey=LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink Target\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA Target\=pirzi;
+useridperkey=LAPTOP-N8HU1KBH.Local\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink Target\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink\=pirzi;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA Target\=pirzi;

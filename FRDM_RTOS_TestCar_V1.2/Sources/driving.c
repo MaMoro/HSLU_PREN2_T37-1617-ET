@@ -14,7 +14,6 @@
 #include "L3G.h"
 #include <math.h>
 #include <stdlib.h>
-#include "CLS1.h"
 #include "pid.h"
 
 #define TOFFRONT 0
@@ -53,7 +52,7 @@ void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance){
 		 motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 
 			 
-		 refreshMovingOffset('x');
+		 //refreshMovingOffset('x');
 		 
 		 // check if stair is detected
 		 VL_GetDistance(TOFFRONT, &range);
@@ -94,7 +93,7 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 		
 		/* \todo test if it helps to avoid drift */
-		refreshMovingOffset('x'); // Test if good or not
+		//refreshMovingOffset('x'); // Test if good or not
 		
 		L3GgetDegree('Z', &angel);
 		// stair upwards
@@ -151,7 +150,7 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 		
 		/* \todo test if it helps to avoid drift */
-		refreshMovingOffset('x'); // Test if good or not
+		//refreshMovingOffset('x'); // Test if good or not
 		
 		// stop condition
 		VL_GetDistance(TOFRIGHT, &ToFRight);
@@ -176,7 +175,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 	uint8_t partState = 0;
 	int16_t corrToF = 0;
 	uint16_t count = 0;
-	uint16_t time = 1000; // drive for 1 seconds over the end
+	uint16_t time = 800; // drive for 1 seconds over the end
 
 	
 	// drive straight for defined time
@@ -260,7 +259,12 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 				 count--;
 				 // error
 			 }
-			 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
+			 if(device == TOFRIGHT){	// LeftParcour
+				 motorsStartup(-corrGyro/4, 0, 0);	// speed+corrGyro/4, 0
+			 }
+			 else{		// RightParcour
+				 motorsStartup(0, corrGyro/4, 0);	// speed-corrGyro/4
+			 }
 			 
 			 // check end condition
 			 if(corrGyro <= 5 && corrGyro >= -5){
@@ -295,7 +299,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 		//end condition
 		rangeOld = range;
 		VL_GetDistance(device, &range);
-		if((rangeOld-range) >= 45 && (rangeOld-range)<=55){
+		if((rangeOld-range) >= 40 && (rangeOld-range)<=60){
 			partState = 5;
 		}		
 	}
@@ -318,7 +322,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 		
 		rangeOld = range;
 		VL_GetDistance(device, &range);
-		if((range-rangeOld) >= 45 && (rangeOld-range)<=55){
+		if((range-rangeOld) >= 40 && (rangeOld-range)<=60){
 			RED_Put(0);
 			LED_GREEN_Put(0);
 			partState = 6;
@@ -352,7 +356,7 @@ void driveToEndZone(int8_t speed, uint8_t optRange, uint8_t frontdistance){
 		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 		
 		/* \todo test if it helps to avoid drift */
-		refreshMovingOffset('x'); // Test if good or not
+		//refreshMovingOffset('x'); // Test if good or not
 		
 		 // stop condition
 		 VL_GetDistance(TOFFRONT, &range);

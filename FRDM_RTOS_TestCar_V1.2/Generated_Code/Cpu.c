@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-12, 20:15, # CodeGen: 55
+**     Date/Time   : 2017-03-16, 08:49, # CodeGen: 64
 **     Abstract    :
 **
 **     Settings    :
@@ -99,6 +99,7 @@
 #include "CI2C2.h"
 #include "DIR_LEFT1.h"
 #include "DIR_RIGHT1.h"
+#include "Watermark.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -901,6 +902,8 @@ void PE_low_level_init(void)
   (void)DIR_LEFT1_Init(NULL);
   /* ### BitIO_LDD "DIR_RIGHT1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)DIR_RIGHT1_Init(NULL);
+  /* ### BitIO_LDD "Watermark" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)Watermark_Init(NULL);
 }
   /* Flash configuration field */
   __attribute__ ((section (".cfmconfig"))) const uint8_t _cfm[0x10] = {

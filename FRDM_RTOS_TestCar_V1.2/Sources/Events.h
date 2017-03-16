@@ -51,6 +51,7 @@
 #include "CI2C2.h"
 #include "DIR_LEFT1.h"
 #include "DIR_RIGHT1.h"
+#include "Watermark.h"
 #include "UTIL1.h"
 #include "GI2C1.h"
 #include "AS1.h"

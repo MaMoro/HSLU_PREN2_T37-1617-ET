@@ -47,6 +47,7 @@
 - \subpage CI2C2
 - \subpage DIR_LEFT1
 - \subpage DIR_RIGHT1
+- \subpage Watermark
 
 
 */

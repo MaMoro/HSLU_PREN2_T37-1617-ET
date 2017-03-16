@@ -1033,6 +1033,15 @@ Module "DIR_RIGHT1" (component BitIO_LDD)
    - DIR_RIGHT1_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only 
                 if the direction = _[output]_ or _[input/output]_.
 
+Module "Watermark" (component BitIO_LDD)
+   - Watermark_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and 
+                sets interrupt priority, sets pin routing, sets timing, etc. If the "Enable in init. code" is set to "yes" 
+                value then the device is also enabled(see the description of the Enable() method). In this case the Enable() 
+                method is not necessary and needn't to be generated.
+   - Watermark_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is read and returned (see <Safe mode> 
+                property for limitations). This method cannot be disabled if direction is [input].
+
 Module "Cpu"       (component MKL25Z128LK4)
 
 ===================================================================================

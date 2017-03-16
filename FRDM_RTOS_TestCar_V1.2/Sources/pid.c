@@ -16,7 +16,6 @@
 #include "pid.h"
 #include "L3G.h"
 #include "FRTOS1.h"
-#include "CLS1.h"
 #include <math.h>
 #include "VL6180X.h"
 
