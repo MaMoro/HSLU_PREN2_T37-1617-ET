@@ -6,15 +6,15 @@
 **     Component   : Shell
 **     Version     : Component 01.085, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-12, 22:00, # CodeGen: 58
+**     Date/Time   : 2017-03-16, 17:52, # CodeGen: 65
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CLS1
 **          Echo                                           : no
-**          Prompt                                         : "CMD> "
+**          Prompt                                         : ""
 **          Project Name                                   : Choegeliwaegeli
-**          Silent Mode Prefix                             : #
+**          Silent Mode Prefix                             : ""
 **          Buffer Size                                    : 48
 **          Blocking Send                                  : Enabled
 **            Wait                                         : WAIT1
@@ -27,7 +27,7 @@
 **          Utility                                        : UTIL1
 **          Default Serial                                 : Enabled
 **            Console Interface                            : AS1
-**          Semaphore                                      : no
+**          Semaphore                                      : yes
 **          Critical Section                               : CS1
 **          History                                        : no
 **          Kinetis SDK                                    : KSDK1
@@ -180,7 +180,7 @@
 #define CLS1_HIST_LEN         0        /* history buffer size */
 
 /* settings for silent prefix char */
-#define CLS1_SILENT_PREFIX_CHAR    '#' /* with this char as first character in the cmd, printing is silent. Use a space to disable it */
+#define CLS1_SILENT_PREFIX_CHAR    '""' /* with this char as first character in the cmd, printing is silent. Use a space to disable it */
 #define CLS1_NO_SILENT_PREFIX_CHAR ' ' /* used for no silent prefix char */
 #define CLS1_SILENT_PREFIX_CHAR_ENABLED (CLS1_SILENT_PREFIX_CHAR != CLS1_NO_SILENT_PREFIX_CHAR)
 

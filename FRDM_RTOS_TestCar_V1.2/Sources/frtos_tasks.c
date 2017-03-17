@@ -25,6 +25,7 @@
 #include "serial_communication.h"
 #include "driving.h"
 #include "serial_communication.h"
+#include "L3G.h"
 
 uint8_t Task2Started;
 uint8_t Task3Started;

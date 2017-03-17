@@ -162,4 +162,6 @@ uint8_t VL_Init(void);
 
 uint8_t VL_GetDistance(uint8_t deviceNbr, int16_t* deviceRange);
 
+int16_t VL_GetLastDistance(uint8_t deviceNbr);
+
 #endif /* SOURCES_VL6180X_H_ */

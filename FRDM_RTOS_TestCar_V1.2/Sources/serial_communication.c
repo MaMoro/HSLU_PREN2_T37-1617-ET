@@ -24,11 +24,12 @@
 uint8_t res;
 
 // Comunication values reads
+static bool hello = TRUE;
 static bool start = FALSE;		// startbefehl
 static bool course = NULL;		// fahrbanwahl	links->true rechts->false
-static uint16_t tof_l_s = 0;	// tof_links_sollwert
-static uint16_t tof_r_s = 0;	// tof_rechts_sollwert
-static uint16_t tof_f_s = 0;	// tof_front_sollwert
+static int16_t tof_l_s = 0;	// tof_links_sollwert
+static int16_t tof_r_s = 0;	// tof_rechts_sollwert
+static int16_t tof_f_s = 0;	// tof_front_sollwert
 static int8_t 	raupe_i_l = 0;	// raupe ist links
 static int8_t	raupe_i_r = 0;	// raupe ist rechts
 static uint8_t	gyroskop_s = 0; // gyroskop soll
@@ -45,11 +46,11 @@ static int16_t gyro_n = 0;
 static int16_t gyro_g = 0;
 static uint8_t 	gyroskop_i = 0;
 static uint8_t 	servo_i = 0;
-static uint8_t 	state = 0;
+static uint8_t 	state = 1;
 static uint8_t 	errState = ERR_OK;
 
 
-
+static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
 static const CLS1_ParseCommandCallback CmdParserTable[] =
 {
@@ -65,22 +66,39 @@ void startCommunication(void){
 	unsigned char RXbuffer[RXBUFSIZE];
 	RXbuffer[0] = '\0';
 	
+	//Say hello to Raspberry Pi
+	while(hello){
+		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
+		vTaskDelay(pdMS_TO_TICKS(10));
+	}
+	// confirm hello
+	  CLS1_SendStr((uint8_t*)"hello,", CLS1_GetStdio()->stdOut);
+	  CLS1_SendNum8u(1, CLS1_GetStdio()->stdOut);
+	  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+	
+	  // Init devices
+	errState = initAllDevices();
+	
+	// Wait until start
 	while(!start){
 		LED_GREEN_Put(1);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
-	state = 1;
+	// confirm start
+	  CLS1_SendStr((uint8_t*)"start,", CLS1_GetStdio()->stdOut);
+	  CLS1_SendNum8u(start, CLS1_GetStdio()->stdOut);
+	  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+	  
 	LED_GREEN_Put(0);
-	
-	errState = initAllDevices();
-	
+
 	//Loop
 	for(;;){
 		
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
-		//readValues();
-		sendStatus();
+		readValues();
+		//sendStatus();
+		sendStatusBT();
 		refreshTasks();
 		
 		vTaskDelay(pdMS_TO_TICKS(300));
@@ -139,6 +157,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
   if (UTIL1_strcmp((char*)cmd, CLS1_CMD_HELP)==0 || UTIL1_strcmp((char*)cmd, "help")==0) {
 	//FRTOS1_taskENTER_CRITICAL(); ////////CRITICAL///////////
 		CLS1_SendHelpStr((unsigned char*)"app", (const unsigned char*)"Group of app commands\n", io->stdOut);
+		CLS1_SendHelpStr((unsigned char*)"  hello,<bool>", (const unsigned char*)"True->FRDM, False->RBI\n", io->stdOut);
 		CLS1_SendHelpStr((unsigned char*)"  start,<bool>", (const unsigned char*)"Set 1 to start\n", io->stdOut);
 		CLS1_SendHelpStr((unsigned char*)"  course,<bool>", (const unsigned char*)"true->links, false->rechts\n", io->stdOut);
 		CLS1_SendHelpStr((unsigned char*)"  tof_l_s,<uint16>", (const unsigned char*)"tof_links_sollwert\n", io->stdOut);
@@ -153,17 +172,21 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
     *handled = TRUE;
     //Status
   } else if ((UTIL1_strcmp((char*)cmd, CLS1_CMD_STATUS)==0) || (UTIL1_strcmp((char*)cmd, "status")==0)) {
-	FRTOS1_taskENTER_CRITICAL(); ////////////CRITICAL///////////
-		CLS1_SendStatusStr((unsigned char*)"app", (const unsigned char*)"\n", io->stdOut);
-		// start
-		UTIL1_Num32sToStr(buf, sizeof(buf), start);						
-		UTIL1_strcat(buf, sizeof(buf), (const unsigned char*)"\n");
-		CLS1_SendStatusStr((const uint8_t*)"  start,", buf, io->stdOut);
-    FRTOS1_taskEXIT_CRITICAL();	/////////////END CRITICAL//////////////
+	CLS1_SendStatusStr((unsigned char*)"app", (const unsigned char*)"\n", io->stdOut);
+	// start
+	UTIL1_Num32sToStr(buf, sizeof(buf), start);						
+	UTIL1_strcat(buf, sizeof(buf), (const unsigned char*)"\n");
+	CLS1_SendStatusStr((const uint8_t*)"  start,", buf, io->stdOut);
     *handled = TRUE;
-    
     // command handling
-  } else if (UTIL1_strncmp((char*)cmd, "start,", sizeof("start,")-1)==0){		//Start
+  } else if (UTIL1_strncmp((char*)cmd, "hello,", sizeof("hello,")-1)==0){		//Start
+	  p = cmd+sizeof("hello,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  hello = tmp;
+		  *handled = TRUE;
+	  }
+  }else if (UTIL1_strncmp((char*)cmd, "start,", sizeof("start,")-1)==0){		//Start
 	  p = cmd+sizeof("start,")-1;
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
@@ -175,6 +198,10 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  course = tmp;
+		  //bestätigen
+		  CLS1_SendStr((uint8_t*)"course,", CLS1_GetStdio()->stdOut);
+		  CLS1_SendNum8u(course, CLS1_GetStdio()->stdOut);
+		  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "tof_l_s,", sizeof("tof_l_s,")-1)==0){		// tof_l_s
@@ -234,11 +261,9 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 		  *handled = TRUE;
 	  }
 	  // bestätigen
-	  FRTOS1_taskENTER_CRITICAL();	///////////CRITICAL///////////
 		  CLS1_SendStr((uint8_t*)"letter,", CLS1_GetStdio()->stdOut);
 		  CLS1_SendNum8u(letter, CLS1_GetStdio()->stdOut);
 		  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
-	  FRTOS1_taskEXIT_CRITICAL();	///////////END CRITICAL/////////
 }
   return res;
 }
@@ -296,13 +321,13 @@ uint8_t initAllDevices(void){
 
 /*
  * // Comunication values writes
-static uint16_t tof_l_i = 0;
-static uint16_t tof_r_i = 0;
-static uint16_t tof_f_i = 0;
+static int16_t tof_l_i = 0;
+static int16_t tof_r_i = 0;
+static int16_t tof_f_i = 0;
 static int8_t	raupe_l_i = 0;
 static int8_t	raupe_r_i = 0;
-static uint16_t gyro_n = 0;
-static uint16_t gyro_g = 0;
+static int16_t gyro_n = 0;
+static int16_t gyro_g = 0;
 static uint8_t 	gyroskop_i = 0;
 static uint8_t 	servo_i = 0;
 static uint8_t 	state = 0;
@@ -310,25 +335,25 @@ static uint8_t 	errState = ERR_OK;
  */
 void sendStatus(void){
 	CLS1_SendStr((uint8_t*)"tof_l_i,", CLS1_GetStdio()->stdOut);		// tof_l_i
-	CLS1_SendNum16u(tof_l_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(tof_l_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"tof_r_i,", CLS1_GetStdio()->stdOut);		// tof_r_i
-	CLS1_SendNum16u(tof_r_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(tof_r_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"tof_f_i,", CLS1_GetStdio()->stdOut);		// tof_f_i
-	CLS1_SendNum16u(tof_f_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(tof_f_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"raupe_l_i,", CLS1_GetStdio()->stdOut);		// raupe_l_i
-	CLS1_SendNum16u(raupe_l_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum8s(raupe_l_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"raupe_r_i,", CLS1_GetStdio()->stdOut);		// raupe_r_i
-	CLS1_SendNum16u(raupe_r_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum8s(raupe_r_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"gyro_n,", CLS1_GetStdio()->stdOut);			// gyro_n
-	CLS1_SendNum16u(gyro_n, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(gyro_n, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"gyro_g,", CLS1_GetStdio()->stdOut);			// gyro_g
-	CLS1_SendNum16u(gyro_g, CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(gyro_g, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"gyroskop_i,", CLS1_GetStdio()->stdOut);		// gyroskop_i
 	CLS1_SendNum16u(gyroskop_i, CLS1_GetStdio()->stdOut);
@@ -345,9 +370,9 @@ void sendStatus(void){
 }
 
 void readValues(void){
-	VL_GetDistance(TOFLEFT, &tof_l_i);
-	VL_GetDistance(TOFRIGHT, &tof_r_i);
-	VL_GetDistance(TOFFRONT, &tof_f_i);
+	tof_l_i = VL_GetLastDistance(TOFLEFT);
+	tof_r_i = VL_GetLastDistance(TOFRIGHT);
+	tof_f_i = VL_GetLastDistance(TOFFRONT);
 	raupe_l_i = (int8_t)motorGetPWMLeft();
 	raupe_r_i = (int8_t)motorGetPWMRight();
 	L3GgetDegree('x', &gyro_g);
@@ -355,4 +380,13 @@ void readValues(void){
 	// \todo gyroskop_i =....
 	// \todo servo_i = ...
 	
+}
+
+void sendStatusBT(void){
+	// gyro_g
+	CLS1_SendNum16s(gyro_g, CLS1_GetStdio()->stdOut);
+	CLS1_SendStr((uint8_t*)",", CLS1_GetStdio()->stdOut);
+	// gyro_n
+	CLS1_SendNum16s(gyro_n, CLS1_GetStdio()->stdOut);
+	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 }

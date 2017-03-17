@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-16, 08:49, # CodeGen: 64
+**     Date/Time   : 2017-03-17, 10:56, # CodeGen: 69
 **     Abstract    :
 **
 **     Settings    :
@@ -100,6 +100,12 @@
 #include "DIR_LEFT1.h"
 #include "DIR_RIGHT1.h"
 #include "Watermark.h"
+#include "BT1.h"
+#include "BTState1.h"
+#include "BitIoLdd1.h"
+#include "Serial1.h"
+#include "ASerialLdd2.h"
+#include "BT_EN.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -439,21 +445,6 @@ PE_ISR(Cpu_ivINT_SPI0)
 ** ===================================================================
 */
 PE_ISR(Cpu_ivINT_SPI1)
-{
-  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
-  PE_DEBUGHALT();
-}
-
-/*
-** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_UART1 (component MKL25Z128LK4)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-PE_ISR(Cpu_ivINT_UART1)
 {
   /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
   PE_DEBUGHALT();
@@ -904,6 +895,14 @@ void PE_low_level_init(void)
   (void)DIR_RIGHT1_Init(NULL);
   /* ### BitIO_LDD "Watermark" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)Watermark_Init(NULL);
+  /* ### BitIO_LDD "BitIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd1_Init(NULL);
+  /* ### Asynchro serial "Serial1" init code ... */
+  Serial1_Init();
+  /* ### Bluetooth_EGBT "BT1" init code ... */
+  BT1_Init();
+  /* ### BitIO_LDD "BT_EN" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BT_EN_Init(NULL);
 }
   /* Flash configuration field */
   __attribute__ ((section (".cfmconfig"))) const uint8_t _cfm[0x10] = {

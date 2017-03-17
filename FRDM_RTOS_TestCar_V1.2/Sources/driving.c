@@ -212,10 +212,10 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 			 count--;
 			 // error
 		 }
-		 motorsStartup(speed-corrGyro/4, speed+corrGyro/4, 10);
+		 motorsStartup(-corrGyro, corrGyro, 10);
 		 
 		 // check end condition
-		 if(corrGyro <= 5 && corrGyro >= -5){
+		 if(corrGyro <= 1 && corrGyro >= -1){
 			 count++;
 		 }
 		 if(count >= 10){
@@ -259,15 +259,11 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 				 count--;
 				 // error
 			 }
-			 if(device == TOFRIGHT){	// LeftParcour
-				 motorsStartup(-corrGyro/4, 0, 0);	// speed+corrGyro/4, 0
-			 }
-			 else{		// RightParcour
-				 motorsStartup(0, corrGyro/4, 0);	// speed-corrGyro/4
-			 }
+			 motorsStartup(-corrGyro, corrGyro, 10);
+			 
 			 
 			 // check end condition
-			 if(corrGyro <= 5 && corrGyro >= -5){
+			 if(corrGyro <= 1 && corrGyro >= -1){
 				 count++;
 			 }
 			 if(count >= 10){

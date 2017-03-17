@@ -51,7 +51,7 @@
 #define NBROFFSET 200
 
 #if(FULLSCALE == 250)
-#define SENSITIVITY (20000/820)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
+#define SENSITIVITY (20000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
 #endif
 #if(FULLSCALE == 500)
 #define SENSITIVITY (2000/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175

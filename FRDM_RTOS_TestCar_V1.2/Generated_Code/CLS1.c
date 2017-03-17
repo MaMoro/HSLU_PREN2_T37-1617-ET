@@ -6,15 +6,15 @@
 **     Component   : Shell
 **     Version     : Component 01.085, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-12, 22:00, # CodeGen: 58
+**     Date/Time   : 2017-03-16, 17:52, # CodeGen: 65
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CLS1
 **          Echo                                           : no
-**          Prompt                                         : "CMD> "
+**          Prompt                                         : ""
 **          Project Name                                   : Choegeliwaegeli
-**          Silent Mode Prefix                             : #
+**          Silent Mode Prefix                             : ""
 **          Buffer Size                                    : 48
 **          Blocking Send                                  : Enabled
 **            Wait                                         : WAIT1
@@ -27,7 +27,7 @@
 **          Utility                                        : UTIL1
 **          Default Serial                                 : Enabled
 **            Console Interface                            : AS1
-**          Semaphore                                      : no
+**          Semaphore                                      : yes
 **          Critical Section                               : CS1
 **          History                                        : no
 **          Kinetis SDK                                    : KSDK1
@@ -115,9 +115,13 @@ uint8_t CLS1_DefaultShellBuffer[CLS1_DEFAULT_SHELL_BUFFER_SIZE]; /* default buff
   static bool CLS1_EchoEnabled = TRUE;
 #endif
 
+#include "FreeRTOS.h"
+#include "semphr.h"
+
 #ifdef __HC08__
   #pragma MESSAGE DISABLE C3303 /* implicit concatenation of strings */
 #endif
+static xSemaphoreHandle ShellSem = NULL; /* Semaphore to protect shell SCI access */
 
 CLS1_ConstStdIOType CLS1_stdio =
 {
@@ -359,7 +363,7 @@ uint8_t CLS1_ParseCommand(const uint8_t *cmd, bool *handled, CLS1_ConstStdIOType
 */
 void CLS1_PrintPrompt(CLS1_ConstStdIOType *io)
 {
-  CLS1_SendStr((unsigned char*)"CMD> ", io->stdOut);
+  CLS1_SendStr((unsigned char*)"", io->stdOut);
 }
 
 /*
@@ -848,6 +852,7 @@ uint8_t CLS1_ReadAndParseWithCommandTable(uint8_t *cmdBuf, size_t cmdBufSize, CL
 */
 void CLS1_RequestSerial(void)
 {
+  (void)xSemaphoreTakeRecursive(ShellSem, portMAX_DELAY);
 }
 
 /*
@@ -863,6 +868,7 @@ void CLS1_RequestSerial(void)
 */
 void CLS1_ReleaseSerial(void)
 {
+  (void)xSemaphoreGiveRecursive(ShellSem);
 }
 
 /*
@@ -878,7 +884,7 @@ void CLS1_ReleaseSerial(void)
 */
 void* CLS1_GetSemaphore(void)
 {
-  return NULL;
+  return ShellSem;
 }
 
 /*
@@ -966,11 +972,13 @@ void CLS1_ReadChar(uint8_t *c)
 {
   uint8_t res;
 
+  (void)xSemaphoreTakeRecursive(ShellSem, portMAX_DELAY);
   res = AS1_RecvChar((uint8_t*)c);
   if (res==ERR_RXEMPTY) {
     /* no character in buffer */
     *c = '\0';
   }
+  (void)xSemaphoreGiveRecursive(ShellSem);
 }
 
 /*
@@ -990,6 +998,7 @@ void CLS1_SendChar(uint8_t ch)
   int timeoutMs = 20;
 
 
+  (void)xSemaphoreTakeRecursive(ShellSem, portMAX_DELAY);
   do {
     res = AS1_SendChar((uint8_t)ch);   /* Send char */
     if (res==ERR_TXFULL) {
@@ -1000,6 +1009,7 @@ void CLS1_SendChar(uint8_t ch)
     }
     timeoutMs -= 5;
   } while(res==ERR_TXFULL);
+  (void)xSemaphoreGiveRecursive(ShellSem);
 }
 
 /*
@@ -1017,7 +1027,9 @@ bool CLS1_KeyPressed(void)
 {
   bool res;
 
+  (void)xSemaphoreTakeRecursive(ShellSem, portMAX_DELAY);
   res = (bool)((AS1_GetCharsInRxBuf()==0U) ? FALSE : TRUE); /* true if there are characters in receive buffer */
+  (void)xSemaphoreGiveRecursive(ShellSem);
   return res;
 }
 
@@ -1033,6 +1045,28 @@ bool CLS1_KeyPressed(void)
 */
 void CLS1_Init(void)
 {
+#if configSUPPORT_STATIC_ALLOCATION
+  static StaticSemaphore_t xMutexBuffer;
+#endif
+  bool schedulerStarted;
+  CS1_CriticalVariable();
+
+  schedulerStarted = (bool)(xTaskGetSchedulerState()!=taskSCHEDULER_NOT_STARTED);
+  if (!schedulerStarted) { /* FreeRTOS not started yet. We are called in PE_low_level_init(), and interrupts are disabled */
+    CS1_EnterCritical();
+  }
+#if configSUPPORT_STATIC_ALLOCATION
+  ShellSem = xSemaphoreCreateRecursiveMutexStatic(&xMutexBuffer);
+#else
+  ShellSem = xSemaphoreCreateRecursiveMutex();
+#endif
+  if (!schedulerStarted) { /* above RTOS call might have enabled interrupts! Make sure we restore the state */
+    CS1_ExitCritical();
+  }
+  if (ShellSem==NULL) { /* semaphore creation failed */
+    for(;;) {} /* error, not enough memory? */
+  }
+  vQueueAddToRegistry(ShellSem, "CLS1_Sem");
 #if CLS1_HISTORY_ENABLED
   {
     int i;
@@ -1060,6 +1094,9 @@ void CLS1_Init(void)
 */
 void CLS1_Deinit(void)
 {
+  vQueueUnregisterQueue(ShellSem);
+  vSemaphoreDelete(ShellSem);
+  ShellSem = NULL;
 }
 
 /*

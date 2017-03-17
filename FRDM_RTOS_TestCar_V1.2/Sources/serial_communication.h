@@ -20,11 +20,11 @@ void startCommunication(void);
 void refreshTasks(void);
 void taskDone(uint8_t taskNbr);
 void readGyro(void);
-static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 uint8_t initAllDevices(void);
 void sendStatus(void);
 void readValues(void);
 uint8_t comGetState();
+void sendStatusBT(void);
 
 
 #endif /* SERIAL_COMMUNICATION_H_ */

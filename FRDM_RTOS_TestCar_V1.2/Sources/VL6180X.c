@@ -661,3 +661,7 @@ uint8_t VL_GetDistance(uint8_t deviceNbr, int16_t* deviceRange){
 		 return res;
 	       
 }
+
+int16_t VL_GetLastDistance(uint8_t deviceNbr){
+	return ToFDevice[deviceNbr].mm;
+}
