@@ -6,14 +6,14 @@
 **     Component   : CriticalSection
 **     Version     : Component 01.009, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-17, 17:56, # CodeGen: 76
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CS1
 **          SDK                                            : KSDK1
 **          Use Processor Expert Default                   : no
-**          Use FreeRTOS                                   : no
+**          Use FreeRTOS                                   : yes
 **     Contents    :
 **         CriticalVariable - void CS1_CriticalVariable(void);
 **         EnterCritical    - void CS1_EnterCritical(void);

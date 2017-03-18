@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="com.freescale.cdt.debug.cw.PN_SuppressDialog3a637494e398b3bfff6cc027ab2caeb2118b1d5a"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

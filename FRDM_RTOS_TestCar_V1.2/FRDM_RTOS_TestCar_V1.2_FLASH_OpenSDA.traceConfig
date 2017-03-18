@@ -53,15 +53,15 @@
 					<Name>General config</Name>
 					<StringAttribute>
 						<Name>Launch config name</Name>
-						<DefaultValue>test</DefaultValue>
+						<DefaultValue>FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA</DefaultValue>
 					</StringAttribute>
 					<StringAttribute>
 						<Name>Config path</Name>
-						<DefaultValue>NO_PATH</DefaultValue>
+						<DefaultValue>C:/Eigene_Dateien/Schule/HSLU/Semester_4/PREN2/Github/HSLU_PREN2_T37-1617-ET/FRDM_RTOS_TestCar_V1.2</DefaultValue>
 					</StringAttribute>
 					<BoolAttribute>
 						<Name>EnableTrace</Name>
-						<DefaultValue>false</DefaultValue>
+						<DefaultValue>true</DefaultValue>
 					</BoolAttribute>
 					<BoolAttribute>
 						<Name>EnableLogging</Name>
@@ -69,7 +69,7 @@
 					</BoolAttribute>
 					<BoolAttribute>
 						<Name>StopTrace</Name>
-						<DefaultValue>false</DefaultValue>
+						<DefaultValue>true</DefaultValue>
 					</BoolAttribute>
 					<BoolAttribute>
 						<Name>StartTrace</Name>
@@ -99,11 +99,11 @@
 						</Addr32Attribute>
 						<Addr32Attribute>
 							<Name>MTBStartAddress</Name>
-							<DefaultValue>0x20000000</DefaultValue>
+							<DefaultValue>0x1ffff000</DefaultValue>
 						</Addr32Attribute>
 						<Addr32Attribute>
 							<Name>MTBEndAddress</Name>
-							<DefaultValue>0x20000200</DefaultValue>
+							<DefaultValue>0x20000000</DefaultValue>
 						</Addr32Attribute>
 						<ConfigBlock>
 							<Name>TraceEnable</Name>

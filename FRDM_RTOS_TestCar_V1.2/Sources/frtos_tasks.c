@@ -24,7 +24,6 @@
 #include <stdlib.h>
 #include "serial_communication.h"
 #include "driving.h"
-#include "serial_communication.h"
 #include "L3G.h"
 
 uint8_t Task2Started;
@@ -35,7 +34,7 @@ uint8_t Task6Started;
 uint8_t Task7Started;
 uint8_t GyroTaskStarted;
 
-static portTASK_FUNCTION(Task1Task, pvParameters) {
+static portTASK_FUNCTION(ComunicationTask, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
@@ -48,7 +47,7 @@ static portTASK_FUNCTION(Task1Task, pvParameters) {
      */
   }
   /* Destroy the task */
-  vTaskDelete(Task1Task);
+  vTaskDelete(ComunicationTask);
 }
 
 static portTASK_FUNCTION(Task2Task, pvParameters) {
@@ -172,9 +171,9 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
   		//read the gyro
   		for(i=0; i<32; i++){
   			L3Gread('x');
-  			if(comGetState() == 2){
-  				L3Gread('z');
-  			}
+  			//if(comGetState() == 2){
+  				//L3Gread('z');
+  			//}
   		}
   		vTaskDelay(pdMS_TO_TICKS(100));
 
@@ -188,11 +187,11 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 
 void CreateTasks(void) {
   if (FRTOS1_xTaskCreate(
-	 Task1Task,  /* pointer to the task */
+	 ComunicationTask,  /* pointer to the task */
 	  "Task1", /* task name for kernel awareness debugging */
-	  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+	  configMINIMAL_STACK_SIZE + 200, /* task stack size */
 	  (void*)NULL, /* optional task startup argument */
-	  tskIDLE_PRIORITY + 3,  /* initial priority */
+	  tskIDLE_PRIORITY + 4,  /* initial priority */
 	  (xTaskHandle*)NULL /* optional task handle to create */
 	) != pdPASS) {
 	  /*lint -e527 */
@@ -206,9 +205,9 @@ void CreateTask2(void){
 	  if (FRTOS1_xTaskCreate(
 		 Task2Task,  /* pointer to the task */
 		  "Task2", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 200, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -224,9 +223,9 @@ void CreateTask3(void){
 	  if (FRTOS1_xTaskCreate(
 		 Task3Task,  /* pointer to the task */
 		  "Task3", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 100, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -242,9 +241,9 @@ void CreateTask4(void){
 	  if (FRTOS1_xTaskCreate(
 		 Task4Task,  /* pointer to the task */
 		  "Task4", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 100, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -260,9 +259,9 @@ void CreateTask5(void){
 	  if (FRTOS1_xTaskCreate(
 		 Task5Task,  /* pointer to the task */
 		  "Task5", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 100, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -278,9 +277,9 @@ void CreateTask6(void){
 		if (FRTOS1_xTaskCreate(
 		 Task6Task,  /* pointer to the task */
 		  "Task6", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 100, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -298,7 +297,7 @@ void CreateTask7(void){
 		  "Task7", /* task name for kernel awareness debugging */
 		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 4,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -314,9 +313,9 @@ void CreateGyroTask(void){
 	  if (FRTOS1_xTaskCreate(
 		 GyroTask,  /* pointer to the task */
 		  "Gyro", /* task name for kernel awareness debugging */
-		  configMINIMAL_STACK_SIZE + 0, /* task stack size */
+		  configMINIMAL_STACK_SIZE + 100, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 5,  /* initial priority */
+		  tskIDLE_PRIORITY + 6,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */

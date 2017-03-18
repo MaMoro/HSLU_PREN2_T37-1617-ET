@@ -6,7 +6,7 @@
 **     Component   : AsynchroSerial
 **     Version     : Component 02.611, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-17, 10:01, # CodeGen: 68
+**     Date/Time   : 2017-03-17, 20:57, # CodeGen: 77
 **     Abstract    :
 **         This component "AsynchroSerial" implements an asynchronous serial
 **         communication. The component supports different settings of
@@ -23,7 +23,7 @@
 **             Parity                  : none
 **             Breaks                  : Disabled
 **             Input buffer size       : 32
-**             Output buffer size      : 128
+**             Output buffer size      : 80
 **
 **         Registers
 **             Input buffer            : UART0_D   [0x4006A007]

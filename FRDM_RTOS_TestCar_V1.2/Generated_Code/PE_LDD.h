@@ -5,7 +5,7 @@
 **     Processor   : MKL25Z128VLK4
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-17, 10:56, # CodeGen: 69
+**     Date/Time   : 2017-03-18, 11:18, # CodeGen: 101
 **     Abstract    :
 **
 **     Settings    :
@@ -78,8 +78,6 @@
 #include "LED_GREEN.h"
 #include "LEDpin3.h"
 #include "BitIoLdd3.h"
-#include "AD1.h"
-#include "AdcLdd1.h"
 #include "RED.h"
 #include "LEDpin4.h"
 #include "BitIoLdd4.h"
@@ -100,12 +98,8 @@
 #include "DIR_LEFT1.h"
 #include "DIR_RIGHT1.h"
 #include "Watermark.h"
-#include "BT1.h"
-#include "BTState1.h"
-#include "BitIoLdd1.h"
-#include "Serial1.h"
-#include "ASerialLdd2.h"
 #include "BT_EN.h"
+#include "TMOUT1.h"
 
 
 /*

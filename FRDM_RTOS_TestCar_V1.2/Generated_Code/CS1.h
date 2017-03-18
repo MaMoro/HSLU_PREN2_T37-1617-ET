@@ -6,14 +6,14 @@
 **     Component   : CriticalSection
 **     Version     : Component 01.009, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-17, 17:56, # CodeGen: 76
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CS1
 **          SDK                                            : KSDK1
 **          Use Processor Expert Default                   : no
-**          Use FreeRTOS                                   : no
+**          Use FreeRTOS                                   : yes
 **     Contents    :
 **         CriticalVariable - void CS1_CriticalVariable(void);
 **         EnterCritical    - void CS1_EnterCritical(void);
@@ -56,6 +56,9 @@
   #include "Cpu.h"
 #endif
 
+#include "FreeRTOS.h"
+#include "task.h"  /* FreeRTOS header file for taskENTER_CRITICAL() and taskEXIT_CRITICAL() macros */
+
 /* workaround macros for wrong EnterCritical()/ExitCritical() in the low level drivers. */
 #define CS1_CriticalVariableDrv() \
   CS1_CriticalVariable()
@@ -65,7 +68,7 @@
   CS1_ExitCritical()
 
 #define CS1_CriticalVariable() \
-  uint8_t cpuSR; /* variable to store current status */
+  /* nothing needed */
 
 /*
 ** ===================================================================
@@ -78,16 +81,7 @@
 */
 
 #define CS1_EnterCritical() \
-  do {                                  \
-    /*lint -save  -esym(529,cpuSR) Symbol 'cpuSR' not subsequently referenced. */\
-    __asm (                             \
-    "mrs   r0, PRIMASK     \n\t"        \
-    "cpsid i               \n\t"        \
-    "strb r0, %[output]   \n\t"         \
-    : [output] "=m" (cpuSR) :: "r0");   \
-    __asm ("" ::: "memory");            \
-    /*lint -restore Symbol 'cpuSR' not subsequently referenced. */\
-  } while(0)
+  taskENTER_CRITICAL_FROM_ISR() /* FreeRTOS critical section inside interrupt */
 
 /*
 ** ===================================================================
@@ -100,12 +94,7 @@
 */
 
 #define CS1_ExitCritical() \
-  do{                                  \
-    __asm (                            \
-    "ldrb r0, %[input]    \n\t"        \
-    "msr PRIMASK,r0        \n\t"       \
-    ::[input] "m" (cpuSR) : "r0");     \
-  } while(0)
+  taskEXIT_CRITICAL_FROM_ISR(0) /* FreeRTOS critical section inside interrupt */
 
 /*
 ** ===================================================================

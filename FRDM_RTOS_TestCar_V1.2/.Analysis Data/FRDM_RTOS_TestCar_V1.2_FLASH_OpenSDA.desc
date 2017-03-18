@@ -1,0 +1,17 @@
+12 
+<InfoDesc>
+ 2 0  23 Exception or PC Update. 25 
+</InfoDesc>
+<ErrorDesc>
+ 2 0  15 Break in trace! 27 
+</ErrorDesc>
+<SignalDesc>
+ 1 0  29 
+</SignalDesc>
+<ProfileDesc>
+ 1 0  29 
+</ProfileDesc>
+<CustomDesc>
+ 1 0  15 
+</CustomDesc>
+

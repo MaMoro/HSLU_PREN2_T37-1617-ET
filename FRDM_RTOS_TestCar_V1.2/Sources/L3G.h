@@ -73,30 +73,34 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
    };
 
    typedef struct gyro{
-	   int32_t vX;
-	   int32_t vY;
-	   int32_t vZ;
+	   uint8_t address;
+	   int16_t vX;
+	   int16_t vY;
+	   int16_t vZ;
 	   int32_t x;
 	   int32_t y;
 	   int32_t z;
-	   int16_t offsetX;
-	   int16_t offsetY;
-	   int16_t offsetZ;
+	   int8_t noiseX;
+	   int8_t noiseY;
+	   int8_t noiseZ;
+	   int8_t offsetX;
+	   int8_t offsetY;
+	   int8_t offsetZ;
 	   uint8_t temp;
    }gyro_t;
    
    void L3Ginit(void);
-   void L3GenableDefault(void);
+   uint8_t L3GenableDefault(void);
    uint8_t L3GwriteReg(uint8_t reg, uint8_t value);
    uint8_t L3GreadReg(uint8_t reg, uint8_t nbrOfBytes, uint8_t* value);
-   void L3Greadxyz(void);
-   gyro_t* getG(void);
-   void calculateOffset(void);
+   uint8_t L3Greadxyz(void);
+   uint8_t L3Gread(char dim);
+   uint8_t calculateOffset(void);
    int16_t cmpfunc (const void * a, const void * b);
    void refreshMovingOffset(char dim);
    void L3GreadTemp(void);
    int8_t L3GgetDegree(char dim, int16_t* value);
-   void L3Gread(char dim);
+   
    void L3GSetAngel(char dim, int16_t value);
    void combineAccel(void);
    void compensateDriftVL(void);

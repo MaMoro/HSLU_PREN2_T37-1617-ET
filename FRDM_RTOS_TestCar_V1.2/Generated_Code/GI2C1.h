@@ -6,7 +6,7 @@
 **     Component   : GenericI2C
 **     Version     : Component 01.028, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-17, 16:50, # CodeGen: 71
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -17,7 +17,9 @@
 **          non-LDD I2C                                    : Disabled
 **          LDD I2C                                        : Enabled
 **            I2C                                          : CI2C1
-**            Timeout                                      : Disabled
+**            Timeout                                      : Enabled
+**              Timeout                                    : TMOUT1
+**              us                                         : 10000
 **          RTOS                                           : Enabled
 **            RTOS                                         : FRTOS1
 **            Semaphore                                    : yes
@@ -90,6 +92,7 @@
 /* Include inherited beans */
 #include "WAIT1.h"
 #include "CI2C1.h"
+#include "TMOUT1.h"
 #include "FRTOS1.h"
 
 #include "Cpu.h"

@@ -7,25 +7,13 @@
 
 #include "L3G.h"
 #include "GI2C1.h"
-#include "WAIT1.h"
 #include <stdlib.h>
 #include <math.h>
 
 
 // Defines ////////////////////////////////////////////////////////////////
-
-
-
 #define PI 3.14159265
 #define MMA1 1
-
-#define VL_COMP	0	// compensation of drift by checking if the distances right + left == the parcour width - car width
-#define TOFDISTANCE 120	// the distance between the two ToF's from the side
-/* \todo set the right TOFDISTANCE */
-
-#if VL_COMP
-	#include "VL6180X.h"
-#endif
 
 #if MMA1
 	#include "MMA1.h"
@@ -59,27 +47,19 @@
 #if(FULLSCALE == 2000)
 #define SENSITIVITY (20/7)			// Sensitivity is 70mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/70 = 10/7
 #endif
+
 deviceType_t device;
-uint8_t address;
-sa0State_t sa0;
-gyro_t gyro;
-int16_t vX[NBROFFSET],vY[NBROFFSET],vZ[NBROFFSET];
-int16_t writingPos;
-int8_t OffsetX;
-int8_t OffsetY;
-int8_t OffsetZ;
-int16_t fullwidth;
+static gyro_t gyro;
+static int16_t vX[NBROFFSET],vY[NBROFFSET],vZ[NBROFFSET];
+static int8_t Offset[3];
+static uint8_t res;
 
 // Public Methods //////////////////////////////////////////////////////////////
 
 void L3Ginit(void){
 	device = device_D20;
-	address = D20_SA0_HIGH_ADDRESS;
-	sa0 = sa0_high;
+	gyro.address = D20_SA0_HIGH_ADDRESS;
 	L3GenableDefault();
-	gyro.offsetX = OffsetX;
-	gyro.offsetY = OffsetY;
-	gyro.offsetZ = OffsetZ;
 	gyro.vX = 0;
 	gyro.vY = 0;
 	gyro.vZ = 0;
@@ -91,53 +71,76 @@ void L3Ginit(void){
 
 /*
 Enables the L3G's gyro. Also:
-- Sets gyro full scale (gain) to default power-on value of +/- 250 dps
-  (specified as +/- 245 dps for L3GD20H).
+- Sets gyro full scale (gain) to default power-on value of defined for FULLSCALE
 - Selects 200 Hz ODR (output data rate). (Exact rate is specified as 189.4 Hz
   for L3GD20H and 190 Hz for L3GD20.)
 Note that this function will also reset other settings controlled by
 the registers it writes to.
 */
-void L3GenableDefault(void)
+uint8_t L3GenableDefault(void)
 {
   if (device == device_D20H)
   {
     // 0x00 = 0b00000000
     // Low_ODR = 0 (low speed ODR disabled)
-    L3GwriteReg(LOW_ODR, 0x00);
+    res = L3GwriteReg(LOW_ODR, 0x00);
+    if(res != ERR_OK){
+    	return res;
+    }
   }
   
 
 #if(FULLSCALE == 250)
   // 0x00 = 0b00000000
   // FS = 00 (+/- 250 dps full scale)
-  L3GwriteReg(CTRL_REG4, 0x00);
+  res = L3GwriteReg(CTRL_REG4, 0x00);
+  if(res != ERR_OK){
+  	return res;
+  }
 #endif
 #if(FULLSCALE == 500)
   // 0x10 = 0b00010000
   // FS = 00 (+/- 250 dps full scale)
-  L3GwriteReg(CTRL_REG4, 0x10);
+  res = L3GwriteReg(CTRL_REG4, 0x10);
+  if(res != ERR_OK){
+  	return res;
+  }
 #endif
 #if(FULLSCALE == 2000)
   // 0x20 = 0b00100000
   // FS = 00 (+/- 250 dps full scale)
-  L3GwriteReg(CTRL_REG4, 0x20);
+  res = L3GwriteReg(CTRL_REG4, 0x20);
+  if(res != ERR_OK){
+  	return res;
+  }
 #endif
   // 0x6F = 0b01101111
-  // DR = 01 (200 Hz ODR); BW = 10 (50 Hz bandwidth); PD = 1 (normal mode); Zen = Yen = Xen = 1 (all axes enabled)
-  L3GwriteReg(CTRL_REG1, 0x6F);
+  // DR = 01 (190 Hz ODR); BW = 10 (50 Hz bandwidth); PD = 1 (normal mode); Zen = Yen = Xen = 1 (all axes enabled)
+  res = L3GwriteReg(CTRL_REG1, 0x6F);
+  if(res != ERR_OK){
+  	return res;
+  }
   
   // 0b0000 0010 = 0x02
   // I2C_FIFO overrun interrupt on DRDY/INT2 enable
-  L3GwriteReg(CTRL_REG3, 0x02);
+  res = L3GwriteReg(CTRL_REG3, 0x02);
+  if(res != ERR_OK){
+  	return res;
+  }
   
   //0x40 = 0b01000000
   // FIFO enable
-  L3GwriteReg(CTRL_REG5, 0x40);
+  res = L3GwriteReg(CTRL_REG5, 0x40);
+  if(res != ERR_OK){
+  	return res;
+  }
   
   //0xE0 = 0b11100000
   // FIFO Stream mode
-  L3GwriteReg(FIFO_CTRL_REG, 0xE0);
+  res = L3GwriteReg(FIFO_CTRL_REG, 0xE0);
+  if(res != ERR_OK){
+  	return res;
+  }
   
   // 0x24 = 0b0010 0100	-> cut off 0.9Hz
   // 0x21 = 0b0010 0001 -> cut off 7.2Hz
@@ -145,7 +148,11 @@ void L3GenableDefault(void)
   // 0x07 = 0b0000 0111 -> cut off 0.09Hz
   // 0x10 =	0b0001 0000
   //High pass filter: Normal Mode/  cut off 0.9Hz
-  L3GwriteReg(CTRL_REG2, 0x10);
+  res = L3GwriteReg(CTRL_REG2, 0x10);
+  if(res != ERR_OK){
+  	return res;
+  }
+  return ERR_OK;
 }
 
 
@@ -155,7 +162,7 @@ uint8_t L3GwriteReg(uint8_t reg, uint8_t value)
 	uint8_t tmp[2];
 	tmp[0] = reg;
 	tmp[1] = reg&0xff;
-	return GI2C1_WriteAddress(address, &tmp[0], sizeof(tmp), (uint8_t*)(&value), sizeof(value));
+	return GI2C1_WriteAddress(gyro.address, &tmp[0], sizeof(tmp), (uint8_t*)(&value), sizeof(value));
 }
 
 // Reads a gyro register
@@ -164,15 +171,22 @@ uint8_t L3GreadReg(uint8_t reg, uint8_t nbrOfBytes, uint8_t* value)
 	uint8_t tmp[2];
 	tmp[0] = reg;
 	tmp[1] = reg&0xff;
-	return GI2C1_ReadAddress(address, &tmp[0], sizeof(tmp), (uint8_t*)value, nbrOfBytes);
+	return GI2C1_ReadAddress(gyro.address, &tmp[0], sizeof(tmp), (uint8_t*)value, nbrOfBytes);
 }
 
-void L3Greadxyz(void)
+/*
+ * Read all three axes of the gyro and write it in the gyro struct
+ * returns ERR_OK if all went good, else error
+ */
+uint8_t L3Greadxyz(void)
 {
  uint8_t value[6];
  uint8_t i;
  for(i=0; i<6; i++){
-	 L3GreadReg((OUT_X_L+i), 1, &value[i]);
+	 res = L3GreadReg((OUT_X_L+i), 1, &value[i]);
+	 if(res!=ERR_OK){
+		 return res;
+	 }
  }
   // combine high and low bytes
   gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
@@ -185,15 +199,15 @@ void L3Greadxyz(void)
   
 #if MMA1
   combineAccel();
-#endif
-  
-#if VL_COMP
-  compensateDriftVL();
-#endif
-  
+#endif  
+  return ERR_OK;
 }
 
-void L3Gread(char dim){
+/*
+ * Read one axis of the gyro and write it in the gyro struct
+ * returns ERR_OK if all went good, else error
+ */
+uint8_t L3Gread(char dim){
 	uint8_t value[2];
 	uint8_t i;
 	uint8_t reg;
@@ -212,17 +226,16 @@ void L3Gread(char dim){
 	break;
 	}
 	for(i=0; i<2; i++){
-		L3GreadReg((reg+i), 1, &value[i]);
+		res = L3GreadReg((reg+i), 1, &value[i]);
+		 if(res!=ERR_OK){
+			 return res;
+		 }
 	}
 	// combine high and low bytes
 	switch(dim){
 	case 'x':;
 	case 'X': 	gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
-				gyro.x += gyro.vX;
-				#if VL_COMP
-					compensateDriftVL();
-				#endif
-  
+				gyro.x += gyro.vX;  
 	break;
 	case 'y':;
 	case 'Y': 	gyro.vY = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetY;
@@ -240,7 +253,7 @@ void L3Gread(char dim){
 	default:; // error
 	break;
 	}
-
+	return ERR_OK;
 }
 
 
@@ -276,33 +289,48 @@ void L3GreadTemp(void){
 	L3GreadReg(OUT_TEMP, 1, &(gyro.temp));
 }
 
-// Calculate the offset of the 3 axis. Don't move the device while calculating!
-// this has to be done just 1 time, as the value is almost not depending on time or temperature!
-// the offset is +/- 10% max of +/-250dps fullscale -> Sensitivity = 8.75mdps/digit
-//offsetMAX = 2^16*8.75*0.1/2 = +/- 28'672
-void calculateOffset(void){
+/*
+ * Calculate the offset of the 3 axis. Don't move the device while calculating!
+ * this has to be done just 1 time, as the value is almost not depending on time or temperature!
+ * the offset is +/- 10% max of +/-250dps fullscale -> Sensitivity = 8.75mdps/digit
+ * offsetMAX = 2^16*8.75*0.1/2 = +/- 28'672
+ */
+uint8_t calculateOffset(void){
 	uint16_t i;
-	
+	uint8_t errCount = 0;
+	uint8_t err;
+	res = ERR_OK;
 	for(i=0;i<NBROFFSET;i++){
-		L3Greadxyz();
-		vX[i]=(int16_t)gyro.vX;
-		vY[i]=(int16_t)gyro.vY;
-		vZ[i]=(int16_t)gyro.vZ;
-		WAIT1_Waitms(4);
+		res = L3Greadxyz();
+		vX[i]=gyro.vX;
+		vY[i]=gyro.vY;
+		vZ[i]=gyro.vZ;
+		vTaskDelay(pdMS_TO_TICKS(5));
+		if(res != ERR_OK){
+			errCount++;
+			err = res;
+		}
+	}
+	if(errCount>=(NBROFFSET/10)){
+		return err;
 	}
 	qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 	qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 	qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-	gyro.offsetX += vX[NBROFFSET/2];
-	gyro.offsetY += vY[NBROFFSET/2];
-	gyro.offsetZ += vZ[NBROFFSET/2];
+	gyro.offsetX += (int8_t)vX[NBROFFSET/2];
+	gyro.offsetY += (int8_t)vY[NBROFFSET/2];
+	gyro.offsetZ += (int8_t)vZ[NBROFFSET/2];
+	gyro.noiseX = (int8_t)(vX[NBROFFSET/3*2]-vY[NBROFFSET/3]);
+	gyro.noiseY = (int8_t)(vY[NBROFFSET/3*2]-vY[NBROFFSET/3]);
+	gyro.noiseZ = (int8_t)(vZ[NBROFFSET/3*2]-vZ[NBROFFSET/3]);
 	gyro.x = 0;
 	gyro.y = 0;
 	gyro.z = 0;
 	
-	OffsetX = gyro.offsetX;
-	OffsetY = gyro.offsetY;
-	OffsetZ = gyro.offsetZ;
+	Offset[0] = gyro.offsetX;
+	Offset[1] = gyro.offsetY;
+	Offset[2] = gyro.offsetZ;
+	return ERR_OK;
 }
 
 
@@ -311,15 +339,11 @@ int16_t cmpfunc (const void * a, const void * b)
    return ( *(int16_t*)a - *(int16_t*)b );
 }
 
-
-gyro_t* getG(void){
-	return &gyro;
-}
-
 void refreshMovingOffset(char dim){
 	static uint16 iX;
 	static uint16 iY;
 	static uint16 iZ;
+	int8_t noise;
 	
 	switch(dim){
 	case 'x':;
@@ -327,9 +351,15 @@ void refreshMovingOffset(char dim){
 				if(++iX  >= NBROFFSET){
 					iX = 0;
 					qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-					if((gyro.offsetX+vX[NBROFFSET/2])<(OffsetX+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(OffsetX-MAXOFFSET)){
+					noise = (int8_t)(vX[NBROFFSET/3*2]-vY[NBROFFSET/3]);
+					if(noise <= gyro.noiseX){
+						gyro.offsetX = (int8_t)vX[NBROFFSET/2];
+					}
+					/*
+					if((gyro.offsetX+vX[NBROFFSET/2])<(Offset[0]+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(Offset[0]-MAXOFFSET)){
 						gyro.offsetX += vX[NBROFFSET/2];
 					}
+					*/
 				}
 	break;
 	case 'y':;
@@ -337,9 +367,15 @@ void refreshMovingOffset(char dim){
 				if(++iY  >= NBROFFSET){
 					iY = 0;
 					qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-					if((gyro.offsetY+vY[NBROFFSET/2])<(OffsetY+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(OffsetY-MAXOFFSET)){
+					noise = (int8_t)(vY[NBROFFSET/3*2]-vY[NBROFFSET/3]);
+					if(noise <= gyro.noiseY){
+						gyro.offsetY = (int8_t)vY[NBROFFSET/2];
+					}
+					/*
+					if((gyro.offsetY+vY[NBROFFSET/2])<(Offset[1]+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(Offset[1]-MAXOFFSET)){
 						gyro.offsetY += vY[NBROFFSET/2];
 					}
+					*/
 				}
 	break;
 	case 'z':;
@@ -347,16 +383,19 @@ void refreshMovingOffset(char dim){
 				if(++iZ  >= NBROFFSET){
 					iZ = 0;
 					qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
-					if((gyro.offsetZ+vZ[NBROFFSET/2])<(OffsetZ+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(OffsetZ-MAXOFFSET)){
+					noise = (int8_t)(vZ[NBROFFSET/3*2]-vZ[NBROFFSET/3]);
+					if(noise <= gyro.noiseZ){
+						gyro.offsetZ = (int8_t)vZ[NBROFFSET/2];
+					}
+					/*
+					if((gyro.offsetZ+vZ[NBROFFSET/2])<(Offset[2]+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(Offset[2]-MAXOFFSET)){
 						gyro.offsetZ += vZ[NBROFFSET/2];
 					}
+					*/
 				}
 	break;
 	default: ; // error
-	}
-	
-
-	
+	}	
 }
 
 void L3GSetAngel(char dim, int16_t value){
@@ -397,21 +436,3 @@ void combineAccel(void){
 }
 #endif
 
-#if VL_COMP
-void compensateDriftVL(void){
-	int16_t rangeLeft, rangeRight;
-	
-	
-	VL_GetDistance(TOFRIGHT, &rangeRight);
-	VL_GetDistance(TOFLEFT, &rangeLeft);
-	
-	if(rangeLeft>0 && rangeLeft<255 && rangeRight>0 && rangeRight<255){
-		fullwidth = rangeLeft + rangeRight + TOFDISTANCE;
-		if(fullwidth == 400){
-			gyro.x = 0;
-		}
-	}
-	
-	
-}
-#endif
