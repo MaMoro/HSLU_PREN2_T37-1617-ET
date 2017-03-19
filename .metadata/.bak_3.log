@@ -1,4 +1,4 @@
-!SESSION 2017-03-18 14:48:55.019 -----------------------------------------------
+!SESSION 2017-03-19 11:35:26.164 -----------------------------------------------
 eclipse.buildId=I20070613-1755
 java.version=1.6.0_15
 java.vendor=Sun Microsystems Inc.
@@ -6,9 +6,100 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
 This is a continuation of log file C:\Eigene_Dateien\Schule\HSLU\Semester_4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_2.log
-Created Time: 2017-03-18 17:00:29.978
+Created Time: 2017-03-19 13:51:29.380
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:29.978
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.380
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Sources/Events.o: ../Sources/Events.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #1 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Events.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Events.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/L3G.o: ../Sources/L3G.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #2 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/L3G.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/L3G.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/VL6180X.o: ../Sources/VL6180X.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #3 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/VL6180X.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/VL6180X.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/driving.o: ../Sources/driving.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #4 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/driving.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/driving.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/frtos_tasks.o: ../Sources/frtos_tasks.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #5 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/frtos_tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/frtos_tasks.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/main.o: ../Sources/main.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #6 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/main.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/motor.o: ../Sources/motor.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #7 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.384
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/motor.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -46,7 +137,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:29.978
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.388
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -145,7 +236,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:29.978
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.389
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/pid.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -183,7 +274,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:29.995
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.393
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -290,7 +381,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:29.996
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.394
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/sa_mtb.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -328,7 +419,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.000
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.398
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -443,7 +534,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.000
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.399
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/serial_communication.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -481,7 +572,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.047
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.446
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
 	@echo 'Building file: $<'
@@ -524,7 +615,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.063
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.447
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_end.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -562,7 +653,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.063
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.451
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
 	@echo 'Building file: $<'
@@ -613,7 +704,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.063
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.452
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_start.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -651,7 +742,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.100
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.480
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -694,7 +785,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.100
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.481
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -732,7 +823,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.100
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.485
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -783,7 +874,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.100
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.486
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/ASerialLdd1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -821,7 +912,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.118
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.490
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -880,7 +971,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.120
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.491
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BT_EN.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -918,7 +1009,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.123
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.500
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -985,7 +1076,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.125
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.501
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1023,7 +1114,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.132
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.505
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1098,7 +1189,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.134
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.506
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1136,7 +1227,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.137
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.510
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1219,7 +1310,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.138
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.511
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1257,7 +1348,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.515
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1348,7 +1439,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.516
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1386,7 +1477,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.519
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1485,7 +1576,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.520
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1523,7 +1614,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.524
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1630,7 +1721,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.525
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1668,7 +1759,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.529
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1783,7 +1874,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.142
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.530
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Cpu.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1821,7 +1912,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.158
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.534
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1944,7 +2035,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.158
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.535
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1982,7 +2073,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.158
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.538
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2113,7 +2204,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.158
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.539
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2151,7 +2242,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.173
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.543
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2290,7 +2381,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.173
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.544
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2328,7 +2419,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.173
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.548
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2475,7 +2566,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.173
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.549
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2513,7 +2604,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.193
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.552
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2668,7 +2759,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.194
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.554
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2706,7 +2797,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.200
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.557
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2869,7 +2960,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.558
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2907,7 +2998,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.562
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3078,7 +3169,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.563
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3116,7 +3207,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.567
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3295,7 +3386,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.568
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/KSDK1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3333,7 +3424,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.572
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3520,7 +3611,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.201
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.573
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LED_GREEN.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3558,7 +3649,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.216
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.576
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3753,7 +3844,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.216
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.578
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3791,7 +3882,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.216
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.581
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3994,7 +4085,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.216
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.582
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4032,7 +4123,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.586
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4243,7 +4334,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.587
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4281,7 +4372,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.591
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4500,7 +4591,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.592
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_LDD.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4538,7 +4629,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.596
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4765,7 +4856,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.232
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.597
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Gyro.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4803,7 +4894,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.247
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.605
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5038,7 +5129,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.247
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.606
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5076,7 +5167,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.247
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.610
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5319,7 +5410,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.247
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.612
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5357,7 +5448,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.247
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.615
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5608,7 +5699,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.263
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.616
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5646,7 +5737,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.263
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.620
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5905,7 +5996,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.263
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.622
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5943,7 +6034,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.263
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.625
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6210,7 +6301,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.263
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.627
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6248,7 +6339,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.279
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.630
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6523,7 +6614,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.279
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.631
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6561,7 +6652,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.279
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.635
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6844,7 +6935,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.279
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.636
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6882,7 +6973,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.297
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.640
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7173,7 +7264,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.298
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.641
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/RED.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7211,7 +7302,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.645
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7510,7 +7601,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.646
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TMOUT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7548,7 +7639,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.649
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7855,7 +7946,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.650
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TSK1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7893,7 +7984,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.654
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8208,7 +8299,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.301
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.655
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8246,7 +8337,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.659
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8569,7 +8660,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.660
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8607,7 +8698,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.664
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8938,7 +9029,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.665
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8976,7 +9067,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.669
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9315,7 +9406,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.317
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.670
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9353,7 +9444,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.674
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9700,7 +9791,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.675
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9738,7 +9829,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.679
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -10093,7 +10184,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.680
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10131,7 +10222,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.684
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -10494,7 +10585,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.686
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Vectors.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10532,7 +10623,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.689
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -10903,7 +10994,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.691
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10941,7 +11032,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.694
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -11320,7 +11411,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.696
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Watermark.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11358,7 +11449,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.348
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.703
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -11745,7 +11836,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.363
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.705
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/croutine.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11783,7 +11874,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.363
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.709
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -12178,7 +12269,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.363
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.710
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12216,7 +12307,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.363
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.714
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -12619,7 +12710,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.379
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.715
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12657,7 +12748,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.379
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.719
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -13068,7 +13159,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.379
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.720
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13106,7 +13197,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.395
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.724
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -13525,7 +13616,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.397
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.725
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13563,7 +13654,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.401
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.729
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -13990,7 +14081,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.401
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.730
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -14028,7 +14119,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.408
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.734
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -14463,7 +14554,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.409
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.736
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_5.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -14501,7 +14592,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.415
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.740
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -14944,7 +15035,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.416
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.741
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/list.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -14982,7 +15073,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.422
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.745
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -15433,7 +15524,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.424
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.746
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/port.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -15471,7 +15562,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.749
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -15930,7 +16021,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.750
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/portasm.s
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -15968,7 +16059,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.753
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -16435,7 +16526,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.755
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -16473,7 +16564,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.759
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -16948,7 +17039,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.444
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.760
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/tasks.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -16986,7 +17077,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.444
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.764
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -17469,7 +17560,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.444
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.765
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17507,7 +17598,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:00:30.764
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:51:29.986
 !MESSAGE Cannot decode string # Tool invocations
 FRDM_RTOS_TestCar_V1.2.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
 	@echo 'Building target: $@'
@@ -17550,7 +17641,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.453
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.027
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -17580,15 +17671,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.029
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/Events.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17613,15 +17709,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.032
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -17659,15 +17760,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.033
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/L3G.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17692,15 +17798,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.041
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -17746,15 +17857,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.042
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/VL6180X.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17779,15 +17895,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.046
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -17841,15 +17962,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.047
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/driving.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17874,15 +18000,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.051
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -17944,15 +18075,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.052
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/frtos_tasks.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17977,15 +18113,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.055
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -18055,15 +18196,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.056
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/main.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -18088,15 +18234,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.060
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -18174,15 +18325,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.061
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/motor.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -18207,15 +18363,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.065
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -18301,15 +18462,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.066
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/pid.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -18334,15 +18500,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.508
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.069
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Sources/Events.o: ../Sources/Events.c
 	@echo 'Building file: $<'
@@ -18436,15 +18607,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.509
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-19 13:52:23.070
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/sa_mtb.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -18469,191 +18645,15 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.515
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Sources/Events.o: ../Sources/Events.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #1 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/Events.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/Events.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/L3G.o: ../Sources/L3G.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #2 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/L3G.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/L3G.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/VL6180X.o: ../Sources/VL6180X.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #3 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/VL6180X.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/VL6180X.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/driving.o: ../Sources/driving.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #4 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/driving.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/driving.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/frtos_tasks.o: ../Sources/frtos_tasks.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #5 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/frtos_tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/frtos_tasks.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/main.o: ../Sources/main.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #6 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/main.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/motor.o: ../Sources/motor.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #7 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/motor.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/motor.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/pid.o: ../Sources/pid.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #8 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/pid.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/pid.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/sa_mtb.o: ../Sources/sa_mtb.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #9 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Sources/sa_mtb.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/sa_mtb.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/serial_communication.o: ../Sources/serial_communication.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #10 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.517
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Sources/serial_communication.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-18 17:05:32.586
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #11 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

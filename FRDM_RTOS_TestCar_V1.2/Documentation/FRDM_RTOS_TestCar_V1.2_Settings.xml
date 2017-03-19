@@ -594,11 +594,11 @@ PE_DEBUGHALT();
     <Properties>
       <Component_Name v="TSK1" />
       <FreeRTOS v="FRTOS1" />
-      <list name="Number of tasks" v="8">
+      <list name="Number of tasks" v="3">
         <group name="FreeRTOS task">
           <Task_name v="Task1" />
           <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="500" />
-          <Initial_Priority v="5" />
+          <Initial_Priority v="4" />
         </group>
         <group name="FreeRTOS task">
           <Task_name v="Task2" />
@@ -608,32 +608,7 @@ PE_DEBUGHALT();
         <group name="FreeRTOS task">
           <Task_name v="Task3" />
           <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="800" />
-          <Initial_Priority v="5" />
-        </group>
-        <group name="FreeRTOS task">
-          <Task_name v="Task4" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
-          <Initial_Priority v="5" />
-        </group>
-        <group name="FreeRTOS task">
-          <Task_name v="Task5" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="200" />
-          <Initial_Priority v="5" />
-        </group>
-        <group name="FreeRTOS task">
-          <Task_name v="Task6" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
-          <Initial_Priority v="5" />
-        </group>
-        <group name="FreeRTOS task">
-          <Task_name v="Task7" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
-          <Initial_Priority v="5" />
-        </group>
-        <group name="FreeRTOS task">
-          <Task_name v="Gyro" />
-          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
-          <Initial_Priority v="4" />
+          <Initial_Priority v="6" />
         </group>
       </list>
     </Properties>

@@ -321,7 +321,7 @@
     </GenFiles>
     <SignalListFile>Documentation\FRDM_RTOS_TestCar_V1.2_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>81</ProjectModificationStamp>
+    <ProjectModificationStamp>82</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>

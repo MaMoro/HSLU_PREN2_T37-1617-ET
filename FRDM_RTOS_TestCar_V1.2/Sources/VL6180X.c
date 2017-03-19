@@ -559,11 +559,11 @@ uint8_t VL_SetI2CDeviceAddress(uint8_t deviceNo, uint8_t i2cDeviceAddress) {
   }
   i2cDeviceAddress &= 0x7F; /* make sure it is 7bits only */
   /* test: check if the device is already configured */
-  //res = VL_ReadReg8(i2cDeviceAddress, I2C_SLAVE__DEVICE_ADDRESS, &val);
-  //if (res==ERR_OK || val == i2cDeviceAddress) {
+  res = VL_ReadReg8(i2cDeviceAddress, I2C_SLAVE__DEVICE_ADDRESS, &val);
+  if (res==ERR_OK || val == i2cDeviceAddress) {
     /* already configured :-) */
-    //return ERR_OK;
-  //}
+    return ERR_OK;
+  }
   /* device just has been powered on: it shall be accessible using the default address */
   res = VL_WriteReg8(VL6180X_DEFAULT_I2C_ADDRESS, I2C_SLAVE__DEVICE_ADDRESS, i2cDeviceAddress);
   if (res!=ERR_OK) {

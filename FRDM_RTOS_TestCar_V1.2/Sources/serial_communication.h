@@ -17,14 +17,14 @@ static const CLS1_ParseCommandCallback CmdParserTable[];
 
 void startCommunication(void);
 
-void refreshTasks(void);
-void taskDone(uint8_t taskNbr);
 void readGyro(void);
 uint8_t initAllDevices(void);
 void sendStatus(void);
 void readValues(void);
-uint8_t comGetState();
+uint8_t getState();
+void setState(uint8_t newState);
 void sendStatusBT(void);
+
 
 
 #endif /* SERIAL_COMMUNICATION_H_ */

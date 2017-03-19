@@ -3,8 +3,8 @@
   <Header>
     <Name>FRDM_RTOS_TestCar_V1.2</Name>
     <SavedBy>pirzi</SavedBy>
-    <ModificationStamp>81</ModificationStamp>
-    <Date>2017-03-18</Date>
+    <ModificationStamp>82</ModificationStamp>
+    <Date>2017-03-19</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.0.RT6_b1411-0406</PEversion>
   </Header>
@@ -7033,7 +7033,7 @@
       <ItemState>
         <ItemSymbol>nof_tasks</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-        <ListItemCount>8</ListItemCount>
+        <ListItemCount>3</ListItemCount>
         <UserReadOnly>false</UserReadOnly>
         <Expanded>true</Expanded>
       </ItemState>
@@ -7062,7 +7062,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>5</Value>
+        <Value>4</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -7118,7 +7118,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>5</Value>
+        <Value>6</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>

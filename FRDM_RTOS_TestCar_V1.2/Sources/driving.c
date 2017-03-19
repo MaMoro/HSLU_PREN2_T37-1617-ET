@@ -16,10 +16,6 @@
 #include <stdlib.h>
 #include "pid.h"
 
-#define TOFFRONT 0
-#define TOFLEFT 1
-#define TOFRIGHT 2
-#define GYRO 3
 #define PI 3.14159265
 #define DELAY 15	// in ms
 
@@ -66,7 +62,7 @@ void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance){
 	}
 	motorsStartup(0, 0, 0);
 	RED_Put(0);
-	taskDone(2);
+	setState(2);
 }
 
 //Task3
@@ -123,7 +119,7 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 	}
 	
 	motorsStartup(0, 0, 0);
-	taskDone(3);
+	setState(3);
 }
 
 //Task4
@@ -163,7 +159,7 @@ void driveToTurningPlace(int8_t speed, uint8_t optRange){
 	}
 	
 	motorsStartup(0, 0, 0);
-	taskDone(4);
+	setState(4);
 }
 
 //Task5
@@ -327,7 +323,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 	}
 	
 		motorsStartup(0, 0, 0);
-		taskDone(5);
+		setState(5);
 }
 
 //Task6
@@ -364,7 +360,7 @@ void driveToEndZone(int8_t speed, uint8_t optRange, uint8_t frontdistance){
 	}
 	
 	motorsStartup(0, 0, 0);
-	taskDone(6);
+	setState(6);
 }
 
 void pushTheButton(uint8_t number, uint8_t fronddistance){

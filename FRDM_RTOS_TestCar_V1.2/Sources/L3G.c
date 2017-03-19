@@ -48,7 +48,7 @@
 #define SENSITIVITY (20/7)			// Sensitivity is 70mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/70 = 10/7
 #endif
 
-deviceType_t device;
+static deviceType_t device;
 static gyro_t gyro;
 static int16_t vX[NBROFFSET],vY[NBROFFSET],vZ[NBROFFSET];
 static int8_t Offset[3];
@@ -59,7 +59,9 @@ static uint8_t res;
 void L3Ginit(void){
 	device = device_D20;
 	gyro.address = D20_SA0_HIGH_ADDRESS;
-	L3GenableDefault();
+	while(L3GenableDefault()!= ERR_OK){
+		L3GenableDefault();
+	}
 	gyro.vX = 0;
 	gyro.vY = 0;
 	gyro.vZ = 0;
@@ -184,9 +186,11 @@ uint8_t L3Greadxyz(void)
  uint8_t i;
  for(i=0; i<6; i++){
 	 res = L3GreadReg((OUT_X_L+i), 1, &value[i]);
+	 WAIT1_WaitOSms(10);
 	 if(res!=ERR_OK){
 		 return res;
 	 }
+	 
  }
   // combine high and low bytes
   gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
@@ -227,9 +231,11 @@ uint8_t L3Gread(char dim){
 	}
 	for(i=0; i<2; i++){
 		res = L3GreadReg((reg+i), 1, &value[i]);
+		WAIT1_WaitOSms(10);
 		 if(res!=ERR_OK){
 			 return res;
 		 }
+		 
 	}
 	// combine high and low bytes
 	switch(dim){
@@ -302,14 +308,19 @@ uint8_t calculateOffset(void){
 	res = ERR_OK;
 	for(i=0;i<NBROFFSET;i++){
 		res = L3Greadxyz();
+		if (res != ERR_OK) {
+			vX[i]=0;
+			vY[i]=0;
+			vZ[i]=0;
+			errCount++;
+			err = res;
+		}else{
 		vX[i]=gyro.vX;
 		vY[i]=gyro.vY;
 		vZ[i]=gyro.vZ;
-		vTaskDelay(pdMS_TO_TICKS(5));
-		if(res != ERR_OK){
-			errCount++;
-			err = res;
 		}
+		//vTaskDelay(pdMS_TO_TICKS(6));
+
 	}
 	if(errCount>=(NBROFFSET/10)){
 		return err;

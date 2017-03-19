@@ -423,7 +423,7 @@ PE_DEBUGHALT();
       <boolgroup name="Timers" v="Disabled" />
       <group name="Memory">
         <boolgroup name="Dynamic Allocation" v="Enabled">
-          <Heap_Size v="8000" />
+          <Heap_Size v="8500" />
           <Application_allocated_Heap v="no" />
           <Memory_Allocation_Scheme v="Scheme 4: merge free blocks" />
         </boolgroup>
