@@ -81,6 +81,9 @@ void FRTOS1_vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
   (void)pcTaskName;
   taskDISABLE_INTERRUPTS();
   /* Write your code here ... */
+  CLS1_SendStr((uint8_t*)"out of memory", CLS1_GetStdio()->stdOut);
+  CLS1_SendStr((uint8_t*)pcTaskName, CLS1_GetStdio()->stdOut);
+  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
   for(;;) {}
 }
 

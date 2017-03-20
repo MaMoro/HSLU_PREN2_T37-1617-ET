@@ -6,7 +6,7 @@
 **     Component   : Timeout
 **     Version     : Component 01.035, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-17, 17:03, # CodeGen: 72
+**     Date/Time   : 2017-03-20, 07:33, # CodeGen: 110
 **     Abstract    :
 **
 The module implements timeout functionality. With this implementation,
@@ -14,7 +14,7 @@ it is possible to wait for a given time, and the time is counted by
 a periodic interrupt.
 **     Settings    :
 **          Component name                                 : TMOUT1
-**          Maximum counters                               : 1
+**          Maximum counters                               : 2
 **          Counter tick period (ms)                       : 10
 **          RTOS                                           : Enabled
 **            RTOS                                         : FRTOS1

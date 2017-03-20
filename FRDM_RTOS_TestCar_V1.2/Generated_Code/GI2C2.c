@@ -6,7 +6,7 @@
 **     Component   : GenericI2C
 **     Version     : Component 01.028, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-12, 13:45, # CodeGen: 54
+**     Date/Time   : 2017-03-20, 21:14, # CodeGen: 115
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -17,7 +17,9 @@
 **          non-LDD I2C                                    : Disabled
 **          LDD I2C                                        : Enabled
 **            I2C                                          : CI2C2
-**            Timeout                                      : Disabled
+**            Timeout                                      : Enabled
+**              Timeout                                    : TMOUT1
+**              us                                         : 50000
 **          RTOS                                           : Enabled
 **            RTOS                                         : FRTOS1
 **            Semaphore                                    : yes
@@ -92,6 +94,9 @@ typedef struct {
 
 static GI2C2_TDataState GI2C2_deviceData;
 
+#define GI2C2_TIMEOUT_US  ((uint32_t)50000)  /* number of microseconds as specified in properties */
+#define GI2C2_TIMEOUT_NOF_TICKS(factor) ((GI2C2_TIMEOUT_US*(factor))/1000/TMOUT1_TICK_PERIOD_MS)
+#define GI2C2_TIMEOUT_TICKS(factor) (GI2C2_TIMEOUT_NOF_TICKS(factor)>0?GI2C2_TIMEOUT_NOF_TICKS(factor):1)  /* at least one tick */
 static xSemaphoreHandle GI2C2_busSem = NULL; /* Semaphore to protect I2C bus access */
 /*
 ** ===================================================================
@@ -181,6 +186,8 @@ uint8_t GI2C2_UnselectSlave(void)
 uint8_t GI2C2_ReadBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flags)
 {
   uint8_t res = ERR_OK;
+  TMOUT1_CounterHandle timeout;
+  bool isTimeout=FALSE;
 
   for(;;) { /* breaks */
     GI2C2_deviceData.dataReceivedFlg = FALSE;
@@ -188,8 +195,22 @@ uint8_t GI2C2_ReadBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flags
     if (res!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(dataSize)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is received */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while() */
+      }
     } while (!GI2C2_deviceData.dataReceivedFlg);
+    TMOUT1_LeaveCounter(timeout);
+    if (isTimeout) {
+      res = ERR_BUSY;
+      break; /* break for(;;) */
+    }
     break; /* break for(;;) */
   } /* for(;;) */
   return res;
@@ -211,6 +232,8 @@ uint8_t GI2C2_ReadBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flags
 */
 uint8_t GI2C2_WriteBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flags)
 {
+  TMOUT1_CounterHandle timeout;
+  bool isTimeout=FALSE;
   uint8_t res = ERR_OK;
 
   for(;;) { /* breaks */
@@ -219,8 +242,22 @@ uint8_t GI2C2_WriteBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flag
     if (res!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(dataSize)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is sent */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while loop */
+      }
     } while (!GI2C2_deviceData.dataTransmittedFlg);
+    TMOUT1_LeaveCounter(timeout);
+    if (isTimeout) {
+      res = ERR_BUSY;
+      break; /* break for(;;) */
+    }
     break; /* break for(;;) */
   } /* for(;;) */
   return res;
@@ -246,6 +283,8 @@ uint8_t GI2C2_WriteBlock(void* data, uint16_t dataSize, GI2C2_EnumSendFlags flag
 uint8_t GI2C2_ReadAddress(uint8_t i2cAddr, uint8_t *memAddr, uint8_t memAddrSize, uint8_t *data, uint16_t dataSize)
 {
   uint8_t res = ERR_OK;
+  TMOUT1_CounterHandle timeout;
+  bool isTimeout=FALSE;
 
   if (GI2C2_SelectSlave(i2cAddr)!=ERR_OK) {
     return ERR_FAILED;
@@ -257,16 +296,44 @@ uint8_t GI2C2_ReadAddress(uint8_t i2cAddr, uint8_t *memAddr, uint8_t memAddrSize
     if (res!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(memAddrSize)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is sent */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while() */
+      }
     } while (!GI2C2_deviceData.dataTransmittedFlg);
+    TMOUT1_LeaveCounter(timeout);
+    if (isTimeout) {
+      res = ERR_BUSY;
+      break; /* break for(;;) */
+    }
     /* receive data */
     GI2C2_deviceData.dataReceivedFlg = FALSE;
     res = CI2C2_MasterReceiveBlock(GI2C2_deviceData.handle, data, dataSize, LDD_I2C_SEND_STOP);
     if (res!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(dataSize)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is received */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while() */
+      }
     } while (!GI2C2_deviceData.dataReceivedFlg);
+    TMOUT1_LeaveCounter(timeout);
+    if (isTimeout) {
+      res = ERR_BUSY;
+      break; /* break for(;;) */
+    }
     break; /* break for(;;) */
   } /* for(;;) */
   if (GI2C2_UnselectSlave()!=ERR_OK) {
@@ -297,6 +364,8 @@ uint8_t GI2C2_WriteAddress(uint8_t i2cAddr, uint8_t *memAddr, uint8_t memAddrSiz
   static uint8_t writeBuf[GI2C2_WRITE_BUFFER_SIZE];
   uint8_t *p;
   uint16_t i;
+  TMOUT1_CounterHandle timeout;
+  bool isTimeout=FALSE;
   uint8_t res = ERR_OK;
 
   if (GI2C2_SelectSlave(i2cAddr)!=ERR_OK) {
@@ -321,8 +390,22 @@ uint8_t GI2C2_WriteAddress(uint8_t i2cAddr, uint8_t *memAddr, uint8_t memAddrSiz
     if (CI2C2_MasterSendBlock(GI2C2_deviceData.handle, writeBuf, i, LDD_I2C_SEND_STOP)!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(i)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is sent */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while loop */
+      }
     } while (!GI2C2_deviceData.dataTransmittedFlg);
+    TMOUT1_LeaveCounter(timeout);
+    if (isTimeout) {
+      res = ERR_BUSY;
+      break; /* break for(;;) */
+    }
     break; /* break for(;;) */
   } /* for(;;) */
   if (GI2C2_UnselectSlave()!=ERR_OK) {
@@ -472,6 +555,8 @@ uint8_t GI2C2_WriteByteAddress8(uint8_t i2cAddr, uint8_t memAddr, uint8_t data)
 uint8_t GI2C2_ScanDevice(uint8_t i2cAddr)
 {
   uint8_t res = ERR_OK;
+  TMOUT1_CounterHandle timeout;
+  bool isTimeout=FALSE;
   LDD_I2C_TErrorMask errMask;
   uint8_t dummy;
 
@@ -485,10 +570,20 @@ uint8_t GI2C2_ScanDevice(uint8_t i2cAddr)
     if (res!=ERR_OK) {
       break; /* break for(;;) */
     }
+    timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(1)); /* set up timeout counter */
+    if (timeout==TMOUT1_OUT_OF_HANDLE) {
+      res = ERR_QFULL;
+      break; /* break for(;;) */
+    }
     do { /* Wait until data is sent */
+      isTimeout = TMOUT1_CounterExpired(timeout);
+      if (isTimeout) {
+        break; /* break while() */
+      }
     } while (!GI2C2_deviceData.dataTransmittedFlg);
     errMask = 0;
     (void)CI2C2_GetError(GI2C2_deviceData.handle, &errMask);
+    TMOUT1_LeaveCounter(timeout);
     if (errMask&LDD_I2C_MASTER_NACK) { /* master did not receive ACK from slave */
       res = ERR_NOTAVAIL; /* device did not respond with ACK */
     }

@@ -28,7 +28,8 @@ Generated_Code/MMA1.o: ../Generated_Code/MMA1.c \
  ../Generated_Code/portable.h ../Generated_Code/deprecated_definitions.h \
  ../Generated_Code/portmacro.h ../Generated_Code/mpu_wrappers.h \
  ../Generated_Code/task.h ../Generated_Code/list.h \
- ../Generated_Code/CI2C2.h ../Generated_Code/FRTOS1.h \
+ ../Generated_Code/CI2C2.h ../Generated_Code/TMOUT1.h \
+ ../Generated_Code/CS1.h ../Generated_Code/FRTOS1.h \
  ../Generated_Code/UTIL1.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring \
@@ -111,6 +112,10 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_rsize_t.h:
 ../Generated_Code/list.h:
 
 ../Generated_Code/CI2C2.h:
+
+../Generated_Code/TMOUT1.h:
+
+../Generated_Code/CS1.h:
 
 ../Generated_Code/FRTOS1.h:
 

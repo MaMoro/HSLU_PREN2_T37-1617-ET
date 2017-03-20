@@ -89,7 +89,7 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
 	   uint8_t temp;
    }gyro_t;
    
-   void L3Ginit(void);
+   uint8_t L3Ginit(void);
    uint8_t L3GenableDefault(void);
    uint8_t L3GwriteReg(uint8_t reg, uint8_t value);
    uint8_t L3GreadReg(uint8_t reg, uint8_t nbrOfBytes, uint8_t* value);

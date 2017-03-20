@@ -242,6 +242,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 			motorsStartup(0, 0, 0);
 			partState = 3;
 		}
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	
 	// turn 90 degree
@@ -293,7 +294,8 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 		VL_GetDistance(device, &range);
 		if((rangeOld-range) >= 40 && (rangeOld-range)<=60){
 			partState = 5;
-		}		
+		}
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
 	}
 	// drive throught the door
 	rangeOld = 0;
@@ -319,7 +321,7 @@ void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdis
 			LED_GREEN_Put(0);
 			partState = 6;
 		}
-		
+		vTaskDelay(pdMS_TO_TICKS(DELAY));		
 	}
 	
 		motorsStartup(0, 0, 0);

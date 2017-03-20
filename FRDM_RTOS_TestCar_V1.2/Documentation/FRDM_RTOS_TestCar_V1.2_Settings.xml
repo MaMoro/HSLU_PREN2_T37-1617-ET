@@ -705,7 +705,7 @@ PE_DEBUGHALT();
         <I2C v="CI2C1" />
         <boolgroup name="Timeout" v="Enabled">
           <Timeout v="TMOUT1" />
-          <us v="10000" />
+          <us v="50000" />
         </boolgroup>
       </boolgroup>
       <boolgroup name="RTOS" v="Enabled">
@@ -2279,7 +2279,10 @@ PE_DEBUGHALT();
       <boolgroup name="non-LDD I2C" v="Disabled" />
       <boolgroup name="LDD I2C" v="Enabled">
         <I2C v="CI2C2" />
-        <boolgroup name="Timeout" v="Disabled" />
+        <boolgroup name="Timeout" v="Enabled">
+          <Timeout v="TMOUT1" />
+          <us v="50000" />
+        </boolgroup>
       </boolgroup>
       <boolgroup name="RTOS" v="Enabled">
         <RTOS v="FRTOS1" />
@@ -2825,7 +2828,7 @@ push-pull
       <Component_name v="TMOUT1" />
       <SDK v="KSDK1" />
       <Critical_Section v="CS1" />
-      <Maximum_counters v="1" />
+      <Maximum_counters v="2" />
       <Counter_tick_period__ms_ v="10" />
       <boolgroup name="RTOS" v="Enabled">
         <RTOS v="FRTOS1" />

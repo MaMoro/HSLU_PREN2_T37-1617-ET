@@ -250,9 +250,10 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 uint8_t initAllDevices(void){
 	uint8_t err = ERR_OK;
 	RED_Put(1);
+	TMOUT1_Init();
 		//ToF Init
 		while(VL_Init()!=ERR_OK){
-			VL_Init();
+			// \todo error
 		}
 		
 		/*
@@ -275,9 +276,11 @@ uint8_t initAllDevices(void){
 		  */
 		
 		// Gyro Init
-		L3Ginit();
+		while(L3Ginit()!=ERR_OK){
+			// \todo error
+		}
 		while(calculateOffset()!=ERR_OK){
-			//error
+			// \todo error
 		}
 		
 		

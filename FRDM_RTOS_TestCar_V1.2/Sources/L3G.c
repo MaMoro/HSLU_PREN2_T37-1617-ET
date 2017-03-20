@@ -56,18 +56,17 @@ static uint8_t res;
 
 // Public Methods //////////////////////////////////////////////////////////////
 
-void L3Ginit(void){
+uint8_t L3Ginit(void){
 	device = device_D20;
 	gyro.address = D20_SA0_HIGH_ADDRESS;
-	while(L3GenableDefault()!= ERR_OK){
-		L3GenableDefault();
-	}
+	res = L3GenableDefault();
 	gyro.vX = 0;
 	gyro.vY = 0;
 	gyro.vZ = 0;
 	gyro.x = 0;
 	gyro.y = 0;
 	gyro.z = 0;
+	return res;
 }
 
 
@@ -186,7 +185,7 @@ uint8_t L3Greadxyz(void)
  uint8_t i;
  for(i=0; i<6; i++){
 	 res = L3GreadReg((OUT_X_L+i), 1, &value[i]);
-	 WAIT1_WaitOSms(10);
+	 //WAIT1_WaitOSms(1);		//10ms-> no error??
 	 if(res!=ERR_OK){
 		 return res;
 	 }
@@ -231,7 +230,7 @@ uint8_t L3Gread(char dim){
 	}
 	for(i=0; i<2; i++){
 		res = L3GreadReg((reg+i), 1, &value[i]);
-		WAIT1_WaitOSms(10);
+		//WAIT1_WaitOSms(1);		//10ms-> no error
 		 if(res!=ERR_OK){
 			 return res;
 		 }
@@ -319,7 +318,7 @@ uint8_t calculateOffset(void){
 		vY[i]=gyro.vY;
 		vZ[i]=gyro.vZ;
 		}
-		//vTaskDelay(pdMS_TO_TICKS(6));
+		vTaskDelay(pdMS_TO_TICKS(5));
 
 	}
 	if(errCount>=(NBROFFSET/10)){

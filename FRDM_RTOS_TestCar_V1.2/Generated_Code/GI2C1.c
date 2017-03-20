@@ -6,7 +6,7 @@
 **     Component   : GenericI2C
 **     Version     : Component 01.028, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-17, 16:50, # CodeGen: 71
+**     Date/Time   : 2017-03-20, 20:57, # CodeGen: 114
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -19,7 +19,7 @@
 **            I2C                                          : CI2C1
 **            Timeout                                      : Enabled
 **              Timeout                                    : TMOUT1
-**              us                                         : 10000
+**              us                                         : 50000
 **          RTOS                                           : Enabled
 **            RTOS                                         : FRTOS1
 **            Semaphore                                    : yes
@@ -94,7 +94,7 @@ typedef struct {
 
 static GI2C1_TDataState GI2C1_deviceData;
 
-#define GI2C1_TIMEOUT_US  ((uint32_t)10000)  /* number of microseconds as specified in properties */
+#define GI2C1_TIMEOUT_US  ((uint32_t)50000)  /* number of microseconds as specified in properties */
 #define GI2C1_TIMEOUT_NOF_TICKS(factor) ((GI2C1_TIMEOUT_US*(factor))/1000/TMOUT1_TICK_PERIOD_MS)
 #define GI2C1_TIMEOUT_TICKS(factor) (GI2C1_TIMEOUT_NOF_TICKS(factor)>0?GI2C1_TIMEOUT_NOF_TICKS(factor):1)  /* at least one tick */
 static xSemaphoreHandle GI2C1_busSem = NULL; /* Semaphore to protect I2C bus access */
