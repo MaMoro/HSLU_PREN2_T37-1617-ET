@@ -39,7 +39,7 @@
 #define NBROFFSET 200
 
 #if(FULLSCALE == 250)
-#define SENSITIVITY (20000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
+#define SENSITIVITY (19000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
 #endif
 #if(FULLSCALE == 500)
 #define SENSITIVITY (2000/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
@@ -363,7 +363,7 @@ void refreshMovingOffset(char dim){
 					qsort(&vX[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 					noise = (int8_t)(vX[NBROFFSET/3*2]-vY[NBROFFSET/3]);
 					if(noise <= gyro.noiseX){
-						gyro.offsetX = (int8_t)vX[NBROFFSET/2];
+						gyro.offsetX += (int8_t)vX[NBROFFSET/2];
 					}
 					/*
 					if((gyro.offsetX+vX[NBROFFSET/2])<(Offset[0]+MAXOFFSET) && (gyro.offsetX+vX[NBROFFSET/2])>(Offset[0]-MAXOFFSET)){
@@ -379,7 +379,7 @@ void refreshMovingOffset(char dim){
 					qsort(&vY[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 					noise = (int8_t)(vY[NBROFFSET/3*2]-vY[NBROFFSET/3]);
 					if(noise <= gyro.noiseY){
-						gyro.offsetY = (int8_t)vY[NBROFFSET/2];
+						gyro.offsetY += (int8_t)vY[NBROFFSET/2];
 					}
 					/*
 					if((gyro.offsetY+vY[NBROFFSET/2])<(Offset[1]+MAXOFFSET) && (gyro.offsetY+vY[NBROFFSET/2])>(Offset[1]-MAXOFFSET)){
@@ -395,7 +395,7 @@ void refreshMovingOffset(char dim){
 					qsort(&vZ[0], NBROFFSET, sizeof(int16_t), (_compare_function) cmpfunc);
 					noise = (int8_t)(vZ[NBROFFSET/3*2]-vZ[NBROFFSET/3]);
 					if(noise <= gyro.noiseZ){
-						gyro.offsetZ = (int8_t)vZ[NBROFFSET/2];
+						gyro.offsetZ += (int8_t)vZ[NBROFFSET/2];
 					}
 					/*
 					if((gyro.offsetZ+vZ[NBROFFSET/2])<(Offset[2]+MAXOFFSET) && (gyro.offsetZ+vZ[NBROFFSET/2])>(Offset[2]-MAXOFFSET)){

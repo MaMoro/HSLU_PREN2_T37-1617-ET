@@ -16,20 +16,21 @@
 #include "MMA1.h"
 #include <math.h>
 #include "motor.h"
+#include "BT1.h"
 
 
 #define PI 3.14159265
 #define RXBUFSIZE 48
 
-uint8_t res;
+static bool courseSet = 0;
 
 // Comunication values reads
-static bool hello = TRUE;
+static bool hello = FALSE;		// kommunikation starten mit RPI3
 static bool start = FALSE;		// startbefehl
-static bool course = NULL;		// fahrbanwahl	links->true rechts->false
-static int16_t tof_l_s = 0;	// tof_links_sollwert
-static int16_t tof_r_s = 0;	// tof_rechts_sollwert
-static int16_t tof_f_s = 0;	// tof_front_sollwert
+static bool course = 0;			// fahrbanwahl	links->true rechts->false
+static int16_t tof_l_s = 0;		// tof_links_sollwert
+static int16_t tof_r_s = 0;		// tof_rechts_sollwert
+static int16_t tof_f_s = 0;		// tof_front_sollwert
 static int8_t 	raupe_i_l = 0;	// raupe ist links
 static int8_t	raupe_i_r = 0;	// raupe ist rechts
 static uint8_t	gyroskop_s = 0; // gyroskop soll
@@ -37,18 +38,20 @@ static uint8_t	servo_s = 0;	// servo soll
 static uint8_t	letter = 0;		// buchstabe
 
 // Comunication values writes
-static int16_t tof_l_i = 0;
-static int16_t tof_r_i = 0;
-static int16_t tof_f_i = 0;
-static int8_t	raupe_l_i = 0;
-static int8_t	raupe_r_i = 0;
-static int16_t gyro_n = 0;
-static int16_t gyro_g = 0;
-static uint8_t 	gyroskop_i = 0;
-static uint8_t 	servo_i = 0;
-static uint8_t 	state = 1;
-static uint8_t 	errState = ERR_OK;
+static int16_t tof_l_i = 0;		// tof links ist
+static int16_t tof_r_i = 0;		// tof rechts ist
+static int16_t tof_f_i = 0;		// tof front ist
+static int8_t	raupe_l_i = 0;	// raupe links ist
+static int8_t	raupe_r_i = 0;	// raupe rechts ist
+static int16_t gyro_n = 0;		// gyro nick 
+static int16_t gyro_g = 0;		// gyro gear
+static uint8_t 	gyroskop_i = 0;	// gyroskop ist
+static uint8_t 	servo_i = 0;	// servo ist
+static uint8_t 	state = 1;		// status auf parcour
+static uint8_t 	errState = ERR_OK;	// errorStatus
 
+static uint8_t kpT = 11, kiT = 0, kdT = 3;
+static uint8_t kpG = 30, kiG = 0, kdG = 40;
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -59,25 +62,42 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
   NULL /* Sentinel, must be last */
 };
 
+/* Bluetooth stdio */
+static CLS1_ConstStdIOType BT_stdio = {
+  (CLS1_StdIO_In_FctType)BT1_StdIOReadChar, /* stdin */
+  (CLS1_StdIO_OutErr_FctType)BT1_StdIOSendChar, /* stdout */
+  (CLS1_StdIO_OutErr_FctType)BT1_StdIOSendChar, /* stderr */
+  BT1_StdIOKeyPressed /* if input is not empty */
+};
 
 
 
 void startCommunication(void){
 	unsigned char RXbuffer[RXBUFSIZE];
+	unsigned char RXbufferBT[RXBUFSIZE];
+	RXbufferBT[0] = '\0';
 	RXbuffer[0] = '\0';
 	
+
+
+	//Init devices
+	errState = initAllDevices();
+	
 	//Say hello to Raspberry Pi
-	while(hello){
+	while(!hello){
+		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
+		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
+		
+	}
+
+	  
+	// wait until course is set
+	while(!courseSet){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
-	// confirm hello
-	  CLS1_SendStr((uint8_t*)"hello,", CLS1_GetStdio()->stdOut);
-	  CLS1_SendNum8u(1, CLS1_GetStdio()->stdOut);
-	  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
-	
-	  // Init devices
-	errState = initAllDevices();
+
+	initDriving(kpT, kiT, kdT, kpG, kiG, kdG, course);
 	
 	// Wait until start
 	LED_GREEN_Put(1);
@@ -85,12 +105,9 @@ void startCommunication(void){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
-	// confirm start
-	  CLS1_SendStr((uint8_t*)"start,", CLS1_GetStdio()->stdOut);
-	  CLS1_SendNum8u(start, CLS1_GetStdio()->stdOut);
-	  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);  
 	LED_GREEN_Put(0);
-
+	L3GSetAngel('x', 0);
+	L3GSetAngel('z', 0);
 	CreateDrivingTask();
 	
 	//Loop
@@ -98,7 +115,7 @@ void startCommunication(void){
 		
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		readValues();
-		//sendStatus();
+		sendStatus();
 		sendStatusBT();
 		
 		vTaskDelay(pdMS_TO_TICKS(300));
@@ -163,6 +180,9 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  hello = tmp;
+		  CLS1_SendStr((uint8_t*)"hello,", CLS1_GetStdio()->stdOut);
+		  CLS1_SendNum8u(hello, CLS1_GetStdio()->stdOut);
+		  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 		  *handled = TRUE;
 	  }
   }else if (UTIL1_strncmp((char*)cmd, "start,", sizeof("start,")-1)==0){		//Start
@@ -170,6 +190,10 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  start = tmp;
+		  //bestätigen
+		  CLS1_SendStr((uint8_t*)"start,", CLS1_GetStdio()->stdOut);
+		  CLS1_SendNum8u(start, CLS1_GetStdio()->stdOut);
+		  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 		  *handled = TRUE;
 	  }
   }else if (UTIL1_strncmp((char*)cmd, "course,", sizeof("course,")-1)==0){		// Course
@@ -177,6 +201,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  course = tmp;
+		  courseSet = 1;
 		  //bestätigen
 		  CLS1_SendStr((uint8_t*)"course,", CLS1_GetStdio()->stdOut);
 		  CLS1_SendNum8u(course, CLS1_GetStdio()->stdOut);
@@ -251,12 +276,19 @@ uint8_t initAllDevices(void){
 	uint8_t err = ERR_OK;
 	RED_Put(1);
 	TMOUT1_Init();
-		//ToF Init
-		while(VL_Init()!=ERR_OK){
-			// \todo error
-		}
-		
-		/*
+	//ToF Init
+	err = VL_Init();
+	while (err != ERR_OK) {
+		err = VL_Init();
+	setErrorState(err, "VL_init in comunication");
+	}
+	//BT Init
+	BT1_Init();
+	BT1_btSetDeviceName((byte*)"T37");
+	BT1_btSetBaud(9600);
+	
+	
+		/* \todo scaling
 		// Set scaling of ToF Frong to 2
 		  res = VL6180XsetScaling(1, TOFFRONT);
 		  if(res != ERR_OK){
@@ -275,49 +307,43 @@ uint8_t initAllDevices(void){
 		  }
 		  */
 		
-		// Gyro Init
-		while(L3Ginit()!=ERR_OK){
-			// \todo error
-		}
-		while(calculateOffset()!=ERR_OK){
-			// \todo error
-		}
+	// Gyro Init
+	err = L3Ginit();
+	while (err != ERR_OK) {
+		err = L3Ginit();
+	setErrorState(err, "L3Ginit in comunication");
+	}
+	err = calculateOffset();
+	while (err != ERR_OK) {
+		err = calculateOffset();
+	setErrorState(err, "calculateOffset in comunication");
+	}
 		
-		
-		// Start GyroTask
-		CreateGyroTask();
-		
-		
-		//Accel init
-		while(MMA1_Enable() != ERR_OK){
-			MMA1_Enable();
-		}
-		while(MMA1_Init() != ERR_OK){
-			MMA1_Init();
-		}
-		MMA1_CalibrateX1g();
-		MMA1_CalibrateY1g();
-		MMA1_CalibrateZ1g();
-		
-		initDriving(11, 0, 3, 30, 0, 40, course);
-		RED_Put(0);
-		
-		return err;
+	// Start GyroTask
+	CreateGyroTask();
+
+	//Accel init
+	err = MMA1_Enable();
+	while (err != ERR_OK) {
+		err = MMA1_Enable();
+		setErrorState(err, "MMA1_Enable in comunication");
+	}
+	err = MMA1_Init();
+	while (err != ERR_OK) {
+		err = MMA1_Init();
+		setErrorState(err, "MMA1_Init in comunication");
+	}
+	MMA1_CalibrateX1g();
+	MMA1_CalibrateY1g();
+	MMA1_CalibrateZ1g();
+
+	RED_Put(0);
+
+	return err;
 }
 
 /*
- * // Comunication values writes
-static int16_t tof_l_i = 0;
-static int16_t tof_r_i = 0;
-static int16_t tof_f_i = 0;
-static int8_t	raupe_l_i = 0;
-static int8_t	raupe_r_i = 0;
-static int16_t gyro_n = 0;
-static int16_t gyro_g = 0;
-static uint8_t 	gyroskop_i = 0;
-static uint8_t 	servo_i = 0;
-static uint8_t 	state = 0;
-static uint8_t 	errState = ERR_OK;
+ * 
  */
 void sendStatus(void){
 	CLS1_SendStr((uint8_t*)"tof_l_i,", CLS1_GetStdio()->stdOut);		// tof_l_i
@@ -347,12 +373,15 @@ void sendStatus(void){
 	CLS1_SendStr((uint8_t*)"servo_i,", CLS1_GetStdio()->stdOut);		// servo_i
 	CLS1_SendNum16u(servo_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
-	CLS1_SendStr((uint8_t*)"state,", CLS1_GetStdio()->stdOut);			// state
+	CLS1_SendStr((uint8_t*)"parcstate,", CLS1_GetStdio()->stdOut);			// state
 	CLS1_SendNum16u(state, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
-	CLS1_SendStr((uint8_t*)"errState,", CLS1_GetStdio()->stdOut);		// errState
+	CLS1_SendStr((uint8_t*)"errstate,", CLS1_GetStdio()->stdOut);		// errState
 	CLS1_SendNum16u(errState, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+	if(errState!=ERR_OK){
+		errState = ERR_OK;	//reset errState after sending
+	}
 }
 
 void readValues(void){
@@ -370,9 +399,13 @@ void readValues(void){
 
 void sendStatusBT(void){
 	// gyro_g
-	CLS1_SendNum16s(gyro_g, CLS1_GetStdio()->stdOut);
-	CLS1_SendStr((uint8_t*)",", CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(gyro_g, BT_stdio.stdOut);
+	CLS1_SendStr((uint8_t*)",", BT_stdio.stdOut);
 	// gyro_n
-	CLS1_SendNum16s(gyro_n, CLS1_GetStdio()->stdOut);
-	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+	CLS1_SendNum16s(gyro_n, BT_stdio.stdOut);
+	CLS1_SendStr((uint8_t*)"\n", BT_stdio.stdOut);
+}
+
+void setErrorState(uint8_t err, char* description){
+	errState = err;
 }

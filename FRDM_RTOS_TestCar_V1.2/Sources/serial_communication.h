@@ -24,6 +24,7 @@ void readValues(void);
 uint8_t getState();
 void setState(uint8_t newState);
 void sendStatusBT(void);
+void setErrorState(uint8_t err, char* description);
 
 
 

@@ -1030,6 +1030,66 @@ Module "Watermark" (component BitIO_LDD)
                 returned. If the direction is [output] then the last written value is read and returned (see <Safe mode> 
                 property for limitations). This method cannot be disabled if direction is [input].
 
+Module "BT1"       (component Bluetooth_EGBT)
+   - BT1_Init -Initializes the module
+   - BT1_Deinit -Deinitializes the module
+   - BT1_GetLastError -Returns the last error reported by the device.
+   - BT1_GetErrorString -Returns for a given error code the error string describing the problem.
+   - BT1_SendATCommand -Sends an AT command string (with the AT in it) to the module.
+   - BT1_StdCmd -Send standard command: "<cmd>\r   " ==> "<expectedResponse>"
+   - BT1_StdOKCmd -Send standard command: "<cmd>\r   " ==> "OK\r   "
+   - BT1_QueryString -get string from device: "<cmd>\r   " ==> "<response><string>\r   OK\r   "
+   - BT1_btTestUART -Tests the UAR connection with AT
+   - BT1_btResetDevice -Resets the device with AT+RESET
+   - BT1_btQueryFirmwareVersionStr -Queries the firmware version
+   - BT1_btRestoreFactoryDefault -Restores the factory defaults on the device
+   - BT1_btQueryBluetoothAddressStr -Queries the Bluetooth address
+   - BT1_btQueryDeviceName -Queries the device name
+   - BT1_btSetDeviceName -Sets the device name
+   - BT1_btQueryRemoteBluetoothDeviceName -Queries the remote Bluetooth device name
+   - BT1_btQueryRole -Returns the current device role
+   - BT1_btSetRole -Sets the device role
+   - BT1_btQueryCoDStr -Queries the Class of Device
+   - BT1_btSetCoDStr -Sets the Class of Device string
+   - BT1_btQueryIACStr -Queries the Inquire Access Code (IAC)
+   - BT1_btSetIACStr -Sets the Inquire Access Code string
+   - BT1_btQueryIAMStr -Queries the Inquire Access Mode (IAM)
+   - BT1_btSetIAMStr -Sets the Inquire Access Mode string
+   - BT1_btQueryPairingPasskey -Queries the Pairing Passkey
+   - BT1_btSetPairingPasskey -Sets the pairing passkey
+   - BT1_btQueryUARTParametersStr -Queries the UART parameters
+   - BT1_btSetUARTParameterStr -Sets the UART parameter.
+   - BT1_btSetBaud -Sets the baud rate of the device.
+   - BT1_btQueryConnectionMethod -Returns the connection method
+   - BT1_btSetConnectionMethod -Sets the device connection method
+   - BT1_btQueryBindingBluetoothAddress -Queries the Binding Bluetooth Address
+   - BT1_btSetBindingBluetoothStr -Sets the Binding Bluetooth Address.
+   - BT1_btQueryLEDOutputPolarityStr -Returns the LED output polarity
+   - BT1_btSetLEDOutputPolarityStr -Sets the LED output polarity
+   - BT1_btSetUserPinIO -Sets or clears a user I/O pin
+   - BT1_btSetMultipleUserIOPins -Sets or clears multiple User I/O pins
+   - BT1_btQueryMultipleUserIOPinsStr -Queries multiple User I/O pins
+   - BT1_btQueryMultipleUserIOPins -Queries multiple User I/O pins
+   - BT1_btQueryScanningParametersStr -Query scanning parameters
+   - BT1_btSetScanningParameterStr -Sets the scanning parameters
+   - BT1_btQuerySNIFFParametersStr -Query SNIFF Energy Savings Parameters
+   - BT1_btSetSNIFFParameterStr -Set SNIFF Energy Saving Parameters
+   - BT1_btQuerySecurityEncryptionModesStr -Query Security & Encryption Modes
+   - BT1_btSetSecurityEncryptionModesStr -Set Security & Encryption Modes
+   - BT1_btDeleteAuthenticatedDeviceFromListStr -Deletes an authenticated device from the list
+   - BT1_btFindDeviceFromAuthenticatedDeviceListStr -Find Device from Authenticated Device List
+   - BT1_btQueryTotalNumberOfDeviceFromAuthenticationListStr -
+   - BT1_btQueryTotalNumberOfDeviceFromAuthenticationList -
+   - BT1_btQueryMostRecentlyUsedAuthenticatedDevice -Query Most Recently Used Authenticated Device
+   - BT1_btQueryCurrentStateOfDeviceStr -Query Current Status of the Device
+   - BT1_ParseCommand -Shell Command Line parser. Method is only available if Shell is enabled in the component properties.
+   - BT1_RecvChar -Receives a character from the Bluetooth serial bridge
+   - BT1_SendChar -Sends a character to the Bluetooth serial bridge
+   - BT1_GetCharsInRxBuf -Returns the numbers of character in the receiver buffer.
+   - BT1_StdIOKeyPressed -StdIO handler for Shell
+   - BT1_StdIOReadChar -StdIO Handler for reading a character. It reads a zero byte if there is no character.
+   - BT1_StdIOSendChar -StdIO handler to sends a character
+
 Module "BT_EN"     (component BitIO_LDD)
    - BT_EN_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
                 interrupt priority, sets pin routing, sets timing, etc. If the "Enable in init. code" is set to "yes" value 

@@ -47,6 +47,8 @@
 - \subpage DIR_LEFT1
 - \subpage DIR_RIGHT1
 - \subpage Watermark
+- \subpage BitIoLdd1
+- \subpage ASerialLdd2
 - \subpage BT_EN
 
 

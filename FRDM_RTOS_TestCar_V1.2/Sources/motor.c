@@ -223,6 +223,7 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 	int8_t incrementLeft = (valueLeft - pwmLeft)/time;
 	int8_t incrementRight = (valueRight - pwmRight)/time;
 	uint8_t i;
+	FRTOS1_taskENTER_CRITICAL();
 		for(i = 1; i <= time; i++){
 			//motorSetPWMRight(pwmRight+incrementRight*i);
 			//motorSetPWMLeft(pwmLeft+incrementLeft*i);
@@ -230,6 +231,7 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 			motorIncrementPWMRight(incrementRight);
 			vTaskDelay(pdMS_TO_TICKS(1));
 		}
+	FRTOS1_taskEXIT_CRITICAL();
 	}
 
 	motorSetPWMRight(valueRight);

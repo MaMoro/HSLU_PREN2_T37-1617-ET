@@ -54,7 +54,9 @@ Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c \
  ../Generated_Code/MMA1.h ../Generated_Code/GI2C2.h \
  ../Generated_Code/CI2C2.h ../Generated_Code/DIR_LEFT1.h \
  ../Generated_Code/DIR_RIGHT1.h ../Generated_Code/Watermark.h \
- ../Generated_Code/BT_EN.h
+ ../Generated_Code/BT1.h ../Generated_Code/BTState1.h \
+ ../Generated_Code/BitIoLdd1.h ../Generated_Code/Serial1.h \
+ ../Generated_Code/ASerialLdd2.h ../Generated_Code/BT_EN.h
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -221,5 +223,15 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/TPM_PDD.h:
 ../Generated_Code/DIR_RIGHT1.h:
 
 ../Generated_Code/Watermark.h:
+
+../Generated_Code/BT1.h:
+
+../Generated_Code/BTState1.h:
+
+../Generated_Code/BitIoLdd1.h:
+
+../Generated_Code/Serial1.h:
+
+../Generated_Code/ASerialLdd2.h:
 
 ../Generated_Code/BT_EN.h:

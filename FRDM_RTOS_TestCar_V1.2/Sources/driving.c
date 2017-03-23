@@ -15,50 +15,38 @@
 #include <math.h>
 #include <stdlib.h>
 #include "pid.h"
+#include "driving.h"
 
 #define PI 3.14159265
 #define DELAY 15	// in ms
 
-uint8_t kpToF, kiToF, kdToF;
-uint8_t kpGyro, kiGyro, kdGyro;
-int8_t factor;
-uint8_t device;
+static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
+static uint8_t kpGyro, kiGyro, kdGyro;		//PID values Gyro
+static int8_t factor;						// inverses the correction direction
+static uint8_t device;						// left or right tof
 
-//Task2
-void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance){
+
+
+void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance) {
 	uint8_t err;
 	uint8_t done = 0;
 	int16_t range = 0;
-	int16_t corrGyro = 0;
-	int16_t corrToF = 0;
-	
-	LED_GREEN_Put(1);
-	while(!done){
-		// Motor-Regulation
-		 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, 0, &corrGyro);
-		 if(err != ERR_OK){
-			 corrGyro = 0;
-			// error 
-		 }
-		 err = calcPID(device,kpToF, kiToF, kdToF, optRange, &corrToF);
-		 if(err != ERR_OK){
-			 corrToF = 0;
-			 // error
-		 }
-		 motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
 
-			 
-		 //refreshMovingOffset('x');
-		 
-		 // check if stair is detected
-		 VL_GetDistance(TOFFRONT, &range);
-		 if(range <= frontdistance && range > 0){
-			 LED_GREEN_Put(0);
-			 RED_Put(1);
-			 done = 1;
-		 }
-		 
-		 vTaskDelay(pdMS_TO_TICKS(DELAY));
+	LED_GREEN_Put(1);
+	while (!done) {
+
+		err = regulateMotor(speed, optRange, 0);
+
+		//refreshMovingOffset('x');
+
+		// check if stair is detected
+		VL_GetDistance(TOFFRONT, &range);
+		if (range <= frontdistance && range > 0) {
+			LED_GREEN_Put(0);
+			RED_Put(1);
+			done = 1;
+		}
+		vTaskDelay(pdMS_TO_TICKS(DELAY) );
 	}
 	motorsStartup(0, 0, 0);
 	RED_Put(0);
@@ -68,25 +56,13 @@ void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance){
 //Task3
 void driveOverStair(int8_t speed, uint8_t optRange){
 	uint8_t err = ERR_OK;
-	int16_t corrToF = 0;
-	int16_t corrGyro = 0;
 	uint8_t stairState = 0;
 	int16_t angel = 0;
 	uint8_t done = 0;
 
 	while(!done){
-		// Regulate Motors
-		err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, 0, &corrGyro);
-		if(err != ERR_OK){
-			corrGyro = 0;
-			//error
-		}
-		err = calcPID(device, kpToF, kiToF, kdToF, optRange, &corrToF);
-		if(err != ERR_OK){
-			corrToF = 0;
-			// error
-		}
-		motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+
+		err = regulateMotor(speed, optRange, 0);
 		
 		/* \todo test if it helps to avoid drift */
 		//refreshMovingOffset('x'); // Test if good or not
@@ -105,7 +81,7 @@ void driveOverStair(int8_t speed, uint8_t optRange){
 			speed -= 20;
 		}
 		// stair downwards
-		else if(stairState == 2 && angel >= 25){
+		else if(stairState == 2 && angel >= 20){
 			stairState = 3; 
 			LED_GREEN_Put(0);
 		}
@@ -368,6 +344,28 @@ void driveToEndZone(int8_t speed, uint8_t optRange, uint8_t frontdistance){
 void pushTheButton(uint8_t number, uint8_t fronddistance){
 	
 }
+
+uint8_t regulateMotor(int8_t speed, uint8_t optRange,int16_t optAngel){
+	uint8_t err = ERR_OK;
+	int16_t corrGyro = 0;
+	int16_t corrToF = 0;
+	
+	// Motor-Regulation
+	 err = calcPID(GYRO, kpGyro, kiGyro, kdGyro, optAngel, &corrGyro);
+	 if(err != ERR_OK){
+		 corrGyro = 0;
+		// error 
+	 }
+	 err = calcPID(device,kpToF, kiToF, kdToF, optRange, &corrToF);
+	 if(err != ERR_OK){
+		 corrToF = 0;
+		 // error
+	 }
+	 motorsStartup(speed-corrGyro+factor*corrToF, speed+corrGyro-factor*corrToF, 0);
+	 return err;
+}
+
+
 
 void initDriving(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG, bool leftParcour){
 	if(leftParcour){
