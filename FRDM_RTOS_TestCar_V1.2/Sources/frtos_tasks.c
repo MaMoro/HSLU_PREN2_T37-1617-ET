@@ -52,17 +52,17 @@ static portTASK_FUNCTION(DrivingTask, pvParameters) {
   /* Write your task initialization code here ... */
 (void) pvParameters;
 
-	driveToStair(50, 150, 200);
+	driveToStair();
 
-	driveOverStair(50, 150);
+	driveOverStair();
 
-	driveToTurningPlace(50, 150);
+	driveToTurningPlace();
 
-	driveThroughtTurningPlace(50, 190, 200);
+	driveThroughtTurningPlace();
 
-	driveToEndZone(50, 150, 200);
+	driveToEndZone();
 
-	pushTheButton(3, 190);
+	pushTheButton();
 	
 	vTaskDelay(pdMS_TO_TICKS(1) );
 	FRTOS1_vTaskSuspend(NULL);
@@ -75,28 +75,50 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 
   /* Write your task initialization code here ... */
 (void) pvParameters;
-  	for(;;) {
-    /* Write your task code here ... */
-	
-  		uint8_t i;
-  		int8_t res;
-  		//read the gyro
-  		for(i=0; i<32; i++){
-  			res = L3Gread('x');
-  			if(res!=ERR_OK){
-  				setErrorState(res, "GyroTask");
-  			}
-  			if(getState() == 2){
-  				res = L3Gread('z');
-  				if(res!=ERR_OK){
-  					setErrorState(res, "GyroTask");
-  				}
-  			}
-  		}
-  		vTaskDelay(pdMS_TO_TICKS(125));
-  }
-  /* Destroy the task */
-  vTaskDelete(GyroTask);
+
+	int8_t res;
+	uint8_t timeout = 100;
+	uint8_t i;
+	uint8_t isfull;
+	uint8_t dataLevel;
+
+	// Gyro Init
+	res = L3Ginit();
+	while (res != ERR_OK) {
+		res = L3Ginit();
+		setErrorState(res, "L3Ginit in comunication");
+	}
+	res = calculateOffset();
+	while (res != ERR_OK) {
+		res = calculateOffset();
+		setErrorState(res, "calculateOffset in comunication");
+	}
+	for (;;) {
+		//read the gyro{
+		dataLevel = L3GFIFOdataLevel();
+		isfull = L3GFIFOfull();
+		if(isfull){
+			if(timeout>0){
+			timeout--;
+			}
+		}
+		else{
+			timeout++;
+		}
+		for(i=0;i<32;i++){
+			res = L3Gread('x');
+			if (res != ERR_OK) {
+				setErrorState(res, "GyroTask");
+			}
+			res = L3Gread('z');
+			if (res != ERR_OK) {
+				setErrorState(res, "GyroTask");
+			}
+		}
+		vTaskDelay(pdMS_TO_TICKS(timeout));
+	}
+	/* Destroy the task */
+	vTaskDelete(GyroTask);
 }
 
 void CreateTasks(void) {

@@ -50,8 +50,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 11, kiT = 0, kdT = 3;
-static uint8_t kpG = 30, kiG = 0, kdG = 40;
+static uint8_t kpT = 7, kiT = 0, kdT = 0;
+static uint8_t kpG = 12, kiG = 1, kdG = 5;
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -77,8 +77,6 @@ void startCommunication(void){
 	unsigned char RXbufferBT[RXBUFSIZE];
 	RXbufferBT[0] = '\0';
 	RXbuffer[0] = '\0';
-	
-
 
 	//Init devices
 	errState = initAllDevices();
@@ -87,13 +85,16 @@ void startCommunication(void){
 	while(!hello){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
-		
+		refreshMovingOffset('x');
+		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 
 	  
 	// wait until course is set
 	while(!courseSet){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
+		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
+		refreshMovingOffset('x');
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 
@@ -103,6 +104,8 @@ void startCommunication(void){
 	LED_GREEN_Put(1);
 	while(!start){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
+		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
+		refreshMovingOffset('x');
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 	LED_GREEN_Put(0);
@@ -114,9 +117,11 @@ void startCommunication(void){
 	for(;;){
 		
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
+		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
 		readValues();
-		sendStatus();
+		//sendStatus();
 		sendStatusBT();
+		sendTestStatus();
 		
 		vTaskDelay(pdMS_TO_TICKS(300));
 	}
@@ -126,7 +131,7 @@ void setState(uint8_t newState){
 	state = newState;
 }
 
-uint8_t getState(){
+uint8_t getState(void){
 	return state;
 }
 
@@ -213,6 +218,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  tof_l_s = tmp;
+		  setDistanceSide(tof_l_s);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "tof_r_s,", sizeof("tof_r_s,")-1)==0){		// tof_r_s
@@ -220,6 +226,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  tof_r_s = tmp;
+		  setDistanceSide(tof_r_s);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "tof_f_s,", sizeof("tof_f_s,")-1)==0){		// tof_f_s
@@ -227,6 +234,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  tof_f_s = tmp;
+		  setDistanceFront(tof_f_s);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "raupe_i_l,", sizeof("raupe_i_l,")-1)==0){		// raupe_i_l
@@ -234,6 +242,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  raupe_i_l = tmp;
+		  setSpeed(raupe_i_l);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "raupe_i_r,", sizeof("raupe_i_r,")-1)==0){		// raupe_i_r
@@ -241,6 +250,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  raupe_i_r = tmp;
+		  setSpeed(raupe_i_r);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "gyroskop_s,", sizeof("gyroskop_s,")-1)==0){		// gyroskop_s
@@ -248,6 +258,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  gyroskop_s = tmp;
+		  setGyroskopPWM(gyroskop_s);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "servo_s,", sizeof("servo_s,")-1)==0){		// servo_s
@@ -255,6 +266,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  servo_s = tmp;
+		  setServoPWM(servo_s);
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "letter,", sizeof("letter,")-1)==0){		// letter
@@ -262,6 +274,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  res = UTIL1_xatoi(&p, &tmp);
 	  if(res==ERR_OK){
 		  letter = tmp;
+		  setLetter(letter);
 		  *handled = TRUE;
 	  }
 	  // bestätigen
@@ -284,8 +297,11 @@ uint8_t initAllDevices(void){
 	}
 	//BT Init
 	BT1_Init();
-	BT1_btSetDeviceName((byte*)"T37");
-	BT1_btSetBaud(9600);
+	err = BT1_btSetDeviceName((byte*)"T37");
+	err = BT1_btSetBaud(9600);
+	err = BT1_StdOKCmd("AT+NAME T37\r\n");
+	err = BT1_StdOKCmd("ENTER");
+	//\todo 
 	
 	
 		/* \todo scaling
@@ -306,18 +322,6 @@ uint8_t initAllDevices(void){
 				vTaskDelay(pdMS_TO_TICKS(300));
 		  }
 		  */
-		
-	// Gyro Init
-	err = L3Ginit();
-	while (err != ERR_OK) {
-		err = L3Ginit();
-	setErrorState(err, "L3Ginit in comunication");
-	}
-	err = calculateOffset();
-	while (err != ERR_OK) {
-		err = calculateOffset();
-	setErrorState(err, "calculateOffset in comunication");
-	}
 		
 	// Start GyroTask
 	CreateGyroTask();
@@ -406,6 +410,16 @@ void sendStatusBT(void){
 	CLS1_SendStr((uint8_t*)"\n", BT_stdio.stdOut);
 }
 
+void sendTestStatus(void){
+	// gyro_g
+	CLS1_SendNum16s(gyro_g, CLS1_GetStdio()->stdOut);
+	CLS1_SendStr((uint8_t*)",", CLS1_GetStdio()->stdOut);
+	// gyro_n
+	CLS1_SendNum16s(gyro_n, CLS1_GetStdio()->stdOut);
+	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+}
+
 void setErrorState(uint8_t err, char* description){
 	errState = err;
 }
+

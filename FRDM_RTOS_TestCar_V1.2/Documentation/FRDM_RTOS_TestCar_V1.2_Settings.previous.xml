@@ -753,7 +753,7 @@ PE_DEBUGHALT();
         <Interrupt_TxD_priority v="medium priority" />
         <Interrupt_Error v="INT_UART0" />
         <Interrupt_Error_priority v="medium priority" />
-        <Input_buffer_size v="32" />
+        <Input_buffer_size v="64" />
         <Output_buffer_size v="128" />
         <group name="Handshake">
           <boolgroup name="CTS" v="Disabled" />
@@ -2545,7 +2545,7 @@ PE_DEBUGHALT();
     <Properties>
       <Component_name v="BT1" />
       <Firmware v="HC05" />
-      <Response_timeout__ms_ v="650" />
+      <Response_timeout__ms_ v="850" />
       <boolgroup name="CMD Pin" v="Disabled" />
       <boolgroup name="State Pin" v="Enabled">
         <inhrbean type="BitIO">

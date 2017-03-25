@@ -21,10 +21,12 @@ void readGyro(void);
 uint8_t initAllDevices(void);
 void sendStatus(void);
 void readValues(void);
-uint8_t getState();
+uint8_t getState(void);
 void setState(uint8_t newState);
 void sendStatusBT(void);
 void setErrorState(uint8_t err, char* description);
+void sendTestStatus(void);
+
 
 
 

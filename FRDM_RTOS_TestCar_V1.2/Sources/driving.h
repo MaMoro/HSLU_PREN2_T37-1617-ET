@@ -14,14 +14,19 @@
  * @param [in] startupTime time from 0 to speed
  * @param [in] frontdistance drive until this range is detected
  */
-void driveToStair(int8_t speed, uint8_t optRange, uint16_t frontdistance);
-void driveOverStair(int8_t speed, uint8_t optRange);
+void driveToStair(void);
+void driveOverStair(void);
 void initDriving(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG, bool isLeftParcour);
-void driveToTurningPlace(int8_t speed, uint8_t optRange);
-void driveThroughtTurningPlace(uint8_t speed, uint8_t optRange, uint8_t frontdistance);
-void driveToEndZone(int8_t speed, uint8_t optRange, uint8_t frontdistance);
-void pushTheButton(uint8_t number, uint8_t fronddistance);
+void driveToTurningPlace(void);
+void driveThroughtTurningPlace(void);
+void driveToEndZone(void);
+void pushTheButton(void);
 uint8_t regulateMotor(int8_t speed, uint8_t optRange,int16_t optAngel);
-
+void setDistanceSide(int16_t value);
+void setDistanceFront(int16_t value);
+void setSpeed(int8_t value);
+void setGyroskopPWM(uint8_t value);
+void setLetter(uint8_t value);
+void setServoPWM(uint8_t value);
 
 #endif /* DRIVING_H_ */

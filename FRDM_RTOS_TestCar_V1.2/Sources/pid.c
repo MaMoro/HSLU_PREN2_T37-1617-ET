@@ -82,7 +82,10 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	pid[device].devOld = pid[device].dev;
 	pid[device].dev = optValue - value;
 	if(kI != 0){
-		pid[device].integ += value;
+		pid[device].integ += value/8;
+		if(value == 0){
+			pid[device].integ = 0;
+		}
 	}
 	
 	correction = kP*pid[device].dev + kD*(pid[device].dev-pid[device].devOld) + kI*pid[device].integ;

@@ -39,7 +39,7 @@
 #define NBROFFSET 200
 
 #if(FULLSCALE == 250)
-#define SENSITIVITY (19000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
+#define SENSITIVITY (18000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
 #endif
 #if(FULLSCALE == 500)
 #define SENSITIVITY (2000/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
@@ -80,17 +80,32 @@ the registers it writes to.
 */
 uint8_t L3GenableDefault(void)
 {
-  if (device == device_D20H)
-  {
-    // 0x00 = 0b00000000
-    // Low_ODR = 0 (low speed ODR disabled)
-    res = L3GwriteReg(LOW_ODR, 0x00);
-    if(res != ERR_OK){
-    	return res;
-    }
+  
+	// put in default mode for program it
+	res = L3GwriteReg(CTRL_REG1, 0x07);
+	if (res != ERR_OK) {
+		return res;
+	}
+  
+  // 0x24 = 0b0010 0100	-> cut off 0.9Hz
+  // 0x21 = 0b0010 0001 -> cut off 7.2Hz
+  // 0x20 = 0b0010 0000	-> cut off 13.5Hz
+  // 0x07 = 0b0000 0111 -> cut off 0.09Hz
+  // 0x10 =	0b0001 0000
+  //High pass filter: Normal Mode/  cut off 0.9Hz
+  res = L3GwriteReg(CTRL_REG2, 0x10);
+  if(res != ERR_OK){
+  	return res;
   }
   
-
+  // 0b0000 0010 = 0x02
+  // I2C_FIFO overrun interrupt on DRDY/INT2 enable
+  res = L3GwriteReg(CTRL_REG3, 0x00);
+  if(res != ERR_OK){
+  	return res;
+  }
+  
+  
 #if(FULLSCALE == 250)
   // 0x00 = 0b00000000
   // FS = 00 (+/- 250 dps full scale)
@@ -115,44 +130,50 @@ uint8_t L3GenableDefault(void)
   	return res;
   }
 #endif
+
+  
+
+  
+  //0x40 = 0b01000000	Fifo enabled
+  //0x50 = 0b01010001	Fifo and hipass filter enabled
+  //
+  // FIFO enable
+  res = L3GwriteReg(CTRL_REG5, 0x00);
+  if(res != ERR_OK){
+  	return res;
+  }
+  
+  //0x20 = 0b0010 0000	Fifo mode
+  //0x40 = 0b0100 0000	Stream mode
+  // first Bypass than to Stream mode
+  res = L3GwriteReg(FIFO_CTRL_REG, 0x00);
+  if(res != ERR_OK){
+  	return res;
+  }
+  vTaskDelay(pdMS_TO_TICKS(2));
+  res = L3GwriteReg(FIFO_CTRL_REG, 0x40);
+  if(res != ERR_OK){
+  	return res;
+  }
+
+  //0x40 = 0b01000000	Fifo enabled
+  //0x50 = 0b01010001	Fifo and hipass filter enabled
+  //
+  // FIFO enable
+  res = L3GwriteReg(CTRL_REG5, 0x53);
+  if(res != ERR_OK){
+  	return res;
+  }
+  
   // 0x6F = 0b01101111
   // DR = 01 (190 Hz ODR); BW = 10 (50 Hz bandwidth); PD = 1 (normal mode); Zen = Yen = Xen = 1 (all axes enabled)
+  // 0x37 = 0b0011 0111 x,y,z enable, odr95, cutoff25
   res = L3GwriteReg(CTRL_REG1, 0x6F);
   if(res != ERR_OK){
   	return res;
   }
   
-  // 0b0000 0010 = 0x02
-  // I2C_FIFO overrun interrupt on DRDY/INT2 enable
-  res = L3GwriteReg(CTRL_REG3, 0x02);
-  if(res != ERR_OK){
-  	return res;
-  }
-  
-  //0x40 = 0b01000000
-  // FIFO enable
-  res = L3GwriteReg(CTRL_REG5, 0x40);
-  if(res != ERR_OK){
-  	return res;
-  }
-  
-  //0xE0 = 0b11100000
-  // FIFO Stream mode
-  res = L3GwriteReg(FIFO_CTRL_REG, 0xE0);
-  if(res != ERR_OK){
-  	return res;
-  }
-  
-  // 0x24 = 0b0010 0100	-> cut off 0.9Hz
-  // 0x21 = 0b0010 0001 -> cut off 7.2Hz
-  // 0x20 = 0b0010 0000	-> cut off 13.5Hz
-  // 0x07 = 0b0000 0111 -> cut off 0.09Hz
-  // 0x10 =	0b0001 0000
-  //High pass filter: Normal Mode/  cut off 0.9Hz
-  res = L3GwriteReg(CTRL_REG2, 0x10);
-  if(res != ERR_OK){
-  	return res;
-  }
+
   return ERR_OK;
 }
 
@@ -179,7 +200,7 @@ uint8_t L3GreadReg(uint8_t reg, uint8_t nbrOfBytes, uint8_t* value)
  * Read all three axes of the gyro and write it in the gyro struct
  * returns ERR_OK if all went good, else error
  */
-uint8_t L3Greadxyz(void)
+uint8_t L3Greadxyz(uint8_t normalMode)
 {
  uint8_t value[6];
  uint8_t i;
@@ -200,9 +221,11 @@ uint8_t L3Greadxyz(void)
   gyro.y += gyro.vY;
   gyro.z += gyro.vZ;
   
+  if(normalMode){
 #if MMA1
   combineAccel();
-#endif  
+#endif 
+  }
   return ERR_OK;
 }
 
@@ -214,7 +237,6 @@ uint8_t L3Gread(char dim){
 	uint8_t value[2];
 	uint8_t i;
 	uint8_t reg;
-	 
 	switch(dim){
 	case 'x':;
 	case 'X': reg = OUT_X_L;
@@ -230,7 +252,6 @@ uint8_t L3Gread(char dim){
 	}
 	for(i=0; i<2; i++){
 		res = L3GreadReg((reg+i), 1, &value[i]);
-		//WAIT1_WaitOSms(1);		//10ms-> no error
 		 if(res!=ERR_OK){
 			 return res;
 		 }
@@ -305,8 +326,13 @@ uint8_t calculateOffset(void){
 	uint8_t errCount = 0;
 	uint8_t err;
 	res = ERR_OK;
+	// warming up the sensor
+	for(i=0;i<400; i++){
+		L3Greadxyz(0);
+		vTaskDelay(pdMS_TO_TICKS(5));
+	}
 	for(i=0;i<NBROFFSET;i++){
-		res = L3Greadxyz();
+		res = L3Greadxyz(0);
 		if (res != ERR_OK) {
 			vX[i]=0;
 			vY[i]=0;
@@ -445,4 +471,58 @@ void combineAccel(void){
 	  accelCounter++;
 }
 #endif
+
+uint8_t L3GisDataAvailable(char dim){
+	uint8_t reg;
+	L3GreadReg(STATUS_REG, 1, &reg);
+	switch(dim){
+	case 'x':;
+	case 'X': reg = reg & 0x01;
+			return reg;
+			break;
+	case 'y':;
+	case 'Y': reg = (reg & 0x02)>>1;
+			return reg;
+			break;
+	case 'z':;
+	case 'Z': reg = (reg & 0x04)>>2;
+			return reg;
+			break;
+	default: return ERR_RANGE;
+	}
+}
+uint8_t L3GFIFOdataLevel(void){
+	uint8_t reg;
+	L3GreadReg(FIFO_SRC_REG, 1, &reg);
+	return(reg & 0x1E)>>1;
+}
+
+uint8_t L3GFIFOfull(void){
+	uint8_t reg;
+	L3GreadReg(FIFO_SRC_REG, 1, &reg);
+	return(reg & 0x40)>>6;
+}
+
+uint8_t L3GFIFOEmpty(void){
+	uint8_t reg;
+	L3GreadReg(FIFO_SRC_REG, 1, &reg);
+	return (reg & 0x20)>>5;
+}
+
+uint8_t L3GdataReady(char dim){
+	uint8_t reg;
+	reg = L3GreadReg(STATUS_REG, 1, &reg);
+	switch(dim){
+	case 'x':;
+	case 'X': return (reg & 0x01);
+	break;
+	case 'y':;
+	case 'Y': return (reg & 0x02)>>1;
+	break;
+	case 'z':;
+	case 'Z': return (reg & 0x04)>>2;
+	break;
+	default: return ERR_RANGE;
+	}
+}
 
