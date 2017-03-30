@@ -58,7 +58,7 @@ static portTASK_FUNCTION(DrivingTask, pvParameters) {
 
 	driveToTurningPlace();
 
-	driveThroughtTurningPlace();
+	driveThroughTurningPlace();
 
 	driveToEndZone();
 
@@ -77,12 +77,12 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 (void) pvParameters;
 
 	int8_t res;
-	uint8_t timeout = 100;
+	uint8_t timeout = 20;
 	uint8_t i;
 	uint8_t isfull;
-	uint8_t dataLevel;
-
+	uint8_t dataLevel, dataLevel1;
 	// Gyro Init
+	RED_Put(1);
 	res = L3Ginit();
 	while (res != ERR_OK) {
 		res = L3Ginit();
@@ -93,28 +93,19 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 		res = calculateOffset();
 		setErrorState(res, "calculateOffset in comunication");
 	}
+	RED_Put(0);
+	
 	for (;;) {
 		//read the gyro{
-		dataLevel = L3GFIFOdataLevel();
 		isfull = L3GFIFOfull();
 		if(isfull){
-			if(timeout>0){
-			timeout--;
-			}
+			setErrorState(ERR_OVERRUN, "GyroTask");
 		}
-		else{
-			timeout++;
+		dataLevel = L3GFIFOdataLevel();
+		for(i=0;i<dataLevel;i++){
+			L3Greadxyz(1);
 		}
-		for(i=0;i<32;i++){
-			res = L3Gread('x');
-			if (res != ERR_OK) {
-				setErrorState(res, "GyroTask");
-			}
-			res = L3Gread('z');
-			if (res != ERR_OK) {
-				setErrorState(res, "GyroTask");
-			}
-		}
+		dataLevel1 = L3GFIFOdataLevel();
 		vTaskDelay(pdMS_TO_TICKS(timeout));
 	}
 	/* Destroy the task */
@@ -127,7 +118,7 @@ void CreateTasks(void) {
 	  "Task1", /* task name for kernel awareness debugging */
 	  configMINIMAL_STACK_SIZE + 400, /* task stack size */
 	  (void*)NULL, /* optional task startup argument */
-	  tskIDLE_PRIORITY + 4,  /* initial priority */
+	  tskIDLE_PRIORITY + 3,  /* initial priority */
 	  (xTaskHandle*)NULL /* optional task handle to create */
 	) != pdPASS) {
 	  /*lint -e527 */
@@ -143,7 +134,7 @@ void CreateDrivingTask(void){
 		  "Task2", /* task name for kernel awareness debugging */
 		  configMINIMAL_STACK_SIZE + 800, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 5,  /* initial priority */
+		  tskIDLE_PRIORITY + 4,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */
@@ -162,7 +153,7 @@ void CreateGyroTask(void){
 		  "Gyro", /* task name for kernel awareness debugging */
 		  configMINIMAL_STACK_SIZE + 200, /* task stack size */
 		  (void*)NULL, /* optional task startup argument */
-		  tskIDLE_PRIORITY + 6,  /* initial priority */
+		  tskIDLE_PRIORITY + 5,  /* initial priority */
 		  (xTaskHandle*)NULL /* optional task handle to create */
 		) != pdPASS) {
 		  /*lint -e527 */

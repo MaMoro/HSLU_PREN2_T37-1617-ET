@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include "CLS1.h"
 
+#define RXBUFSIZE 48
+
 
 static const CLS1_ParseCommandCallback CmdParserTable[];
 
@@ -18,7 +20,7 @@ static const CLS1_ParseCommandCallback CmdParserTable[];
 void startCommunication(void);
 
 void readGyro(void);
-uint8_t initAllDevices(void);
+uint8_t initAllSensors(void);
 void sendStatus(void);
 void readValues(void);
 uint8_t getState(void);

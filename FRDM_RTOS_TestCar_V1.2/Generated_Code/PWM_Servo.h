@@ -6,7 +6,7 @@
 **     Component   : PWM
 **     Version     : Component 02.240, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-07, 19:23, # CodeGen: 40
+**     Date/Time   : 2017-03-29, 11:37, # CodeGen: 156
 **     Abstract    :
 **         This component implements a pulse-width modulation generator
 **         that generates signal with variable duty and fixed cycle. 
@@ -44,9 +44,9 @@
 **           Initial value of            period     pulse width
 **             Xtal ticks              : ---        ---
 **             microseconds            : ---        ---
-**             milliseconds            : 50         0
+**             milliseconds            : 20         0
 **             seconds                 : ---        ---
-**             seconds (real)          : 50.001526  0
+**             seconds (real)          : 20         0
 **
 **     Contents    :
 **         SetRatio16 - byte PWM_Servo_SetRatio16(word Ratio);
@@ -176,7 +176,7 @@ extern "C" {
 **     Parameters  :
 **         NAME            - DESCRIPTION
 **         Time            - Duty to set [in milliseconds]
-**                      (0 to 50 ms in high speed mode)
+**                      (0 to 20 ms in high speed mode)
 **     Returns     :
 **         ---             - Error code, possible codes:
 **                           ERR_OK - OK

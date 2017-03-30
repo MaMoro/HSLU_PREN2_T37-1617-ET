@@ -21,7 +21,7 @@ by the component.
     0x04000000
  </td><td>SIM_SCGC6 register, peripheral PwmLdd1.</td></tr>
 <tr><td>0x4003A000</td><td>TPM2_SC</td><td>
-    0x00000008
+    0x0000000A
  </td><td>TPM2_SC register, peripheral PwmLdd1.</td></tr>
 <tr><td>0x4003A004</td><td>TPM2_CNT</td><td>
     0x00000000
@@ -159,7 +159,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003A000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000008</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000A</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>8</td><td>DMA</td><td>0x00</td><td>DMA Enable</td>
@@ -598,7 +598,7 @@ registers of the peripheral(s) configured by the component.
 **          Output pin signal                              : 
 **          Counter                                        : TPM2_CNT
 **          Interrupt service/event                        : Disabled
-**          Period                                         : 3.125 ms
+**          Period                                         : 10 ms
 **          Starting pulse width                           : 0 µs
 **          Initial polarity                               : low
 **          Initialization                                 : 

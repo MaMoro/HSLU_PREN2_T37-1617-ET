@@ -12,7 +12,7 @@
 
 #define MOTOR_OFFSET	0
 #define MODULO          (0xFFFF-1)
-#define DUALMOTORDRIVER 0			// put 1 if dualmotordriver with 2 IO Pins for direction is used
+#define DUALMOTORDRIVER 1			// put 1 if dualmotordriver with 2 IO Pins for direction is used
 
 #if DUALMOTORDRIVER
 #include "DIR_LEFT1.h"

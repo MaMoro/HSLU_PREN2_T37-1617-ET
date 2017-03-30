@@ -19,8 +19,7 @@
 #include "BT1.h"
 
 
-#define PI 3.14159265
-#define RXBUFSIZE 48
+
 
 static bool courseSet = 0;
 
@@ -50,8 +49,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 7, kiT = 0, kdT = 0;
-static uint8_t kpG = 12, kiG = 1, kdG = 5;
+static uint8_t kpT = 6, kiT = 0, kdT = 1;		// 7, 0, 1
+static uint8_t kpG = 10, kiG = 1, kdG = 3;		// 12, 1, 1
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -71,15 +70,18 @@ static CLS1_ConstStdIOType BT_stdio = {
 };
 
 
-
+// Communication Task
 void startCommunication(void){
 	unsigned char RXbuffer[RXBUFSIZE];
 	unsigned char RXbufferBT[RXBUFSIZE];
 	RXbufferBT[0] = '\0';
 	RXbuffer[0] = '\0';
 
-	//Init devices
-	errState = initAllDevices();
+	//Init sensors
+	errState = initAllSensors();
+	
+	// Start GyroTask
+	CreateGyroTask();
 	
 	//Say hello to Raspberry Pi
 	while(!hello){
@@ -109,13 +111,14 @@ void startCommunication(void){
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 	LED_GREEN_Put(0);
-	L3GSetAngel('x', 0);
-	L3GSetAngel('z', 0);
+	
+	L3GSetAngel(GEAR, 0);
+	L3GSetAngel(NICK, 0);
 	CreateDrivingTask();
 	
 	//Loop
 	for(;;){
-		
+		// Parse the commands
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
 		readValues();
@@ -123,30 +126,32 @@ void startCommunication(void){
 		sendStatusBT();
 		sendTestStatus();
 		
-		vTaskDelay(pdMS_TO_TICKS(300));
+		//vTaskDelay(pdMS_TO_TICKS(300));
 	}
 }
-
+/*
+ * Set the status of the Parcours
+ * @param newState new state whitch is set;
+ */
 void setState(uint8_t newState){
 	state = newState;
 }
 
+/*
+ * Get the state of the Parcours
+ * @return ParcourState
+ */
 uint8_t getState(void){
 	return state;
 }
 
-/* Comunication values
-static bool start = FALSE;		// startbefehl
-static bool course = NULL;		// fahrbanwahl
-static uint16_t tof_l_s = 0;	// tof_links_sollwert
-static uint16_t tof_r_s = 0;	// tof_rechts_sollwert
-static uint16_t tof_f_s = 0;	// tof_front_sollwert
-static int8_t 	raupe_i_l = 0;	// raupe ist links
-static int8_t	raupe_i_r = 0;	// raupe ist rechts
-static uint8_t	gyroskop_s = 0; // gyroskop soll
-static uint8_t	servo_s = 0;	// servo soll
-static uint8_t	letter = 0;		// buchstabe
-*/
+/*
+ * ParseTable for Comunication
+ * @param cmd pointer to the Comand
+ * @param handled pointer to the boolen if the comand is handled or not
+ * @param io pointer to the stdioType
+ * @return error State
+ */
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io) {
   uint8_t res = ERR_OK;
   int32_t tmp;
@@ -259,6 +264,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  if(res==ERR_OK){
 		  gyroskop_s = tmp;
 		  setGyroskopPWM(gyroskop_s);
+		  gyroskop_i = gyroskop_s;
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "servo_s,", sizeof("servo_s,")-1)==0){		// servo_s
@@ -267,6 +273,7 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 	  if(res==ERR_OK){
 		  servo_s = tmp;
 		  setServoPWM(servo_s);
+		  servo_i = servo_s;
 		  *handled = TRUE;
 	  }
 }else if (UTIL1_strncmp((char*)cmd, "letter,", sizeof("letter,")-1)==0){		// letter
@@ -281,11 +288,67 @@ static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_
 		  CLS1_SendStr((uint8_t*)"letter,", CLS1_GetStdio()->stdOut);
 		  CLS1_SendNum8u(letter, CLS1_GetStdio()->stdOut);
 		  CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+}else if (UTIL1_strncmp((char*)cmd, "kpG,", sizeof("kpG,")-1)==0){		// kpG
+	  p = cmd+sizeof("kpG,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kpG = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}
+else if (UTIL1_strncmp((char*)cmd, "kiG,", sizeof("kiG,")-1)==0){		// kiG
+	  p = cmd+sizeof("kiG,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kiG = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}else if (UTIL1_strncmp((char*)cmd, "kdG,", sizeof("kdG,")-1)==0){		// kdG
+	  p = cmd+sizeof("kdG,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kdG = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}else if (UTIL1_strncmp((char*)cmd, "kpT,", sizeof("kpT,")-1)==0){		// kpT
+	  p = cmd+sizeof("kpT,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kpT = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}else if (UTIL1_strncmp((char*)cmd, "kiT,", sizeof("kiT,")-1)==0){		// kiT
+	  p = cmd+sizeof("kiT,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kiT = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}else if (UTIL1_strncmp((char*)cmd, "kdT,", sizeof("kdT,")-1)==0){		// kdT
+	  p = cmd+sizeof("kdT,")-1;
+	  res = UTIL1_xatoi(&p, &tmp);
+	  if(res==ERR_OK){
+		  kdT = tmp;
+		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
+		  *handled = TRUE;
+	  }
+}else if (UTIL1_strncmp((char*)cmd, "stop", sizeof("stop")-1)==0){		// stop
+	stopDriving();
+	*handled = TRUE;
 }
   return res;
 }
 
-uint8_t initAllDevices(void){
+/*
+ * Init the devices for the DrivingTask
+ * @return errorState
+ */
+uint8_t initAllSensors(void){
 	uint8_t err = ERR_OK;
 	RED_Put(1);
 	TMOUT1_Init();
@@ -295,36 +358,14 @@ uint8_t initAllDevices(void){
 		err = VL_Init();
 	setErrorState(err, "VL_init in comunication");
 	}
+	
 	//BT Init
 	BT1_Init();
 	err = BT1_btSetDeviceName((byte*)"T37");
 	err = BT1_btSetBaud(9600);
-	err = BT1_StdOKCmd("AT+NAME T37\r\n");
-	err = BT1_StdOKCmd("ENTER");
-	//\todo 
-	
-	
-		/* \todo scaling
-		// Set scaling of ToF Frong to 2
-		  res = VL6180XsetScaling(1, TOFFRONT);
-		  if(res != ERR_OK){
-		      CLS1_SendStr("ERROR: Failed scaling of TOF device: ", CLS1_GetStdio()->stdErr);
-		      CLS1_SendNum8u(TOFFRONT, CLS1_GetStdio()->stdErr);
-		      CLS1_SendStr("\r\n", CLS1_GetStdio()->stdErr);
-		  }
-		  int16_t range;
-		  for(;;){
-			  VL_GetDistance(TOFFRONT, &range);
-				FRTOS1_taskENTER_CRITICAL();
-				CLS1_SendNum16s(range, CLS1_GetStdio()->stdOut);
-				CLS1_SendStr((uint8_t*)"\n\r", CLS1_GetStdio()->stdOut);
-				FRTOS1_taskEXIT_CRITICAL();
-				vTaskDelay(pdMS_TO_TICKS(300));
-		  }
-		  */
-		
-	// Start GyroTask
-	CreateGyroTask();
+	err = BT1_StdOKCmd((byte*)"AT+NAME T37\r\n");
+	err = BT1_StdOKCmd((byte*)"ENTER");
+	//\todo BT init doesn't work
 
 	//Accel init
 	err = MMA1_Enable();
@@ -340,14 +381,13 @@ uint8_t initAllDevices(void){
 	MMA1_CalibrateX1g();
 	MMA1_CalibrateY1g();
 	MMA1_CalibrateZ1g();
-
+	
 	RED_Put(0);
-
 	return err;
 }
 
 /*
- * 
+ * Send the Informations about the Driving values to the Raspberry PI
  */
 void sendStatus(void){
 	CLS1_SendStr((uint8_t*)"tof_l_i,", CLS1_GetStdio()->stdOut);		// tof_l_i
@@ -388,19 +428,22 @@ void sendStatus(void){
 	}
 }
 
+/*
+ * Read all values for Comunication
+ */
 void readValues(void){
 	tof_l_i = VL_GetLastDistance(TOFLEFT);
 	tof_r_i = VL_GetLastDistance(TOFRIGHT);
 	tof_f_i = VL_GetLastDistance(TOFFRONT);
 	raupe_l_i = (int8_t)motorGetPWMLeft();
 	raupe_r_i = (int8_t)motorGetPWMRight();
-	L3GgetDegree('x', &gyro_g);
-	L3GgetDegree('z', &gyro_n);
-	// \todo gyroskop_i =....
-	// \todo servo_i = ...
-	
+	L3GgetDegree(GEAR, &gyro_g);
+	L3GgetDegree(NICK, &gyro_n);	
 }
 
+/*
+ * Send status to the Bluetooth for the SerialChart (just for debugging purposes)
+ */
 void sendStatusBT(void){
 	// gyro_g
 	CLS1_SendNum16s(gyro_g, BT_stdio.stdOut);
@@ -410,6 +453,9 @@ void sendStatusBT(void){
 	CLS1_SendStr((uint8_t*)"\n", BT_stdio.stdOut);
 }
 
+/*
+ * Send Test Status insteed of the Bluetooth (can be removed if Bluetooth is working)
+ */
 void sendTestStatus(void){
 	// gyro_g
 	CLS1_SendNum16s(gyro_g, CLS1_GetStdio()->stdOut);
@@ -419,6 +465,11 @@ void sendTestStatus(void){
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 }
 
+/*
+ * Set the error state if an error occured somewhere
+ * @param err errorState
+ * @param description of the error and where it occured
+ */
 void setErrorState(uint8_t err, char* description){
 	errState = err;
 }

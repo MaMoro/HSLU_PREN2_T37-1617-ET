@@ -18,6 +18,10 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
 #define TOFRIGHT 2
 #define GYRO 3
 
+#define NICK	'y'
+#define GEAR	'x'
+#define ROLL	'z'
+
 // register addresses
    enum L3GregAddr
    {

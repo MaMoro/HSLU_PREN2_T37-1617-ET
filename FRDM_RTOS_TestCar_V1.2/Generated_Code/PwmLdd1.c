@@ -6,7 +6,7 @@
 **     Component   : PWM_LDD
 **     Version     : Component 01.013, Driver 01.03, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-03-30, 23:20, # CodeGen: 164
 **     Abstract    :
 **          This component implements a pulse-width modulation generator
 **          that generates signal with variable duty and fixed cycle.
@@ -21,7 +21,7 @@
 **          Output pin signal                              : 
 **          Counter                                        : TPM2_CNT
 **          Interrupt service/event                        : Disabled
-**          Period                                         : 3.125 ms
+**          Period                                         : 10 ms
 **          Starting pulse width                           : 0 µs
 **          Initial polarity                               : low
 **          Initialization                                 : 
@@ -148,7 +148,7 @@ LDD_TDeviceData* PwmLdd1_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   DeviceDataPrv->EnUser = TRUE;        /* Set the flag "device enabled" */
-  DeviceDataPrv->RatioStore = 0x01U;   /* Ratio after initialization */
+  DeviceDataPrv->RatioStore = 0x00U;   /* Ratio after initialization */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_PwmLdd1_ID,DeviceDataPrv);
   DeviceDataPrv->LinkedDeviceDataPtr = TU1_Init((LDD_TUserData *)NULL);
@@ -229,10 +229,10 @@ LDD_TError PwmLdd1_SetDutyUS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time)
 
   /* Time test - this test can be disabled by setting the "Ignore range checking"
      property to the "yes" value in the "Configuration inspector" */
-  if (Time > 0x0C35U) {                /* Is the given value out of range? */
+  if (Time > 0x2710U) {                /* Is the given value out of range? */
     return ERR_PARAM_RANGE;            /* If yes then error */
   }
-  rtval = Time * 20.97152F;            /* Multiply given value and actual clock configuration coefficient */
+  rtval = Time * 6.553575000095F;      /* Multiply given value and actual clock configuration coefficient */
   if (rtval > 0xFFFFUL) {              /* Is the result greater than 65535 ? */
     DeviceDataPrv->RatioStore = 0xFFFFU; /* If yes then use maximal possible value */
   }
@@ -275,10 +275,10 @@ LDD_TError PwmLdd1_SetDutyMS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time)
 
   /* Time test - this test can be disabled by setting the "Ignore range checking"
      property to the "yes" value in the "Configuration inspector" */
-  if (Time > 0x03U) {                  /* Is the given value out of range? */
+  if (Time > 0x0AU) {                  /* Is the given value out of range? */
     return ERR_PARAM_RANGE;            /* If yes then error */
   }
-  rtval = Time * 20971.52F;            /* Multiply given value and actual clock configuration coefficient */
+  rtval = Time * 6553.575000077448F;   /* Multiply given value and actual clock configuration coefficient */
   if (rtval > 0xFFFFUL) {              /* Is the result greater than 65535 ? */
     DeviceDataPrv->RatioStore = 0xFFFFU; /* If yes then use maximal possible value */
   }

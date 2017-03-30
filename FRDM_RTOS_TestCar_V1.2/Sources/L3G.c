@@ -14,6 +14,7 @@
 // Defines ////////////////////////////////////////////////////////////////
 #define PI 3.14159265
 #define MMA1 1
+#define ODR 95		// ODR: 95 / 190 / ...
 
 #if MMA1
 	#include "MMA1.h"
@@ -39,13 +40,13 @@
 #define NBROFFSET 200
 
 #if(FULLSCALE == 250)
-#define SENSITIVITY (18000/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
+#define SENSITIVITY (ODR*100/875)		//default (20000/875) Sensitivity is 8.75mdps/digit [millidegreePerS/digit] at 250dps		875/100		(200: abtastrate * 100/875)
 #endif
 #if(FULLSCALE == 500)
-#define SENSITIVITY (2000/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
+#define SENSITIVITY (ODR*10/175)		//default (2000/175) Sensitivity is 17.5mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/17.5 = 2000/175
 #endif
 #if(FULLSCALE == 2000)
-#define SENSITIVITY (20/7)			// Sensitivity is 70mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/70 = 10/7
+#define SENSITIVITY (ODR/70)			// Sensitivity is 70mdps/digit -> frequency 200Hz -> 1/Sensitivity = 200/70 = 10/7
 #endif
 
 static deviceType_t device;
@@ -73,33 +74,34 @@ uint8_t L3Ginit(void){
 /*
 Enables the L3G's gyro. Also:
 - Sets gyro full scale (gain) to default power-on value of defined for FULLSCALE
-- Selects 200 Hz ODR (output data rate). (Exact rate is specified as 189.4 Hz
-  for L3GD20H and 190 Hz for L3GD20.)
+- Selects 200 Hz ODR (output data rate). (Exact rate is specified as 190 Hz for L3GD20.)
 Note that this function will also reset other settings controlled by
 the registers it writes to.
 */
 uint8_t L3GenableDefault(void)
 {
   
-	// put in default mode for program it
+	// put in default mode for programming it
 	res = L3GwriteReg(CTRL_REG1, 0x07);
 	if (res != ERR_OK) {
 		return res;
 	}
   
-  // 0x24 = 0b0010 0100	-> cut off 0.9Hz
-  // 0x21 = 0b0010 0001 -> cut off 7.2Hz
-  // 0x20 = 0b0010 0000	-> cut off 13.5Hz
-  // 0x07 = 0b0000 0111 -> cut off 0.09Hz
-  // 0x10 =	0b0001 0000
-  //High pass filter: Normal Mode/  cut off 0.9Hz
-  res = L3GwriteReg(CTRL_REG2, 0x10);
+  // 0x24 = 0b0010 0100	-> cut off 0.9Hz, normal mode
+  // 0x21 = 0b0010 0001 -> cut off 7.2Hz, normal mode
+  // 0x20 = 0b0010 0000	-> cut off 13.5Hz, normal mode
+  // 0x07 = 0b0000 0111 -> cut off 0.09Hz, normal mode (reset reading)
+  // 0x10 =	0b0001 0000 -> cut off 13.5Hz, reference Signal for filtering
+  // 0x14 = 0b0001 0100 -> cut off 0.9Hz, reference Signal for filtering
+  //High pass filter: reference signal for filtering/  cut off 0.9Hz
+  res = L3GwriteReg(CTRL_REG2, 0x14);
   if(res != ERR_OK){
   	return res;
   }
   
   // 0b0000 0010 = 0x02
-  // I2C_FIFO overrun interrupt on DRDY/INT2 enable
+  // 0b0000 0000 = 0x00
+  // no interrupt enabled
   res = L3GwriteReg(CTRL_REG3, 0x00);
   if(res != ERR_OK){
   	return res;
@@ -108,7 +110,7 @@ uint8_t L3GenableDefault(void)
   
 #if(FULLSCALE == 250)
   // 0x00 = 0b00000000
-  // FS = 00 (+/- 250 dps full scale)
+  // FS = 00 (+/- 250 dps full scale), no interrupt enabled
   res = L3GwriteReg(CTRL_REG4, 0x00);
   if(res != ERR_OK){
   	return res;
@@ -116,7 +118,7 @@ uint8_t L3GenableDefault(void)
 #endif
 #if(FULLSCALE == 500)
   // 0x10 = 0b00010000
-  // FS = 00 (+/- 250 dps full scale)
+  // FS = 00 (+/- 500 dps full scale), no interrupt enabled
   res = L3GwriteReg(CTRL_REG4, 0x10);
   if(res != ERR_OK){
   	return res;
@@ -124,7 +126,7 @@ uint8_t L3GenableDefault(void)
 #endif
 #if(FULLSCALE == 2000)
   // 0x20 = 0b00100000
-  // FS = 00 (+/- 250 dps full scale)
+  // FS = 00 (+/- 2000 dps full scale), no interrupt enabled
   res = L3GwriteReg(CTRL_REG4, 0x20);
   if(res != ERR_OK){
   	return res;
@@ -136,9 +138,9 @@ uint8_t L3GenableDefault(void)
   
   //0x40 = 0b01000000	Fifo enabled
   //0x50 = 0b01010001	Fifo and hipass filter enabled
-  //
+  //0x53 = 0b01010011	Fifo and highpass filter enabled, outSel from lowpass filter (LPF2)
   // FIFO enable
-  res = L3GwriteReg(CTRL_REG5, 0x00);
+  res = L3GwriteReg(CTRL_REG5, 0x53);
   if(res != ERR_OK){
   	return res;
   }
@@ -146,34 +148,37 @@ uint8_t L3GenableDefault(void)
   //0x20 = 0b0010 0000	Fifo mode
   //0x40 = 0b0100 0000	Stream mode
   // first Bypass than to Stream mode
-  res = L3GwriteReg(FIFO_CTRL_REG, 0x00);
-  if(res != ERR_OK){
-  	return res;
-  }
-  vTaskDelay(pdMS_TO_TICKS(2));
   res = L3GwriteReg(FIFO_CTRL_REG, 0x40);
   if(res != ERR_OK){
   	return res;
   }
 
-  //0x40 = 0b01000000	Fifo enabled
-  //0x50 = 0b01010001	Fifo and hipass filter enabled
-  //
-  // FIFO enable
-  res = L3GwriteReg(CTRL_REG5, 0x53);
+#if ODR == 95
+  // 0x3F = 0b0011 1111 => xyz enable , normalmode, ODR 95 Hz, 25Hz cut off
+  res = L3GwriteReg(CTRL_REG1, 0x3F);
   if(res != ERR_OK){
   	return res;
   }
+#endif
   
-  // 0x6F = 0b01101111
+#if ODR == 190
+  // 0x6F = 0b0110 1111
   // DR = 01 (190 Hz ODR); BW = 10 (50 Hz bandwidth); PD = 1 (normal mode); Zen = Yen = Xen = 1 (all axes enabled)
-  // 0x37 = 0b0011 0111 x,y,z enable, odr95, cutoff25
   res = L3GwriteReg(CTRL_REG1, 0x6F);
   if(res != ERR_OK){
   	return res;
   }
+#endif
   
-
+/*  uint8_t regTmp;
+  // read registers for debugging purposes
+  res = L3GreadReg(CTRL_REG1, 2, &regTmp);
+  res = L3GreadReg(CTRL_REG2, 2, &regTmp);
+  res = L3GreadReg(CTRL_REG3, 2, &regTmp);
+  res = L3GreadReg(CTRL_REG4, 2, &regTmp);
+  res = L3GreadReg(CTRL_REG5, 2, &regTmp);
+  res = L3GreadReg(FIFO_CTRL_REG, 2, &regTmp);*/
+  
   return ERR_OK;
 }
 
@@ -181,19 +186,13 @@ uint8_t L3GenableDefault(void)
 // Writes a gyro register
 uint8_t L3GwriteReg(uint8_t reg, uint8_t value)
 {
-	uint8_t tmp[2];
-	tmp[0] = reg;
-	tmp[1] = reg&0xff;
-	return GI2C1_WriteAddress(gyro.address, &tmp[0], sizeof(tmp), (uint8_t*)(&value), sizeof(value));
+	return GI2C1_WriteAddress(gyro.address, &reg, sizeof(reg), (uint8_t*)(&value), sizeof(value));
 }
 
 // Reads a gyro register
 uint8_t L3GreadReg(uint8_t reg, uint8_t nbrOfBytes, uint8_t* value)
 {
-	uint8_t tmp[2];
-	tmp[0] = reg;
-	tmp[1] = reg&0xff;
-	return GI2C1_ReadAddress(gyro.address, &tmp[0], sizeof(tmp), (uint8_t*)value, nbrOfBytes);
+	return GI2C1_ReadAddress(gyro.address, &reg, sizeof(reg), (uint8_t*)value, nbrOfBytes);
 }
 
 /*
@@ -206,12 +205,16 @@ uint8_t L3Greadxyz(uint8_t normalMode)
  uint8_t i;
  for(i=0; i<6; i++){
 	 res = L3GreadReg((OUT_X_L+i), 1, &value[i]);
-	 //WAIT1_WaitOSms(1);		//10ms-> no error??
 	 if(res!=ERR_OK){
 		 return res;
-	 }
-	 
+	 } 
  }
+ /*
+  res = L3GreadReg(OUT_X_L, sizeof(value), &value[0]);
+  //\todo test if it works
+   
+  */
+ 
   // combine high and low bytes
   gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
   gyro.vY = (int16_t)(value[3] << 8 | value[2])/SENSITIVITY-gyro.offsetY;
@@ -221,6 +224,25 @@ uint8_t L3Greadxyz(uint8_t normalMode)
   gyro.y += gyro.vY;
   gyro.z += gyro.vZ;
   
+  // Ring values
+	if(gyro.x > 180000){
+		gyro.x-=360000;
+	}else if(gyro.x < -180000){
+		gyro.x+=360000;
+	}
+	
+	if(gyro.y > 180000){
+		gyro.y-=360000;
+	}else if(gyro.y < -180000){
+		gyro.y+=360000;
+	}
+	
+	if(gyro.z > 180000){
+		gyro.z-=360000;
+	}else if(gyro.z < -180000){
+		gyro.z+=360000;
+	}
+	
   if(normalMode){
 #if MMA1
   combineAccel();
@@ -247,7 +269,7 @@ uint8_t L3Gread(char dim){
 	case 'z':;
 	case 'Z': reg = OUT_Z_L;
 	break;
-	default:; // error
+	default: return ERR_VALUE;
 	break;
 	}
 	for(i=0; i<2; i++){
@@ -255,29 +277,43 @@ uint8_t L3Gread(char dim){
 		 if(res!=ERR_OK){
 			 return res;
 		 }
-		 
 	}
 	// combine high and low bytes
 	switch(dim){
 	case 'x':;
 	case 'X': 	gyro.vX = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetX;
-				gyro.x += gyro.vX;  
+				gyro.x += gyro.vX; 
+				if(gyro.x > 180000){
+					gyro.x-=360000;
+				}else if(gyro.x < -180000){
+					gyro.x+=360000;
+				}
 	break;
 	case 'y':;
 	case 'Y': 	gyro.vY = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetY;
 				gyro.y += gyro.vY;
+				if(gyro.y > 180000){
+					gyro.y-=360000;
+				}else if(gyro.y < -180000){
+					gyro.y+=360000;
+				}
 	break;
 	case 'z':;
 	case 'Z': 	gyro.vZ = (int16_t)(value[1] << 8 | value[0])/SENSITIVITY-gyro.offsetZ;
 				gyro.z += gyro.vZ;
-				
-				#if MMA1
-					combineAccel();
-				#endif
-				 
+				if(gyro.z > 180000){
+					gyro.z-=360000;
+				}else if(gyro.z < -180000){
+					gyro.z+=360000;
+				}
 	break;
 	default:; // error
 	break;
+	}
+	if(dim == NICK){
+	#if MMA1
+		combineAccel();
+	#endif
 	}
 	return ERR_OK;
 }
@@ -297,13 +333,6 @@ int8_t L3GgetDegree(char dim, int16_t* value){
 	break;
 	default: ; // error
 	break;
-	}
-	if(*value>180){
-		*value-=360;
-		err = ERR_OVERFLOW; 
-	}else if(*value<=-180){
-		*value+=360;
-		err = ERR_OVERFLOW;
 	}
 	return err;
 }
@@ -326,11 +355,6 @@ uint8_t calculateOffset(void){
 	uint8_t errCount = 0;
 	uint8_t err;
 	res = ERR_OK;
-	// warming up the sensor
-	for(i=0;i<400; i++){
-		L3Greadxyz(0);
-		vTaskDelay(pdMS_TO_TICKS(5));
-	}
 	for(i=0;i<NBROFFSET;i++){
 		res = L3Greadxyz(0);
 		if (res != ERR_OK) {
@@ -344,8 +368,7 @@ uint8_t calculateOffset(void){
 		vY[i]=gyro.vY;
 		vZ[i]=gyro.vZ;
 		}
-		vTaskDelay(pdMS_TO_TICKS(5));
-
+		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 	if(errCount>=(NBROFFSET/10)){
 		return err;
@@ -452,20 +475,26 @@ void L3GSetAngel(char dim, int16_t value){
 
 #if MMA1
 void combineAccel(void){
-	   float xyzAccel[3];
-	   float pitch;
-	   static uint8_t accelCounter;
+	  static uint8_t accelCounter;
 	  
 	  if(accelCounter >=32){
+		  float xyzAccel[3];
+		  float nick;
 		  xyzAccel[1] = (float)MMA1_GetXmg()*PI/1000;
 		  xyzAccel[2] = (float)MMA1_GetYmg()*PI/1000;
 		  xyzAccel[3] = (float)MMA1_GetZmg()*PI/1000;
 		  
 		  //calc pitch in degree
-		  pitch = atan(xyzAccel[1]/sqrt(xyzAccel[2]*xyzAccel[2]+xyzAccel[3]*xyzAccel[3]))*180/PI; 
+		  nick = atan(xyzAccel[1]/sqrt(xyzAccel[2]*xyzAccel[2]+xyzAccel[3]*xyzAccel[3]))*180/PI; 
 		  
-		  // set new pitch to register
-		  gyro.z = gyro.z*0.95 + (int32_t)(pitch*50); 		// pitch*50 => pitch*1000*0.05;
+		  // set new nick to register
+		  if(NICK == 'z'){
+			  gyro.z = gyro.z*0.95 + (int32_t)(nick*50); 		// pitch*50 => pitch*1000mg/g*0.05;
+		  }else if(NICK == 'y'){
+			 gyro.y = gyro.y*0.95 + (int32)(nick*50);		// change to + if wrong direction
+		  }else if(NICK == 'x'){
+			  gyro.x = gyro.x *0.95 + (int32)(nick*50);
+		  }
 		  accelCounter = 0;
 	  }
 	  accelCounter++;
@@ -494,7 +523,7 @@ uint8_t L3GisDataAvailable(char dim){
 uint8_t L3GFIFOdataLevel(void){
 	uint8_t reg;
 	L3GreadReg(FIFO_SRC_REG, 1, &reg);
-	return(reg & 0x1E)>>1;
+	return(reg & 0x1F);
 }
 
 uint8_t L3GFIFOfull(void){

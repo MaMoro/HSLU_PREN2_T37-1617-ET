@@ -18,9 +18,14 @@
 #define PID_H
 
 #include "stdlib.h"
+#include "L3G.h"
+#include "FRTOS1.h"
+#include <math.h>
+#include "VL6180X.h"
 
 typedef struct {
 	int16_t dev, devOld, integ;
+	portTickType timecount;
 }pid_t;
 
 uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optValue, int16_t* corr);

@@ -21,7 +21,7 @@ by the component.
     0x05000000
  </td><td>SIM_SCGC6 register, peripheral PwmLdd3.</td></tr>
 <tr><td>0x40038000</td><td>TPM0_SC</td><td>
-    0x0000000C
+    0x0000000B
  </td><td>TPM0_SC register, peripheral PwmLdd3.</td></tr>
 <tr><td>0x40038004</td><td>TPM0_CNT</td><td>
     0x00000000
@@ -171,7 +171,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000C</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000B</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>8</td><td>DMA</td><td>0x00</td><td>DMA Enable</td>
@@ -179,7 +179,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>6</td><td>TOIE</td><td>0x00</td><td>Timer Overflow Interrupt Enable</td>
 <tr><td>5</td><td>CPWMS</td><td>0x00</td><td>Center-aligned PWM Select</td>
 <tr><td>3 - 4</td><td>CMOD</td><td>0x00</td><td>Clock Mode Selection</td>
-<tr><td>0 - 2</td><td>PS</td><td>0x04</td><td>Prescale Factor Selection</td>
+<tr><td>0 - 2</td><td>PS</td><td>0x00</td><td>Prescale Factor Selection</td>
 </tr></table>
 <div class="reghdr1">TPM0_CNT</div>
 <div class="regdiag">
@@ -842,7 +842,7 @@ registers of the peripheral(s) configured by the component.
 **          Output pin signal                              : 
 **          Counter                                        : TPM0_CNT
 **          Interrupt service/event                        : Disabled
-**          Period                                         : 50.001526 ms
+**          Period                                         : 20 ms
 **          Starting pulse width                           : 0 ms
 **          Initial polarity                               : low
 **          Initialization                                 : 

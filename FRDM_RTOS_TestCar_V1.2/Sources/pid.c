@@ -14,10 +14,6 @@
  *--------------------------------------------------------------------
  */
 #include "pid.h"
-#include "L3G.h"
-#include "FRTOS1.h"
-#include <math.h>
-#include "VL6180X.h"
 
 #define PI 3.14159265
 
@@ -25,71 +21,78 @@ pid_t pid[4];
 
 
 /*
- * Device: 	0 = ToF Front
+
+ * 
+ * Calculate the PID correction of a device
+ *  Device: 0 = ToF Front
  * 			1 = ToF Left
  * 			2 = ToF Right
  * 			3 = Gyro
+ * @param device device to calculate from
+ * @param kP proportional factor
+ * @param kI integral factor
+ * @param kD differential factor
+ * @param optValue the optimal value to reach
+ * @param corr pointer to the correction value
  */
 uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optValue, int16_t* corr){
 	uint8_t err = ERR_OK;
 	int16_t value;
 	int16_t angel;
 	int16_t correction;
+	static uint8_t timems;
 	
-	switch(device){
-	case 0: err = VL_GetDistance(device, &value);
-	break;
-	case 1: err = VL_GetDistance(device, &value);
-	break;
-	case 2: err = VL_GetDistance(device, &value);
-	break;
-	case 3: ;
-	break;
-	default: value = 0;
-			err = ERR_VALUE;
+	if(timems == 0){
+	timems = (uint8_t)(FRTOS1_xTaskGetTickCount() - pid[device].timecount)*10;	// timecount in ms	deltaTicks /100Hz*1000ms/s
+	pid[device].timecount = FRTOS1_xTaskGetTickCount();
+	*corr = 0;
+	return ERR_OK;
 	}
-	if(err != ERR_OK){
-	return err;
-	}
-	err = L3GgetDegree('x', &angel);
+	timems = (uint8_t)(FRTOS1_xTaskGetTickCount() - pid[device].timecount)*10;	// timecount in ms	deltaTicks /100Hz*1000ms/s
+	pid[device].timecount = FRTOS1_xTaskGetTickCount();
 	
-	// ToF's are the target
-	if(device==0 || device==1 || device==2){
-		if(value==255 || value<=0){
-			*corr = 0;
-			return ERR_RANGE;
-		}
-		if(device!=0){
-			//value = value*cos(angel*PI/180);
-		}
-	}
-	// angel is the target
-	else{
-		if(err == ERR_OVERFLOW){
-			if(angel>0){
-				value = angel-360;
-			}else if(angel<0){
-				value = angel+360;
-			}
-		}
-		else{
+	switch (device) {
+	case TOFFRONT:;
+	case TOFLEFT:;
+	case TOFRIGHT:;
+		err = VL_GetDistance(device, &value);
+		break;
+	case GYRO:
+		err = L3GgetDegree(GEAR, &angel);
+		if (optValue > 120 && angel < -120) {
+			value = angel + 360;
+		} else if (optValue < -120 && angel > 120) {
+			value = angel - 360;
+		} else {
 			value = angel;
 		}
-		
-		
+		break;
+	default:
+		err = ERR_VALUE;
+	}
+	if(err != ERR_OK){
+		*corr = 0;
+		return err;
 	}
 	
 	pid[device].devOld = pid[device].dev;
 	pid[device].dev = optValue - value;
 	if(kI != 0){
-		pid[device].integ += value/8;
-		if(value == 0){
+		if(pid[device].dev == 0){
 			pid[device].integ = 0;
+		}else{
+			pid[device].integ += pid[device].dev;
 		}
+		if(pid[device].integ > 255){
+			pid[device].integ = 255;
+		}else if(pid[device].integ < -255){
+			pid[device].integ = -255;
+		}
+	}else{
+		pid[device].integ = 0;
 	}
 	
-	correction = kP*pid[device].dev + kD*(pid[device].dev-pid[device].devOld) + kI*pid[device].integ;
-	correction /= 16;
+	correction = kP*pid[device].dev/16 + kD*(pid[device].dev-pid[device].devOld)/16*100/timems + kI*pid[device].integ*timems/100/16;
 	
 	
 	if(correction>255){
@@ -105,6 +108,14 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 }
 
 
+/*
+ * Set dev, devOld and integ in the pid structure to zero for a defined device
+ * @param device 
+ * Device:	0 = ToF Front
+ * 			1 = ToF Left
+ * 			2 = ToF Right
+ * 			3 = Gyro
+ */
 void setDeviceToZero(uint8_t device){
 	pid[device].dev = pid[device].devOld = pid[device].integ = 0;
 }
