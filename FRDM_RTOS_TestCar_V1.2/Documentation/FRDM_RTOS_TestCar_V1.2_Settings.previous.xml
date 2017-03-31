@@ -1100,7 +1100,7 @@ PE_DEBUGHALT();
       <Output_pin v="ADC0_DP3/ADC0_SE3/PTE22/TPM2_CH0/UART2_TX" />
       <Counter v="TPM2_CNT" />
       <boolgroup name="Interrupt service/event" v="Disabled" />
-      <Period v="20 ms" />
+      <Period v="10 ms" />
       <Starting_pulse_width v="0 &amp;#181;s" />
       <Initial_polarity v="low" />
       <Same_period_in_modes v="no" />
@@ -1124,7 +1124,7 @@ PE_DEBUGHALT();
             <Output_pin v="ADC0_DP3/ADC0_SE3/PTE22/TPM2_CH0/UART2_TX" />
             <Counter v="TPM2_CNT" />
             <boolgroup name="Interrupt service/event" v="Disabled" />
-            <Period v="20 ms" />
+            <Period v="10 ms" />
             <Starting_pulse_width v="0 &amp;#181;s" />
             <Initial_polarity v="low" />
             <group name="Initialization">
@@ -1211,7 +1211,7 @@ PE_DEBUGHALT();
       <Output_pin v="ADC0_DM3/ADC0_SE7a/PTE23/TPM2_CH1/UART2_RX" />
       <Counter v="TPM2_CNT" />
       <boolgroup name="Interrupt service/event" v="Disabled" />
-      <Period v="20 ms" />
+      <Period v="10 ms" />
       <Starting_pulse_width v="0 &amp;#181;s" />
       <Initial_polarity v="low" />
       <Same_period_in_modes v="no" />
@@ -1235,7 +1235,7 @@ PE_DEBUGHALT();
             <Output_pin v="ADC0_DM3/ADC0_SE7a/PTE23/TPM2_CH1/UART2_RX" />
             <Counter v="TPM2_CNT" />
             <boolgroup name="Interrupt service/event" v="Disabled" />
-            <Period v="20 ms" />
+            <Period v="10 ms" />
             <Starting_pulse_width v="0 &amp;#181;s" />
             <Initial_polarity v="low" />
             <group name="Initialization">
@@ -1758,7 +1758,7 @@ PE_DEBUGHALT();
       </enumgroup>
       <enumgroup name="Counter restart" v="On-match">
         <Period_device v="TPM2_MOD" />
-        <Period v="20 ms" />
+        <Period v="10 ms" />
         <boolgroup name="Interrupt" v="Disabled" />
       </enumgroup>
       <list name="Channel list" v="2">

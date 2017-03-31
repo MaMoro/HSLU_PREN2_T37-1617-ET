@@ -6,7 +6,7 @@
 **     Component   : I2C_LDD
 **     Version     : Component 01.016, Driver 01.07, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-27, 22:21, # CodeGen: 150
+**     Date/Time   : 2017-03-31, 11:07, # CodeGen: 169
 **     Abstract    :
 **          This component encapsulates the internal I2C communication
 **          interface. The implementation of the interface is based
@@ -48,11 +48,11 @@
 **              Input Glitch filter                        : 0
 **            Internal frequency (multiplier factor)       : 20.97152 MHz
 **            Bits 0-2 of Frequency divider register       : 010
-**            Bits 3-5 of Frequency divider register       : 100
-**            SCL frequency                                : 93.623 kHz
-**            SDA Hold                                     : 1.574 us
-**            SCL start Hold                               : 5.245 us
-**            SCL stop Hold                                : 5.388 us
+**            Bits 3-5 of Frequency divider register       : 011
+**            SCL frequency                                : 187.246 kHz
+**            SDA Hold                                     : 0.811 us
+**            SCL start Hold                               : 2.575 us
+**            SCL stop Hold                                : 2.718 us
 **            Control acknowledge bit                      : Disabled
 **            Low timeout                                  : Disabled
 **          Initialization                                 : 

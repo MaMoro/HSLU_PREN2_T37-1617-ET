@@ -1630,11 +1630,11 @@ PE_DEBUGHALT();
         </group>
         <Internal_frequency__multiplier_factor_ v="20.97152 MHz" />
         <Bits_0_2_of_Frequency_divider_register v="010" />
-        <Bits_3_5_of_Frequency_divider_register v="100" />
-        <SCL_frequency v="93.623 kHz" />
-        <SDA_Hold v="1.574 us" />
-        <SCL_start_Hold v="5.245 us" />
-        <SCL_stop_Hold v="5.388 us" />
+        <Bits_3_5_of_Frequency_divider_register v="011" />
+        <SCL_frequency v="187.246 kHz" />
+        <SDA_Hold v="0.811 us" />
+        <SCL_start_Hold v="2.575 us" />
+        <SCL_stop_Hold v="2.718 us" />
         <boolgroup name="Control acknowledge bit" v="Disabled" />
         <boolgroup name="Low timeout" v="Disabled" />
       </group>
@@ -2347,11 +2347,11 @@ PE_DEBUGHALT();
         </group>
         <Internal_frequency__multiplier_factor_ v="20.97152 MHz" />
         <Bits_0_2_of_Frequency_divider_register v="010" />
-        <Bits_3_5_of_Frequency_divider_register v="100" />
-        <SCL_frequency v="93.623 kHz" />
-        <SDA_Hold v="1.574 us" />
-        <SCL_start_Hold v="5.245 us" />
-        <SCL_stop_Hold v="5.388 us" />
+        <Bits_3_5_of_Frequency_divider_register v="011" />
+        <SCL_frequency v="187.246 kHz" />
+        <SDA_Hold v="0.811 us" />
+        <SCL_start_Hold v="2.575 us" />
+        <SCL_stop_Hold v="2.718 us" />
         <boolgroup name="Control acknowledge bit" v="Disabled" />
         <boolgroup name="Low timeout" v="Disabled" />
       </group>

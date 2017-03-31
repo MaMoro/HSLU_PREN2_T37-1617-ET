@@ -56,6 +56,10 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	case TOFLEFT:;
 	case TOFRIGHT:;
 		err = VL_GetDistance(device, &value);
+		if(value <= 0 || value == 255){
+			*corr = 0;
+			return ERR_OK;
+		}
 		break;
 	case GYRO:
 		err = L3GgetDegree(GEAR, &angel);

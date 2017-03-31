@@ -59,7 +59,7 @@ by the component.
     0x00000008
  </td><td>I2C1_SMB register, peripheral CI2C1.</td></tr>
 <tr><td>0x40067001</td><td>I2C1_F</td><td>
-    0x00000022
+    0x0000001A
  </td><td>I2C1_F register, peripheral CI2C1.</td></tr>
 </table>
 <br/>
@@ -508,11 +508,11 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40067001</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000022</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000001A</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>6 - 7</td><td>MULT</td><td>0x00</td><td>The MULT bits define the multiplier factor mul. This factor is used along with the SCL divider to generate the I2C baud rate</td>
-<tr><td>0 - 5</td><td>ICR</td><td>0x20</td><td>ClockRate</td>
+<tr><td>0 - 5</td><td>ICR</td><td>0x00</td><td>ClockRate</td>
 </tr></table>
 */
 /*!
@@ -541,11 +541,11 @@ registers of the peripheral(s) configured by the component.
 **              Input Glitch filter                        : 0
 **            Internal frequency (multiplier factor)       : 20.97152 MHz
 **            Bits 0-2 of Frequency divider register       : 010
-**            Bits 3-5 of Frequency divider register       : 100
-**            SCL frequency                                : 93.623 kHz
-**            SDA Hold                                     : 1.574 us
-**            SCL start Hold                               : 5.245 us
-**            SCL stop Hold                                : 5.388 us
+**            Bits 3-5 of Frequency divider register       : 011
+**            SCL frequency                                : 187.246 kHz
+**            SDA Hold                                     : 0.811 us
+**            SCL start Hold                               : 2.575 us
+**            SCL stop Hold                                : 2.718 us
 **            Control acknowledge bit                      : Disabled
 **            Low timeout                                  : Disabled
 **          Initialization                                 : 

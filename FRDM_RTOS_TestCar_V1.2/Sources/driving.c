@@ -104,9 +104,9 @@ void driveOverStair(void){
 			setErrorState(err, "DrivingTask, State2");
 		}
 		// stair upwards
-		if(stairState == 0 && angelNick <= -25){
+		if(stairState == 0 && angelNick <= -20){
 			counter++;
-			if(counter >= 3){
+			if(counter >= 2){
 				counter = 0;
 				stairState = 1;	
 				LED_GREEN_Put(1);
@@ -115,7 +115,7 @@ void driveOverStair(void){
 		// on top of the stair
 		else if(stairState == 1 && angelNick < 5 && angelNick > -5){
 			counter++;
-			if(counter >= 3){
+			if(counter >= 2){
 				counter = 0;
 				stairState = 2;	
 				RED_Put(1);
@@ -125,7 +125,7 @@ void driveOverStair(void){
 		// stair downwards
 		else if(stairState == 2 && angelNick >= 20){
 			counter++;
-			if(counter >= 3){
+			if(counter >= 2){
 				counter = 0;
 				stairState = 3; 
 				LED_GREEN_Put(0);
@@ -134,7 +134,7 @@ void driveOverStair(void){
 		// stair done
 		else if(stairState == 3 && angelNick < 5 && angelNick > -5){
 			counter++;
-			if(counter >= 3){
+			if(counter >= 2){
 				counter = 0;
 				RED_Put(0);
 				speed += 20;
@@ -215,6 +215,7 @@ void driveThroughTurningPlace(void){
 		 // check end condition
 		if(angel == -90*parcour){
 			partState = 2;
+			angel = -90*parcour;
 		}
 	}
 	
@@ -256,6 +257,7 @@ void driveThroughTurningPlace(void){
 			 
 		// check end condition
 		if(angel == -180*parcour){
+			angel = -180*parcour;
 			RED_Put(0);
 			partState = 4;
 		}

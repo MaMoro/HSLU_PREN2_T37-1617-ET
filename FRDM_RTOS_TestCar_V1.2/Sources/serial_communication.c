@@ -50,7 +50,7 @@ static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
 static uint8_t kpT = 6, kiT = 0, kdT = 1;		// 7, 0, 1
-static uint8_t kpG = 10, kiG = 1, kdG = 3;		// 12, 1, 1
+static uint8_t kpG = 20, kiG = 1, kdG = 1;		// 12, 1, 1
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
