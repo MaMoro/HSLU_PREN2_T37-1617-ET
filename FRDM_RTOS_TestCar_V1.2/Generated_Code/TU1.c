@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-31, 10:45, # CodeGen: 167
+**     Date/Time   : 2017-04-02, 14:58, # CodeGen: 176
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -21,8 +21,10 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : TPM2_MOD
-**            Period                                       : 10 ms
-**            Interrupt                                    : Disabled
+**            Period                                       : 20 ms
+**            Interrupt                                    : Enabled
+**              Interrupt                                  : INT_TPM2
+**              Interrupt priority                         : medium priority
 **          Channel list                                   : 2
 **            Channel 0                                    : 
 **              Mode                                       : Compare
@@ -48,7 +50,7 @@
 **            Enabled in init. code                        : yes
 **            Auto initialization                          : no
 **            Event mask                                   : 
-**              OnCounterRestart                           : Disabled
+**              OnCounterRestart                           : Enabled
 **              OnChannel0                                 : Disabled
 **              OnChannel1                                 : Disabled
 **              OnChannel2                                 : Disabled
@@ -119,6 +121,7 @@
 
 /* MODULE TU1. */
 
+#include "Cpu.h"
 #include "TU1.h"
 #include "FreeRTOS.h" /* FreeRTOS interface */
 #include "IO_Map.h"
@@ -135,6 +138,7 @@ static const uint8_t ChannelMode[TU1_NUMBER_OF_CHANNELS] = {0x00U,0x00U};
 
 
 typedef struct {
+  LDD_TEventMask EnEvents;             /* Enable/Disable events mask */
   uint8_t InitCntr;                    /* Number of initialization */
   LDD_TUserData *UserDataPtr;          /* RTOS device data structure */
 } TU1_TDeviceData;
@@ -143,7 +147,10 @@ typedef TU1_TDeviceData *TU1_TDeviceDataPtr; /* Pointer to the device data struc
 
 /* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static TU1_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static TU1_TDeviceDataPtr INT_TPM2__BAREBOARD_RTOS_ISRPARAM;
 
+#define AVAILABLE_EVENTS_MASK (LDD_TEventMask)(LDD_TIMERUNIT_ON_COUNTER_RESTART)
 #define AVAILABLE_PIN_MASK (LDD_TPinMask)(TU1_CHANNEL_0_PIN | TU1_CHANNEL_1_PIN)
 #define LAST_CHANNEL 0x01U
 
@@ -190,6 +197,9 @@ LDD_TDeviceData* TU1_Init(LDD_TUserData *UserDataPtr)
     DeviceDataPrv->InitCntr++;         /* Increment counter of initialization */
     return ((LDD_TDeviceData *)DeviceDataPrv); /* Return pointer to the device data structure */
   }
+  /* Interrupt vector(s) allocation */
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_TPM2__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
   /* SIM_SCGC6: TPM2=1 */
   SIM_SCGC6 |= SIM_SCGC6_TPM2_MASK;
   /* TPM2_SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,DMA=0,TOF=0,TOIE=0,CPWMS=0,CMOD=0,PS=0 */
@@ -224,8 +234,17 @@ LDD_TDeviceData* TU1_Init(LDD_TUserData *UserDataPtr)
                 )) | (uint32_t)(
                  PORT_PCR_MUX(0x03)
                 ));
-  /* TPM2_SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,DMA=0,TOF=0,TOIE=0,CPWMS=0,CMOD=1,PS=2 */
-  TPM2_SC = (TPM_SC_CMOD(0x01) | TPM_SC_PS(0x02)); /* Set up status and control register */
+  DeviceDataPrv->EnEvents = 0x0100U;   /* Enable selected events */
+  /* NVIC_IPR4: PRI_19=0x80 */
+  NVIC_IPR4 = (uint32_t)((NVIC_IPR4 & (uint32_t)~(uint32_t)(
+               NVIC_IP_PRI_19(0x7F)
+              )) | (uint32_t)(
+               NVIC_IP_PRI_19(0x80)
+              ));
+  /* NVIC_ISER: SETENA|=0x00080000 */
+  NVIC_ISER |= NVIC_ISER_SETENA(0x00080000);
+  /* TPM2_SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,DMA=0,TOF=0,TOIE=1,CPWMS=0,CMOD=1,PS=3 */
+  TPM2_SC = (TPM_SC_TOIE_MASK | TPM_SC_CMOD(0x01) | TPM_SC_PS(0x03)); /* Set up status and control register */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_TU1_ID,DeviceDataPrv);
   return ((LDD_TDeviceData *)DeviceDataPrv); /* Return pointer to the device data structure */
@@ -462,6 +481,33 @@ LDD_TError TU1_SelectOutputAction(LDD_TDeviceData *DeviceDataPtr, uint8_t Channe
       return ERR_NOTAVAIL;
   }
   return ERR_OK;                       /* OK */
+}
+
+/*
+** ===================================================================
+**     Method      :  TU1_Interrupt (component TimerUnit_LDD)
+**
+**     Description :
+**         The method services the interrupt of the selected peripheral(s)
+**         and eventually invokes event(s) of the component.
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+PE_ISR(TU1_Interrupt)
+{
+  /* {FreeRTOS RTOS Adapter} ISR parameter is passed through the global variable */
+  TU1_TDeviceDataPtr DeviceDataPrv = INT_TPM2__BAREBOARD_RTOS_ISRPARAM;
+
+  LDD_TEventMask State = 0U;
+
+  if ((TPM_PDD_GetOverflowInterruptFlag(TPM2_BASE_PTR)) != 0U) { /* Is the overflow interrupt flag pending? */
+    State |= LDD_TIMERUNIT_ON_COUNTER_RESTART; /* and set mask */
+  }
+  State &= DeviceDataPrv->EnEvents;    /* Handle only enabled interrupts */
+  if (State & LDD_TIMERUNIT_ON_COUNTER_RESTART) { /* Is the overflow interrupt flag pending? */
+    TPM_PDD_ClearOverflowInterruptFlag(TPM2_BASE_PTR); /* Clear flag */
+    TU1_OnCounterRestart(DeviceDataPrv->UserDataPtr); /* Invoke OnCounterRestart event */
+  }
 }
 
 /* END TU1. */

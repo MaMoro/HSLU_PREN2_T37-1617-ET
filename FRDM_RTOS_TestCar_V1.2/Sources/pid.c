@@ -51,6 +51,7 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	timems = (uint8_t)(FRTOS1_xTaskGetTickCount() - pid[device].timecount)*10;	// timecount in ms	deltaTicks /100Hz*1000ms/s
 	pid[device].timecount = FRTOS1_xTaskGetTickCount();
 	
+	
 	switch (device) {
 	case TOFFRONT:;
 	case TOFLEFT:;

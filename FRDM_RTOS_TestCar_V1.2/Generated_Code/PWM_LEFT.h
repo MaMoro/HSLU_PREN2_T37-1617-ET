@@ -6,7 +6,7 @@
 **     Component   : PWM
 **     Version     : Component 02.240, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-31, 10:45, # CodeGen: 167
+**     Date/Time   : 2017-04-02, 15:07, # CodeGen: 177
 **     Abstract    :
 **         This component implements a pulse-width modulation generator
 **         that generates signal with variable duty and fixed cycle. 
@@ -26,7 +26,11 @@
 **         Compare register            : TPM2_C1V  [0x4003A018]
 **         Flip-flop register          : TPM2_C1SC [0x4003A014]
 **
-**         User handling procedure     : not specified
+**         Interrupt name              : INT_TPM2
+**         Interrupt enable reg.       : TPM2_C1SC [0x4003A014]
+**         Priority                    : 2
+**         User handling procedure     : PWM_LEFT_OnEnd
+**         This event is called when the 1 of cycles is generated
 **
 **         Port name                   : PTE
 **         Bit number (in port)        : 23
@@ -44,11 +48,12 @@
 **           Initial value of            period     pulse width
 **             Xtal ticks              : ---        ---
 **             microseconds            : ---        0
-**             milliseconds            : 10         ---
+**             milliseconds            : 20         ---
 **             seconds                 : ---        ---
-**             seconds (real)          : 10         0
+**             seconds (real)          : 20         0
 **
 **     Contents    :
+**         SetRatio8  - byte PWM_LEFT_SetRatio8(byte Ratio);
 **         SetRatio16 - byte PWM_LEFT_SetRatio16(word Ratio);
 **         SetDutyUS  - byte PWM_LEFT_SetDutyUS(word Time);
 **         SetDutyMS  - byte PWM_LEFT_SetDutyMS(word Time);
@@ -122,6 +127,40 @@ extern "C" {
 
 /*
 ** ===================================================================
+**     Method      :  PWM_LEFT_OnEnd (component PWM)
+**
+**     Description :
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+void PwmLdd2_OnEnd(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Method      :  PWM_LEFT_SetRatio8 (component PWM)
+**     Description :
+**         This method sets a new duty-cycle ratio. Ratio is expressed
+**         as an 8-bit unsigned integer number. 0 - FF value is
+**         proportional to ratio 0 - 100%. The method is available
+**         only if it is not selected list of predefined values in
+**         <Starting pulse width> property. 
+**         Note: Calculated duty depends on the timer capabilities and
+**         on the selected period.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         Ratio           - Ratio to set. 0 - 255 value is
+**                           proportional to ratio 0 - 100%
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+** ===================================================================
+*/
+#define PWM_LEFT_SetRatio8(Ratio) (PwmLdd2_SetRatio8(PwmLdd2_DeviceData, Ratio))
+
+/*
+** ===================================================================
 **     Method      :  PWM_LEFT_SetRatio16 (component PWM)
 **     Description :
 **         This method sets a new duty-cycle ratio. Ratio is expressed
@@ -176,7 +215,7 @@ extern "C" {
 **     Parameters  :
 **         NAME            - DESCRIPTION
 **         Time            - Duty to set [in milliseconds]
-**                      (0 to 10 ms in high speed mode)
+**                      (0 to 20 ms in high speed mode)
 **     Returns     :
 **         ---             - Error code, possible codes:
 **                           ERR_OK - OK

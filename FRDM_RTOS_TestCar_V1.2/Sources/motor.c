@@ -7,17 +7,11 @@
 #include "motor.h"
 #include <stdlib.h>
 #include "FRTOS1.h"
-#include "DIR_LEFT.h"
-#include "DIR_RIGHt.h"
 
 #define MOTOR_OFFSET	0
 #define MODULO          (0xFFFF-1)
-#define DUALMOTORDRIVER 1			// put 1 if dualmotordriver with 2 IO Pins for direction is used
 
-#if DUALMOTORDRIVER
-#include "DIR_LEFT1.h"
-#include "DIR_RIGHT1.h"
-#endif
+
 
 static int16_t pwmLeft;
 static int16_t pwmRight;
@@ -81,6 +75,8 @@ void motorIncrementPWMRight(int8_t value)
  *  +1..+127 => speed in forward direction
  *  -1..-127 => speed in backward direction
  *  0 => stop
+ *  
+ *  Ratio is set in Events.c
  */
 void motorSetPWMLeft(int8_t value)
 {
@@ -91,7 +87,6 @@ void motorSetPWMLeft(int8_t value)
 #if DUALMOTORDRIVER
     DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
 #endif
-    PWM_LEFT_SetRatio16(MODULO/127*(-value));
   }
   else if (value > 0)         // forward
   {
@@ -100,11 +95,9 @@ void motorSetPWMLeft(int8_t value)
 #if DUALMOTORDRIVER
 	DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 1);
 #endif
-	PWM_LEFT_SetRatio16(MODULO/127*value);
   } 
   else                        // stop
   {
-	  PWM_LEFT_SetRatio16(0);
 	  DIR_LEFT_PutVal(DIR_LEFT_DeviceData, 0);
 #if DUALMOTORDRIVER
 	  DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
@@ -130,7 +123,8 @@ void motorSetPWMRight(int8_t value)
 #if DUALMOTORDRIVER
 	  DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 1);  
 #endif
-	    PWM_RIGHT_SetRatio16(MODULO/127*(-value));
+	    //PWM_RIGHT_SetRatio16(MODULO/127*(-value));
+	  //PWM_RIGHT_SetRatio8(-value);
 	  }
 	  else if (value > 0)         // forward
 	  {
@@ -139,11 +133,13 @@ void motorSetPWMRight(int8_t value)
 #if DUALMOTORDRIVER
 		DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);
 #endif
-		PWM_RIGHT_SetRatio16(MODULO/127*value);
+		//PWM_RIGHT_SetRatio16(MODULO/127*value);
+		//PWM_RIGHT_SetRatio8(value);
 	  } 
 	  else                        // stop
 	  {
-		  PWM_RIGHT_SetRatio16(0);
+		  //PWM_RIGHT_SetRatio16(0);
+		  //PWM_RIGHT_SetRatio8(0);
 		  DIR_RIGHT_PutVal(DIR_RIGHT_DeviceData, 0);
 #if DUALMOTORDRIVER
 		DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);  

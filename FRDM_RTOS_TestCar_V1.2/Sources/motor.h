@@ -10,11 +10,16 @@
 #include "stdint.h"
 #include "DIR_LEFT.h"
 #include "DIR_RIGHT.h"
+#include "DIR_LEFT1.h"
+#include "DIR_RIGHT1.h"
 #include "PWM_LEFT.h"
 #include "PWM_RIGHT.h"
 #include "PwmLdd1.h"
 #include "PwmLdd2.h"
 #include "TU1.h"
+
+#define DUALMOTORDRIVER 0			// put 1 if dualmotordriver with 2 IO Pins for direction is used
+
 
 int8_t motorGetPWMLeft(void);
 void motorSetPWMLeft(int8_t value);

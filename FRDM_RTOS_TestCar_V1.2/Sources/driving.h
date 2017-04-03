@@ -12,6 +12,7 @@
 #define PI 3.14159265
 #define LEFT -1
 #define RIGHT 1
+#define MAXTIMEOUT 2000		// timeout = 2s
 
 
 /*
@@ -27,7 +28,7 @@ void driveToTurningPlace(void);
 void driveThroughTurningPlace(void);
 void driveToEndZone(void);
 void pushTheButton(void);
-uint8_t regulateMotor(int8_t speed, uint8_t optRange,int16_t optAngel);
+uint8_t regulateMotor(void);
 void setDistanceSide(int16_t value);
 void setDistanceFront(int16_t value);
 void setSpeed(int8_t value);
@@ -36,5 +37,6 @@ void setLetter(uint8_t value);
 void setServoPWM(uint8_t value);
 void setPID(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG);
 void stopDriving(void);
+uint8_t getTime(uint16_t* time);
 
 #endif /* DRIVING_H_ */

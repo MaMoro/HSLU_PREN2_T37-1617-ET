@@ -94,7 +94,7 @@ uint8_t L3GenableDefault(void)
   // 0x10 =	0b0001 0000 -> cut off 13.5Hz, reference Signal for filtering
   // 0x14 = 0b0001 0100 -> cut off 0.9Hz, reference Signal for filtering
   //High pass filter: reference signal for filtering/  cut off 0.9Hz
-  res = L3GwriteReg(CTRL_REG2, 0x14);
+  res = L3GwriteReg(CTRL_REG2, 0x10);
   if(res != ERR_OK){
   	return res;
   }
@@ -147,7 +147,7 @@ uint8_t L3GenableDefault(void)
   
   //0x20 = 0b0010 0000	Fifo mode
   //0x40 = 0b0100 0000	Stream mode
-  // first Bypass than to Stream mode
+  // Stream mode
   res = L3GwriteReg(FIFO_CTRL_REG, 0x40);
   if(res != ERR_OK){
   	return res;
@@ -489,11 +489,11 @@ void combineAccel(void){
 		  
 		  // set new nick to register
 		  if(NICK == 'z'){
-			  gyro.z = gyro.z*0.95 + (int32_t)(nick*50); 		// pitch*50 => pitch*1000mg/g*0.05;
+			  gyro.z = gyro.z*0.98 + (int32_t)(nick*20); 		// pitch*50 => pitch*1000mg/g*0.05;
 		  }else if(NICK == 'y'){
-			 gyro.y = gyro.y*0.95 + (int32)(nick*50);		// change to + if wrong direction
+			 gyro.y = gyro.y*0.98 + (int32)(nick*20);
 		  }else if(NICK == 'x'){
-			  gyro.x = gyro.x *0.95 + (int32)(nick*50);
+			  gyro.x = gyro.x *0.98 + (int32)(nick*20);
 		  }
 		  accelCounter = 0;
 	  }

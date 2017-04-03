@@ -38,6 +38,9 @@ extern "C" {
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "L3G.h"
 #include "FRTOS1.h"
+#include <stdlib.h>
+#include "motor.h"
+#include "driving.h"
 /*
 ** ===================================================================
 **     Event       :  Cpu_OnNMIINT (module Events)
@@ -258,6 +261,58 @@ void Cpu_OnHardFault(void)
   /* Write your code here ... */
 }
 
+
+/*
+** ===================================================================
+**     Event       :  PWM_LEFT_OnEnd (module Events)
+**
+**     Component   :  PWM_LEFT [PWM]
+**     Description :
+**         This event is called when the specified number of cycles has
+**         been generated. (Only when the component is enabled -
+**         <Enable> and the events are enabled - <EnableEvent>). The
+**         event is available only when the <Interrupt service/event>
+**         property is enabled and selected peripheral supports
+**         appropriate interrupt.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void PWM_LEFT_OnEnd(void)
+{
+#if DUALMOTORDRIVER
+  PWM_LEFT_SetRatio8(255-(abs(motorGetPWMLeft())<<1));
+#endif
+#if !DUALMOTORDRIVER
+  PWM_LEFT_SetRatio8(abs(motorGetPWMLeft()<<1));
+#endif
+}
+
+/*
+** ===================================================================
+**     Event       :  PWM_RIGHT_OnEnd (module Events)
+**
+**     Component   :  PWM_RIGHT [PWM]
+**     Description :
+**         This event is called when the specified number of cycles has
+**         been generated. (Only when the component is enabled -
+**         <Enable> and the events are enabled - <EnableEvent>). The
+**         event is available only when the <Interrupt service/event>
+**         property is enabled and selected peripheral supports
+**         appropriate interrupt.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void PWM_RIGHT_OnEnd(void)
+{
+#if DUALMOTORDRIVER
+  PWM_RIGHT_SetRatio8(255-(abs(motorGetPWMRight())<<1));
+#endif
+#if !DUALMOTORDRIVER
+  PWM_RIGHT_SetRatio8(abs(motorGetPWMRight()<<1));
+#endif
+}
 
 /* END Events */
 

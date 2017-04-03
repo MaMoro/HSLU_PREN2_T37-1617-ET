@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-21, 07:40, # CodeGen: 117
+**     Date/Time   : 2017-04-02, 18:43, # CodeGen: 190
 **     Abstract    :
 **
 **     Settings    :
@@ -458,17 +458,6 @@ PE_ISR(Cpu_ivINT_TPM1);
 ** ===================================================================
 */
 
-PE_ISR(Cpu_ivINT_TPM2);
-/*
-** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_TPM2 (component MKL25Z128LK4)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-
 PE_ISR(Cpu_ivINT_RTC);
 /*
 ** ===================================================================
@@ -600,6 +589,17 @@ PE_ISR(Cpu_ivINT_PORTD);
 **         This method is internal. It is used by Processor Expert only.
 ** ===================================================================
 */
+
+  
+/*
+** ===================================================================
+**     Method      :  Cpu_TU1_OnCounterRestart (component MKL25Z128LK4)
+**
+**     Description :
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+void TU1_OnCounterRestart(LDD_TUserData* UserDataPtr);
 
 void __init_hardware(void);
 /*

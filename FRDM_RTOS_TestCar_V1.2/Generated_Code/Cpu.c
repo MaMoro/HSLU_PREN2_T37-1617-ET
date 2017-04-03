@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-30, 10:44, # CodeGen: 162
+**     Date/Time   : 2017-04-02, 18:43, # CodeGen: 190
 **     Abstract    :
 **
 **     Settings    :
@@ -526,21 +526,6 @@ PE_ISR(Cpu_ivINT_TPM1)
 
 /*
 ** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_TPM2 (component MKL25Z128LK4)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-PE_ISR(Cpu_ivINT_TPM2)
-{
-  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
-  PE_DEBUGHALT();
-}
-
-/*
-** ===================================================================
 **     Method      :  Cpu_Cpu_ivINT_RTC (component MKL25Z128LK4)
 **
 **     Description :
@@ -717,6 +702,20 @@ PE_ISR(Cpu_ivINT_PORTD)
 {
   /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
   PE_DEBUGHALT();
+}
+
+/*
+** ===================================================================
+**     Method      :  Cpu_TU1_OnCounterRestart (component MKL25Z128LK4)
+**
+**     Description :
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+void TU1_OnCounterRestart(LDD_TUserData* UserDataPtr)
+{
+  TU1_OnCounterRestart1(UserDataPtr);  /* Call a shared event. This event is generated into PwmLdd2 module */
+  TU1_OnCounterRestart0(UserDataPtr);  /* Call a shared event. This event is generated into PwmLdd1 module */
 }
 
 

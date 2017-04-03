@@ -252,23 +252,39 @@ void Cpu_OnHardFault(void);
 
 /*
 ** ===================================================================
-**     Event       :  TI1_OnInterrupt (module Events)
+**     Event       :  PWM_LEFT_OnEnd (module Events)
 **
-**     Component   :  TI1 [TimerInt_LDD]
+**     Component   :  PWM_LEFT [PWM]
+**     Description :
+**         This event is called when the specified number of cycles has
+**         been generated. (Only when the component is enabled -
+**         <Enable> and the events are enabled - <EnableEvent>). The
+**         event is available only when the <Interrupt service/event>
+**         property is enabled and selected peripheral supports
+**         appropriate interrupt.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
 */
-/*!
-**     @brief
-**         Called if periodic event occur. Component and OnInterrupt
-**         event must be enabled. See [SetEventMask] and [GetEventMask]
-**         methods. This event is available only if a [Interrupt
-**         service/event] is enabled.
-**     @param
-**         UserDataPtr     - Pointer to the user or
-**                           RTOS specific data. The pointer passed as
-**                           the parameter of Init method.
+void PWM_LEFT_OnEnd(void);
+
+/*
+** ===================================================================
+**     Event       :  PWM_RIGHT_OnEnd (module Events)
+**
+**     Component   :  PWM_RIGHT [PWM]
+**     Description :
+**         This event is called when the specified number of cycles has
+**         been generated. (Only when the component is enabled -
+**         <Enable> and the events are enabled - <EnableEvent>). The
+**         event is available only when the <Interrupt service/event>
+**         property is enabled and selected peripheral supports
+**         appropriate interrupt.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
 */
-/* ===================================================================*/
-void TI1_OnInterrupt(LDD_TUserData *UserDataPtr);
+void PWM_RIGHT_OnEnd(void);
 
 /* END Events */
 

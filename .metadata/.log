@@ -1,1689 +1,14 @@
-!SESSION 2017-03-31 10:58:54.512 -----------------------------------------------
+!SESSION 2017-04-02 14:37:32.483 -----------------------------------------------
 eclipse.buildId=I20070613-1755
 java.version=1.6.0_15
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
-This is a continuation of log file C:\Eigene_Dateien\Schule\HSLU\Semester_4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_7.log
-Created Time: 2017-03-31 11:56:47.402
+This is a continuation of log file C:\Eigene_Dateien\Schule\HSLU\Semester_4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_0.log
+Created Time: 2017-04-02 20:35:23.961
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.402
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT1.o: ../Generated_Code/BT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #16 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BTState1.o: ../Generated_Code/BTState1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #17 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BTState1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BTState1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT_EN.o: ../Generated_Code/BT_EN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #18 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT_EN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT_EN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd1.o: ../Generated_Code/BitIoLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #19 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #20 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #21 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C1.o: ../Generated_Code/CI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #22 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C2.o: ../Generated_Code/CI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #23 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CLS1.o: ../Generated_Code/CLS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #24 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CLS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CLS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CS1.o: ../Generated_Code/CS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #25 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Cpu.o: ../Generated_Code/Cpu.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #26 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Cpu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Cpu.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT.o: ../Generated_Code/DIR_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #27 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT1.o: ../Generated_Code/DIR_LEFT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #28 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT.o: ../Generated_Code/DIR_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #29 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT1.o: ../Generated_Code/DIR_RIGHT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #30 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/FRTOS1.o: ../Generated_Code/FRTOS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #31 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/FRTOS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/FRTOS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C1.o: ../Generated_Code/GI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #32 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #33 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/KSDK1.o: ../Generated_Code/KSDK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #34 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/KSDK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/KSDK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #35 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #36 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #37 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/MMA1.o: ../Generated_Code/MMA1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #38 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MMA1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MMA1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #39 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PE_LDD.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PE_LDD.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Gyro.o: ../Generated_Code/PWM_Gyro.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #40 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Gyro.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Gyro.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_LEFT.o: ../Generated_Code/PWM_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #41 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_RIGHT.o: ../Generated_Code/PWM_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #42 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Servo.o: ../Generated_Code/PWM_Servo.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #43 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Servo.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Servo.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd1.o: ../Generated_Code/PwmLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #44 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd2.o: ../Generated_Code/PwmLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #45 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd3.o: ../Generated_Code/PwmLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #46 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd4.o: ../Generated_Code/PwmLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #47 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/RED.o: ../Generated_Code/RED.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #48 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/RED.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/RED.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Serial1.o: ../Generated_Code/Serial1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #49 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Serial1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Serial1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TMOUT1.o: ../Generated_Code/TMOUT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #50 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TMOUT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TMOUT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TSK1.o: ../Generated_Code/TSK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #51 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TSK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TSK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU1.o: ../Generated_Code/TU1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #52 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU2.o: ../Generated_Code/TU2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #53 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE1.o: ../Generated_Code/TofCE1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #54 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE2.o: ../Generated_Code/TofCE2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #55 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE3.o: ../Generated_Code/TofCE3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #56 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.408
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE3.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.412
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT1.o: ../Generated_Code/BT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #16 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BTState1.o: ../Generated_Code/BTState1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #17 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BTState1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BTState1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT_EN.o: ../Generated_Code/BT_EN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #18 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT_EN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT_EN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd1.o: ../Generated_Code/BitIoLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #19 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #20 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #21 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C1.o: ../Generated_Code/CI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #22 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C2.o: ../Generated_Code/CI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #23 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CLS1.o: ../Generated_Code/CLS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #24 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CLS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CLS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CS1.o: ../Generated_Code/CS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #25 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Cpu.o: ../Generated_Code/Cpu.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #26 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Cpu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Cpu.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT.o: ../Generated_Code/DIR_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #27 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT1.o: ../Generated_Code/DIR_LEFT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #28 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT.o: ../Generated_Code/DIR_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #29 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT1.o: ../Generated_Code/DIR_RIGHT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #30 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/FRTOS1.o: ../Generated_Code/FRTOS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #31 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/FRTOS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/FRTOS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C1.o: ../Generated_Code/GI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #32 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #33 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/KSDK1.o: ../Generated_Code/KSDK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #34 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/KSDK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/KSDK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #35 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #36 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #37 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/MMA1.o: ../Generated_Code/MMA1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #38 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MMA1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MMA1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #39 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PE_LDD.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PE_LDD.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Gyro.o: ../Generated_Code/PWM_Gyro.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #40 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Gyro.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Gyro.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_LEFT.o: ../Generated_Code/PWM_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #41 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_RIGHT.o: ../Generated_Code/PWM_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #42 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Servo.o: ../Generated_Code/PWM_Servo.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #43 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Servo.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Servo.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd1.o: ../Generated_Code/PwmLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #44 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd2.o: ../Generated_Code/PwmLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #45 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd3.o: ../Generated_Code/PwmLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #46 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd4.o: ../Generated_Code/PwmLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #47 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/RED.o: ../Generated_Code/RED.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #48 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/RED.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/RED.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Serial1.o: ../Generated_Code/Serial1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #49 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Serial1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Serial1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TMOUT1.o: ../Generated_Code/TMOUT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #50 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TMOUT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TMOUT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TSK1.o: ../Generated_Code/TSK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #51 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TSK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TSK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU1.o: ../Generated_Code/TU1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #52 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU2.o: ../Generated_Code/TU2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #53 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE1.o: ../Generated_Code/TofCE1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #54 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE2.o: ../Generated_Code/TofCE2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #55 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE3.o: ../Generated_Code/TofCE3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #56 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/UTIL1.o: ../Generated_Code/UTIL1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #57 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.414
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.418
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT1.o: ../Generated_Code/BT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #16 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BTState1.o: ../Generated_Code/BTState1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #17 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BTState1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BTState1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT_EN.o: ../Generated_Code/BT_EN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #18 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT_EN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT_EN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd1.o: ../Generated_Code/BitIoLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #19 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #20 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #21 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C1.o: ../Generated_Code/CI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #22 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C2.o: ../Generated_Code/CI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #23 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CLS1.o: ../Generated_Code/CLS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #24 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CLS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CLS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CS1.o: ../Generated_Code/CS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #25 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Cpu.o: ../Generated_Code/Cpu.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #26 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Cpu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Cpu.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT.o: ../Generated_Code/DIR_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #27 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT1.o: ../Generated_Code/DIR_LEFT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #28 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT.o: ../Generated_Code/DIR_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #29 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT1.o: ../Generated_Code/DIR_RIGHT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #30 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/FRTOS1.o: ../Generated_Code/FRTOS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #31 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/FRTOS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/FRTOS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C1.o: ../Generated_Code/GI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #32 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #33 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/KSDK1.o: ../Generated_Code/KSDK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #34 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/KSDK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/KSDK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #35 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #36 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #37 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/MMA1.o: ../Generated_Code/MMA1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #38 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MMA1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MMA1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #39 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PE_LDD.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PE_LDD.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Gyro.o: ../Generated_Code/PWM_Gyro.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #40 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Gyro.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Gyro.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_LEFT.o: ../Generated_Code/PWM_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #41 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_RIGHT.o: ../Generated_Code/PWM_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #42 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Servo.o: ../Generated_Code/PWM_Servo.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #43 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Servo.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Servo.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd1.o: ../Generated_Code/PwmLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #44 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd2.o: ../Generated_Code/PwmLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #45 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd3.o: ../Generated_Code/PwmLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #46 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd4.o: ../Generated_Code/PwmLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #47 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/RED.o: ../Generated_Code/RED.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #48 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/RED.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/RED.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Serial1.o: ../Generated_Code/Serial1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #49 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Serial1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Serial1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TMOUT1.o: ../Generated_Code/TMOUT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #50 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TMOUT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TMOUT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TSK1.o: ../Generated_Code/TSK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #51 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TSK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TSK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU1.o: ../Generated_Code/TU1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #52 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU2.o: ../Generated_Code/TU2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #53 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE1.o: ../Generated_Code/TofCE1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #54 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE2.o: ../Generated_Code/TofCE2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #55 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE3.o: ../Generated_Code/TofCE3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #56 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/UTIL1.o: ../Generated_Code/UTIL1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #57 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/UTIL1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/UTIL1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Vectors.o: ../Generated_Code/Vectors.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #58 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.419
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Vectors.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.423
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT1.o: ../Generated_Code/BT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #16 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BTState1.o: ../Generated_Code/BTState1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #17 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BTState1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BTState1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT_EN.o: ../Generated_Code/BT_EN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #18 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT_EN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT_EN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd1.o: ../Generated_Code/BitIoLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #19 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #20 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #21 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C1.o: ../Generated_Code/CI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #22 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CI2C2.o: ../Generated_Code/CI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #23 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CLS1.o: ../Generated_Code/CLS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #24 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CLS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CLS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/CS1.o: ../Generated_Code/CS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #25 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Cpu.o: ../Generated_Code/Cpu.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #26 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Cpu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Cpu.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT.o: ../Generated_Code/DIR_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #27 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_LEFT1.o: ../Generated_Code/DIR_LEFT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #28 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT.o: ../Generated_Code/DIR_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #29 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/DIR_RIGHT1.o: ../Generated_Code/DIR_RIGHT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #30 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/FRTOS1.o: ../Generated_Code/FRTOS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #31 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/FRTOS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/FRTOS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C1.o: ../Generated_Code/GI2C1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #32 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #33 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/KSDK1.o: ../Generated_Code/KSDK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #34 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/KSDK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/KSDK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #35 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #36 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #37 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/MMA1.o: ../Generated_Code/MMA1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #38 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MMA1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MMA1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #39 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PE_LDD.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PE_LDD.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Gyro.o: ../Generated_Code/PWM_Gyro.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #40 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Gyro.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Gyro.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_LEFT.o: ../Generated_Code/PWM_LEFT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #41 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_LEFT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_RIGHT.o: ../Generated_Code/PWM_RIGHT.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #42 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_RIGHT.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PWM_Servo.o: ../Generated_Code/PWM_Servo.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #43 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Servo.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Servo.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd1.o: ../Generated_Code/PwmLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #44 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd2.o: ../Generated_Code/PwmLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #45 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd3.o: ../Generated_Code/PwmLdd3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #46 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/PwmLdd4.o: ../Generated_Code/PwmLdd4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #47 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd4.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/RED.o: ../Generated_Code/RED.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #48 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/RED.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/RED.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Serial1.o: ../Generated_Code/Serial1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #49 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Serial1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Serial1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TMOUT1.o: ../Generated_Code/TMOUT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #50 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TMOUT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TMOUT1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TSK1.o: ../Generated_Code/TSK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #51 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TSK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TSK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU1.o: ../Generated_Code/TU1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #52 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TU2.o: ../Generated_Code/TU2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #53 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE1.o: ../Generated_Code/TofCE1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #54 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE2.o: ../Generated_Code/TofCE2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #55 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/TofCE3.o: ../Generated_Code/TofCE3.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #56 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE3.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/UTIL1.o: ../Generated_Code/UTIL1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #57 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/UTIL1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/UTIL1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/Vectors.o: ../Generated_Code/Vectors.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #58 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Vectors.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Vectors.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/WAIT1.o: ../Generated_Code/WAIT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #59 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.424
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.961
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1708,15 +33,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.429
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.970
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2122,15 +452,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.430
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.971
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Watermark.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2155,15 +490,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.434
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.975
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2577,15 +917,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.436
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.976
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/croutine.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2610,15 +955,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.440
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.980
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3040,15 +1390,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.441
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.981
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3073,15 +1428,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.446
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.985
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3511,15 +1871,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.447
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.986
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3544,15 +1909,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.451
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.990
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3990,15 +2360,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.452
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.992
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4023,15 +2398,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.456
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.998
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4477,15 +2857,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.457
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:23.999
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4510,15 +2895,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.461
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.013
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4972,15 +3362,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.463
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.014
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5005,15 +3400,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.467
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.022
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5475,15 +3875,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.468
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.023
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_5.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5508,15 +3913,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.473
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.031
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5986,15 +4396,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.474
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.032
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/list.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6019,15 +4434,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.478
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.036
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6505,15 +4925,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.479
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.038
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/port.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6538,15 +4963,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.482
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.040
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7032,15 +5462,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.483
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.042
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/portasm.s
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7065,15 +5500,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.487
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.046
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7567,15 +6007,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.489
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.047
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7600,15 +6045,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.492
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.051
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8110,15 +6560,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.494
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.052
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/tasks.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8143,15 +6598,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.498
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.056
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8661,15 +7121,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.499
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.057
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8694,15 +7159,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-03-31 11:56:47.735
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-04-02 20:35:24.353
 !MESSAGE Cannot decode string # Tool invocations
 FRDM_RTOS_TestCar_V1.2.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
 	@echo 'Building target: $@'
@@ -8732,10 +7202,15 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

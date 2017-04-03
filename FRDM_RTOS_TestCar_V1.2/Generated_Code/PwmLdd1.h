@@ -6,7 +6,7 @@
 **     Component   : PWM_LDD
 **     Version     : Component 01.013, Driver 01.03, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-31, 10:45, # CodeGen: 167
+**     Date/Time   : 2017-04-02, 15:07, # CodeGen: 177
 **     Abstract    :
 **          This component implements a pulse-width modulation generator
 **          that generates signal with variable duty and fixed cycle.
@@ -20,15 +20,18 @@
 **          Output pin                                     : ADC0_DP3/ADC0_SE3/PTE22/TPM2_CH0/UART2_TX
 **          Output pin signal                              : 
 **          Counter                                        : TPM2_CNT
-**          Interrupt service/event                        : Disabled
-**          Period                                         : 10 ms
+**          Interrupt service/event                        : Enabled
+**            Interrupt                                    : INT_TPM2
+**            Interrupt priority                           : medium priority
+**            Iterations before action/event               : 1
+**          Period                                         : 20 ms
 **          Starting pulse width                           : 0 µs
 **          Initial polarity                               : low
 **          Initialization                                 : 
 **            Enabled in init. code                        : yes
 **            Auto initialization                          : yes
 **            Event mask                                   : 
-**              OnEnd                                      : Disabled
+**              OnEnd                                      : Enabled
 **          CPU clock/configuration selection              : 
 **            Clock configuration 0                        : This component enabled
 **            Clock configuration 1                        : This component disabled
@@ -42,6 +45,7 @@
 **            Linked component                             : TU1
 **     Contents    :
 **         Init       - LDD_TDeviceData* PwmLdd1_Init(LDD_TUserData *UserDataPtr);
+**         SetRatio8  - LDD_TError PwmLdd1_SetRatio8(LDD_TDeviceData *DeviceDataPtr, uint8_t Ratio);
 **         SetRatio16 - LDD_TError PwmLdd1_SetRatio16(LDD_TDeviceData *DeviceDataPtr, uint16_t Ratio);
 **         SetDutyUS  - LDD_TError PwmLdd1_SetDutyUS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
 **         SetDutyMS  - LDD_TError PwmLdd1_SetDutyMS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
@@ -124,11 +128,13 @@ extern "C" {
 
 /* Methods configuration constants - generated for all enabled component's methods */
 #define PwmLdd1_Init_METHOD_ENABLED    /*!< Init method of the component PwmLdd1 is enabled (generated) */
+#define PwmLdd1_SetRatio8_METHOD_ENABLED /*!< SetRatio8 method of the component PwmLdd1 is enabled (generated) */
 #define PwmLdd1_SetRatio16_METHOD_ENABLED /*!< SetRatio16 method of the component PwmLdd1 is enabled (generated) */
 #define PwmLdd1_SetDutyUS_METHOD_ENABLED /*!< SetDutyUS method of the component PwmLdd1 is enabled (generated) */
 #define PwmLdd1_SetDutyMS_METHOD_ENABLED /*!< SetDutyMS method of the component PwmLdd1 is enabled (generated) */
 
 /* Events configuration constants - generated for all enabled component's events */
+#define PwmLdd1_OnEnd_EVENT_ENABLED    /*!< OnEnd event of the component PwmLdd1 is enabled (generated) */
 
 
 
@@ -157,6 +163,34 @@ extern "C" {
 */
 /* ===================================================================*/
 LDD_TDeviceData* PwmLdd1_Init(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Method      :  PwmLdd1_SetRatio8 (component PWM_LDD)
+*/
+/*!
+**     @brief
+**         This method sets a new duty-cycle ratio. Ratio is expressed
+**         as an 8-bit unsigned integer number. 0 - FF value is
+**         proportional to ratio 0 - 100%. The method is available
+**         only if it is not selected list of predefined values in
+**         [Starting pulse width] property. 
+**         Note: Calculated duty depends on the timer capabilities and
+**         on the selected period.
+**     @param
+**         DeviceDataPtr   - Device data structure
+**                           pointer returned by [Init] method.
+**     @param
+**         Ratio           - Ratio to set. 0 - 255 value is
+**                           proportional to ratio 0 - 100%
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+*/
+/* ===================================================================*/
+LDD_TError PwmLdd1_SetRatio8(LDD_TDeviceData *DeviceDataPtr, uint8_t Ratio);
 
 /*
 ** ===================================================================
@@ -239,6 +273,25 @@ LDD_TError PwmLdd1_SetDutyUS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
 */
 /* ===================================================================*/
 LDD_TError PwmLdd1_SetDutyMS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
+
+/*
+** ===================================================================
+**     Method      :  PwmLdd1_OnCounterRestart (component PWM_LDD)
+**
+**     Description :
+**         Called if counter overflow/underflow or counter is 
+**         reinitialized by modulo or compare register matching. 
+**         OnCounterRestart event and Timer unit must be enabled. See <a 
+**         href="UntitledMethods.html#SetEventMask">SetEventMask</a> and 
+**         <a href="UntitledMethods.html#GetEventMask">GetEventMask</a> 
+**         methods.This event is available only if a <a 
+**         href="UntitledProperties.html#IntServiceCounter">Interrupt</a> 
+**         is enabled. The event services the event of the inherited 
+**         component and eventually invokes other events.
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+void TU1_OnCounterRestart0(LDD_TUserData *UserDataPtr);
 
 /* END PwmLdd1. */
 

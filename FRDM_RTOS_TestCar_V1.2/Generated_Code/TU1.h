@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-31, 10:45, # CodeGen: 167
+**     Date/Time   : 2017-04-02, 14:58, # CodeGen: 176
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -21,8 +21,10 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : TPM2_MOD
-**            Period                                       : 10 ms
-**            Interrupt                                    : Disabled
+**            Period                                       : 20 ms
+**            Interrupt                                    : Enabled
+**              Interrupt                                  : INT_TPM2
+**              Interrupt priority                         : medium priority
 **          Channel list                                   : 2
 **            Channel 0                                    : 
 **              Mode                                       : Compare
@@ -48,7 +50,7 @@
 **            Enabled in init. code                        : yes
 **            Auto initialization                          : no
 **            Event mask                                   : 
-**              OnCounterRestart                           : Disabled
+**              OnCounterRestart                           : Enabled
 **              OnChannel0                                 : Disabled
 **              OnChannel1                                 : Disabled
 **              OnChannel2                                 : Disabled
@@ -141,8 +143,8 @@ extern "C" {
 #define __BWUserType_TU1_TValueType
   typedef uint16_t TU1_TValueType ;    /* Type for data parameters of methods */
 #endif
-#define TU1_CNT_INP_FREQ_U_0 0x00500000UL /* Counter input frequency in Hz */
-#define TU1_CNT_INP_FREQ_R_0 5242876.24190631F /* Counter input frequency in Hz */
+#define TU1_CNT_INP_FREQ_U_0 0x00280000UL /* Counter input frequency in Hz */
+#define TU1_CNT_INP_FREQ_R_0 2621438.120953155F /* Counter input frequency in Hz */
 #define TU1_CNT_INP_FREQ_COUNT 0U      /* Count of predefined counter input frequencies */
 #define TU1_PERIOD_TICKS   0xCCCDUL    /* Initialization value of period in 'counter ticks' */
 #define TU1_NUMBER_OF_CHANNELS 0x02U   /* Count of predefined channels */
@@ -162,6 +164,7 @@ extern "C" {
 #define TU1_SelectOutputAction_METHOD_ENABLED /*!< SelectOutputAction method of the component TU1 is enabled (generated) */
 
 /* Events configuration constants - generated for all enabled component's events */
+#define TU1_OnCounterRestart_EVENT_ENABLED /*!< OnCounterRestart event of the component TU1 is enabled (generated) */
 
 
 
@@ -336,6 +339,19 @@ LDD_TError TU1_GetOffsetTicks(LDD_TDeviceData *DeviceDataPtr, uint8_t ChannelIdx
 */
 /* ===================================================================*/
 LDD_TError TU1_SelectOutputAction(LDD_TDeviceData *DeviceDataPtr, uint8_t ChannelIdx, LDD_TimerUnit_TOutAction CompareAction, LDD_TimerUnit_TOutAction CounterAction);
+
+/*
+** ===================================================================
+**     Method      :  TU1_Interrupt (component TimerUnit_LDD)
+**
+**     Description :
+**         The method services the interrupt of the selected peripheral(s)
+**         and eventually invokes event(s) of the component.
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+/* {FreeRTOS RTOS Adapter} ISR function prototype */
+PE_ISR(TU1_Interrupt);
 
 /* END TU1. */
 
