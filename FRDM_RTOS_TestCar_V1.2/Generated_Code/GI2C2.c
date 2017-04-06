@@ -4,9 +4,9 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : GenericI2C
-**     Version     : Component 01.028, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.030, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-20, 21:14, # CodeGen: 115
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -290,11 +290,13 @@ uint8_t GI2C2_ReadAddress(uint8_t i2cAddr, uint8_t *memAddr, uint8_t memAddrSize
     return ERR_FAILED;
   }
   for(;;) { /* breaks */
-    /* send device address and memory address */
-    GI2C2_deviceData.dataTransmittedFlg = FALSE;
-    res = CI2C2_MasterSendBlock(GI2C2_deviceData.handle, memAddr, memAddrSize, LDD_I2C_NO_SEND_STOP);
-    if (res!=ERR_OK) {
-      break; /* break for(;;) */
+    if(memAddr!=NULL) { /* only if we want to send an address */
+      /* send device address and memory address */
+      GI2C2_deviceData.dataTransmittedFlg = FALSE;
+      res = CI2C2_MasterSendBlock(GI2C2_deviceData.handle, memAddr, memAddrSize, LDD_I2C_NO_SEND_STOP);
+      if (res!=ERR_OK) {
+        break; /* break for(;;) */
+      }
     }
     timeout = TMOUT1_GetCounter(GI2C2_TIMEOUT_TICKS(memAddrSize)); /* set up timeout counter */
     if (timeout==TMOUT1_OUT_OF_HANDLE) {
@@ -463,10 +465,11 @@ void GI2C2_Init(void)
   if (GI2C2_deviceData.handle==NULL) {
     for(;;){} /* failure! */
   }
-  GI2C2_busSem = FRTOS1_xSemaphoreCreateRecursiveMutex();
+  GI2C2_busSem = xSemaphoreCreateRecursiveMutex();
   if (GI2C2_busSem==NULL) { /* semaphore creation failed */
     for(;;) {} /* error, not enough memory? */
   }
+  vQueueAddToRegistry(GI2C2_busSem, "GI2C2_Mutex");
 }
 
 /*
@@ -481,7 +484,9 @@ void GI2C2_Init(void)
 void GI2C2_Deinit(void)
 {
   CI2C2_Deinit(&GI2C2_deviceData);
+  vQueueUnregisterQueue(GI2C2_busSem);
   FRTOS1_vSemaphoreDelete(GI2C2_busSem);
+  GI2C2_busSem = NULL;
 }
 
 /*

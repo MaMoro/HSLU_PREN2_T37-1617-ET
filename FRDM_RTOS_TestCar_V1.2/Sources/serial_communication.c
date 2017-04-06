@@ -49,8 +49,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 8, kiT = 0, kdT = 1;		// 8, 0, 1
-static uint8_t kpG = 20, kiG = 1, kdG = 5;		// 20, 1, 5
+static uint8_t kpT = 6, kiT = 0, kdT = 1;		// 8, 0, 1
+static uint8_t kpG = 15, kiG = 2, kdG = 5;		// 18, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -126,7 +126,7 @@ void startCommunication(void){
 		sendStatusBT();
 		sendTestStatus();
 		
-		vTaskDelay(pdMS_TO_TICKS(20));
+		vTaskDelay(pdMS_TO_TICKS(30));
 	}
 }
 /*

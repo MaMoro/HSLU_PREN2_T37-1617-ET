@@ -4,9 +4,9 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : Wait
-**     Version     : Component 01.069, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.079, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-05, 20:56, # CodeGen: 33
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **          Implements busy waiting routines.
 **     Settings    :
@@ -24,15 +24,35 @@
 **         Waitus         - void WAIT1_Waitus(uint16_t us);
 **         Waitns         - void WAIT1_Waitns(uint16_t ns);
 **         WaitOSms       - void WAIT1_WaitOSms(void);
+**         Init           - void WAIT1_Init(void);
+**         DeInit         - void WAIT1_DeInit(void);
 **
-**     License   : Open Source (LGPL)
-**     Copyright : Erich Styger, 2013-2016, all rights reserved.
-**     Web       : www.mcuoneclipse.com
-**     This an open source software implementing waiting routines using Processor Expert.
-**     This is a free software and is opened for education,  research  and commercial developments under license policy of following terms:
-**     * This is a free software and there is NO WARRANTY.
-**     * No restriction on use. You can use, modify and redistribute it for personal, non-profit or commercial product UNDER YOUR RESPONSIBILITY.
-**     * Redistributions of source code must retain the above copyright notice.
+**     * Copyright (c) 2013-2017, Erich Styger
+**      * Web:         https://mcuoneclipse.com
+**      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
+**      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
+**      * All rights reserved.
+**      *
+**      * Redistribution and use in source and binary forms, with or without modification,
+**      * are permitted provided that the following conditions are met:
+**      *
+**      * - Redistributions of source code must retain the above copyright notice, this list
+**      *   of conditions and the following disclaimer.
+**      *
+**      * - Redistributions in binary form must reproduce the above copyright notice, this
+**      *   list of conditions and the following disclaimer in the documentation and/or
+**      *   other materials provided with the distribution.
+**      *
+**      * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+**      * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+**      * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+**      * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+**      * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+**      * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+**      * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+**      * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+**      * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+**      * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ** ###################################################################*/
 /*!
 ** @file WAIT1.h
@@ -49,32 +69,28 @@
 #define __WAIT1_H
 
 /* MODULE WAIT1. */
+#include "MCUC1.h" /* SDK and API used */
+#include "WAIT1config.h" /* configuration */
 
-/* Include inherited beans */
-#include "KSDK1.h"
+/* Include inherited components */
+#include "MCUC1.h"
 
-#if KSDK1_SDK_VERSION_USED == KSDK1_SDK_VERSION_NONE
-/* Include shared modules, which are used for whole project */
-  #include "PE_Types.h"
-  #include "PE_Error.h"
-  #include "PE_Const.h"
-  #include "IO_Map.h"
-  #include "Cpu.h"
-#endif
+/* other includes needed */
 /* include RTOS header files */
 #include "FreeRTOS.h" /* for vTaskDelay() */
 #include "task.h"
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-#if KSDK1_SDK_VERSION_USED != KSDK1_SDK_VERSION_NONE
+#if MCUC1_CONFIG_SDK_VERSION_USED == MCUC1_CONFIG_SDK_PROCESSOR_EXPERT
+  #define WAIT1_INSTR_CLOCK_HZ       CPU_CORE_CLK_HZ /* for Kinetis, use core clock as base for instruction execution */
+#else
   extern uint32_t SystemCoreClock; /* clock frequency variable defined system_<device>.h of the SDK */
   #define WAIT1_INSTR_CLOCK_HZ       SystemCoreClock  /* core clock frequency in Hz */
-#else
-  #define WAIT1_INSTR_CLOCK_HZ       CPU_CORE_CLK_HZ /* for Kinetis, use core clock as base for instruction execution */
 #endif
 #define WAIT1_NofCyclesMs(ms, hz)  ((ms)*((hz)/1000)) /* calculates the needed cycles based on bus clock frequency */
 #define WAIT1_NofCyclesUs(us, hz)  ((us)*(((hz)/1000)/1000)) /* calculates the needed cycles based on bus clock frequency */
@@ -209,6 +225,28 @@ void WAIT1_WaitLongCycles(uint32_t cycles);
 **     Parameters  :
 **         NAME            - DESCRIPTION
 **         cycles          - The number of cycles to wait.
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void WAIT1_Init(void);
+/*
+** ===================================================================
+**     Method      :  WAIT1_Init (component Wait)
+**     Description :
+**         Driver initialization routine.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void WAIT1_DeInit(void);
+/*
+** ===================================================================
+**     Method      :  WAIT1_DeInit (component Wait)
+**     Description :
+**         Driver de-initialization routine
+**     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================
 */

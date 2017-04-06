@@ -4,14 +4,14 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : CriticalSection
-**     Version     : Component 01.009, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.010, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-17, 17:56, # CodeGen: 76
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CS1
-**          SDK                                            : KSDK1
+**          SDK                                            : MCUC1
 **          Use Processor Expert Default                   : no
 **          Use FreeRTOS                                   : yes
 **     Contents    :
@@ -19,14 +19,32 @@
 **         EnterCritical    - void CS1_EnterCritical(void);
 **         ExitCritical     - void CS1_ExitCritical(void);
 **
-**     License   : Open Source (LGPL)
-**     Copyright : Erich Styger, 2014-2016, all rights reserved.
-**     Web       : www.mcuoneclipse.com
-**     This an open source software implementing a driver using Processor Expert.
-**     This is a free software and is opened for education, research and commercial developments under license policy of following terms:
-**     * This is a free software and there is NO WARRANTY.
-**     * No restriction on use. You can use, modify and redistribute it for personal, non-profit or commercial product UNDER YOUR RESPONSIBILITY.
-**     * Redistributions of source code must retain the above copyright notice.
+**     * Copyright (c) 2014-2016, Erich Styger
+**      * Web:         https://mcuoneclipse.com
+**      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
+**      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
+**      * All rights reserved.
+**      *
+**      * Redistribution and use in source and binary forms, with or without modification,
+**      * are permitted provided that the following conditions are met:
+**      *
+**      * - Redistributions of source code must retain the above copyright notice, this list
+**      *   of conditions and the following disclaimer.
+**      *
+**      * - Redistributions in binary form must reproduce the above copyright notice, this
+**      *   list of conditions and the following disclaimer in the documentation and/or
+**      *   other materials provided with the distribution.
+**      *
+**      * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+**      * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+**      * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+**      * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+**      * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+**      * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+**      * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+**      * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+**      * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+**      * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ** ###################################################################*/
 /*!
 ** @file CS1.h
@@ -43,21 +61,16 @@
 #define __CS1_H
 
 /* MODULE CS1. */
+#include "MCUC1.h" /* SDK and API used */
+#include "CS1config.h" /* configuration */
 
-/* Include inherited beans */
-#include "KSDK1.h"
 
-#if KSDK1_SDK_VERSION_USED == KSDK1_SDK_VERSION_NONE
-/* Include shared modules, which are used for whole project */
-  #include "PE_Types.h"
-  #include "PE_Error.h"
-  #include "PE_Const.h"
-  #include "IO_Map.h"
-  #include "Cpu.h"
+/* other includes needed */
+#if CS1_CONFIG_USE_RTOS_CRITICAL_SECTION
+  #include "FreeRTOS.h"
+  #include "task.h"  /* FreeRTOS header file for taskENTER_CRITICAL() and taskEXIT_CRITICAL() macros */
 #endif
 
-#include "FreeRTOS.h"
-#include "task.h"  /* FreeRTOS header file for taskENTER_CRITICAL() and taskEXIT_CRITICAL() macros */
 
 /* workaround macros for wrong EnterCritical()/ExitCritical() in the low level drivers. */
 #define CS1_CriticalVariableDrv() \
@@ -67,9 +80,17 @@
 #define CS1_ExitCriticalDrv() \
   CS1_ExitCritical()
 
-#define CS1_CriticalVariable() \
-  /* nothing needed */
+#ifdef __HIWARE__
+  #pragma MESSAGE DISABLE C3303 /* C3303 Implicit concatenation of strings */
+#endif
 
+#if CS1_CONFIG_USE_PEX_DEFAULT
+  #define CS1_CriticalVariable() /* nothing needed */
+#elif CS1_CONFIG_USE_RTOS_CRITICAL_SECTION
+  #define CS1_CriticalVariable() /* nothing needed */
+#elif CS1_CONFIG_USE_CUSTOM_CRITICAL_SECTION
+  #define CS1_CriticalVariable() uint8_t cpuSR; /* variable to store current status */
+#endif
 /*
 ** ===================================================================
 **     Method      :  CS1_CriticalVariable (component CriticalSection)
@@ -80,9 +101,23 @@
 ** ===================================================================
 */
 
-#define CS1_EnterCritical() \
-  taskENTER_CRITICAL_FROM_ISR() /* FreeRTOS critical section inside interrupt */
-
+#if CS1_CONFIG_USE_PEX_DEFAULT
+  #define CS1_EnterCritical()   EnterCritical()
+#elif CS1_CONFIG_USE_RTOS_CRITICAL_SECTION
+  #define CS1_EnterCritical()   taskENTER_CRITICAL_FROM_ISR() /* FreeRTOS critical section inside interrupt */
+#elif CS1_CONFIG_USE_CUSTOM_CRITICAL_SECTION
+  #define CS1_EnterCritical() \
+    do {                                  \
+      /*lint -save  -esym(529,cpuSR) Symbol 'cpuSR' not subsequently referenced. */\
+      __asm (                             \
+      "mrs   r0, PRIMASK     \n\t"        \
+      "cpsid i               \n\t"        \
+      "strb r0, %[output]   \n\t"         \
+      : [output] "=m" (cpuSR) :: "r0");   \
+      __asm ("" ::: "memory");            \
+      /*lint -restore Symbol 'cpuSR' not subsequently referenced. */\
+    } while(0)
+#endif
 /*
 ** ===================================================================
 **     Method      :  CS1_EnterCritical (component CriticalSection)
@@ -93,9 +128,19 @@
 ** ===================================================================
 */
 
-#define CS1_ExitCritical() \
-  taskEXIT_CRITICAL_FROM_ISR(0) /* FreeRTOS critical section inside interrupt */
-
+#if CS1_CONFIG_USE_PEX_DEFAULT
+  #define CS1_ExitCritical()   ExitCritical()
+#elif CS1_CONFIG_USE_RTOS_CRITICAL_SECTION
+  #define CS1_ExitCritical()   taskEXIT_CRITICAL_FROM_ISR(0) /* FreeRTOS critical section inside interrupt */
+#elif CS1_CONFIG_USE_CUSTOM_CRITICAL_SECTION
+  #define CS1_ExitCritical() \
+   do{                                  \
+     __asm (                            \
+     "ldrb r0, %[input]    \n\t"        \
+     "msr PRIMASK,r0        \n\t"       \
+     ::[input] "m" (cpuSR) : "r0");     \
+   } while(0)
+#endif
 /*
 ** ===================================================================
 **     Method      :  CS1_ExitCritical (component CriticalSection)

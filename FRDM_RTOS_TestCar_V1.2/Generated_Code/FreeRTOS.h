@@ -96,14 +96,9 @@ extern "C" {
 /* Application specific configuration options. */
 #include "FreeRTOSConfig.h"
 
-#if configGENERATE_STATIC_SOURCES || configPEX_KINETIS_SDK /* << EST */
-  #include <stdint.h> /* READ COMMENT ABOVE. */
-#else
-  #include "PE_Types.h"
-#endif
-#if configSYSTICK_USE_LOW_POWER_TIMER
-  #include "IO_Map.h"
-  #include "SIM_PDD.h"
+//  #include <stdint.h> /* READ COMMENT ABOVE. */
+#if configSYSTICK_USE_LOW_POWER_TIMER && MCUC1_CONFIG_SDK_VERSION_USED == MCUC1_CONFIG_SDK_PROCESSOR_EXPERT
+  #include "SIM_PDD.h"  /*! \todo this is a PEx header */
 #endif
 
 /* Basic FreeRTOS definitions. */
@@ -135,6 +130,10 @@ extern "C" {
 	#error Missing definition:  configMAX_PRIORITIES must be defined in FreeRTOSConfig.h.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
 
+#if configMAX_PRIORITIES < 1
+	#error configMAX_PRIORITIES must be defined to be greater than or equal to 1.
+#endif
+
 #ifndef configUSE_PREEMPTION
 	#error Missing definition:  configUSE_PREEMPTION must be defined in FreeRTOSConfig.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
 #endif
@@ -149,10 +148,6 @@ extern "C" {
 
 #ifndef configUSE_16_BIT_TICKS
 	#error Missing definition:  configUSE_16_BIT_TICKS must be defined in FreeRTOSConfig.h as either 1 or 0.  See the Configuration section of the FreeRTOS API documentation for details.
-#endif
-
-#ifndef configMAX_PRIORITIES
-	#error configMAX_PRIORITIES must be defined to be greater than or equal to 1.
 #endif
 
 #ifndef configUSE_CO_ROUTINES
@@ -343,7 +338,7 @@ extern "C" {
   #error "Only one trace implementation can be active"
 #endif
 #if configUSE_TRACE_HOOKS /* << EST */
-  #include "trcKernelPort.h" /* include Percepio trace macro definition */
+  //#include "trcKernelPort.h" /* include Percepio trace macro definition */
 #endif
 #if configUSE_SEGGER_SYSTEM_VIEWER_HOOKS
   #include "SEGGER_SYSVIEW_FreeRTOS.h" /* include Segger System Viewer macro definitions */
@@ -427,6 +422,14 @@ extern "C" {
 	#define configCHECK_FOR_STACK_OVERFLOW 0
 #endif
 
+#ifndef configRECORD_STACK_HIGH_ADDRESS
+	#define configRECORD_STACK_HIGH_ADDRESS 0
+#endif
+
+#ifndef configINCLUDE_FREERTOS_TASK_C_ADDITIONS_H
+	#define configINCLUDE_FREERTOS_TASK_C_ADDITIONS_H 0
+#endif
+
 /* The following event macros are embedded in the kernel API calls. */
 
 #ifndef traceMOVED_TASK_TO_READY_STATE
@@ -434,7 +437,7 @@ extern "C" {
 #endif
 
 #ifndef tracePOST_MOVED_TASK_TO_READY_STATE
-  #define tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
+	#define tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
 #endif
 
 #ifndef traceQUEUE_CREATE
@@ -964,7 +967,7 @@ typedef struct xSTATIC_TCB
 	UBaseType_t			uxDummy5;
 	void				*pxDummy6;
 	uint8_t				ucDummy7[ configMAX_TASK_NAME_LEN ];
-	#if ( portSTACK_GROWTH > 0 )
+	#if ( ( portSTACK_GROWTH > 0 ) || ( configRECORD_STACK_HIGH_ADDRESS == 1 ) )
 		void			*pxDummy8;
   #else /* << EST */
     void      *pxDummy8;
@@ -994,7 +997,7 @@ typedef struct xSTATIC_TCB
 		uint32_t 		ulDummy18;
 		uint8_t 		ucDummy19;
 	#endif
-	#if( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+	#if( ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) ) || ( portUSING_MPU_WRAPPERS == 1 ) )
 		uint8_t			uxDummy20;
 	#endif
 
@@ -1109,5 +1112,9 @@ typedef struct xSTATIC_TIMER
 #endif
 
 #endif /* INC_FREERTOS_H */
+
+#if configUSE_TRACE_HOOKS /* << EST */
+  #include "trcRecorder.h"
+#endif
 
 

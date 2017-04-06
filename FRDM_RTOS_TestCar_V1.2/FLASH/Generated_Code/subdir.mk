@@ -27,10 +27,10 @@ C_SRCS_QUOTED += \
 "../Generated_Code/FRTOS1.c" \
 "../Generated_Code/GI2C1.c" \
 "../Generated_Code/GI2C2.c" \
-"../Generated_Code/KSDK1.c" \
 "../Generated_Code/LED_GREEN.c" \
 "../Generated_Code/LEDpin3.c" \
 "../Generated_Code/LEDpin4.c" \
+"../Generated_Code/MCUC1.c" \
 "../Generated_Code/MMA1.c" \
 "../Generated_Code/PE_LDD.c" \
 "../Generated_Code/PWM_Gyro.c" \
@@ -54,6 +54,7 @@ C_SRCS_QUOTED += \
 "../Generated_Code/Vectors.c" \
 "../Generated_Code/WAIT1.c" \
 "../Generated_Code/Watermark.c" \
+"../Generated_Code/XF1.c" \
 "../Generated_Code/croutine.c" \
 "../Generated_Code/event_groups.c" \
 "../Generated_Code/heap_1.c" \
@@ -62,6 +63,7 @@ C_SRCS_QUOTED += \
 "../Generated_Code/heap_4.c" \
 "../Generated_Code/heap_5.c" \
 "../Generated_Code/list.c" \
+"../Generated_Code/mpu_wrappers.c" \
 "../Generated_Code/port.c" \
 "../Generated_Code/queue.c" \
 "../Generated_Code/tasks.c" \
@@ -89,10 +91,10 @@ C_SRCS += \
 ../Generated_Code/FRTOS1.c \
 ../Generated_Code/GI2C1.c \
 ../Generated_Code/GI2C2.c \
-../Generated_Code/KSDK1.c \
 ../Generated_Code/LED_GREEN.c \
 ../Generated_Code/LEDpin3.c \
 ../Generated_Code/LEDpin4.c \
+../Generated_Code/MCUC1.c \
 ../Generated_Code/MMA1.c \
 ../Generated_Code/PE_LDD.c \
 ../Generated_Code/PWM_Gyro.c \
@@ -116,6 +118,7 @@ C_SRCS += \
 ../Generated_Code/Vectors.c \
 ../Generated_Code/WAIT1.c \
 ../Generated_Code/Watermark.c \
+../Generated_Code/XF1.c \
 ../Generated_Code/croutine.c \
 ../Generated_Code/event_groups.c \
 ../Generated_Code/heap_1.c \
@@ -124,6 +127,7 @@ C_SRCS += \
 ../Generated_Code/heap_4.c \
 ../Generated_Code/heap_5.c \
 ../Generated_Code/list.c \
+../Generated_Code/mpu_wrappers.c \
 ../Generated_Code/port.c \
 ../Generated_Code/queue.c \
 ../Generated_Code/tasks.c \
@@ -160,10 +164,10 @@ OBJS += \
 ./Generated_Code/FRTOS1.o \
 ./Generated_Code/GI2C1.o \
 ./Generated_Code/GI2C2.o \
-./Generated_Code/KSDK1.o \
 ./Generated_Code/LED_GREEN.o \
 ./Generated_Code/LEDpin3.o \
 ./Generated_Code/LEDpin4.o \
+./Generated_Code/MCUC1.o \
 ./Generated_Code/MMA1.o \
 ./Generated_Code/PE_LDD.o \
 ./Generated_Code/PWM_Gyro.o \
@@ -187,6 +191,7 @@ OBJS += \
 ./Generated_Code/Vectors.o \
 ./Generated_Code/WAIT1.o \
 ./Generated_Code/Watermark.o \
+./Generated_Code/XF1.o \
 ./Generated_Code/croutine.o \
 ./Generated_Code/event_groups.o \
 ./Generated_Code/heap_1.o \
@@ -195,6 +200,7 @@ OBJS += \
 ./Generated_Code/heap_4.o \
 ./Generated_Code/heap_5.o \
 ./Generated_Code/list.o \
+./Generated_Code/mpu_wrappers.o \
 ./Generated_Code/port.o \
 ./Generated_Code/portasm.o \
 ./Generated_Code/queue.o \
@@ -223,10 +229,10 @@ C_DEPS += \
 ./Generated_Code/FRTOS1.d \
 ./Generated_Code/GI2C1.d \
 ./Generated_Code/GI2C2.d \
-./Generated_Code/KSDK1.d \
 ./Generated_Code/LED_GREEN.d \
 ./Generated_Code/LEDpin3.d \
 ./Generated_Code/LEDpin4.d \
+./Generated_Code/MCUC1.d \
 ./Generated_Code/MMA1.d \
 ./Generated_Code/PE_LDD.d \
 ./Generated_Code/PWM_Gyro.d \
@@ -250,6 +256,7 @@ C_DEPS += \
 ./Generated_Code/Vectors.d \
 ./Generated_Code/WAIT1.d \
 ./Generated_Code/Watermark.d \
+./Generated_Code/XF1.d \
 ./Generated_Code/croutine.d \
 ./Generated_Code/event_groups.d \
 ./Generated_Code/heap_1.d \
@@ -258,6 +265,7 @@ C_DEPS += \
 ./Generated_Code/heap_4.d \
 ./Generated_Code/heap_5.d \
 ./Generated_Code/list.d \
+./Generated_Code/mpu_wrappers.d \
 ./Generated_Code/port.d \
 ./Generated_Code/queue.d \
 ./Generated_Code/tasks.d \
@@ -288,10 +296,10 @@ OBJS_QUOTED += \
 "./Generated_Code/FRTOS1.o" \
 "./Generated_Code/GI2C1.o" \
 "./Generated_Code/GI2C2.o" \
-"./Generated_Code/KSDK1.o" \
 "./Generated_Code/LED_GREEN.o" \
 "./Generated_Code/LEDpin3.o" \
 "./Generated_Code/LEDpin4.o" \
+"./Generated_Code/MCUC1.o" \
 "./Generated_Code/MMA1.o" \
 "./Generated_Code/PE_LDD.o" \
 "./Generated_Code/PWM_Gyro.o" \
@@ -315,6 +323,7 @@ OBJS_QUOTED += \
 "./Generated_Code/Vectors.o" \
 "./Generated_Code/WAIT1.o" \
 "./Generated_Code/Watermark.o" \
+"./Generated_Code/XF1.o" \
 "./Generated_Code/croutine.o" \
 "./Generated_Code/event_groups.o" \
 "./Generated_Code/heap_1.o" \
@@ -323,6 +332,7 @@ OBJS_QUOTED += \
 "./Generated_Code/heap_4.o" \
 "./Generated_Code/heap_5.o" \
 "./Generated_Code/list.o" \
+"./Generated_Code/mpu_wrappers.o" \
 "./Generated_Code/port.o" \
 "./Generated_Code/portasm.o" \
 "./Generated_Code/queue.o" \
@@ -351,10 +361,10 @@ C_DEPS_QUOTED += \
 "./Generated_Code/FRTOS1.d" \
 "./Generated_Code/GI2C1.d" \
 "./Generated_Code/GI2C2.d" \
-"./Generated_Code/KSDK1.d" \
 "./Generated_Code/LED_GREEN.d" \
 "./Generated_Code/LEDpin3.d" \
 "./Generated_Code/LEDpin4.d" \
+"./Generated_Code/MCUC1.d" \
 "./Generated_Code/MMA1.d" \
 "./Generated_Code/PE_LDD.d" \
 "./Generated_Code/PWM_Gyro.d" \
@@ -378,6 +388,7 @@ C_DEPS_QUOTED += \
 "./Generated_Code/Vectors.d" \
 "./Generated_Code/WAIT1.d" \
 "./Generated_Code/Watermark.d" \
+"./Generated_Code/XF1.d" \
 "./Generated_Code/croutine.d" \
 "./Generated_Code/event_groups.d" \
 "./Generated_Code/heap_1.d" \
@@ -386,6 +397,7 @@ C_DEPS_QUOTED += \
 "./Generated_Code/heap_4.d" \
 "./Generated_Code/heap_5.d" \
 "./Generated_Code/list.d" \
+"./Generated_Code/mpu_wrappers.d" \
 "./Generated_Code/port.d" \
 "./Generated_Code/queue.d" \
 "./Generated_Code/tasks.d" \
@@ -413,10 +425,10 @@ OBJS_OS_FORMAT += \
 ./Generated_Code/FRTOS1.o \
 ./Generated_Code/GI2C1.o \
 ./Generated_Code/GI2C2.o \
-./Generated_Code/KSDK1.o \
 ./Generated_Code/LED_GREEN.o \
 ./Generated_Code/LEDpin3.o \
 ./Generated_Code/LEDpin4.o \
+./Generated_Code/MCUC1.o \
 ./Generated_Code/MMA1.o \
 ./Generated_Code/PE_LDD.o \
 ./Generated_Code/PWM_Gyro.o \
@@ -440,6 +452,7 @@ OBJS_OS_FORMAT += \
 ./Generated_Code/Vectors.o \
 ./Generated_Code/WAIT1.o \
 ./Generated_Code/Watermark.o \
+./Generated_Code/XF1.o \
 ./Generated_Code/croutine.o \
 ./Generated_Code/event_groups.o \
 ./Generated_Code/heap_1.o \
@@ -448,6 +461,7 @@ OBJS_OS_FORMAT += \
 ./Generated_Code/heap_4.o \
 ./Generated_Code/heap_5.o \
 ./Generated_Code/list.o \
+./Generated_Code/mpu_wrappers.o \
 ./Generated_Code/port.o \
 ./Generated_Code/portasm.o \
 ./Generated_Code/queue.o \
@@ -624,17 +638,9 @@ Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Generated_Code/KSDK1.o: ../Generated_Code/KSDK1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #34 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/KSDK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/KSDK1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
 Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #35 $<'
+	@echo 'Executing target #34 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
 	@echo 'Finished building: $<'
@@ -642,7 +648,7 @@ Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
 
 Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #36 $<'
+	@echo 'Executing target #35 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
 	@echo 'Finished building: $<'
@@ -650,9 +656,17 @@ Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
 
 Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #37 $<'
+	@echo 'Executing target #36 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/MCUC1.o: ../Generated_Code/MCUC1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #37 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MCUC1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MCUC1.o"
 	@echo 'Finished building: $<'
 	@echo ' '
 
@@ -840,9 +854,17 @@ Generated_Code/Watermark.o: ../Generated_Code/Watermark.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Generated_Code/croutine.o: ../Generated_Code/croutine.c
+Generated_Code/XF1.o: ../Generated_Code/XF1.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #61 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/XF1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/XF1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/croutine.o: ../Generated_Code/croutine.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #62 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/croutine.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/croutine.o"
 	@echo 'Finished building: $<'
@@ -850,7 +872,7 @@ Generated_Code/croutine.o: ../Generated_Code/croutine.c
 
 Generated_Code/event_groups.o: ../Generated_Code/event_groups.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #62 $<'
+	@echo 'Executing target #63 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/event_groups.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/event_groups.o"
 	@echo 'Finished building: $<'
@@ -858,7 +880,7 @@ Generated_Code/event_groups.o: ../Generated_Code/event_groups.c
 
 Generated_Code/heap_1.o: ../Generated_Code/heap_1.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #63 $<'
+	@echo 'Executing target #64 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_1.o"
 	@echo 'Finished building: $<'
@@ -866,7 +888,7 @@ Generated_Code/heap_1.o: ../Generated_Code/heap_1.c
 
 Generated_Code/heap_2.o: ../Generated_Code/heap_2.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #64 $<'
+	@echo 'Executing target #65 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_2.o"
 	@echo 'Finished building: $<'
@@ -874,7 +896,7 @@ Generated_Code/heap_2.o: ../Generated_Code/heap_2.c
 
 Generated_Code/heap_3.o: ../Generated_Code/heap_3.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #65 $<'
+	@echo 'Executing target #66 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_3.o"
 	@echo 'Finished building: $<'
@@ -882,7 +904,7 @@ Generated_Code/heap_3.o: ../Generated_Code/heap_3.c
 
 Generated_Code/heap_4.o: ../Generated_Code/heap_4.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #66 $<'
+	@echo 'Executing target #67 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_4.o"
 	@echo 'Finished building: $<'
@@ -890,7 +912,7 @@ Generated_Code/heap_4.o: ../Generated_Code/heap_4.c
 
 Generated_Code/heap_5.o: ../Generated_Code/heap_5.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #67 $<'
+	@echo 'Executing target #68 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_5.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_5.o"
 	@echo 'Finished building: $<'
@@ -898,15 +920,23 @@ Generated_Code/heap_5.o: ../Generated_Code/heap_5.c
 
 Generated_Code/list.o: ../Generated_Code/list.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #68 $<'
+	@echo 'Executing target #69 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/list.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/list.o"
 	@echo 'Finished building: $<'
 	@echo ' '
 
+Generated_Code/mpu_wrappers.o: ../Generated_Code/mpu_wrappers.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #70 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/mpu_wrappers.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/mpu_wrappers.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 Generated_Code/port.o: ../Generated_Code/port.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #69 $<'
+	@echo 'Executing target #71 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/port.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/port.o"
 	@echo 'Finished building: $<'
@@ -914,7 +944,7 @@ Generated_Code/port.o: ../Generated_Code/port.c
 
 Generated_Code/portasm.o: ../Generated_Code/portasm.s
 	@echo 'Building file: $<'
-	@echo 'Executing target #70 $<'
+	@echo 'Executing target #72 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC Assembler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/portasm.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/portasm.o"
 	@echo 'Finished building: $<'
@@ -922,7 +952,7 @@ Generated_Code/portasm.o: ../Generated_Code/portasm.s
 
 Generated_Code/queue.o: ../Generated_Code/queue.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #71 $<'
+	@echo 'Executing target #73 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/queue.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/queue.o"
 	@echo 'Finished building: $<'
@@ -930,7 +960,7 @@ Generated_Code/queue.o: ../Generated_Code/queue.c
 
 Generated_Code/tasks.o: ../Generated_Code/tasks.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #72 $<'
+	@echo 'Executing target #74 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/tasks.o"
 	@echo 'Finished building: $<'
@@ -938,7 +968,7 @@ Generated_Code/tasks.o: ../Generated_Code/tasks.c
 
 Generated_Code/timers.o: ../Generated_Code/timers.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #73 $<'
+	@echo 'Executing target #75 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/timers.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/timers.o"
 	@echo 'Finished building: $<'

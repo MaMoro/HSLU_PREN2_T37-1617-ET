@@ -4,9 +4,9 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : Shell
-**     Version     : Component 01.085, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.090, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-16, 17:52, # CodeGen: 65
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **
 **     Settings    :
@@ -30,7 +30,7 @@
 **          Semaphore                                      : yes
 **          Critical Section                               : CS1
 **          History                                        : no
-**          Kinetis SDK                                    : KSDK1
+**          Kinetis SDK                                    : MCUC1
 **     Contents    :
 **         PrintPrompt                  - void CLS1_PrintPrompt(CLS1_ConstStdIOType *io);
 **         SendNum8u                    - void CLS1_SendNum8u(uint8_t val, CLS1_StdIO_OutErr_FctType io);
@@ -41,6 +41,8 @@
 **         SendNum32s                   - void CLS1_SendNum32s(int32_t val, CLS1_StdIO_OutErr_FctType io);
 **         SendCh                       - void CLS1_SendCh(uint8_t ch, CLS1_StdIO_OutErr_FctType io);
 **         SendStr                      - void CLS1_SendStr(const uint8_t *str, CLS1_StdIO_OutErr_FctType io);
+**         printfIO                     - unsigned CLS1_printfIO(CLS1_ConstStdIOType *io, const char *fmt, ...);
+**         printf                       - unsigned CLS1_printf(const char *fmt, ...);
 **         SendData                     - void CLS1_SendData(const uint8_t *data, uint16_t dataSize,...
 **         PrintStatus                  - uint8_t CLS1_PrintStatus(CLS1_ConstStdIOType *io);
 **         ParseCommand                 - uint8_t CLS1_ParseCommand(const uint8_t *cmd, bool *handled,...
@@ -106,14 +108,8 @@
 #define __CLS1_H
 
 /* MODULE CLS1. */
-#ifndef __HIWARE__
-  #include <stdint.h>
-  #include <stdbool.h>
-#endif
-
-#ifndef bool
-  #include "PE_Types.h"
-#endif
+#include "MCUC1.h" /* SDK and API used */
+#include "CLS1config.h" /* configuration */
 
 
 #ifndef __BWUserType_CLS1_StdIO_OutErr_FctType
@@ -154,24 +150,17 @@
   typedef const CLS1_ParseCommandCallback CLS1_ConstParseCommandCallback; /* Callback for parsing a shell command */
 #endif
 
-
 #define CLS1_DEFAULT_SHELL_BUFFER_SIZE  48  /* default buffer size for shell command parsing */
 
 /* Include inherited components */
 #include "WAIT1.h"
-#include "UTIL1.h"
+#include "MCUC1.h"
 #include "AS1.h"
+#include "UTIL1.h"
+#include "XF1.h"
 #include "CS1.h"
-#include "KSDK1.h"
 
-#if KSDK1_SDK_VERSION_USED == KSDK1_SDK_VERSION_NONE
-/* Include shared modules, which are used for whole project */
-  #include "PE_Types.h"
-  #include "PE_Error.h"
-  #include "PE_Const.h"
-  #include "IO_Map.h"
-  #include "Cpu.h"
-#endif
+/* other includes needed */
 #include <stddef.h> /* for size_t */
 
 /* settings for command line history */
@@ -667,6 +656,48 @@ void CLS1_SendCh(uint8_t ch, CLS1_StdIO_OutErr_FctType io);
 **         ch              - Character to send
 **         io              - I/O callbacks to be used for printing.
 **     Returns     : Nothing
+** ===================================================================
+*/
+
+unsigned CLS1_printf(const char *fmt, ...);
+/*
+** ===================================================================
+**     Method      :  CLS1_printf (component Shell)
+**     Description :
+**         Printf() style function using XFormat component, using the
+**         shell default I/O handler.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         fmt             - printf style format string
+**     Returns     :
+**         ---             - number of characters written
+** ===================================================================
+*/
+
+void CLS1_printfPutChar(void *arg, char c);
+/*
+** ===================================================================
+**     Method      :  CLS1_printfPutChar (component Shell)
+**
+**     Description :
+**         Helper routine for printf
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+
+unsigned CLS1_printfIO(CLS1_ConstStdIOType *io, const char *fmt, ...);
+/*
+** ===================================================================
+**     Method      :  CLS1_printfIO (component Shell)
+**     Description :
+**         Printf() style function using XFormat component, using a
+**         custom I/O handler.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**       * io              - Pointer to 
+**         fmt             - printf style format string
+**     Returns     :
+**         ---             - number of characters written
 ** ===================================================================
 */
 

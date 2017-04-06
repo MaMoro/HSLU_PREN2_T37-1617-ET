@@ -103,7 +103,15 @@ void motorSetPWMLeft(int8_t value)
 	  DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
 #endif
 	  }
+#if DUALMOTORDRIVER
+  if(abs(pwmLeft-value)<50){		// Motordriver safety if difference is too high then set the half of the incrementation
+	  pwmLeft = value;
+  }else if(abs(pwmLeft-value/2)<50){
+	  pwmLeft = value/2;
+  }
+#else
   pwmLeft = value;
+#endif
 }
 
 /**
@@ -145,7 +153,15 @@ void motorSetPWMRight(int8_t value)
 		DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);  
 #endif
 	  }  
+#if DUALMOTORDRIVER
+  if(abs(pwmRight-value)<50){		// Motordriver safety if difference is too high then set the half of the incrementation
 	  pwmRight = value;
+  }else if(abs(pwmRight-value/2)<50){
+	  pwmRight = value/2;
+  }
+#else
+  pwmRight = value;
+#endif
 }
 
 /**

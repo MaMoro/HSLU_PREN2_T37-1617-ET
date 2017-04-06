@@ -14,9 +14,10 @@ Generated_Code/TSK1.o: ../Generated_Code/TSK1.c \
  ../Generated_Code/PE_Error.h ../Generated_Code/PE_Const.h \
  ../Generated_Code/IO_Map.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/iofiles/MKL25Z4.h \
- ../Generated_Code/FRTOS1.h ../Generated_Code/KSDK1.h \
- C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdbool.h \
- ../Generated_Code/Cpu.h ../Generated_Code/UTIL1.h \
+ ../Generated_Code/FRTOS1.h ../Generated_Code/MCUC1.h \
+ ../Generated_Code/MCUC1config.h ../Generated_Code/Cpu.h \
+ ../Generated_Code/FRTOS1config.h ../Generated_Code/UTIL1.h \
+ ../Generated_Code/UTIL1config.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/null.h \
@@ -71,13 +72,17 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/iofiles/MKL25Z4.h:
 
 ../Generated_Code/FRTOS1.h:
 
-../Generated_Code/KSDK1.h:
+../Generated_Code/MCUC1.h:
 
-C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdbool.h:
+../Generated_Code/MCUC1config.h:
 
 ../Generated_Code/Cpu.h:
 
+../Generated_Code/FRTOS1config.h:
+
 ../Generated_Code/UTIL1.h:
+
+../Generated_Code/UTIL1config.h:
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h:
 

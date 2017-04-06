@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-org.eclipse.rse.preferences.order.connections=LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA Target;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink Target;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA
+org.eclipse.rse.preferences.order.connections=LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_OpenSDA Target;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink;LAPTOP-N8HU1KBH.FRDM_RTOS_TestCar_V1.2_FLASH_PnE U-MultiLink Target

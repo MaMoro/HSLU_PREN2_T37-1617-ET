@@ -4,9 +4,9 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : Shell
-**     Version     : Component 01.085, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.090, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-16, 17:52, # CodeGen: 65
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **
 **     Settings    :
@@ -30,7 +30,7 @@
 **          Semaphore                                      : yes
 **          Critical Section                               : CS1
 **          History                                        : no
-**          Kinetis SDK                                    : KSDK1
+**          Kinetis SDK                                    : MCUC1
 **     Contents    :
 **         PrintPrompt                  - void CLS1_PrintPrompt(CLS1_ConstStdIOType *io);
 **         SendNum8u                    - void CLS1_SendNum8u(uint8_t val, CLS1_StdIO_OutErr_FctType io);
@@ -41,6 +41,8 @@
 **         SendNum32s                   - void CLS1_SendNum32s(int32_t val, CLS1_StdIO_OutErr_FctType io);
 **         SendCh                       - void CLS1_SendCh(uint8_t ch, CLS1_StdIO_OutErr_FctType io);
 **         SendStr                      - void CLS1_SendStr(const uint8_t *str, CLS1_StdIO_OutErr_FctType io);
+**         printfIO                     - unsigned CLS1_printfIO(CLS1_ConstStdIOType *io, const char *fmt, ...);
+**         printf                       - unsigned CLS1_printf(const char *fmt, ...);
 **         SendData                     - void CLS1_SendData(const uint8_t *data, uint16_t dataSize,...
 **         PrintStatus                  - uint8_t CLS1_PrintStatus(CLS1_ConstStdIOType *io);
 **         ParseCommand                 - uint8_t CLS1_ParseCommand(const uint8_t *cmd, bool *handled,...
@@ -1125,6 +1127,71 @@ void CLS1_SendData(const uint8_t *data, uint16_t dataSize, CLS1_StdIO_OutErr_Fct
     io(*data++);
     dataSize--;
   }
+}
+
+/*
+** ===================================================================
+**     Method      :  CLS1_printfPutChar (component Shell)
+**
+**     Description :
+**         Helper routine for printf
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+void CLS1_printfPutChar(void *arg, char c)
+{
+  CLS1_StdIO_OutErr_FctType fct = (CLS1_StdIO_OutErr_FctType)arg;
+
+  fct(c); /* print character */
+}
+
+/*
+** ===================================================================
+**     Method      :  CLS1_printfIO (component Shell)
+**     Description :
+**         Printf() style function using XFormat component, using a
+**         custom I/O handler.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**       * io              - Pointer to 
+**         fmt             - printf style format string
+**     Returns     :
+**         ---             - number of characters written
+** ===================================================================
+*/
+unsigned CLS1_printfIO(CLS1_ConstStdIOType *io, const char *fmt, ...)
+{
+  va_list args;
+  unsigned int count = 0;
+
+  va_start(args,fmt);
+  count = XF1_xvformat(CLS1_printfPutChar, (void*)io->stdOut, fmt, args);
+  va_end(args);
+  return count;
+}
+
+/*
+** ===================================================================
+**     Method      :  CLS1_printf (component Shell)
+**     Description :
+**         Printf() style function using XFormat component, using the
+**         shell default I/O handler.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         fmt             - printf style format string
+**     Returns     :
+**         ---             - number of characters written
+** ===================================================================
+*/
+unsigned CLS1_printf(const char *fmt, ...)
+{
+  va_list args;
+  unsigned int count = 0;
+
+  va_start(args,fmt);
+  count = XF1_xvformat(CLS1_printfPutChar, (void*)CLS1_GetStdio()->stdOut, fmt, args);
+  va_end(args);
+  return count;
 }
 
 /* END CLS1. */

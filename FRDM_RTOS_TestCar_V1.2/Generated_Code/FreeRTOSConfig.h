@@ -70,47 +70,10 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
-/* -------------------------------------------------------------------- */
-/* Macros to identify the compiler used: */
-#define configCOMPILER_ARM_GCC                    1 /* GNU ARM gcc compiler */
-#define configCOMPILER_ARM_IAR                    2 /* IAR ARM compiler */
-#define configCOMPILER_ARM_FSL                    3 /* Legacy Freescale ARM compiler */
-#define configCOMPILER_ARM_KEIL                   4 /* ARM/Keil compiler */
-#define configCOMPILER_S08_FSL                    5 /* Freescale HCS08 compiler */
-#define configCOMPILER_S12_FSL                    6 /* Freescale HCS12(X) compiler */
-#define configCOMPILER_CF1_FSL                    7 /* Freescale ColdFire V1 compiler */
-#define configCOMPILER_CF2_FSL                    8 /* Freescale ColdFire V2 compiler */
-#define configCOMPILER_DSC_FSL                    9 /* Freescale DSC compiler */
+#include "MCUC1.h" /* SDK and API used */
+#include "FRTOS1config.h" /* configuration */
 
-#define configCOMPILER                            configCOMPILER_ARM_GCC
-/* -------------------------------------------------------------------- */
-/* CPU family identification */
-#define configCPU_FAMILY_S08                      1   /* S08 core */
-#define configCPU_FAMILY_S12                      2   /* S12(X) core */
-#define configCPU_FAMILY_CF1                      3   /* ColdFire V1 core */
-#define configCPU_FAMILY_CF2                      4   /* ColdFire V2 core */
-#define configCPU_FAMILY_DSC                      5   /* 56800/DSC */
-#define configCPU_FAMILY_ARM_M0P                  6   /* ARM Cortex-M0+ */
-#define configCPU_FAMILY_ARM_M4                   7   /* ARM Cortex-M4 */
-#define configCPU_FAMILY_ARM_M4F                  8   /* ARM Cortex-M4F (with floating point unit) */
-#define configCPU_FAMILY_ARM_M7                   9   /* ARM Cortex-M7 */
-#define configCPU_FAMILY_ARM_M7F                  10  /* ARM Cortex-M7F (with floating point unit) */
-/* Macros to identify set of core families */
-#define configCPU_FAMILY_IS_ARM_M0(fam)           ((fam)==configCPU_FAMILY_ARM_M0P)
-#define configCPU_FAMILY_IS_ARM_M4(fam)           (((fam)==configCPU_FAMILY_ARM_M4)  || ((fam)==configCPU_FAMILY_ARM_M4F))
-#define configCPU_FAMILY_IS_ARM_M7(fam)           (((fam)==configCPU_FAMILY_ARM_M7)  || ((fam)==configCPU_FAMILY_ARM_M7F))
-#define configCPU_FAMILY_IS_ARM_M4_M7(fam)        (configCPU_FAMILY_IS_ARM_M4(fam) || configCPU_FAMILY_IS_ARM_M7(fam))
-#define configCPU_FAMILY_IS_ARM_FPU(fam)          (((fam)==configCPU_FAMILY_ARM_M4F) || ((fam)==configCPU_FAMILY_ARM_M7F))
-#define configCPU_FAMILY_IS_ARM(fam)              (configCPU_FAMILY_IS_ARM_M0(fam) || configCPU_FAMILY_IS_ARM_M4(fam) || configCPU_FAMILY_IS_ARM_M7(fam))
-
-#define configCPU_FAMILY                          configCPU_FAMILY_ARM_M0P
-
-/*-----------------------------------------------------------
- * GDB backtrace handler support
- * See http://interactive.freertos.org/entries/23468301-Tasks-backtrace-switcher-viewer-snippet-for-debugger-gcc-gdb-ARM-Cortex-M3-MPU-port-Eclipse-support-
- *----------------------------------------------------------*/
-#define configGDB_HELPER                          (0 && configCPU_FAMILY_IS_ARM(configCPU_FAMILY) && (configCOMPILER==configCOMPILER_ARM_GCC)) /* 1: enable special GDB stack backtrace debug helper; 0: disabled */
-
+#define configINCLUDE_FREERTOS_TASK_C_ADDITIONS_H 1 /* include additional header file to help with debugging in GDB */
 /*-----------------------------------------------------------
  * Application specific definitions.
  *
@@ -122,8 +85,6 @@
  *
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
-#define configGENERATE_STATIC_SOURCES             0 /* 1: it will create 'static' sources to be used without Processor Expert; 0: Processor Expert code generated */
-#define configPEX_KINETIS_SDK                     0 /* 1: project is a Kinetis SDK Processor Expert project; 0: No Kinetis Processor Expert project */
 #define configGENERATE_RUN_TIME_STATS_USE_TICKS   0 /* 1: Use the RTOS tick counter as runtime counter. 0: use extra timer */
 #define configGENERATE_RUN_TIME_STATS             0 /* 1: generate runtime statistics; 0: no runtime statistics */
 #if configGENERATE_RUN_TIME_STATS
@@ -131,7 +92,6 @@
     #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()   /* nothing */ /* default: use Tick counter as runtime counter */
     #define portGET_RUN_TIME_COUNTER_VALUE()           xTaskGetTickCountFromISR() /* default: use Tick counter as runtime counter */
   #else /* use dedicated timer */
-    #include <stdint.h>
     extern uint32_t FRTOS1_AppGetRuntimeCounterValueFromISR(void);
     #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()   FRTOS1_AppConfigureTimerForRuntimeStats()
     #define portGET_RUN_TIME_COUNTER_VALUE()           FRTOS1_AppGetRuntimeCounterValueFromISR()
@@ -151,9 +111,8 @@
 #define configTICK_RATE_HZ                        ((TickType_t)100) /* frequency of tick interrupt */
 #define configSYSTICK_USE_LOW_POWER_TIMER         0 /* If using Kinetis Low Power Timer (LPTMR) instead of SysTick timer */
 #define configSYSTICK_LOW_POWER_TIMER_CLOCK_HZ    1 /* 1 kHz LPO timer. Set to 1 if not used */
-#if configPEX_KINETIS_SDK
+#if MCUC1_CONFIG_NXP_SDK_USED
 /* The SDK variable SystemCoreClock contains the current clock speed */
-  #include <stdint.h>
   extern uint32_t SystemCoreClock;
   #define configCPU_CLOCK_HZ                      SystemCoreClock /* CPU clock frequency */
   #define configBUS_CLOCK_HZ                      SystemCoreClock /* Bus clock frequency */
@@ -164,14 +123,15 @@
     #define configCPU_CLOCK_HZ                    CPU_INSTR_CLK_HZ /* CPU core clock defined in Cpu.h */
   #endif
   #define configBUS_CLOCK_HZ                      CPU_BUS_CLK_HZ /* CPU bus clock defined in Cpu.h */
-#endif /* configPEX_KINETIS_SDK */
+#endif /* #if MCUC1_CONFIG_NXP_SDK_USED */
 #define configSYSTICK_USE_CORE_CLOCK              1 /* System Tick is using core clock  */
 #define configSYSTICK_CLOCK_DIVIDER               1 /* no divider */
 #define configSYSTICK_CLOCK_HZ                    ((configCPU_CLOCK_HZ)/configSYSTICK_CLOCK_DIVIDER) /* frequency of system tick counter */
 #define configMINIMAL_STACK_SIZE                  (100) /* stack size in addressable stack units */
 /*----------------------------------------------------------*/
 /* Heap Memory */
-#define configFRTOS_MEMORY_SCHEME                 4 /* either 1 (only alloc), 2 (alloc/free), 3 (malloc), 4 (coalesc blocks), 5 (multiple blocks) */
+#define configUSE_HEAP_SCHEME                     4 /* either 1 (only alloc), 2 (alloc/free), 3 (malloc), 4 (coalesc blocks), 5 (multiple blocks) */
+#define configFRTOS_MEMORY_SCHEME   configUSE_HEAP_SCHEME /* for backwards compatible only with legacy name */
 #define configTOTAL_HEAP_SIZE                     ((size_t)(8500)) /* size of heap in bytes */
 #define configUSE_HEAP_SECTION_NAME               0 /* set to 1 if a custom section name (configHEAP_SECTION_NAME_STRING) shall be used, 0 otherwise */
 #if configUSE_HEAP_SECTION_NAME
@@ -187,7 +147,8 @@
 #define configUSE_SEGGER_SYSTEM_VIEWER_HOOKS      0 /* 1: Segger System Viewer hooks, 0: not using Segger System Viewer hooks */
 #define configUSE_STATS_FORMATTING_FUNCTIONS      (configUSE_TRACE_FACILITY || configGENERATE_RUN_TIME_STATS)
 #define configUSE_16_BIT_TICKS                    0 /* 1: use 16bit tick counter type, 0: use 32bit tick counter type */
-#define configIDLE_SHOULD_YIELD                   1
+#define configIDLE_SHOULD_YIELD                   1 /* 1: the IDEL task will yield as soon as possible. 0: The IDLE task waits until preemption. */
+#define configUSE_PORT_OPTIMISED_TASK_SELECTION   (1 && configCPU_FAMILY_IS_ARM_M4_M7(configCPU_FAMILY)) /* 1: the scheduler uses an optimized task selection as defined by the port (if available). 0: normal task selection is used */
 #define configUSE_CO_ROUTINES                     0
 #define configUSE_MUTEXES                         1
 #define configCHECK_FOR_STACK_OVERFLOW            1 /* 0 is disabling stack overflow. Set it to 1 for Method1 or 2 for Method2 */
@@ -204,13 +165,15 @@
 #define configUSE_TICKLESS_IDLE_DECISION_HOOK_NAME xEnterTicklessIdle /* function name of decision hook */
 #define configNUM_THREAD_LOCAL_STORAGE_POINTERS   0 /* number of tread local storage pointers, 0 to disable functionality */
 
-#define configMAX_PRIORITIES                      ((unsigned portBASE_TYPE)6)
+#define configMAX_PRIORITIES                      6
 #define configMAX_CO_ROUTINE_PRIORITIES           2
 
-#define configTASK_RETURN_ADDRESS   0  /* return address of task is zero */
+#define configTASK_RETURN_ADDRESS   0             /* return address of task is zero */
+
+#define configRECORD_STACK_HIGH_ADDRESS           1  /* 1: record stack high address for the debugger, 0: do not record stack high address */
 
 /* Software timer definitions. */
-#define configUSE_TIMERS                          0 /* set to 1 to enable sofware timers */
+#define configUSE_TIMERS                          0 /* set to 1 to enable software timers */
 #define configTIMER_TASK_PRIORITY                 (configMAX_PRIORITIES-1U)
 #define configTIMER_QUEUE_LENGTH                  10U
 #define configTIMER_TASK_STACK_DEPTH              (configMINIMAL_STACK_SIZE)
@@ -237,8 +200,11 @@ point support. */
 #define INCLUDE_uxTaskGetStackHighWaterMark       1
 #define INCLUDE_xTaskGetSchedulerState            1
 #define INCLUDE_xQueueGetMutexHolder              1
+#define INCLUDE_xTaskGetHandle                    1
+#define INCLUDE_xTaskAbortDelay                   1
 #define INCLUDE_xTaskGetCurrentTaskHandle         1
 #define INCLUDE_xTaskGetIdleTaskHandle            1
+#define INCLUDE_xTaskResumeFromISR                1
 #define INCLUDE_eTaskGetState                     0
 #define INCLUDE_pcTaskGetTaskName                 1
 /* -------------------------------------------------------------------- */

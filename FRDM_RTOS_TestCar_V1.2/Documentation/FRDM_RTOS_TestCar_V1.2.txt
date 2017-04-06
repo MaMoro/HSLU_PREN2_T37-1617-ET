@@ -227,6 +227,7 @@ Module "FRTOS1"    (component FreeRTOS)
    - FRTOS1_xTaskGetCurrentTaskHandle -The handle of the currently running (calling) task.
    - FRTOS1_xTaskGetIdleTaskHandle -The task handle associated with the Idle task. The Idle task is created automatically when 
                 the RTOS scheduler is started.
+   - FRTOS1_xTaskGetHandle -Looks up the handle of a task from the task's name.
    - FRTOS1_pcTaskGetTaskName -Returns the name of the task.
    - FRTOS1_xTaskGetSchedulerState -Returns the state of the scheduler
    - FRTOS1_uxTaskGetStackHighWaterMark -The stack used by a task will grow and shrink as the task executes and interrupts are 
@@ -482,7 +483,6 @@ Module "FRTOS1"    (component FreeRTOS)
    - FRTOS1_vTaskSetThreadLocalStoragePointer -Only enabled if configNUM_THREAD_LOCAL_STORAGE_POINTERS is >0.
    - FRTOS1_pvTaskGetThreadLocalStoragePointer -Sets the thread local storage. Only enabled if 
                 configNUM_THREAD_LOCAL_STORAGE_POINTERS is >0
-   - FRTOS1_xTaskGetHandle -Looks up the handle of a task from the task's name.
    - FRTOS1_pcTaskGetName -Looks up the name of a task from the task's handle.
    - FRTOS1_vTaskGetInfo -Whereas uxTaskGetSystemState() populates a TaskStatus_t structure for each task in the system, 
                 vTaskGetInfo() populates a TaskStatus_t structures for just a single task. The TaskStatus_t structure contains, 
@@ -567,6 +567,8 @@ Module "UTIL1"     (component Utility)
    - UTIL1_SetValue16LE -Stores a 16bit value in memory as Little Endian
    - UTIL1_SetValue24LE -Stores a 24bit value in memory as Little Endian
    - UTIL1_SetValue32LE -Stores a 32bit value in memory as Little Endian
+   - UTIL1_Deinit -Driver De-Initialization
+   - UTIL1_Init -Driver Initialization
 
 Module "GI2C1"     (component GenericI2C)
    - GI2C1_SelectSlave -Selects the slave device on the bus. Method might use a semaphore to protect bus access.
@@ -624,6 +626,8 @@ Module "CLS1"      (component Shell)
    - CLS1_SendNum32s -Sends a 32bit signed number to the given I/O
    - CLS1_SendCh -Prints a character using an I/O function
    - CLS1_SendStr -Prints a string using an I/O function
+   - CLS1_printfIO -Printf() style function using XFormat component, using a custom I/O handler.
+   - CLS1_printf -Printf() style function using XFormat component, using the shell default I/O handler.
    - CLS1_SendData -Sends data using an I/O function. Unlike SendStr(), with this method it is possible to send binary data, 
                 including zero bytes.
    - CLS1_PrintStatus -Prints various available system status information
@@ -784,8 +788,6 @@ Module "RED"       (component LED)
    - RED_Deinit -Deinitializes the driver
    - RED_Init -Performs the LED driver initialization.
 
-Module "KSDK1"     (component KinetisSDK)
-
 Module "WAIT1"     (component Wait)
    - WAIT1_Wait10Cycles -Wait for 10 CPU cycles.
    - WAIT1_Wait100Cycles -Wait for 100 CPU cycles.
@@ -796,6 +798,8 @@ Module "WAIT1"     (component Wait)
    - WAIT1_Waitns -Wait for a specified time in nano seconds.
    - WAIT1_WaitOSms -If an RTOS is enabled, this routine will use a non-blocking wait method. Otherwise it will do a 
                 busy/blocking wait.
+   - WAIT1_Init -Driver initialization routine.
+   - WAIT1_DeInit -Driver de-initialization routine
 
 Module "CI2C1"     (component I2C_LDD)
    - CI2C1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
@@ -943,8 +947,8 @@ Module "MMA1"      (component MMA8451Q)
    - MMA1_GetZ1gValue -Returns the value for 1g for channel  Z.
    - MMA1_SetFastMode -Turns the F_READ (Fast Read Mode) on or off
    - MMA1_WhoAmI -Returns the value of the WHO_AM_I (0x0D) register
-   - MMA1_Init -Initializes the device driver
    - MMA1_Deinit -Counterpart to Init() method.
+   - MMA1_Init -Initializes the device driver
 
 Module "GI2C2"     (component GenericI2C)
    - GI2C2_SelectSlave -Selects the slave device on the bus. Method might use a semaphore to protect bus access.
@@ -1128,6 +1132,13 @@ Module "TMOUT1"    (component Timeout)
    - TMOUT1_AddTick -Method to be called from a periodic timer or interrupt. It will decrement all current counters by one down 
                 to zero.
    - TMOUT1_Init -Initialization of the driver
+
+Module "MCUC1"     (component McuLibConfig)
+
+Module "XF1"       (component XFormat)
+   - XF1_xvformat -Printf() like format function
+   - XF1_xformat -Printf() like function using variable arguments
+   - XF1_xsprintf -sprintf() like function
 
 Module "Cpu"       (component MKL25Z128LK4)
 

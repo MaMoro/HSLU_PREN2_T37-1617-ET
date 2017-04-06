@@ -18,26 +18,32 @@ Generated_Code/BT1.o: ../Generated_Code/BT1.c \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/GPIO_PDD.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h \
  ../Generated_Code/Cpu.h ../Generated_Code/CLS1.h \
- C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdbool.h \
- ../Generated_Code/WAIT1.h ../Generated_Code/KSDK1.h \
- ../Generated_Code/FreeRTOS.h \
+ ../Generated_Code/MCUC1.h ../Generated_Code/MCUC1config.h \
+ ../Generated_Code/CLS1config.h ../Generated_Code/WAIT1.h \
+ ../Generated_Code/WAIT1config.h ../Generated_Code/FreeRTOS.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stddef.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstddef \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/null.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/size_t.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/wchar_t.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_rsize_t.h \
- ../Generated_Code/FreeRTOSConfig.h ../Generated_Code/projdefs.h \
- ../Generated_Code/portable.h ../Generated_Code/deprecated_definitions.h \
- ../Generated_Code/portmacro.h ../Generated_Code/mpu_wrappers.h \
- ../Generated_Code/task.h ../Generated_Code/list.h \
- ../Generated_Code/UTIL1.h \
+ ../Generated_Code/FreeRTOSConfig.h ../Generated_Code/FRTOS1config.h \
+ ../Generated_Code/projdefs.h ../Generated_Code/portable.h \
+ ../Generated_Code/deprecated_definitions.h ../Generated_Code/portmacro.h \
+ ../Generated_Code/mpu_wrappers.h ../Generated_Code/task.h \
+ ../Generated_Code/list.h ../Generated_Code/AS1.h \
+ ../Generated_Code/ASerialLdd1.h ../Generated_Code/UTIL1.h \
+ ../Generated_Code/UTIL1config.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string_api.h \
- ../Generated_Code/AS1.h ../Generated_Code/ASerialLdd1.h \
- ../Generated_Code/CS1.h ../Generated_Code/Serial1.h \
- ../Generated_Code/ASerialLdd2.h
+ ../Generated_Code/XF1.h ../Generated_Code/XF1config.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdarg.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstdarg \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/va_list.h \
+ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/stdarg.ARM.h \
+ ../Generated_Code/CS1.h ../Generated_Code/CS1config.h \
+ ../Generated_Code/Serial1.h ../Generated_Code/ASerialLdd2.h
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/lib_ewl.prefix:
 
@@ -85,11 +91,15 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h:
 
 ../Generated_Code/CLS1.h:
 
-C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdbool.h:
+../Generated_Code/MCUC1.h:
+
+../Generated_Code/MCUC1config.h:
+
+../Generated_Code/CLS1config.h:
 
 ../Generated_Code/WAIT1.h:
 
-../Generated_Code/KSDK1.h:
+../Generated_Code/WAIT1config.h:
 
 ../Generated_Code/FreeRTOS.h:
 
@@ -107,6 +117,8 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_rsize_t.h:
 
 ../Generated_Code/FreeRTOSConfig.h:
 
+../Generated_Code/FRTOS1config.h:
+
 ../Generated_Code/projdefs.h:
 
 ../Generated_Code/portable.h:
@@ -121,7 +133,13 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/ewl_rsize_t.h:
 
 ../Generated_Code/list.h:
 
+../Generated_Code/AS1.h:
+
+../Generated_Code/ASerialLdd1.h:
+
 ../Generated_Code/UTIL1.h:
+
+../Generated_Code/UTIL1config.h:
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string.h:
 
@@ -129,11 +147,21 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstring:
 
 C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/string_api.h:
 
-../Generated_Code/AS1.h:
+../Generated_Code/XF1.h:
 
-../Generated_Code/ASerialLdd1.h:
+../Generated_Code/XF1config.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/stdarg.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/cstdarg:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/va_list.h:
+
+C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/arm/stdarg.ARM.h:
 
 ../Generated_Code/CS1.h:
+
+../Generated_Code/CS1config.h:
 
 ../Generated_Code/Serial1.h:
 

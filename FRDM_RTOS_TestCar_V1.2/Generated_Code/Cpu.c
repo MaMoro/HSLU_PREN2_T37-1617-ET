@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-04-02, 18:43, # CodeGen: 190
+**     Date/Time   : 2017-04-03, 20:58, # CodeGen: 197
 **     Abstract    :
 **
 **     Settings    :
@@ -81,7 +81,6 @@
 #include "RED.h"
 #include "LEDpin4.h"
 #include "BitIoLdd4.h"
-#include "KSDK1.h"
 #include "WAIT1.h"
 #include "CI2C1.h"
 #include "CS1.h"
@@ -105,6 +104,8 @@
 #include "ASerialLdd2.h"
 #include "BT_EN.h"
 #include "TMOUT1.h"
+#include "MCUC1.h"
+#include "XF1.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -853,16 +854,12 @@ void PE_low_level_init(void)
                 ));
   /* NVIC_IPR1: PRI_6=0 */
   NVIC_IPR1 &= (uint32_t)~(uint32_t)(NVIC_IP_PRI_6(0xFF));
-  /* ### KinetisSDK "KSDK1" init code ... */
-  /* Write code here ... */
+  /* ### McuLibConfig "MCUC1" init code ... */
   /* ### FreeRTOS "FRTOS1" init code ... */
-#if configSYSTICK_USE_LOW_POWER_TIMER
-  /* enable clocking for low power timer, otherwise vPortStopTickTimer() will crash */
-  SIM_PDD_SetClockGate(SIM_BASE_PTR, SIM_PDD_CLOCK_GATE_LPTMR0, PDD_ENABLE);
-#endif
-  vPortStopTickTimer(); /* tick timer shall not run until the RTOS scheduler is started */
+  /* PEX_RTOS_INIT() should have been called at this time already with the most critical setup */
   /* ### FreeRTOS_Tasks "TSK1" init code ... */
   TSK1_CreateTasks();
+  WAIT1_Init();
   /* ### CriticalSection "CS1" init code ... */
   /* ### Timeout "TMOUT1" init code ... */
   TMOUT1_Init();
@@ -870,6 +867,7 @@ void PE_low_level_init(void)
   GI2C1_Init();
   /* ### Asynchro serial "AS1" init code ... */
   AS1_Init();
+  /* ### XFormat "XF1" init code ... */
   /* ### Shell "CLS1" init code ... */
   CLS1_Init(); /* initialize shell */
   /* ### BitIO_LDD "TofCE1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */

@@ -20,13 +20,12 @@
 #include "PWM_Servo.h"
 
 #define DELAY 20	// in ms
-#define SLOW 10
-#define MEDIUM 20
+#define SLOW 20
+#define MEDIUM 40
 #define FAST 60
 
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
 static uint8_t kpGyro, kiGyro, kdGyro;		//PID values Gyro
-static int8_t factor;						// inverses the correction direction
 static uint8_t device;						// left or right tof
 static uint8_t distanceSide = 140;			// distance of the tofs to the side wall
 static uint8_t distanceFront = 200;
@@ -189,7 +188,7 @@ void driveThroughTurningPlace(void){
 	
 	// turn 90 degree
 	while(partState == 0){
-		optAngel -= 2*parcour;
+		optAngel -= 4*parcour;
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -225,9 +224,10 @@ void driveThroughTurningPlace(void){
 	
 	speed = 0;
 	RED_Put(1);
+	optRange = distanceSide-10;
 	// turn 90 degree
 	while(partState == 2){
-		optAngel -= 2*parcour;	
+		optAngel -= 4*parcour;	
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -245,7 +245,6 @@ void driveThroughTurningPlace(void){
 	//drive to the door
 	range = 0;
 	timeout = 0;
-	optRange = distanceSide;
 	speed = MEDIUM;
 	LED_GREEN_Put(1);
 	while(partState == 3){
@@ -274,7 +273,7 @@ void driveThroughTurningPlace(void){
 	// drive through the door
 	range = 0;
 	timeout = 0;
-	optRange = distanceSide-50;
+	optRange = distanceSide-60;
 	RED_Put(1);
 	while(partState == 4){
 		err = regulateMotor();

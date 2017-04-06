@@ -77,7 +77,7 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 (void) pvParameters;
 
 	int8_t res;
-	uint8_t timeout = 20;
+	uint8_t timeout = 15;
 	uint8_t i;
 	uint8_t isfull;
 	uint8_t dataLevel, dataLevel1;

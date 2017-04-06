@@ -4,15 +4,15 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : FreeRTOS
-**     Version     : Component 01.508, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.529, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-18, 17:15, # CodeGen: 105
+**     Date/Time   : 2017-04-03, 20:58, # CodeGen: 197
 **     Abstract    :
 **          This component implements the FreeRTOS Realtime Operating System
 **     Settings    :
 **          Component name                                 : FRTOS1
 **          RTOS Version                                   : V9.0.0
-**          Kinetis SDK                                    : KSDK1
+**          SDK                                            : MCUC1
 **          Kinetis SDK                                    : Disabled
 **          Custom Port                                    : Custom port settings
 **            Compiler                                     : automatic
@@ -42,11 +42,13 @@
 **              Low Power Timer                            : Disabled
 **            non-LDD SWI                                  : Disabled
 **            Preemptive                                   : yes
+**            Optimized Task Selection                     : yes
 **            Time Slicing                                 : yes
 **            Use Co-Routines                              : no
 **            Idle should yield                            : yes
 **            Task Name Length                             : 12
 **            Minimal Stack Size                           : 100
+**            Record Stack High Address                    : yes
 **            Maximum Priorities                           : 6
 **            Maximum Coroutine Priorities                 : 2
 **            Stackoverflow checking method                : Method 1
@@ -126,6 +128,7 @@
 **         xPortGetFreeHeapSize                 - Tsize_t FRTOS1_xPortGetFreeHeapSize(void);
 **         xTaskGetCurrentTaskHandle            - xTaskHandle FRTOS1_xTaskGetCurrentTaskHandle(void);
 **         xTaskGetIdleTaskHandle               - xTaskHandle FRTOS1_xTaskGetIdleTaskHandle(void);
+**         xTaskGetHandle                       - TaskHandle_t FRTOS1_xTaskGetHandle(const char *pcNameToQuery );
 **         pcTaskGetTaskName                    - signed char FRTOS1_pcTaskGetTaskName(xTaskHandle xTaskToQuery);
 **         xTaskGetSchedulerState               - portBASE_TYPE FRTOS1_xTaskGetSchedulerState(void);
 **         uxTaskGetStackHighWaterMark          - unsigned_portBASE_TYPE FRTOS1_uxTaskGetStackHighWaterMark(xTaskHandle xTask);
@@ -187,7 +190,6 @@
 **         xTaskNotifyStateClear                - BaseType_t FRTOS1_xTaskNotifyStateClear(TaskHandle_t xTask);
 **         vTaskSetThreadLocalStoragePointer    - void FRTOS1_vTaskSetThreadLocalStoragePointer(TaskHandle_t xTaskToSet,...
 **         pvTaskGetThreadLocalStoragePointer   - void* FRTOS1_pvTaskGetThreadLocalStoragePointer(TaskHandle_t xTaskToQuery,...
-**         xTaskGetHandle                       - TaskHandle_t FRTOS1_xTaskGetHandle(const char *pcNameToQuery );
 **         pcTaskGetName                        - char* FRTOS1_pcTaskGetName(TaskHandle_t xTaskToQuery);
 **         vTaskGetInfo                         - void FRTOS1_vTaskGetInfo(TaskHandle_t xTask, TaskStatus_t *pxTaskStatus,...
 **         AppConfigureTimerForRuntimeStats     - void FRTOS1_AppConfigureTimerForRuntimeStats(void);
@@ -195,14 +197,35 @@
 **         Init                                 - void FRTOS1_Init(void);
 **         Deinit                               - void FRTOS1_Deinit(void);
 **
-**     License : Open Source (LGPL)
-**     FreeRTOS (c) Copyright 2003-2016 Richard Barry, http: www.FreeRTOS.org
-**     FreeRTOS Processor Expert Component: (c) Copyright Erich Styger, 2013-2016
-**     Processor Expert and CodeWarrior (c) Copyright Freescale Semiconductor, 2013-2016, all rights reserved
-**     This is a free software and is opened for education, research and commercial developments under license policy of following terms:
-**     * This is a free software and there is NO WARRANTY.
-**     * No restriction on use. You can use, modify and redistribute it for personal, non-profit or commercial product UNDER YOUR RESPONSIBILITY.
-**     * Redistributions of source code must retain the above copyright notice.
+**     * FreeRTOS (c) Copyright 2003-2016 Richard Barry, http: www.FreeRTOS.org
+**      * See separate FreeRTOS licensing terms.
+**      *
+**      * FreeRTOS Processor Expert Component: (c) Copyright Erich Styger, 2013-2017
+**      * Web:         https://mcuoneclipse.com
+**      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
+**      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
+**      * All rights reserved.
+**      *
+**      * Redistribution and use in source and binary forms, with or without modification,
+**      * are permitted provided that the following conditions are met:
+**      *
+**      * - Redistributions of source code must retain the above copyright notice, this list
+**      *   of conditions and the following disclaimer.
+**      *
+**      * - Redistributions in binary form must reproduce the above copyright notice, this
+**      *   list of conditions and the following disclaimer in the documentation and/or
+**      *   other materials provided with the distribution.
+**      *
+**      * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+**      * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+**      * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+**      * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+**      * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+**      * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+**      * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+**      * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+**      * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+**      * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ** ###################################################################*/
 /*!
 ** @file FRTOS1.c
@@ -217,9 +240,6 @@
 
 /* MODULE FRTOS1. */
 #include "FRTOS1.h"
-#if KSDK1_SDK_VERSION_USED == KSDK1_SDK_VERSION_NONE
-  #include "Events.h"
-#endif
 #include "portTicks.h"                 /* interface to tick counter */
 
 
@@ -1744,8 +1764,16 @@ bool FRTOS1_xSemaphoreTakeFromISR(xSemaphoreHandle xSemaphore, signed_portBASE_T
 */
 void FRTOS1_Init(void)
 {
-  vPortInitTickTimer();
-  vPortStopTickTimer();
+  portDISABLE_ALL_INTERRUPTS(); /* disable all interrupts, they get enabled in vStartScheduler() */
+#if configSYSTICK_USE_LOW_POWER_TIMER
+  /* enable clocking for low power timer, otherwise vPortStopTickTimer() will crash.
+    Additionally, Percepio trace needs access to the timer early on. */
+  SIM_PDD_SetClockGate(SIM_BASE_PTR, SIM_PDD_CLOCK_GATE_LPTMR0, PDD_ENABLE);
+#endif
+  vPortStopTickTimer(); /* tick timer shall not run until the RTOS scheduler is started */
+  /* no Percepio Trace Hooks enabled with configUSE_TRACE_HOOKS */
+  //vPortInitTickTimer();
+  //vPortStopTickTimer();
 }
 
 /*

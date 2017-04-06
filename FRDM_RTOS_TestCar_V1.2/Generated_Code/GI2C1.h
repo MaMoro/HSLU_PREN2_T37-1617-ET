@@ -4,9 +4,9 @@
 **     Project     : FRDM_RTOS_TestCar_V1.2
 **     Processor   : MKL25Z128VLK4
 **     Component   : GenericI2C
-**     Version     : Component 01.028, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.030, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-20, 20:57, # CodeGen: 114
+**     Date/Time   : 2017-04-03, 20:25, # CodeGen: 191
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -83,40 +83,16 @@
 #define __GI2C1_H
 
 /* MODULE GI2C1. */
+#include "MCUC1.h" /* SDK and API used */
+#include "GI2C1config.h" /* configuration */
 
-/* Include shared modules, which are used for whole project */
-#include "PE_Types.h"
-#include "PE_Error.h"
-#include "PE_Const.h"
-#include "IO_Map.h"
 /* Include inherited beans */
 #include "WAIT1.h"
+#include "MCUC1.h"
 #include "CI2C1.h"
 #include "TMOUT1.h"
 #include "FRTOS1.h"
 
-#include "Cpu.h"
-
-
-#ifndef __BWUserType_GI2C1_TTIME
-#define __BWUserType_GI2C1_TTIME
-  typedef struct {                     /* Time in binary format */
-    byte hour;                         /* hours */
-    byte min;                          /* minutes */
-    byte sec;                          /* seconds */
-    bool mode;                         /* clock mode, 0 for 12-hour mode, otherwise 0-24 hour mode */
-    byte am_pm;                        /* 0: AM, otherwise PM */
-  } GI2C1_TTIME;
-#endif
-#ifndef __BWUserType_GI2C1_TDATE
-#define __BWUserType_GI2C1_TDATE
-  typedef struct {                     /* Date in binary format */
-    byte year;                         /* year */
-    byte month;                        /* month */
-    byte day;                          /* day */
-    bool dayOfWeek;                    /* Day of week, where 0 is the first day. In the range of 0..6 */
-  } GI2C1_TDATE;
-#endif
 
 #define GI2C1_WRITE_BUFFER_SIZE 16 /* size of internal buffer used, set in the component properties */
 
@@ -128,12 +104,12 @@ typedef enum GI2C1_EnumSendFlags_ {
 
 typedef enum GI2C1_EnumStartFlags_ {
   GI2C1_SEND_START,        /* Start is sent */
-  GI2C1_DO_NOT_SEND_START, /* Start is not sent */
+  GI2C1_DO_NOT_SEND_START  /* Start is not sent */
 } GI2C1_EnumStartFlags;
 
 typedef enum GI2C1_EnumAckFlags_ {
   GI2C1_SEND_LAST_ACK,   /* Nack after last received byte is sent */
-  GI2C1_DO_NOT_LAST_ACK, /* Nack after last received byte is not sent */
+  GI2C1_DO_NOT_LAST_ACK  /* Nack after last received byte is not sent */
 } GI2C1_EnumAckFlags;
 
 void CI2C1_OnMasterBlockSent(LDD_TUserData *UserDataPtr);
