@@ -19,9 +19,12 @@
 #include "BT1.h"
 
 
+#define RASPISET 0
 
 
-static bool courseSet = 0;
+
+static bool courseSet = FALSE;
+
 
 // Comunication values reads
 static bool hello = FALSE;		// kommunikation starten mit RPI3
@@ -49,8 +52,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 6, kiT = 0, kdT = 1;		// 8, 0, 1
-static uint8_t kpG = 15, kiG = 2, kdG = 5;		// 18, 1, 5
+static uint8_t kpT = 0, kiT = 0, kdT = 0;		// 8, 0, 1
+static uint8_t kpG = 5, kiG = 0, kdG = 0;		// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -83,6 +86,7 @@ void startCommunication(void){
 	// Start GyroTask
 	CreateGyroTask();
 	
+#if RASPISET
 	//Say hello to Raspberry Pi
 	while(!hello){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
@@ -99,9 +103,11 @@ void startCommunication(void){
 		refreshMovingOffset('x');
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
+#endif
 
 	initDriving(kpT, kiT, kdT, kpG, kiG, kdG, course);
 	
+#if RASPISET
 	// Wait until start
 	LED_GREEN_Put(1);
 	while(!start){
@@ -111,6 +117,7 @@ void startCommunication(void){
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 	LED_GREEN_Put(0);
+#endif
 	
 	L3GSetAngel(GEAR, 0);
 	L3GSetAngel(NICK, 0);
@@ -122,11 +129,11 @@ void startCommunication(void){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
 		readValues();
-		//sendStatus();
+		sendStatus();
 		sendStatusBT();
-		sendTestStatus();
+		//sendTestStatus();
 		
-		vTaskDelay(pdMS_TO_TICKS(30));
+		vTaskDelay(pdMS_TO_TICKS(300));
 	}
 }
 /*

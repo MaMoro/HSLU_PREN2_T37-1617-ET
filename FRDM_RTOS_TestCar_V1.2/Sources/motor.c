@@ -15,6 +15,7 @@
 
 static int16_t pwmLeft;
 static int16_t pwmRight;
+static int16_t safetyVal;
 
 /**
  * returns the pwm value of the left motor
@@ -46,7 +47,7 @@ int8_t motorGetPWMRight(void)
  */
 void motorIncrementPWMLeft(int8_t value)
 {
-  int8_t v = pwmLeft + value;
+  int16_t v = pwmLeft + value;
   if (v > 127) v = 127;
   if (v < -127) v = -127;
   motorSetPWMLeft((int8_t)v);
@@ -103,15 +104,9 @@ void motorSetPWMLeft(int8_t value)
 	  DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
 #endif
 	  }
-#if DUALMOTORDRIVER
-  if(abs(pwmLeft-value)<50){		// Motordriver safety if difference is too high then set the half of the incrementation
-	  pwmLeft = value;
-  }else if(abs(pwmLeft-value/2)<50){
-	  pwmLeft = value/2;
-  }
-#else
-  pwmLeft = value;
-#endif
+  safetyVal = abs(pwmLeft-value)/MAXDIFERENCE+1;	// Motordriver safety if difference is too high then shorten the incrementation
+  pwmLeft = value / safetyVal;
+
 }
 
 /**
@@ -153,15 +148,8 @@ void motorSetPWMRight(int8_t value)
 		DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);  
 #endif
 	  }  
-#if DUALMOTORDRIVER
-  if(abs(pwmRight-value)<50){		// Motordriver safety if difference is too high then set the half of the incrementation
-	  pwmRight = value;
-  }else if(abs(pwmRight-value/2)<50){
-	  pwmRight = value/2;
-  }
-#else
-  pwmRight = value;
-#endif
+  safetyVal = abs(pwmRight-value)/MAXDIFERENCE+1;		// Motordriver safety if difference is too high then shorten the incrementation
+  pwmRight = value/safetyVal;
 }
 
 /**
@@ -248,4 +236,5 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 
 	motorSetPWMRight(valueRight);
 	motorSetPWMLeft(valueLeft);
+	//\todo add proper time handling
 }

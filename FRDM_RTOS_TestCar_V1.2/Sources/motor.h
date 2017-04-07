@@ -18,8 +18,9 @@
 #include "PwmLdd2.h"
 #include "TU1.h"
 
-#define DUALMOTORDRIVER 0			// put 1 if dualmotordriver with 2 IO Pins for direction is used
-
+#define DUALMOTORDRIVER 1			// put 1 if dualmotordriver with 2 IO Pins for direction is used
+#define MAXDIFERENCE 42				// max difference of actual pwm to next pwm if div%MAXDIFERENCE+1 -> pwm = nextpwm/(div%MAXDIFERENCE+1)
+#define PERIODEMS 20
 
 int8_t motorGetPWMLeft(void);
 void motorSetPWMLeft(int8_t value);
