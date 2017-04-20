@@ -21,7 +21,7 @@
 
 #define DELAY 20	// in ms
 #define SLOW 20
-#define MEDIUM 40
+#define MEDIUM 45
 #define FAST 60
 
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
@@ -47,10 +47,13 @@ void driveToStair(void) {
 	optRange = distanceSide;
 	optAngel = 0;
 	
-	speed = MEDIUM;
-	motorsStartup(speed, speed, 50);
+	setGyroskopPWM(13);
+	
 	LED_GREEN_Put(1);
 	while (!done) {
+		if(speed < MEDIUM){
+			speed = speed + 1;
+		}
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -66,6 +69,7 @@ void driveToStair(void) {
 			LED_GREEN_Put(0);
 			RED_Put(1);
 			done = 1;
+			speed = MEDIUM;
 		}
 	}
 	RED_Put(0);
@@ -112,27 +116,36 @@ void driveOverStair(void){
 				counter = 0;
 				stairState = 2;	
 				RED_Put(1);
-				speed = SLOW;
 			}
 		}
-		// stair downwards
-		else if(stairState == 2 && angelNick >= 20){
+		else if(stairState == 2){
+			if(speed > 0){
+				speed = speed*10/11;
+			}
+			if(angelNick >= 20){	// stair downwards
 			counter++;
 			if(counter >= 2){
 				counter = 0;
 				stairState = 3; 
 				LED_GREEN_Put(0);
 			}
+			}
 		}
 		// stair done
-		else if(stairState == 3 && angelNick < 5 && angelNick > -5){
+		else if(stairState == 3){
+			if(speed < SLOW){
+				speed++;
+			}
+			if(angelNick < 5 && angelNick > -5){
 			counter++;
 			if(counter >= 2){
 				counter = 0;
 				RED_Put(0);
 				speed = MEDIUM;
 				done = 1;
+				motorsbrake(FALSE);
 			}
+		}
 		}
 	}
 	setState(3);
@@ -348,10 +361,7 @@ void pushTheButton(void){
 	speed = 0;
 	optRange = 0;
 	while(1){
-		err = regulateMotor();
-		if(err != ERR_OK){
-			setErrorState(err,"Driving Task");
-		}
+		setServoPWM(900);
 		vTaskDelay(pdMS_TO_TICKS(DELAY));	 
 			 
 		// check end condition
@@ -467,7 +477,7 @@ void setSpeed(int8_t value){
  * @ value speed of the Motor from 0...127
  */
 void setGyroskopPWM(uint8_t value){
-	PWM_Gyro_SetRatio16((0xFFFF-1)/127*value);
+	PWM_Gyro_SetRatio8(0xFF-value);
 }
 
 /*
@@ -478,12 +488,15 @@ void setLetter(uint8_t value){
 	letter = value;
 }
 
-/*
+/*0x0FFFF-0x1FFFF
  * set the optimal angel of the Servo 
- * @ value angel of the Servo from 0...127
+ * @ value angel of the Servo from 0...1200 for 0°-120°
  */
-void setServoPWM(uint8_t value){
-	PWM_Servo_SetRatio16((0xFFFF-1)/127*value);
+void setServoPWM(uint16_t value){
+	if(value > 1200){
+		value = 1200;
+	}
+	PWM_Servo_SetDutyUS(20000-(2500-value*20/18));
 }
 
 /*

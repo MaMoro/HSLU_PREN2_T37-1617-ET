@@ -873,6 +873,10 @@ Module "TofCE3"    (component BitIO_LDD)
                 the direction = _[output]_ or _[input/output]_.
 
 Module "PWM_Gyro"  (component PWM)
+   - PWM_Gyro_SetRatio8 -This method sets a new duty-cycle ratio. Ratio is expressed as an 8-bit unsigned integer number. 0 - 
+                FF value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of 
+                predefined values in <Starting pulse width> property.   Note: Calculated duty depends on the timer capabilities 
+                and on the selected period.
    - PWM_Gyro_SetRatio16 -This method sets a new duty-cycle ratio. Ratio is expressed as a 16-bit unsigned integer number. 0 - 
                 FFFF value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of 
                 predefined values in <Starting pulse width> property.   Note: Calculated duty depends on the timer 
@@ -902,6 +906,10 @@ Module "TU2"       (component TimerUnit_LDD)
                 available when at least one channel is configured.
 
 Module "PWM_Servo" (component PWM)
+   - PWM_Servo_SetRatio8 -This method sets a new duty-cycle ratio. Ratio is expressed as an 8-bit unsigned integer number. 0 - 
+                FF value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of 
+                predefined values in <Starting pulse width> property.   Note: Calculated duty depends on the timer capabilities 
+                and on the selected period.
    - PWM_Servo_SetRatio16 -This method sets a new duty-cycle ratio. Ratio is expressed as a 16-bit unsigned integer number. 0 - 
                 FFFF value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of 
                 predefined values in <Starting pulse width> property.   Note: Calculated duty depends on the timer 

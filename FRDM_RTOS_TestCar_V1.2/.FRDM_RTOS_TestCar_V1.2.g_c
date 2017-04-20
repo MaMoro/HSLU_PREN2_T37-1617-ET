@@ -6891,15 +6891,15 @@
     <GenComponentVersion>02.240</GenComponentVersion>
     <GenDriverVersion>01.01</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1249729733</HeaderAge>
-    <CodeAge>1249729733</CodeAge>
+    <HeaderAge>1250773320</HeaderAge>
+    <CodeAge>1250773320</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <Enable>false</Enable>
     <Disable>false</Disable>
     <EnableEvent>false</EnableEvent>
     <DisableEvent>false</DisableEvent>
-    <SetRatio8>false</SetRatio8>
+    <SetRatio8>true</SetRatio8>
     <SetRatio16>true</SetRatio16>
     <SetDutyTicks16>false</SetDutyTicks16>
     <SetDutyTicks32>false</SetDutyTicks32>
@@ -6922,48 +6922,62 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-    <GenMethodPos>6</GenMethodPos>
+    <GenMethodPos>8</GenMethodPos>
     <MethodPos>
-      <MethodPos0>SetRatio16</MethodPos0>
+      <MethodPos0>SetRatio8</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>122</LineBeg>
-      <LineEnd>145</LineEnd>
+      <LineBeg>123</LineBeg>
+      <LineEnd>146</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos1>SetDutyUS</MethodPos1>
+      <MethodPos1>SetRatio16</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>146</LineBeg>
-      <LineEnd>167</LineEnd>
+      <LineBeg>147</LineBeg>
+      <LineEnd>170</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos2>SetDutyMS</MethodPos2>
+      <MethodPos2>SetDutyUS</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>168</LineBeg>
-      <LineEnd>189</LineEnd>
+      <LineBeg>171</LineBeg>
+      <LineEnd>192</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos3>SetRatio16</MethodPos3>
+      <MethodPos3>SetDutyMS</MethodPos3>
       <MethodType>method</MethodType>
-      <ModuleType>Code</ModuleType>
-      <LineBeg>106</LineBeg>
-      <LineEnd>132</LineEnd>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>193</LineBeg>
+      <LineEnd>214</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos4>SetDutyUS</MethodPos4>
+      <MethodPos4>SetRatio8</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>133</LineBeg>
-      <LineEnd>157</LineEnd>
+      <LineBeg>107</LineBeg>
+      <LineEnd>133</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos5>SetDutyMS</MethodPos5>
+      <MethodPos5>SetRatio16</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>158</LineBeg>
-      <LineEnd>182</LineEnd>
+      <LineBeg>134</LineBeg>
+      <LineEnd>160</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos6>SetDutyUS</MethodPos6>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>161</LineBeg>
+      <LineEnd>185</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos7>SetDutyMS</MethodPos7>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>186</LineBeg>
+      <LineEnd>210</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>0</GenExtraFilesCount>
     <InhrCompID_58>
@@ -6972,8 +6986,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1249729733</HeaderAge>
-      <CodeAge>1249729733</CodeAge>
+      <HeaderAge>1250773320</HeaderAge>
+      <CodeAge>1250773320</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -6983,7 +6997,7 @@
       <SetEventMask>false</SetEventMask>
       <GetEventMask>false</GetEventMask>
       <GetEventStatus>false</GetEventStatus>
-      <SetRatio8>false</SetRatio8>
+      <SetRatio8>true</SetRatio8>
       <SetRatio16>true</SetRatio16>
       <SetDutyUS>true</SetDutyUS>
       <SetDutyMS>true</SetDutyMS>
@@ -7001,76 +7015,90 @@
       <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
       <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
       <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-      <GenMethodPos>10</GenMethodPos>
+      <GenMethodPos>12</GenMethodPos>
       <MethodPos>
         <MethodPos0>Init</MethodPos0>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>134</LineBeg>
-        <LineEnd>159</LineEnd>
+        <LineBeg>136</LineBeg>
+        <LineEnd>161</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos1>SetRatio16</MethodPos1>
+        <MethodPos1>SetRatio8</MethodPos1>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>160</LineBeg>
-        <LineEnd>187</LineEnd>
+        <LineBeg>162</LineBeg>
+        <LineEnd>189</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos2>SetDutyUS</MethodPos2>
+        <MethodPos2>SetRatio16</MethodPos2>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>188</LineBeg>
-        <LineEnd>214</LineEnd>
+        <LineBeg>190</LineBeg>
+        <LineEnd>217</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos3>SetDutyMS</MethodPos3>
+        <MethodPos3>SetDutyUS</MethodPos3>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>215</LineBeg>
-        <LineEnd>241</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos4>SetRatio</MethodPos4>
-        <MethodType>internal_method_declaration</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>115</LineBeg>
-        <LineEnd>115</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos5>Init</MethodPos5>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>116</LineBeg>
-        <LineEnd>163</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos6>SetRatio16</MethodPos6>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>164</LineBeg>
-        <LineEnd>198</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos7>SetDutyUS</MethodPos7>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>199</LineBeg>
+        <LineBeg>218</LineBeg>
         <LineEnd>244</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos8>SetDutyMS</MethodPos8>
+        <MethodPos4>SetDutyMS</MethodPos4>
         <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
+        <ModuleType>Header</ModuleType>
         <LineBeg>245</LineBeg>
-        <LineEnd>290</LineEnd>
+        <LineEnd>271</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos9>SetRatio</MethodPos9>
+        <MethodPos5>SetRatio</MethodPos5>
+        <MethodType>internal_method_declaration</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>116</LineBeg>
+        <LineEnd>116</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos6>Init</MethodPos6>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>117</LineBeg>
+        <LineEnd>164</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos7>SetRatio8</MethodPos7>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>165</LineBeg>
+        <LineEnd>199</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos8>SetRatio16</MethodPos8>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>200</LineBeg>
+        <LineEnd>234</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos9>SetDutyUS</MethodPos9>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>235</LineBeg>
+        <LineEnd>280</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos10>SetDutyMS</MethodPos10>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>281</LineBeg>
+        <LineEnd>326</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos11>SetRatio</MethodPos11>
         <MethodType>internal_method</MethodType>
         <ModuleType>Code</ModuleType>
-        <LineBeg>291</LineBeg>
-        <LineEnd>315</LineEnd>
+        <LineBeg>327</LineBeg>
+        <LineEnd>351</LineEnd>
       </MethodPos>
       <GenExtraFilesCount>1</GenExtraFilesCount>
       <ExtraFile0>Documentation\doxygen\PwmLdd3.txt</ExtraFile0>
@@ -7239,15 +7267,15 @@
     <GenComponentVersion>02.240</GenComponentVersion>
     <GenDriverVersion>01.01</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1249729733</HeaderAge>
-    <CodeAge>1249729733</CodeAge>
+    <HeaderAge>1250773320</HeaderAge>
+    <CodeAge>1250773320</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <Enable>false</Enable>
     <Disable>false</Disable>
     <EnableEvent>false</EnableEvent>
     <DisableEvent>false</DisableEvent>
-    <SetRatio8>false</SetRatio8>
+    <SetRatio8>true</SetRatio8>
     <SetRatio16>true</SetRatio16>
     <SetDutyTicks16>false</SetDutyTicks16>
     <SetDutyTicks32>false</SetDutyTicks32>
@@ -7270,48 +7298,62 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-    <GenMethodPos>6</GenMethodPos>
+    <GenMethodPos>8</GenMethodPos>
     <MethodPos>
-      <MethodPos0>SetRatio16</MethodPos0>
+      <MethodPos0>SetRatio8</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>122</LineBeg>
-      <LineEnd>145</LineEnd>
+      <LineBeg>123</LineBeg>
+      <LineEnd>146</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos1>SetDutyUS</MethodPos1>
+      <MethodPos1>SetRatio16</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>146</LineBeg>
-      <LineEnd>167</LineEnd>
+      <LineBeg>147</LineBeg>
+      <LineEnd>170</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos2>SetDutyMS</MethodPos2>
+      <MethodPos2>SetDutyUS</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>168</LineBeg>
-      <LineEnd>189</LineEnd>
+      <LineBeg>171</LineBeg>
+      <LineEnd>192</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos3>SetRatio16</MethodPos3>
+      <MethodPos3>SetDutyMS</MethodPos3>
       <MethodType>method</MethodType>
-      <ModuleType>Code</ModuleType>
-      <LineBeg>106</LineBeg>
-      <LineEnd>132</LineEnd>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>193</LineBeg>
+      <LineEnd>214</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos4>SetDutyUS</MethodPos4>
+      <MethodPos4>SetRatio8</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>133</LineBeg>
-      <LineEnd>157</LineEnd>
+      <LineBeg>107</LineBeg>
+      <LineEnd>133</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos5>SetDutyMS</MethodPos5>
+      <MethodPos5>SetRatio16</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>158</LineBeg>
-      <LineEnd>182</LineEnd>
+      <LineBeg>134</LineBeg>
+      <LineEnd>160</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos6>SetDutyUS</MethodPos6>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>161</LineBeg>
+      <LineEnd>185</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos7>SetDutyMS</MethodPos7>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>186</LineBeg>
+      <LineEnd>210</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>0</GenExtraFilesCount>
     <InhrCompID_67>
@@ -7320,8 +7362,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1249729733</HeaderAge>
-      <CodeAge>1249729733</CodeAge>
+      <HeaderAge>1250773320</HeaderAge>
+      <CodeAge>1250773320</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -7331,7 +7373,7 @@
       <SetEventMask>false</SetEventMask>
       <GetEventMask>false</GetEventMask>
       <GetEventStatus>false</GetEventStatus>
-      <SetRatio8>false</SetRatio8>
+      <SetRatio8>true</SetRatio8>
       <SetRatio16>true</SetRatio16>
       <SetDutyUS>true</SetDutyUS>
       <SetDutyMS>true</SetDutyMS>
@@ -7349,76 +7391,90 @@
       <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
       <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
       <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-      <GenMethodPos>10</GenMethodPos>
+      <GenMethodPos>12</GenMethodPos>
       <MethodPos>
         <MethodPos0>Init</MethodPos0>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>134</LineBeg>
-        <LineEnd>159</LineEnd>
+        <LineBeg>136</LineBeg>
+        <LineEnd>161</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos1>SetRatio16</MethodPos1>
+        <MethodPos1>SetRatio8</MethodPos1>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>160</LineBeg>
-        <LineEnd>187</LineEnd>
+        <LineBeg>162</LineBeg>
+        <LineEnd>189</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos2>SetDutyUS</MethodPos2>
+        <MethodPos2>SetRatio16</MethodPos2>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>188</LineBeg>
-        <LineEnd>214</LineEnd>
+        <LineBeg>190</LineBeg>
+        <LineEnd>217</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos3>SetDutyMS</MethodPos3>
+        <MethodPos3>SetDutyUS</MethodPos3>
         <MethodType>method</MethodType>
         <ModuleType>Header</ModuleType>
-        <LineBeg>215</LineBeg>
-        <LineEnd>241</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos4>SetRatio</MethodPos4>
-        <MethodType>internal_method_declaration</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>115</LineBeg>
-        <LineEnd>115</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos5>Init</MethodPos5>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>116</LineBeg>
-        <LineEnd>163</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos6>SetRatio16</MethodPos6>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>164</LineBeg>
-        <LineEnd>198</LineEnd>
-      </MethodPos>
-      <MethodPos>
-        <MethodPos7>SetDutyUS</MethodPos7>
-        <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
-        <LineBeg>199</LineBeg>
+        <LineBeg>218</LineBeg>
         <LineEnd>244</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos8>SetDutyMS</MethodPos8>
+        <MethodPos4>SetDutyMS</MethodPos4>
         <MethodType>method</MethodType>
-        <ModuleType>Code</ModuleType>
+        <ModuleType>Header</ModuleType>
         <LineBeg>245</LineBeg>
-        <LineEnd>290</LineEnd>
+        <LineEnd>271</LineEnd>
       </MethodPos>
       <MethodPos>
-        <MethodPos9>SetRatio</MethodPos9>
+        <MethodPos5>SetRatio</MethodPos5>
+        <MethodType>internal_method_declaration</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>116</LineBeg>
+        <LineEnd>116</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos6>Init</MethodPos6>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>117</LineBeg>
+        <LineEnd>164</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos7>SetRatio8</MethodPos7>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>165</LineBeg>
+        <LineEnd>199</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos8>SetRatio16</MethodPos8>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>200</LineBeg>
+        <LineEnd>234</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos9>SetDutyUS</MethodPos9>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>235</LineBeg>
+        <LineEnd>280</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos10>SetDutyMS</MethodPos10>
+        <MethodType>method</MethodType>
+        <ModuleType>Code</ModuleType>
+        <LineBeg>281</LineBeg>
+        <LineEnd>326</LineEnd>
+      </MethodPos>
+      <MethodPos>
+        <MethodPos11>SetRatio</MethodPos11>
         <MethodType>internal_method</MethodType>
         <ModuleType>Code</ModuleType>
-        <LineBeg>291</LineBeg>
-        <LineEnd>315</LineEnd>
+        <LineBeg>327</LineBeg>
+        <LineEnd>351</LineEnd>
       </MethodPos>
       <GenExtraFilesCount>1</GenExtraFilesCount>
       <ExtraFile0>Documentation\doxygen\PwmLdd4.txt</ExtraFile0>

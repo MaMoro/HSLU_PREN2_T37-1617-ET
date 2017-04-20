@@ -16,6 +16,7 @@
 static int16_t pwmLeft;
 static int16_t pwmRight;
 static int16_t safetyVal;
+static bool brake;
 
 /**
  * returns the pwm value of the left motor
@@ -81,6 +82,11 @@ void motorIncrementPWMRight(int8_t value)
  */
 void motorSetPWMLeft(int8_t value)
 {
+	if(brake){				// brake
+		  DIR_LEFT_PutVal(DIR_LEFT_DeviceData, 0);
+		  DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
+		  pwmLeft = 127;
+	}else{
   if (value < 0)              // backward
   {
 	  if (value < -127) value = -127;
@@ -106,7 +112,7 @@ void motorSetPWMLeft(int8_t value)
 	  }
   safetyVal = abs(pwmLeft-value)/MAXDIFERENCE+1;	// Motordriver safety if difference is too high then shorten the incrementation
   pwmLeft = value / safetyVal;
-
+	}
 }
 
 /**
@@ -119,6 +125,12 @@ void motorSetPWMLeft(int8_t value)
  */
 void motorSetPWMRight(int8_t value)
 {
+	if(brake){				// brake
+		  DIR_RIGHT_PutVal(DIR_RIGHT_DeviceData, 0);
+		  DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);
+		  pwmLeft = 127;
+	}
+	else{
 	  if (value < 0)              // backward
 	  {
 		  if (value < -127) value = -127;
@@ -150,6 +162,7 @@ void motorSetPWMRight(int8_t value)
 	  }  
   safetyVal = abs(pwmRight-value)/MAXDIFERENCE+1;		// Motordriver safety if difference is too high then shorten the incrementation
   pwmRight = value/safetyVal;
+	}
 }
 
 /**
@@ -237,4 +250,8 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 	motorSetPWMRight(valueRight);
 	motorSetPWMLeft(valueLeft);
 	//\todo add proper time handling
+}
+
+void motorsbrake(bool doBrake){
+	brake = doBrake;
 }

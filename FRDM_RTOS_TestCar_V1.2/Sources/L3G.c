@@ -94,7 +94,7 @@ uint8_t L3GenableDefault(void)
   // 0x10 =	0b0001 0000 -> cut off 13.5Hz, reference Signal for filtering
   // 0x14 = 0b0001 0100 -> cut off 0.9Hz, reference Signal for filtering
   //High pass filter: reference signal for filtering/  cut off 0.9Hz
-  res = L3GwriteReg(CTRL_REG2, 0x10);
+  res = L3GwriteReg(CTRL_REG2, 0x14);
   if(res != ERR_OK){
   	return res;
   }
@@ -155,6 +155,7 @@ uint8_t L3GenableDefault(void)
 
 #if ODR == 95
   // 0x3F = 0b0011 1111 => xyz enable , normalmode, ODR 95 Hz, 25Hz cut off
+  // 0x0F = 0b0000 1111 => xyz enable, normal mode, ODR 95 Hz, 12.5Hz cut off
   res = L3GwriteReg(CTRL_REG1, 0x3F);
   if(res != ERR_OK){
   	return res;

@@ -375,9 +375,7 @@ PE_DEBUGHALT();
       <Application_Task_Tags v="no" />
       <Thread_Local_Storage_Pointers v="0" />
       <Use_Trace_Facility v="no" />
-      <boolgroup name="Segger System Viewer Trace" v="Enabled">
-        <Segger_System_Viewer v="SYS1" />
-      </boolgroup>
+      <boolgroup name="Segger System Viewer Trace" v="Disabled" />
       <boolgroup name="Percepio Trace" v="Disabled" />
       <boolgroup name="Generate Runtime Statistics" v="Disabled" />
       <group name="Scheduler">
@@ -3013,103 +3011,6 @@ PE_DEBUGHALT();
       <xvformat v="generate code" />
       <xformat v="generate code" />
       <xsprintf v="generate code" />
-    </Methods>
-    <Events>
-      <EmptySection_DummyValue />
-    </Events>
-  </Bean>
-  <Bean name="SYS1" type="SeggerSystemView">
-    <Enabled v="Y" />
-    <Properties>
-      <Component_name v="SYS1" />
-      <Version v="V2.40" />
-      <Application_Name v="&amp;quot;Demo Application&amp;quot;" />
-      <Device_Name v="&amp;quot;Cortex&amp;quot;" />
-      <RAM_Base v="536866816" />
-      <ID_Base v="268435456" />
-      <ID_Shift v="2" />
-      <Number_of_tasks v="3" />
-      <Static_Buffer v="yes" />
-      <Post_Mortem v="no" />
-      <group name="RTT Channel">
-        <Segger_RTT v="RTT1" />
-        <Name v="&amp;quot;SysView&amp;quot;" />
-        <Channel_Index v="1" />
-        <Up_Buffer_size v="512" />
-      </group>
-      <SDK v="MCUC1" />
-      <group name="Source Folders">
-        <Source_Folder v="" />
-        <Config_Folder v="" />
-      </group>
-    </Properties>
-    <Methods>
-      <OnUserStart v="generate code" />
-      <OnUserStop v="generate code" />
-      <RecordEnterISR v="generate code" />
-      <RecordExitISR v="generate code" />
-      <Print v="generate code" />
-      <PrintfHost v="generate code" />
-      <PrintfTarget v="generate code" />
-      <Warn v="generate code" />
-      <WarnfHost v="generate code" />
-      <WarnfTarget v="generate code" />
-      <Error v="generate code" />
-      <ErrorfHost v="generate code" />
-      <ErrorfTarget v="generate code" />
-      <EnableEvents v="generate code" />
-      <DisableEvents v="generate code" />
-      <Init v="generate code" />
-    </Methods>
-    <Events>
-      <EmptySection_DummyValue />
-    </Events>
-  </Bean>
-  <Bean name="RTT1" type="SeggerRTT">
-    <Enabled v="Y" />
-    <Properties>
-      <Component_name v="RTT1" />
-      <Version v="V5.10u" />
-      <Number_of_Up_Channels v="2" />
-      <Number_of_Down_Channels v="2" />
-      <Max_Blocked_Interrupt_Level v="3" />
-      <boolgroup name="Channel 0" v="Enabled">
-        <Name v="&amp;quot;Terminal&amp;quot;" />
-        <Up_Buffer_Size__Tx_ v="512" />
-        <Down_Buffer_Size__Rx_ v="64" />
-        <Up_Buffer_Mode v="Skip (Default)" />
-        <Down_Buffer_Mode v="Skip (Default)" />
-        <boolgroup name="Blocking Send" v="Enabled">
-          <Timeout__ms_ v="5" />
-          <Wait v="WAIT1" />
-          <Wait_Time__ms_ v="1" />
-        </boolgroup>
-        <Printf_Buffer_Size v="64" />
-      </boolgroup>
-      <SDK v="MCUC1" />
-      <Shell v="CLS1" />
-    </Properties>
-    <Methods>
-      <Read v="generate code" />
-      <Write v="generate code" />
-      <WriteString v="generate code" />
-      <printf v="generate code" />
-      <GetKey v="generate code" />
-      <WaitKey v="generate code" />
-      <HasKey v="generate code" />
-      <SetTerminal v="generate code" />
-      <TerminalOut v="generate code" />
-      <ConfigUpBuffer v="generate code" />
-      <ConfigDownBuffer v="generate code" />
-      <RecvChar v="generate code" />
-      <SendChar v="generate code" />
-      <GetCharsInRxBuf v="generate code" />
-      <StdIOKeyPressed v="generate code" />
-      <StdIOReadChar v="generate code" />
-      <StdIOSendChar v="generate code" />
-      <GetStdio v="generate code" />
-      <Deinit v="generate code" />
-      <Init v="generate code" />
     </Methods>
     <Events>
       <EmptySection_DummyValue />

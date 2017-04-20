@@ -6,7 +6,7 @@
 **     Component   : PWM_LDD
 **     Version     : Component 01.013, Driver 01.03, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-29, 11:37, # CodeGen: 156
+**     Date/Time   : 2017-04-13, 09:09, # CodeGen: 205
 **     Abstract    :
 **          This component implements a pulse-width modulation generator
 **          that generates signal with variable duty and fixed cycle.
@@ -42,6 +42,7 @@
 **            Linked component                             : TU2
 **     Contents    :
 **         Init       - LDD_TDeviceData* PwmLdd4_Init(LDD_TUserData *UserDataPtr);
+**         SetRatio8  - LDD_TError PwmLdd4_SetRatio8(LDD_TDeviceData *DeviceDataPtr, uint8_t Ratio);
 **         SetRatio16 - LDD_TError PwmLdd4_SetRatio16(LDD_TDeviceData *DeviceDataPtr, uint16_t Ratio);
 **         SetDutyUS  - LDD_TError PwmLdd4_SetDutyUS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
 **         SetDutyMS  - LDD_TError PwmLdd4_SetDutyMS(LDD_TDeviceData *DeviceDataPtr, uint16_t Time);
@@ -124,6 +125,7 @@ extern "C" {
 
 /* Methods configuration constants - generated for all enabled component's methods */
 #define PwmLdd4_Init_METHOD_ENABLED    /*!< Init method of the component PwmLdd4 is enabled (generated) */
+#define PwmLdd4_SetRatio8_METHOD_ENABLED /*!< SetRatio8 method of the component PwmLdd4 is enabled (generated) */
 #define PwmLdd4_SetRatio16_METHOD_ENABLED /*!< SetRatio16 method of the component PwmLdd4 is enabled (generated) */
 #define PwmLdd4_SetDutyUS_METHOD_ENABLED /*!< SetDutyUS method of the component PwmLdd4 is enabled (generated) */
 #define PwmLdd4_SetDutyMS_METHOD_ENABLED /*!< SetDutyMS method of the component PwmLdd4 is enabled (generated) */
@@ -157,6 +159,34 @@ extern "C" {
 */
 /* ===================================================================*/
 LDD_TDeviceData* PwmLdd4_Init(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Method      :  PwmLdd4_SetRatio8 (component PWM_LDD)
+*/
+/*!
+**     @brief
+**         This method sets a new duty-cycle ratio. Ratio is expressed
+**         as an 8-bit unsigned integer number. 0 - FF value is
+**         proportional to ratio 0 - 100%. The method is available
+**         only if it is not selected list of predefined values in
+**         [Starting pulse width] property. 
+**         Note: Calculated duty depends on the timer capabilities and
+**         on the selected period.
+**     @param
+**         DeviceDataPtr   - Device data structure
+**                           pointer returned by [Init] method.
+**     @param
+**         Ratio           - Ratio to set. 0 - 255 value is
+**                           proportional to ratio 0 - 100%
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+*/
+/* ===================================================================*/
+LDD_TError PwmLdd4_SetRatio8(LDD_TDeviceData *DeviceDataPtr, uint8_t Ratio);
 
 /*
 ** ===================================================================

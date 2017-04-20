@@ -3,26 +3,26 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="305" key="DIALOG_WIDTH"/>
 		<item value="491" key="DIALOG_Y_ORIGIN"/>
-		<item value="444" key="DIALOG_HEIGHT"/>
 		<item value="89" key="DIALOG_X_ORIGIN"/>
+		<item value="444" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="angel" key="selection"/>
+		<item value="setGyroskopPWM" key="selection"/>
 		<list key="findhistory">
+			<item value="setGyroskopPWM"/>
+			<item value="setGyroskopPWM()"/>
+			<item value="setGyroskopPWM(0)"/>
+			<item value="gyro"/>
 			<item value="angel"/>
 			<item value="timeout"/>
 			<item value="speed"/>
 			<item value="read"/>
-			<item value="takes"/>
-			<item value="gyroskop_s"/>
-			<item value="gyroskop_i"/>
-			<item value="&apos;x&apos;"/>
 		</list>
 		<list key="replacehistory">
 		</list>

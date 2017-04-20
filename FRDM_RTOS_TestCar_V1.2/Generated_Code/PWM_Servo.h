@@ -6,7 +6,7 @@
 **     Component   : PWM
 **     Version     : Component 02.240, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-03-29, 11:37, # CodeGen: 156
+**     Date/Time   : 2017-04-13, 09:09, # CodeGen: 205
 **     Abstract    :
 **         This component implements a pulse-width modulation generator
 **         that generates signal with variable duty and fixed cycle. 
@@ -49,6 +49,7 @@
 **             seconds (real)          : 20         0
 **
 **     Contents    :
+**         SetRatio8  - byte PWM_Servo_SetRatio8(byte Ratio);
 **         SetRatio16 - byte PWM_Servo_SetRatio16(word Ratio);
 **         SetDutyUS  - byte PWM_Servo_SetDutyUS(word Time);
 **         SetDutyMS  - byte PWM_Servo_SetDutyMS(word Time);
@@ -119,6 +120,30 @@ extern "C" {
 #define PWM_Servo_PERIOD_VALUE PwmLdd4_PERIOD_VALUE /* Initial period value in ticks of the timer. It is available only if the bean is enabled in high speed mode. */
 #define PWM_Servo_PERIOD_VALUE_HIGH PwmLdd4_PERIOD_VALUE_0 /* Period value in ticks of the timer in high speed mode. It is available only if the bean is enabled in high speed mode. */
 
+
+/*
+** ===================================================================
+**     Method      :  PWM_Servo_SetRatio8 (component PWM)
+**     Description :
+**         This method sets a new duty-cycle ratio. Ratio is expressed
+**         as an 8-bit unsigned integer number. 0 - FF value is
+**         proportional to ratio 0 - 100%. The method is available
+**         only if it is not selected list of predefined values in
+**         <Starting pulse width> property. 
+**         Note: Calculated duty depends on the timer capabilities and
+**         on the selected period.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         Ratio           - Ratio to set. 0 - 255 value is
+**                           proportional to ratio 0 - 100%
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+** ===================================================================
+*/
+#define PWM_Servo_SetRatio8(Ratio) (PwmLdd4_SetRatio8(PwmLdd4_DeviceData, Ratio))
 
 /*
 ** ===================================================================

@@ -34,7 +34,7 @@ void setDistanceFront(int16_t value);
 void setSpeed(int8_t value);
 void setGyroskopPWM(uint8_t value);
 void setLetter(uint8_t value);
-void setServoPWM(uint8_t value);
+void setServoPWM(uint16_t value);
 void setPID(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG);
 void stopDriving(void);
 uint8_t getTime(uint16_t* time);
