@@ -12,7 +12,7 @@
 #define PI 3.14159265
 #define LEFT -1
 #define RIGHT 1
-#define MAXTIMEOUT 2000		// timeout = 2s
+#define MAXTIMEOUT 5000		// timeout = 2s
 
 
 /*
@@ -36,7 +36,7 @@ void setGyroskopPWM(uint8_t value);
 void setLetter(uint8_t value);
 void setServoPWM(uint16_t value);
 void setPID(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG);
-void stopDriving(void);
+void stopDriving(bool stp);
 uint8_t getTime(uint16_t* time);
 
 #endif /* DRIVING_H_ */

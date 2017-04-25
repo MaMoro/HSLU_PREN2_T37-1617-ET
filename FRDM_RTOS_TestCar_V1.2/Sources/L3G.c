@@ -15,6 +15,7 @@
 #define PI 3.14159265
 #define MMA1 1
 #define ODR 95		// ODR: 95 / 190 / ...
+#define GEARLISTSIZE 50
 
 #if MMA1
 	#include "MMA1.h"
@@ -93,6 +94,7 @@ uint8_t L3GenableDefault(void)
   // 0x07 = 0b0000 0111 -> cut off 0.09Hz, normal mode (reset reading)
   // 0x10 =	0b0001 0000 -> cut off 13.5Hz, reference Signal for filtering
   // 0x14 = 0b0001 0100 -> cut off 0.9Hz, reference Signal for filtering
+	// 0xX9 cut off 0.009Hz
   //High pass filter: reference signal for filtering/  cut off 0.9Hz
   res = L3GwriteReg(CTRL_REG2, 0x14);
   if(res != ERR_OK){
@@ -139,6 +141,7 @@ uint8_t L3GenableDefault(void)
   //0x40 = 0b01000000	Fifo enabled
   //0x50 = 0b01010001	Fifo and hipass filter enabled
   //0x53 = 0b01010011	Fifo and highpass filter enabled, outSel from lowpass filter (LPF2)
+  //0xD3 = 0b11010011	
   // FIFO enable
   res = L3GwriteReg(CTRL_REG5, 0x53);
   if(res != ERR_OK){
@@ -556,3 +559,29 @@ uint8_t L3GdataReady(char dim){
 	}
 }
 
+void angelCorrection(int16_t optAngel){
+	static int32_t gearList[GEARLISTSIZE];
+	static uint8_t arrayCount;
+	int32_t corrAngel;
+	
+	if(gyro.x > 0 && optAngel < 0){
+		gearList[arrayCount] = -180000 - (180000-gyro.x);
+	}else if(gyro.x < 0 && optAngel > 0){
+		gearList[arrayCount] = 180000 + (180000+gyro.x);
+	}
+	else{
+		gearList[arrayCount] = gyro.x;
+	}
+	arrayCount++;
+	if(arrayCount >= GEARLISTSIZE){
+		qsort(&gearList[0], GEARLISTSIZE, sizeof(int32_t), (_compare_function) cmpfunc_32);
+		corrAngel = gyro.x + (optAngel*1000 - gearList[GEARLISTSIZE/2]);
+		L3GSetAngel(GEAR,corrAngel);
+		arrayCount = 0;
+	}
+}
+
+int32_t cmpfunc_32 (const void * a, const void * b)
+{
+   return ( *(int32_t*)a - *(int32_t*)b );
+}

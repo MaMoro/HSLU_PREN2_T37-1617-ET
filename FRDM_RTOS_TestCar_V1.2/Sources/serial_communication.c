@@ -24,6 +24,7 @@
 
 
 static bool courseSet = FALSE;
+static bool ready;
 
 
 // Comunication values reads
@@ -52,8 +53,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 20, kiT = 0, kdT = 0;		// 8, 0, 1
-static uint8_t kpG = 15, kiG = 1, kdG = 5;		// 15, 1, 5
+static uint8_t kpT = 20, kiT = 0, kdT = 0;		// 20, 0, 0
+static uint8_t kpG = 20, kiG = 1, kdG = 8;		// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -83,7 +84,7 @@ void startCommunication(void){
 	int16_t i;
 	setServoPWM(0);
 	setGyroskopPWM(0);
-	vTaskDelay(pdMS_TO_TICKS(8000));
+	//vTaskDelay(pdMS_TO_TICKS(8000));
 	
 	//Init sensors
 	errState = initAllSensors();
@@ -139,6 +140,9 @@ void startCommunication(void){
 	
 	L3GSetAngel(GEAR, 0);
 	L3GSetAngel(NICK, 0);
+	while(!ready){
+		vTaskDelay(pdMS_TO_TICKS(30));
+	}
 	CreateDrivingTask();
 	
 	//Loop
@@ -362,9 +366,13 @@ else if (UTIL1_strncmp((char*)cmd, "kiG,", sizeof("kiG,")-1)==0){		// kiG
 		  setPID(kpT, kiT, kdT, kpG, kiG, kdG);
 		  *handled = TRUE;
 	  }
-}else if (UTIL1_strncmp((char*)cmd, "stop", sizeof("stop")-1)==0){		// stop
-	stopDriving();
-	*handled = TRUE;
+}else if (UTIL1_strncmp((char*)cmd, "stop,", sizeof("stop,")-1)==0){		// stop
+	p = cmd+sizeof("kdT,")-1;
+	res = UTIL1_xatoi(&p, &tmp);
+	if(res==ERR_OK){
+		stopDriving(tmp);
+		*handled = TRUE;
+	}
 }
   return res;
 }
@@ -488,11 +496,11 @@ void sendTestStatus(void){
 	// gyro_n
 	CLS1_SendNum16s(gyro_n, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)",\t", CLS1_GetStdio()->stdOut);
-	// pwm left
-	CLS1_SendNum8s(motorGetPWMLeft(), CLS1_GetStdio()->stdOut);
+	// tof left
+	CLS1_SendNum16s(tof_l_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)",\t", CLS1_GetStdio()->stdOut);
-	//pwm right
-	CLS1_SendNum8s(motorGetPWMRight(), CLS1_GetStdio()->stdOut);
+	//tof right
+	CLS1_SendNum16s(tof_r_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 }
 
@@ -505,3 +513,6 @@ void setErrorState(uint8_t err, char* description){
 	errState = err;
 }
 
+void gyroReady(void){
+	ready = 1;
+}

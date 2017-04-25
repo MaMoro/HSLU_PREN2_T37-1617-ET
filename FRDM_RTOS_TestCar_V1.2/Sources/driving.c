@@ -21,7 +21,7 @@
 
 #define DELAY 20	// in ms
 #define SLOW 20
-#define MEDIUM 45
+#define MEDIUM 40
 #define FAST 60
 
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
@@ -84,6 +84,7 @@ void driveOverStair(void){
 	uint8_t stairState = 0;
 	int16_t angelNick = 0;
 	uint8_t done = 0;
+	bool brake = 0;
 	uint8_t counter = 0;
 	optRange = distanceSide;
 	optAngel = 0;
@@ -120,23 +121,27 @@ void driveOverStair(void){
 		}
 		else if(stairState == 2){
 			if(speed > 0){
-				speed = speed*10/11;
+				speed = speed*0.95;
 			}
-			if(angelNick >= 20){	// stair downwards
+			if(angelNick >= 10){	// stair downwards
 			counter++;
 			if(counter >= 2){
+				speed = 0;
+				motorsbrake(1);
 				counter = 0;
 				stairState = 3; 
 				LED_GREEN_Put(0);
 			}
 			}
 		}
-		// stair done
+		
 		else if(stairState == 3){
-			if(speed < SLOW){
+			brake = !brake;
+			motorsbrake(0);
+			if(speed < SLOW && !brake){
 				speed++;
 			}
-			if(angelNick < 5 && angelNick > -5){
+			if(angelNick < 5 && angelNick > -5){	// stair done
 			counter++;
 			if(counter >= 2){
 				counter = 0;
@@ -162,7 +167,10 @@ void driveToTurningPlace(void){
 	optRange = distanceSide;
 	optAngel = 0;
 	
-	while(!done){		
+	while(!done){	
+		//angel correction
+		//angelCorrection(optAngel);
+		
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -194,6 +202,7 @@ void driveThroughTurningPlace(void){
 	uint8_t err = ERR_OK;
 	uint8_t partState = 0;
 	uint16_t time;
+	int16_t angel;
 	optRange = distanceSide;
 	optAngel = 0;
 	speed = SLOW;
@@ -201,7 +210,11 @@ void driveThroughTurningPlace(void){
 	
 	// turn 90 degree
 	while(partState == 0){
-		optAngel -= 4*parcour;
+		if(abs(optAngel) < 90){
+			optAngel -= 4*parcour;
+		}else{
+			optAngel = -90*parcour;
+		}
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -209,7 +222,8 @@ void driveThroughTurningPlace(void){
 		 vTaskDelay(pdMS_TO_TICKS(DELAY));
 		 
 		 // check end condition
-		if(abs(optAngel) >= 90){
+		L3GgetDegree(GEAR,&angel);
+		if(abs(angel) >= 85){
 			partState = 1;
 			optAngel = -90*parcour;
 		}
@@ -235,20 +249,25 @@ void driveThroughTurningPlace(void){
 		}
 	}
 	
-	speed = 0;
+	speed = 5;
 	RED_Put(1);
 	optRange = distanceSide-10;
 	// turn 90 degree
 	while(partState == 2){
-		optAngel -= 4*parcour;	
+		if(abs(optAngel)<175){
+		optAngel -= 4*parcour;
+		}else{
+			optAngel = -180*parcour;
+		}
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
 		}
 		vTaskDelay(pdMS_TO_TICKS(DELAY));	 
 			 
+		L3GgetDegree(GEAR, &angel);
 		// check end condition
-		if(abs(optAngel) >= 178){
+		if(angel*(-parcour) < 0){	// so angel has gone over 180 degrees to -180 or less degrees
 			optAngel = -180*parcour;
 			RED_Put(0);
 			partState = 3;
@@ -286,7 +305,7 @@ void driveThroughTurningPlace(void){
 	// drive through the door
 	range = 0;
 	timeout = 0;
-	optRange = distanceSide-60;
+	optRange = distanceSide-50;
 	RED_Put(1);
 	while(partState == 4){
 		err = regulateMotor();
@@ -322,7 +341,11 @@ void driveToEndZone(void){
 	int8_t deviceIn;
 	optRange = distanceSide;
 	
+	speed = FAST;
 	while(!done){
+		//angel correction
+		//angelCorrection(optAngel);
+		
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -496,14 +519,14 @@ void setServoPWM(uint16_t value){
 	if(value > 1200){
 		value = 1200;
 	}
-	PWM_Servo_SetDutyUS(20000-(2500-value*20/18));
+	PWM_Servo_SetDutyUS(20000-(2500-value*20/18));		// dutysicle is between 17.5ms to 20ms
 }
 
 /*
  * run this method to stop the motors of the car
  */
-void stopDriving(void){
-	stop = 1;
+void stopDriving(bool stp){
+	stop = stp;
 }
 
 uint8_t getTime(uint16_t* time){
@@ -521,3 +544,4 @@ uint8_t getTime(uint16_t* time){
 	*time = timems;
 	return ERR_OK;
 }
+

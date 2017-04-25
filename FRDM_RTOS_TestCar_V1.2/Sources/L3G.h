@@ -81,7 +81,7 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
 	   int16_t vX;
 	   int16_t vY;
 	   int16_t vZ;
-	   int32_t x;
+	   int32_t x;		// links drehen => positiv, rechts drehen => negativ
 	   int32_t y;
 	   int32_t z;
 	   int8_t noiseX;
@@ -101,6 +101,7 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
    uint8_t L3Gread(char dim);
    uint8_t calculateOffset(void);
    int16_t cmpfunc (const void * a, const void * b);
+   int32_t cmpfunc_32 (const void * a, const void * b);
    void refreshMovingOffset(char dim);
    void L3GreadTemp(void);
    int8_t L3GgetDegree(char dim, int16_t* value);
@@ -113,6 +114,7 @@ typedef enum sa0State { sa0_low, sa0_high, sa0_auto }sa0State_t;
    void L3GSetAngel(char dim, int16_t value);
    void combineAccel(void);
    void compensateDriftVL(void);
+   void angelCorrection(int16_t optAngel);
 
 
 #endif /* L3G_H_ */

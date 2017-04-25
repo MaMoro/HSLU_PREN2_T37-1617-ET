@@ -94,6 +94,7 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 		setErrorState(res, "calculateOffset in comunication");
 	}
 	RED_Put(0);
+	gyroReady();
 	
 	for (;;) {
 		//read the gyro{

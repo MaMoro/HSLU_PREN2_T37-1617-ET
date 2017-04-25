@@ -28,6 +28,7 @@ void setState(uint8_t newState);
 void sendStatusBT(void);
 void setErrorState(uint8_t err, char* description);
 void sendTestStatus(void);
+void gyroReady(void);
 
 
 
