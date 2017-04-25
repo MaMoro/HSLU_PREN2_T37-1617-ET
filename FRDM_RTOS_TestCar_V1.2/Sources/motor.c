@@ -128,7 +128,7 @@ void motorSetPWMRight(int8_t value)
 	if(brake){				// brake
 		  DIR_RIGHT_PutVal(DIR_RIGHT_DeviceData, 0);
 		  DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);
-		  pwmLeft = 127;
+		  pwmRight = 127;
 	}
 	else{
 	  if (value < 0)              // backward

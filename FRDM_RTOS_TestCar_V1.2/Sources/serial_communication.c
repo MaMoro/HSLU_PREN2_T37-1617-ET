@@ -30,7 +30,7 @@ static bool ready;
 // Comunication values reads
 static bool hello = FALSE;		// kommunikation starten mit RPI3
 static bool start = FALSE;		// startbefehl
-static bool course = 0;			// fahrbanwahl	links->true rechts->false
+static bool course = 1;			// fahrbanwahl	links->true rechts->false
 static int16_t tof_l_s = 0;		// tof_links_sollwert
 static int16_t tof_r_s = 0;		// tof_rechts_sollwert
 static int16_t tof_f_s = 0;		// tof_front_sollwert
@@ -53,8 +53,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 20, kiT = 0, kdT = 0;		// 20, 0, 0
-static uint8_t kpG = 20, kiG = 1, kdG = 8;		// 15, 1, 5
+static uint8_t kpT = 18, kiT = 0, kdT = 0;		// 20, 0, 0
+static uint8_t kpG = 18, kiG = 1, kdG = 9;		// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 

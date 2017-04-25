@@ -27,7 +27,7 @@
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
 static uint8_t kpGyro, kiGyro, kdGyro;		//PID values Gyro
 static uint8_t device;						// left or right tof
-static uint8_t distanceSide = 140;			// distance of the tofs to the side wall
+static uint8_t distanceSide = 135;			// distance of the tofs to the side wall
 static uint8_t distanceFront = 200;
 static int8_t speed = 0;
 static uint8_t letter;
@@ -120,25 +120,27 @@ void driveOverStair(void){
 			}
 		}
 		else if(stairState == 2){
-			if(speed > 0){
-				speed = speed*0.95;
+			if(speed > 5){
+				speed = speed*0.7;
+			}else{
+				speed = 5;
 			}
-			if(angelNick >= 10){	// stair downwards
-			counter++;
-			if(counter >= 2){
-				speed = 0;
-				motorsbrake(1);
-				counter = 0;
-				stairState = 3; 
-				LED_GREEN_Put(0);
-			}
+			if(angelNick >= 5){	// stair downwards
+				counter++;
+				if(counter>2){
+					speed = 0;
+					motorsbrake(1);
+					counter = 0;
+					stairState = 3; 
+					LED_GREEN_Put(0);
+					motorsbrake(1);
+				}
 			}
 		}
 		
 		else if(stairState == 3){
-			brake = !brake;
-			motorsbrake(0);
-			if(speed < SLOW && !brake){
+			if(angelNick < 28){
+				motorsbrake(0);
 				speed++;
 			}
 			if(angelNick < 5 && angelNick > -5){	// stair done
@@ -203,12 +205,14 @@ void driveThroughTurningPlace(void){
 	uint8_t partState = 0;
 	uint16_t time;
 	int16_t angel;
+	uint8_t counter = 0;
 	optRange = distanceSide;
 	optAngel = 0;
 	speed = SLOW;
 	distanceSide = 190;
 	
 	// turn 90 degree
+	counter = 0;
 	while(partState == 0){
 		if(abs(optAngel) < 90){
 			optAngel -= 4*parcour;
@@ -223,9 +227,12 @@ void driveThroughTurningPlace(void){
 		 
 		 // check end condition
 		L3GgetDegree(GEAR,&angel);
-		if(abs(angel) >= 85){
-			partState = 1;
-			optAngel = -90*parcour;
+		if(abs(angel) >= 85 && abs(angel) < 95){
+			counter++;
+			if(counter >= 5){
+				partState = 1;
+				optAngel = -90*parcour;
+			}
 		}
 	}
 	
@@ -243,18 +250,19 @@ void driveThroughTurningPlace(void){
 		if (err != ERR_OK) {
 			setErrorState(err, "DrivingTask, State4");
 		}
-		if(range <= distanceFront && range > 0){
+		if(range <= distanceFront-50 && range > 0){
 			LED_GREEN_Put(0);
 			partState = 2;
 		}
 	}
 	
-	speed = 5;
+	speed = 0;
 	RED_Put(1);
-	optRange = distanceSide-10;
+	optRange = 0;
+	counter = 0;
 	// turn 90 degree
 	while(partState == 2){
-		if(abs(optAngel)<175){
+		if(abs(optAngel)<177){
 		optAngel -= 4*parcour;
 		}else{
 			optAngel = -180*parcour;
@@ -267,10 +275,14 @@ void driveThroughTurningPlace(void){
 			 
 		L3GgetDegree(GEAR, &angel);
 		// check end condition
-		if(angel*(-parcour) < 0){	// so angel has gone over 180 degrees to -180 or less degrees
-			optAngel = -180*parcour;
-			RED_Put(0);
-			partState = 3;
+		if(angel*(-parcour) < -175 || angel*(-parcour) > 175){	// so angel has gone over 180 degrees to -180 or less degrees
+			counter++;
+			if(counter > 5){
+				optAngel = -180*parcour;
+				RED_Put(0);
+				partState = 3;
+				optRange = distanceSide-10;
+			}
 		}
 	}
 	
@@ -384,6 +396,7 @@ void pushTheButton(void){
 	speed = 0;
 	optRange = 0;
 	while(1){
+		
 		setServoPWM(900);
 		vTaskDelay(pdMS_TO_TICKS(DELAY));	 
 			 
