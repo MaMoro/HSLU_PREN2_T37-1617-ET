@@ -18,7 +18,7 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1250142027</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1251693939</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
       <ShrdHeaderAge1>1248175909</ShrdHeaderAge1>
@@ -30,7 +30,7 @@
       <ShrdHeaderAge3>1248175909</ShrdHeaderAge3>
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
-      <GenExtraFiles lines_count="79">
+      <GenExtraFiles lines_count="80">
         <Line>Generated_Code\MCUC1config.h</Line>
         <Line>Generated_Code\UTIL1config.h</Line>
         <Line>Generated_Code\FRTOS1config.h</Line>
@@ -101,6 +101,7 @@
         <Line>Documentation\doxygen\BitIoLdd1.txt</Line>
         <Line>Documentation\doxygen\ASerialLdd2.txt</Line>
         <Line>Documentation\doxygen\BT_EN.txt</Line>
+        <Line>Documentation\doxygen\Toggle.txt</Line>
         <Line>Documentation\doxygen\FRDM_RTOS_TestCar_V1.2.txt</Line>
         <Line>Documentation\doxygen\RoutingReport.txt</Line>
         <Line>Documentation\doxygen\pex.doxyfile</Line>
@@ -111,7 +112,7 @@
         <Line>Project_Settings\Linker_Files\ProcessorExpert.ld</Line>
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
-      <GenExtraFileSrcDir73>lib\doxygen\</GenExtraFileSrcDir73>
+      <GenExtraFileSrcDir74>lib\doxygen\</GenExtraFileSrcDir74>
       <XtraAge0>1250140972</XtraAge0>
       <XtraAge1>1250140972</XtraAge1>
       <XtraAge2>1250140972</XtraAge2>
@@ -157,15 +158,16 @@
       <XtraAge56>1250140972</XtraAge56>
       <XtraAge62>1250140972</XtraAge62>
       <XtraAge63>1250140972</XtraAge63>
-      <XtraAge75>1250142027</XtraAge75>
-      <XtraAge76>1250142027</XtraAge76>
-      <XtraAge78>1250142027</XtraAge78>
+      <XtraAge76>1251693939</XtraAge76>
+      <XtraAge77>1251693939</XtraAge77>
+      <XtraAge79>1251693939</XtraAge79>
+      <GenExtraFileType79>4</GenExtraFileType79>
       <GenExtraFileType78>4</GenExtraFileType78>
       <GenExtraFileType77>4</GenExtraFileType77>
       <GenExtraFileType76>4</GenExtraFileType76>
       <GenExtraFileType75>4</GenExtraFileType75>
-      <GenExtraFileType74>4</GenExtraFileType74>
-      <GenExtraFileType73>5</GenExtraFileType73>
+      <GenExtraFileType74>5</GenExtraFileType74>
+      <GenExtraFileType73>4</GenExtraFileType73>
       <GenExtraFileType72>4</GenExtraFileType72>
       <GenExtraFileType71>4</GenExtraFileType71>
       <GenExtraFileType70>4</GenExtraFileType70>
@@ -281,7 +283,7 @@
         <Line>Cpu_OnNMIINT</Line>
         <Line>Cpu_OnHardFault</Line>
       </GenMethodsInEvents>
-      <GenAllModules lines_count="52">
+      <GenAllModules lines_count="53">
         <Line>AS1</Line>
         <Line>ASerialLdd1</Line>
         <Line>ASerialLdd2</Line>
@@ -327,6 +329,7 @@
         <Line>TofCE1</Line>
         <Line>TofCE2</Line>
         <Line>TofCE3</Line>
+        <Line>Toggle</Line>
         <Line>TSK1</Line>
         <Line>TU1</Line>
         <Line>TU2</Line>
@@ -336,7 +339,7 @@
         <Line>XF1</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
-      <GenBeanModules lines_count="46">
+      <GenBeanModules lines_count="47">
         <Line>FRTOS1</Line>
         <Line>TSK1</Line>
         <Line>UTIL1</Line>
@@ -383,11 +386,12 @@
         <Line>TMOUT1</Line>
         <Line>MCUC1</Line>
         <Line>XF1</Line>
+        <Line>Toggle</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile>Documentation\FRDM_RTOS_TestCar_V1.2_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>145</ProjectModificationStamp>
+    <ProjectModificationStamp>154</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -395,8 +399,8 @@
     <GenComponentVersion>01.025</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1250071918</HeaderAge>
-    <CodeAge>1250142027</CodeAge>
+    <HeaderAge>1251641472</HeaderAge>
+    <CodeAge>1251693939</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -3852,7 +3856,7 @@
       <GenDriverVersion>01.12</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
       <HeaderAge>1249463808</HeaderAge>
-      <CodeAge>1249463808</CodeAge>
+      <CodeAge>1251641469</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>36</GenNumMethods>
       <Init>true</Init>
@@ -4936,8 +4940,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1250064621</HeaderAge>
-      <CodeAge>1250064621</CodeAge>
+      <HeaderAge>1251641469</HeaderAge>
+      <CodeAge>1251641469</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -5183,8 +5187,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1250064621</HeaderAge>
-      <CodeAge>1250064621</CodeAge>
+      <HeaderAge>1251641469</HeaderAge>
+      <CodeAge>1251641472</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -6339,8 +6343,8 @@
     <GenComponentVersion>01.016</GenComponentVersion>
     <GenDriverVersion>01.07</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1250071802</HeaderAge>
-    <CodeAge>1250071802</CodeAge>
+    <HeaderAge>1251641648</HeaderAge>
+    <CodeAge>1251641648</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>33</GenNumMethods>
     <Init>true</Init>
@@ -6577,8 +6581,8 @@
     <GenComponentVersion>01.164</GenComponentVersion>
     <GenDriverVersion>01.11</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1250064209</HeaderAge>
-    <CodeAge>1250064209</CodeAge>
+    <HeaderAge>1251641469</HeaderAge>
+    <CodeAge>1251641469</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Init>true</Init>
@@ -6986,8 +6990,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1250773320</HeaderAge>
-      <CodeAge>1250773320</CodeAge>
+      <HeaderAge>1251641472</HeaderAge>
+      <CodeAge>1251641472</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -7110,8 +7114,8 @@
     <GenComponentVersion>01.164</GenComponentVersion>
     <GenDriverVersion>01.11</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1249729733</HeaderAge>
-    <CodeAge>1249729733</CodeAge>
+    <HeaderAge>1251641472</HeaderAge>
+    <CodeAge>1251641472</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Init>true</Init>
@@ -7362,8 +7366,8 @@
       <GenComponentVersion>01.013</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1250773320</HeaderAge>
-      <CodeAge>1250773320</CodeAge>
+      <HeaderAge>1251641472</HeaderAge>
+      <CodeAge>1251641472</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>18</GenNumMethods>
       <Init>true</Init>
@@ -8230,8 +8234,8 @@
     <GenComponentVersion>01.016</GenComponentVersion>
     <GenDriverVersion>01.07</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1250071802</HeaderAge>
-    <CodeAge>1250071802</CodeAge>
+    <HeaderAge>1251641648</HeaderAge>
+    <CodeAge>1251641648</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>33</GenNumMethods>
     <Init>true</Init>
@@ -9971,7 +9975,7 @@
         <GenDriverVersion>01.12</GenDriverVersion>
         <GenEventModule>Events</GenEventModule>
         <HeaderAge>1249463851</HeaderAge>
-        <CodeAge>1249463851</CodeAge>
+        <CodeAge>1251641472</CodeAge>
         <AsemblAge>-1</AsemblAge>
         <GenNumMethods>36</GenNumMethods>
         <Init>true</Init>
@@ -10456,6 +10460,107 @@
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Generated_Code\XF1config.h</ExtraFile0>
   </ComponentID_197>
+  <ComponentID_210>
+    <Generated>true</Generated>
+    <GenCompName>Toggle</GenCompName>
+    <GenComponentVersion>01.033</GenComponentVersion>
+    <GenDriverVersion>01.03</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1251693939</HeaderAge>
+    <CodeAge>1251693939</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>13</GenNumMethods>
+    <Init>true</Init>
+    <Deinit>false</Deinit>
+    <GetDir>false</GetDir>
+    <SetDir>false</SetDir>
+    <SetInput>false</SetInput>
+    <SetOutput>false</SetOutput>
+    <GetVal>true</GetVal>
+    <PutVal>true</PutVal>
+    <ClrVal>true</ClrVal>
+    <SetVal>true</SetVal>
+    <NegVal>false</NegVal>
+    <ConnectPin>false</ConnectPin>
+    <GetRawVal>false</GetRawVal>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>10</GenMethodPos>
+    <MethodPos>
+      <MethodPos0>Init</MethodPos0>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>122</LineBeg>
+      <LineEnd>145</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos1>GetVal</MethodPos1>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>146</LineBeg>
+      <LineEnd>167</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos2>PutVal</MethodPos2>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>168</LineBeg>
+      <LineEnd>193</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos3>ClrVal</MethodPos3>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>194</LineBeg>
+      <LineEnd>209</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos4>SetVal</MethodPos4>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>210</LineBeg>
+      <LineEnd>225</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos5>Init</MethodPos5>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>95</LineBeg>
+      <LineEnd>144</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos6>GetVal</MethodPos6>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>145</LineBeg>
+      <LineEnd>173</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos7>PutVal</MethodPos7>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>174</LineBeg>
+      <LineEnd>207</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos8>ClrVal</MethodPos8>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>208</LineBeg>
+      <LineEnd>227</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos9>SetVal</MethodPos9>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>228</LineBeg>
+      <LineEnd>247</LineEnd>
+    </MethodPos>
+    <GenExtraFilesCount>1</GenExtraFilesCount>
+    <ExtraFile0>Documentation\doxygen\Toggle.txt</ExtraFile0>
+  </ComponentID_210>
   <UsedSrcFiles>
     <SrcFile0>Drivers\Common\Bluetooth_EGBTStdIOSendChar.Inc=1250140845</SrcFile0>
     <SrcFile1>Drivers\freeRTOS\Source\include\queue.h=1250140846</SrcFile1>

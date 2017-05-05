@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-04-03, 20:58, # CodeGen: 197
+**     Date/Time   : 2017-04-27, 10:43, # CodeGen: 225
 **     Abstract    :
 **
 **     Settings    :
@@ -106,6 +106,7 @@
 #include "TMOUT1.h"
 #include "MCUC1.h"
 #include "XF1.h"
+#include "Toggle.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -914,6 +915,8 @@ void PE_low_level_init(void)
   BT1_Init();
   /* ### BitIO_LDD "BT_EN" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)BT_EN_Init(NULL);
+  /* ### BitIO_LDD "Toggle" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)Toggle_Init(NULL);
 }
   /* Flash configuration field */
   __attribute__ ((section (".cfmconfig"))) const uint8_t _cfm[0x10] = {

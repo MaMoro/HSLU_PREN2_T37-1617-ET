@@ -18,8 +18,10 @@
 #include "driving.h"
 #include "PWM_Gyro.h"
 #include "PWM_Servo.h"
+#include "Toggle.h"
 
 #define DELAY 20	// in ms
+#define ULTRASLOW 8
 #define SLOW 20
 #define MEDIUM 40
 #define FAST 60
@@ -27,14 +29,14 @@
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
 static uint8_t kpGyro, kiGyro, kdGyro;		//PID values Gyro
 static uint8_t device;						// left or right tof
-static uint8_t distanceSide = 135;			// distance of the tofs to the side wall
+static uint8_t distanceSide = 145;			// distance of the tofs to the side wall
 static uint8_t distanceFront = 200;
 static int8_t speed = 0;
 static uint8_t letter;
 static uint8_t stop;						// if set to 1 the motors will stop
 static int8_t parcour;						// -1 = LeftParcour, 1 = RightParcour
 static uint16_t timeout;
-static uint8_t optRange;
+static uint8_t optRangeLeft, optRangeRight;
 static int16_t optAngel;
 
 /*
@@ -44,7 +46,8 @@ void driveToStair(void) {
 	uint8_t err = ERR_OK;
 	uint8_t done = 0;
 	int16_t range = 0;
-	optRange = distanceSide;
+	optRangeLeft = distanceSide;
+	optRangeRight = distanceSide;
 	optAngel = 0;
 	
 	setGyroskopPWM(13);
@@ -52,7 +55,9 @@ void driveToStair(void) {
 	LED_GREEN_Put(1);
 	while (!done) {
 		if(speed < MEDIUM){
-			speed = speed + 1;
+			speed += 2;
+		}else{
+			speed = MEDIUM;
 		}
 		err = regulateMotor();
 		if(err != ERR_OK){
@@ -84,11 +89,11 @@ void driveOverStair(void){
 	uint8_t stairState = 0;
 	int16_t angelNick = 0;
 	uint8_t done = 0;
-	bool brake = 0;
+	uint8_t brake;
 	uint8_t counter = 0;
-	optRange = distanceSide;
+	optRangeLeft = distanceSide;
+	optRangeRight = distanceSide;
 	optAngel = 0;
-	
 
 	while(!done){
 		err = regulateMotor();
@@ -120,25 +125,28 @@ void driveOverStair(void){
 			}
 		}
 		else if(stairState == 2){
-			if(speed > 5){
+			if(speed > ULTRASLOW){
 				speed = speed*0.7;
 			}else{
-				speed = 5;
+				speed = ULTRASLOW;
 			}
-			if(angelNick >= 5){	// stair downwards
+			if(angelNick >= 2){	// stair downwards
 				counter++;
-				if(counter>2){
+				if(counter>3){
 					speed = 0;
-					motorsbrake(1);
 					counter = 0;
 					stairState = 3; 
 					LED_GREEN_Put(0);
-					motorsbrake(1);
+					brake = 60;
 				}
 			}
 		}
 		
 		else if(stairState == 3){
+			motorsbrake(brake);
+			if(brake > 0){
+				brake -= 2;
+			}
 			if(angelNick < 28){
 				motorsbrake(0);
 				speed++;
@@ -150,7 +158,6 @@ void driveOverStair(void){
 				RED_Put(0);
 				speed = MEDIUM;
 				done = 1;
-				motorsbrake(FALSE);
 			}
 		}
 		}
@@ -166,7 +173,8 @@ void driveToTurningPlace(void){
 	uint8_t done = 0;
 	int16_t ToFLeft;
 	int16_t ToFRight;
-	optRange = distanceSide;
+	optRangeLeft = distanceSide;
+	optRangeRight = distanceSide;
 	optAngel = 0;
 	
 	while(!done){	
@@ -206,16 +214,17 @@ void driveThroughTurningPlace(void){
 	uint16_t time;
 	int16_t angel;
 	uint8_t counter = 0;
-	optRange = distanceSide;
+	optRangeLeft = distanceSide;
+	optRangeRight = distanceSide;
 	optAngel = 0;
-	speed = SLOW;
 	distanceSide = 190;
 	
-	// turn 90 degree
+	// turn 90 degree and drive to the wall
 	counter = 0;
+	speed = SLOW;
 	while(partState == 0){
 		if(abs(optAngel) < 90){
-			optAngel -= 4*parcour;
+			optAngel -= 5*parcour;
 		}else{
 			optAngel = -90*parcour;
 		}
@@ -228,40 +237,28 @@ void driveThroughTurningPlace(void){
 		 // check end condition
 		L3GgetDegree(GEAR,&angel);
 		if(abs(angel) >= 85 && abs(angel) < 95){
-			counter++;
-			if(counter >= 5){
-				partState = 1;
-				optAngel = -90*parcour;
-			}
+			speed = MEDIUM;
+			LED_GREEN_Put(1);
+			optAngel = -90*parcour;
 		}
-	}
-	
-	LED_GREEN_Put(1);
-	// drive to the wall
-	while(partState == 1){
-		err = regulateMotor();
-		if(err != ERR_OK){
-			setErrorState(err,"Driving Task");
-		}
-		vTaskDelay(pdMS_TO_TICKS(DELAY));
-		
-		// check end condition
+		// end condition for the front wall
 		err = VL_GetDistance(TOFFRONT, &range);
 		if (err != ERR_OK) {
 			setErrorState(err, "DrivingTask, State4");
 		}
-		if(range <= distanceFront-50 && range > 0){
+		if(range <= distanceFront && range > 0){
 			LED_GREEN_Put(0);
-			partState = 2;
+			partState = 1;
 		}
 	}
 	
 	speed = 0;
 	RED_Put(1);
-	optRange = 0;
+	optRangeLeft = 0;
+	optRangeRight = 0;
 	counter = 0;
 	// turn 90 degree
-	while(partState == 2){
+	while(partState == 1){
 		if(abs(optAngel)<177){
 		optAngel -= 4*parcour;
 		}else{
@@ -280,8 +277,9 @@ void driveThroughTurningPlace(void){
 			if(counter > 5){
 				optAngel = -180*parcour;
 				RED_Put(0);
-				partState = 3;
-				optRange = distanceSide-10;
+				partState = 2;
+				optRangeLeft = distanceSide-10;
+				optRangeRight = distanceSide-10;
 			}
 		}
 	}
@@ -291,7 +289,7 @@ void driveThroughTurningPlace(void){
 	timeout = 0;
 	speed = MEDIUM;
 	LED_GREEN_Put(1);
-	while(partState == 3){
+	while(partState == 2){
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -307,19 +305,20 @@ void driveThroughTurningPlace(void){
 			setErrorState(err, "DrivingTask, State4");
 		}
 		if((rangeOld-range) >= 40 && (rangeOld-range)<=60){
-			partState = 4;
+			partState = 3;
 		}
 		if(timeout >= MAXTIMEOUT){
-			partState = 6;				// already drove through door
+			partState = 4;				// already drove through door
 		}
 	}
 	
 	// drive through the door
 	range = 0;
 	timeout = 0;
-	optRange = distanceSide-50;
+	optRangeLeft = distanceSide-50;
+	optRangeRight = distanceSide-50;
 	RED_Put(1);
-	while(partState == 4){
+	while(partState == 3){
 		err = regulateMotor();
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
@@ -337,22 +336,23 @@ void driveThroughTurningPlace(void){
 		if(((range-rangeOld) >= 40 && (rangeOld-range)<=60) || timeout >= MAXTIMEOUT){
 			RED_Put(0);
 			LED_GREEN_Put(0);
-			partState = 5;
+			partState = 4;
 		}		
 	}
 		setState(5);
 }
 
-/*
- * drive to the endzone, if the wall of the buttons is detected with the front ToF, the frontzone is reached
- */
-void driveToEndZone(void){
+
+void driveOverChannel(void){
 	uint8_t err = ERR_OK;
 	uint8_t done = 0;
-	int16_t rangeFront, rangeSide;
-	int8_t deviceIn;
-	optRange = distanceSide;
+	int16_t angelNick = 0;
+	uint8_t partState = 0;
+	uint16_t time;
 	
+	timeout = 0;
+	optRangeLeft = distanceSide;
+	optRangeRight = distanceSide;
 	speed = FAST;
 	while(!done){
 		//angel correction
@@ -362,13 +362,56 @@ void driveToEndZone(void){
 		if(err != ERR_OK){
 			setErrorState(err,"Driving Task");
 		}
+		getTime(&time);
+		timeout += time;
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
+		
+		//end Condition
+		L3GgetDegree(NICK, &angelNick);
+		if(partState == 0 && angelNick <= -3){		// drive on channel
+			partState = 1;
+			speed = MEDIUM;
+		}
+		else if(partState == 1 && angelNick >= 3){		// drive down from channel
+			partState = 2;
+		}
+		else if(partState == 2 && angelNick < 3 && angelNick > -3){		// channel done
+			done = 1;
+			speed = FAST;
+		}
+		if(timeout >= MAXTIMEOUT){
+			done = 1;
+			speed = FAST;
+		}
+	}
+	setState(6);
+}
+
+/*
+ * drive to the endzone, if the wall of the buttons is detected with the front ToF, the frontzone is reached
+ */
+void driveToEndZone(void){
+	uint8_t err = ERR_OK;
+	uint8_t done = 0;
+	int16_t rangeSide;
+	int8_t deviceIn;
+	int8_t difference = 50;
+	optRangeLeft = distanceSide-difference;
+	optRangeRight = distanceSide+difference;
+
+	
+	speed = FAST;
+	while(!done){
+		//angel correction
+		angelCorrection(optAngel);
+		
+		err = regulateMotor();
+		if(err != ERR_OK){
+			setErrorState(err,"Driving Task");
+		}
 		vTaskDelay(pdMS_TO_TICKS(DELAY));
 		
 		 // stop condition
-		 err = VL_GetDistance(TOFFRONT, &rangeFront);
-		if (err != ERR_OK) {
-			setErrorState(err, "DrivingTask, State4");
-		}
 		if(parcour == LEFT){
 			deviceIn = TOFLEFT;
 		}else if (parcour == RIGHT){
@@ -378,14 +421,22 @@ void driveToEndZone(void){
 		if ( err != ERR_OK){
 			setErrorState(err, "DrivingTask, State4");
 		}
-		 if(rangeFront <= distanceFront && rangeFront > 0 && (rangeSide<=0 || rangeSide == 255)){
-			 done = 1;
+		 if(rangeSide<=0 || rangeSide == 255){
+			 if(speed > SLOW){
+				 speed -=5;
+			 }
+			 else{
+				 speed = SLOW;
+			 }
+			 if(speed <= SLOW){
+				 done = 1;
+			 }
 		 }
 		
 	}
-	
-	motorsStartup(0, 0, 0);
-	setState(6);
+	motorsStartup(0,0);
+	//motorsbrake(50);
+	setState(7);
 }
 
 /*
@@ -393,16 +444,37 @@ void driveToEndZone(void){
  */
 void pushTheButton(void){
 	uint8_t err;
-	speed = 0;
-	optRange = 0;
-	while(1){
+		speed = 0;
+		optRangeLeft = 0;
+		optRangeRight = 0;
+		int16_t rangeFront, rangeSide;		
+		int8_t deviceOutside = 0;
+		int8_t rangeWallButton = 0;
+		int8_t rangeTofServoCalc = 0;
+		const int8_t rangeTofServo = 106;		// distance from ToF right to Servo axis
+		const int8_t lengthStick = 170;		// noch zu bestimmen
+		const int8_t widthChassis = 120;
+		int16_t angle = 0;
 		
-		setServoPWM(900);
-		vTaskDelay(pdMS_TO_TICKS(DELAY));	 
-			 
-		// check end condition
-	}
-	//\todo
+		// chose Tof-Sensor on the Outside
+		if(parcour == LEFT){
+			deviceOutside = TOFLEFT;
+			rangeWallButton = 90 + (240 - (letter-1) * 60);	 	// calculate distance from the outside Wall to the Button
+			rangeTofServoCalc = rangeTofServo;
+		}else if (parcour == RIGHT){
+			deviceOutside = TOFRIGHT;
+			rangeWallButton = 90 + ((letter-1)* 60);			// calculate distance from the outside Wall to the Button
+			rangeTofServoCalc = widthChassis - rangeTofServo;
+		}
+		err = VL_GetDistance(deviceOutside, &rangeSide);
+		if (err != ERR_OK){
+			setErrorState(err, "DrivingTask, State6");
+		}
+		
+		angle = (900 + (int16_t)(asin((rangeTofServoCalc + rangeSide - rangeWallButton)/lengthStick)*(1800.0f/PI)));
+		
+		setServoPWM(angle);
+		vTaskDelay(pdMS_TO_TICKS(DELAY));
 }
 
 /*
@@ -414,9 +486,10 @@ void pushTheButton(void){
 uint8_t regulateMotor(void){
 	uint8_t err = ERR_OK;
 	int16_t corrGyro = 0;
-	int16_t corrToFleft = 0, corrToFright = 0;
+	int16_t corrToFleft = 0, corrToFright = 0, corrToF = 0;
+	Toggle_PutVal(Toggle_DeviceData, !Toggle_GetVal((Toggle_DeviceData)));
 	if (stop) {
-		motorsStartup(0, 0, 0);
+		motorsStartup(0, 0);
 		return ERR_OK;
 	} else {
 		// Motor-Regulation
@@ -425,19 +498,25 @@ uint8_t regulateMotor(void){
 			corrGyro = 0;
 			// error \todo
 		}
-		if (optRange != 0) {
-			err = calcPID(TOFLEFT, kpToF, kiToF, kdToF, optRange, &corrToFleft);
+		if (optRangeLeft != 0 || optRangeRight != 0) {
+			err = calcPID(TOFLEFT, kpToF, kiToF, kdToF, optRangeLeft, &corrToFleft);
 			if (err != ERR_OK) {
 				corrToFleft = 0;
 				// error \todo
 			}
-			err = calcPID(TOFRIGHT, kpToF, kiToF, kdToF, optRange, &corrToFright);
+			err = calcPID(TOFRIGHT, kpToF, kiToF, kdToF, optRangeRight, &corrToFright);
 			if (err != ERR_OK) {
 				corrToFright = 0;
 				// error \todo
 			}
+			if(corrToFleft != 0 && corrToFright != 0){			// both sides detected
+				corrToF = (corrToFleft-corrToFright)/2;
+			}
+			else{										// one or no side detected
+				corrToF = corrToFleft-corrToFright;
+			}
 		}
-		motorsStartup(speed - corrGyro + (corrToFleft-corrToFright)/2, speed + corrGyro + (-corrToFleft+corrToFright)/2, 0);
+		motorsStartup(speed - corrGyro + corrToF, speed + corrGyro - corrToF);
 		return ERR_OK;
 	}
 }

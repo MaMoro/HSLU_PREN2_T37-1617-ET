@@ -16,7 +16,7 @@
 static int16_t pwmLeft;
 static int16_t pwmRight;
 static int16_t safetyVal;
-static bool brake;
+static uint8_t brake;
 
 /**
  * returns the pwm value of the left motor
@@ -82,10 +82,10 @@ void motorIncrementPWMRight(int8_t value)
  */
 void motorSetPWMLeft(int8_t value)
 {
-	if(brake){				// brake
+	if(brake > 0){				// brake
 		  DIR_LEFT_PutVal(DIR_LEFT_DeviceData, 0);
 		  DIR_LEFT1_PutVal(DIR_LEFT1_DeviceData, 0);
-		  pwmLeft = 127;
+		  pwmLeft = brake;
 	}else{
   if (value < 0)              // backward
   {
@@ -125,10 +125,10 @@ void motorSetPWMLeft(int8_t value)
  */
 void motorSetPWMRight(int8_t value)
 {
-	if(brake){				// brake
+	if(brake > 0){				// brake
 		  DIR_RIGHT_PutVal(DIR_RIGHT_DeviceData, 0);
 		  DIR_RIGHT1_PutVal(DIR_RIGHT1_DeviceData, 0);
-		  pwmRight = 127;
+		  pwmRight = brake;
 	}
 	else{
 	  if (value < 0)              // backward
@@ -219,7 +219,7 @@ void motorStartupLeft(int8_t value, uint8_t time){
  *  @param [in] time
  *  time in witch the motor has to reach the speed of value (in ms)
  */
-void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
+void motorsStartup(int16_t valueLeft, int16_t valueRight){
 	if(valueLeft>127){
 		valueLeft = 127;
 	}else if(valueLeft<-127){
@@ -230,28 +230,17 @@ void motorsStartup(int16_t valueLeft, int16_t valueRight, uint16_t time){
 	}else if(valueRight<-127){
 		valueRight = -127;
 	}
-	
-	
-	if(time > 0){
-	int8_t incrementLeft = (valueLeft - pwmLeft)/time;
-	int8_t incrementRight = (valueRight - pwmRight)/time;
-	uint8_t i;
-	FRTOS1_taskENTER_CRITICAL();
-		for(i = 1; i <= time; i++){
-			//motorSetPWMRight(pwmRight+incrementRight*i);
-			//motorSetPWMLeft(pwmLeft+incrementLeft*i);
-			motorIncrementPWMLeft(incrementLeft);	
-			motorIncrementPWMRight(incrementRight);
-			vTaskDelay(pdMS_TO_TICKS(1));
-		}
-	FRTOS1_taskEXIT_CRITICAL();
-	}
 
 	motorSetPWMRight(valueRight);
 	motorSetPWMLeft(valueLeft);
-	//\todo add proper time handling
 }
 
-void motorsbrake(bool doBrake){
+void motorsbrake(uint8_t doBrake){
+	if(doBrake > 127){
+		doBrake = 127;
+	}
+	else if(doBrake < 0){
+		doBrake = 0;
+	}
 	brake = doBrake;
 }

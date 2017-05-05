@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="front" key="selection"/>
+		<item value="gyros" key="selection"/>
 		<list key="findhistory">
+			<item value="gyros"/>
+			<item value="gyro"/>
+			<item value="delay"/>
+			<item value="timeout"/>
 			<item value="frontdistance"/>
 			<item value="front"/>
 			<item value="setGyroskopPWM"/>
 			<item value="setGyroskopPWM()"/>
-			<item value="setGyroskopPWM(0)"/>
-			<item value="gyro"/>
-			<item value="angel"/>
-			<item value="timeout"/>
 		</list>
 		<list key="replacehistory">
 		</list>

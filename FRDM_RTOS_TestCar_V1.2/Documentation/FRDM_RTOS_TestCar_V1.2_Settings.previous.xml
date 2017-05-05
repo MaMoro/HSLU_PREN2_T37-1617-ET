@@ -60,7 +60,7 @@
                   <PLL_module_in_Stop v="Disabled" />
                   <PLL_output__MHz_ v="0" />
                   <Reference_clock_divider v="Auto select" />
-                  <PLL_reference_clock__MHz_ v="1" />
+                  <PLL_reference_clock__MHz_ v="4" />
                   <Multiplication_factor v="Auto select" />
                   <Loss_of_lock_interrupt v="Disabled" />
                 </group>
@@ -1989,7 +1989,7 @@ PE_DEBUGHALT();
             <SetEventMask v="don&amp;apos;t generate code" />
             <GetEventMask v="don&amp;apos;t generate code" />
             <GetEventStatus v="don&amp;apos;t generate code" />
-            <SetRatio8 v="don&amp;apos;t generate code" />
+            <SetRatio8 v="generate code" />
             <SetRatio16 v="generate code" />
             <SetDutyUS v="generate code" />
             <SetDutyMS v="generate code" />
@@ -2013,7 +2013,7 @@ PE_DEBUGHALT();
       <Disable v="don&amp;apos;t generate code" />
       <EnableEvent v="don&amp;apos;t generate code" />
       <DisableEvent v="don&amp;apos;t generate code" />
-      <SetRatio8 v="don&amp;apos;t generate code" />
+      <SetRatio8 v="generate code" />
       <SetRatio16 v="generate code" />
       <SetDutyTicks16 v="don&amp;apos;t generate code" />
       <SetDutyTicks32 v="don&amp;apos;t generate code" />
@@ -2210,7 +2210,7 @@ PE_DEBUGHALT();
             <SetEventMask v="don&amp;apos;t generate code" />
             <GetEventMask v="don&amp;apos;t generate code" />
             <GetEventStatus v="don&amp;apos;t generate code" />
-            <SetRatio8 v="don&amp;apos;t generate code" />
+            <SetRatio8 v="generate code" />
             <SetRatio16 v="generate code" />
             <SetDutyUS v="generate code" />
             <SetDutyMS v="generate code" />
@@ -2234,7 +2234,7 @@ PE_DEBUGHALT();
       <Disable v="don&amp;apos;t generate code" />
       <EnableEvent v="don&amp;apos;t generate code" />
       <DisableEvent v="don&amp;apos;t generate code" />
-      <SetRatio8 v="don&amp;apos;t generate code" />
+      <SetRatio8 v="generate code" />
       <SetRatio16 v="generate code" />
       <SetDutyTicks16 v="don&amp;apos;t generate code" />
       <SetDutyTicks32 v="don&amp;apos;t generate code" />

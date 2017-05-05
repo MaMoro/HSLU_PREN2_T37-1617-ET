@@ -56,6 +56,7 @@
 #include "TMOUT1.h"
 #include "MCUC1.h"
 #include "XF1.h"
+#include "Toggle.h"
 #include "UTIL1.h"
 #include "GI2C1.h"
 #include "AS1.h"

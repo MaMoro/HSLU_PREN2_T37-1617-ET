@@ -17,6 +17,7 @@
 "./Generated_Code/WAIT1.o"
 "./Generated_Code/Vectors.o"
 "./Generated_Code/UTIL1.o"
+"./Generated_Code/Toggle.o"
 "./Generated_Code/TofCE3.o"
 "./Generated_Code/TofCE2.o"
 "./Generated_Code/TofCE1.o"

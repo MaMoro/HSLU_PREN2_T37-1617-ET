@@ -61,7 +61,7 @@
 					</StringAttribute>
 					<BoolAttribute>
 						<Name>EnableTrace</Name>
-						<DefaultValue>true</DefaultValue>
+						<DefaultValue>false</DefaultValue>
 					</BoolAttribute>
 					<BoolAttribute>
 						<Name>EnableLogging</Name>

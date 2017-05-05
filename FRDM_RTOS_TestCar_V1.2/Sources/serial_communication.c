@@ -53,8 +53,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 18, kiT = 0, kdT = 0;		// 20, 0, 0
-static uint8_t kpG = 18, kiG = 1, kdG = 9;		// 15, 1, 5
+static uint8_t kpT = 16, kiT = 0, kdT = 0;		// 20, 0, 0
+static uint8_t kpG = 17, kiG = 1, kdG = 8;		// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -81,10 +81,8 @@ void startCommunication(void){
 	RXbufferBT[0] = '\0';
 	RXbuffer[0] = '\0';
 
-	int16_t i;
 	setServoPWM(0);
 	setGyroskopPWM(0);
-	//vTaskDelay(pdMS_TO_TICKS(8000));
 	
 	//Init sensors
 	errState = initAllSensors();
@@ -124,10 +122,11 @@ void startCommunication(void){
 	}
 	LED_GREEN_Put(0);
 #endif
+	
+/*	//ToF test
 	int16_t rangeL;
 	int16_t rangeR;
-	
-/*	for(;;){
+	for(;;){
 		VL_GetDistance(TOFLEFT, &rangeL);
 		VL_GetDistance(TOFRIGHT, &rangeR);
 		CLS1_SendNum16s(rangeL, CLS1_GetStdio()->stdOut);
@@ -151,9 +150,9 @@ void startCommunication(void){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
 		readValues();
-		//sendStatus();
+		sendStatus();
 		sendStatusBT();
-		sendTestStatus();
+		//sendTestStatus();
 		
 		vTaskDelay(pdMS_TO_TICKS(300));
 	}
@@ -161,6 +160,13 @@ void startCommunication(void){
 /*
  * Set the status of the Parcours
  * @param newState new state whitch is set;
+ * State: 	1 => drive to stair
+ * 			2 => drive over stair
+ * 			3 => drive to turningPlace
+ * 			4 => drive through turningPlace
+ * 			5 => drive to the channel
+ * 			6 => drive to the endZone
+ * 			7 => push the button
  */
 void setState(uint8_t newState){
 	state = newState;

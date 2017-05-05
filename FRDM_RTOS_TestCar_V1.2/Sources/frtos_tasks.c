@@ -52,17 +52,29 @@ static portTASK_FUNCTION(DrivingTask, pvParameters) {
   /* Write your task initialization code here ... */
 (void) pvParameters;
 
-	driveToStair();
+uint8_t state;
+for(;;){
+	state = getState();
+	switch(state){
+	case 1: driveToStair();
+	break;
+	case 2: driveOverStair();
+	break;
+	case 3: driveToTurningPlace();
+	break;
+	case 4: driveThroughTurningPlace();
+	break;
+	case 5: driveOverChannel();
+	break;
+	case 6: driveToEndZone();
+	break;
+	case 7: pushTheButton();
+	break;
+	default: setErrorState(ERR_PARAM_COMMAND, "unvalid State in DrivingTask");
+	}
+}
+	
 
-	driveOverStair();
-
-	driveToTurningPlace();
-
-	driveThroughTurningPlace();
-
-	driveToEndZone();
-
-	pushTheButton();
 	
 	vTaskDelay(pdMS_TO_TICKS(1) );
 	FRTOS1_vTaskSuspend(NULL);

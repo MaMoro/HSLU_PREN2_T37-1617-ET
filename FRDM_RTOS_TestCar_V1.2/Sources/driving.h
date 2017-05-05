@@ -26,6 +26,7 @@ void driveOverStair(void);
 void initDriving(uint8_t kpT, uint8_t kiT, uint8_t kdT, uint8_t kpG, uint8_t kiG, uint8_t kdG, bool isLeftParcour);
 void driveToTurningPlace(void);
 void driveThroughTurningPlace(void);
+void driveOverChannel(void);
 void driveToEndZone(void);
 void pushTheButton(void);
 uint8_t regulateMotor(void);

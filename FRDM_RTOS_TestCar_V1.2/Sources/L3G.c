@@ -15,7 +15,7 @@
 #define PI 3.14159265
 #define MMA1 1
 #define ODR 95		// ODR: 95 / 190 / ...
-#define GEARLISTSIZE 50
+#define GEARLISTSIZE 30
 
 #if MMA1
 	#include "MMA1.h"
@@ -576,7 +576,9 @@ void angelCorrection(int16_t optAngel){
 	if(arrayCount >= GEARLISTSIZE){
 		qsort(&gearList[0], GEARLISTSIZE, sizeof(int32_t), (_compare_function) cmpfunc_32);
 		corrAngel = gyro.x + (optAngel*1000 - gearList[GEARLISTSIZE/2]);
-		L3GSetAngel(GEAR,corrAngel);
+		if(abs(corrAngel)< 10000){
+			L3GSetAngel(GEAR,corrAngel);
+		}
 		arrayCount = 0;
 	}
 }

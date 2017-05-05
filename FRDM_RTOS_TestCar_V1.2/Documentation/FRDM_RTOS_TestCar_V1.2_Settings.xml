@@ -60,7 +60,7 @@
                   <PLL_module_in_Stop v="Disabled" />
                   <PLL_output__MHz_ v="0" />
                   <Reference_clock_divider v="Auto select" />
-                  <PLL_reference_clock__MHz_ v="1" />
+                  <PLL_reference_clock__MHz_ v="4" />
                   <Multiplication_factor v="Auto select" />
                   <Loss_of_lock_interrupt v="Disabled" />
                 </group>
@@ -3011,6 +3011,38 @@ PE_DEBUGHALT();
       <xvformat v="generate code" />
       <xformat v="generate code" />
       <xsprintf v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="Toggle" type="BitIO_LDD">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Toggle" />
+      <Pin_for_I_O v="ADC0_SE15/TSI0_CH14/PTC1/LLWU_P6/RTC_CLKIN/I2C1_SCL/TPM0_CH0" />
+      <Direction v="Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+        <Auto_initialization v="yes" />
+      </group>
+      <Safe_mode v="no" />
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+      <Deinit v="don&amp;apos;t generate code" />
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="don&amp;apos;t generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
     </Methods>
     <Events>
       <EmptySection_DummyValue />
