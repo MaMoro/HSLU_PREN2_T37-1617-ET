@@ -21,10 +21,10 @@
 #include "Toggle.h"
 
 #define DELAY 20	// in ms
-#define ULTRASLOW 8
-#define SLOW 20
-#define MEDIUM 40
-#define FAST 60
+#define ULTRASLOW 8	// default 8
+#define SLOW 20		// default 20
+#define MEDIUM 80	// default 40
+#define FAST 60		// default 60
 
 static uint8_t kpToF, kiToF, kdToF;			// PID values ToF
 static uint8_t kpGyro, kiGyro, kdGyro;		//PID values Gyro
@@ -32,7 +32,7 @@ static uint8_t device;						// left or right tof
 static uint8_t distanceSide = 145;			// distance of the tofs to the side wall
 static uint8_t distanceFront = 200;
 static int8_t speed = 0;
-static uint8_t letter;
+static uint8_t letter = 5;
 static uint8_t stop;						// if set to 1 the motors will stop
 static int8_t parcour;						// -1 = LeftParcour, 1 = RightParcour
 static uint16_t timeout;
@@ -395,10 +395,15 @@ void driveToEndZone(void){
 	uint8_t done = 0;
 	int16_t rangeSide;
 	int8_t deviceIn;
-	int8_t difference = 50;
+	int8_t difference = 30;
 	optRangeLeft = distanceSide-difference;
 	optRangeRight = distanceSide+difference;
 
+	if(parcour == LEFT){
+		deviceIn = TOFLEFT;
+	}else if (parcour == RIGHT){
+		deviceIn = TOFRIGHT;
+	}
 	
 	speed = FAST;
 	while(!done){
@@ -412,11 +417,6 @@ void driveToEndZone(void){
 		vTaskDelay(pdMS_TO_TICKS(DELAY));
 		
 		 // stop condition
-		if(parcour == LEFT){
-			deviceIn = TOFLEFT;
-		}else if (parcour == RIGHT){
-			deviceIn = TOFRIGHT;
-		}
 		err = VL_GetDistance(deviceIn, &rangeSide);
 		if ( err != ERR_OK){
 			setErrorState(err, "DrivingTask, State4");
@@ -444,37 +444,56 @@ void driveToEndZone(void){
  */
 void pushTheButton(void){
 	uint8_t err;
-		speed = 0;
-		optRangeLeft = 0;
-		optRangeRight = 0;
-		int16_t rangeFront, rangeSide;		
-		int8_t deviceOutside = 0;
-		int8_t rangeWallButton = 0;
-		int8_t rangeTofServoCalc = 0;
-		const int8_t rangeTofServo = 106;		// distance from ToF right to Servo axis
-		const int8_t lengthStick = 170;		// noch zu bestimmen
-		const int8_t widthChassis = 120;
-		int16_t angle = 0;
+	int16_t rangeFront, rangeSide;		
+	uint8_t deviceOutside = 0;
+	uint16_t rangeWallButton = 0;
+	uint8_t rangeTofServoCalc = 0;
+	double function;
+	bool done = 0;
+	const uint8_t rangeTofServo = 106;		// distance from ToF right to Servo axis
+	const uint8_t lengthStick = 170;		// noch zu bestimmen
+	const uint8_t widthChassis = 120;
+	int16_t angle = 0;
+	int8_t difference = 30;
+	
+	speed = ULTRASLOW;
+	optRangeLeft = distanceSide-difference;
+	optRangeRight = distanceSide+difference;
 		
-		// chose Tof-Sensor on the Outside
-		if(parcour == LEFT){
-			deviceOutside = TOFLEFT;
-			rangeWallButton = 90 + (240 - (letter-1) * 60);	 	// calculate distance from the outside Wall to the Button
-			rangeTofServoCalc = rangeTofServo;
-		}else if (parcour == RIGHT){
-			deviceOutside = TOFRIGHT;
-			rangeWallButton = 90 + ((letter-1)* 60);			// calculate distance from the outside Wall to the Button
-			rangeTofServoCalc = widthChassis - rangeTofServo;
+	// chose Tof-Sensor on the Outside
+	if(parcour == LEFT){
+		deviceOutside = TOFRIGHT;
+		rangeWallButton = 90 + (240 - (letter-1) * 60);	 	// calculate distance from the outside Wall to the Button
+		rangeTofServoCalc = rangeTofServo;
+	}else if (parcour == RIGHT){
+		deviceOutside = TOFLEFT;
+		rangeWallButton = 90 + ((letter-1)* 60);			// calculate distance from the outside Wall to the Button
+		rangeTofServoCalc = widthChassis - rangeTofServo;
+	}
+	
+		while(!done){
+
+			err = VL_GetDistance(deviceOutside, &rangeSide);
+			if (err != ERR_OK){
+				setErrorState(err, "DrivingTask, State6");
+			}
+			if(rangeSide >= 0 && rangeSide <= 200){
+				function = ((double)rangeTofServoCalc + (double)rangeSide - (double)rangeWallButton)/(double)lengthStick;
+				if(parcour == LEFT){
+					angle = (900 - (int16_t)((asin(function))*(1800.0f/PI)));
+				}else{
+					angle = (900 + (int16_t)((asin(function))*(1800.0f/PI)));
+				}
+			}
+			
+			setServoPWM(angle);
+			
+			err = regulateMotor();
+			if(err != ERR_OK){
+				setErrorState(err,"Driving Task");
+			}
+			vTaskDelay(pdMS_TO_TICKS(DELAY));
 		}
-		err = VL_GetDistance(deviceOutside, &rangeSide);
-		if (err != ERR_OK){
-			setErrorState(err, "DrivingTask, State6");
-		}
-		
-		angle = (900 + (int16_t)(asin((rangeTofServoCalc + rangeSide - rangeWallButton)/lengthStick)*(1800.0f/PI)));
-		
-		setServoPWM(angle);
-		vTaskDelay(pdMS_TO_TICKS(DELAY));
 }
 
 /*
@@ -611,7 +630,8 @@ void setServoPWM(uint16_t value){
 	if(value > 1200){
 		value = 1200;
 	}
-	PWM_Servo_SetDutyUS(20000-(2500-value*20/18));		// dutysicle is between 17.5ms to 20ms
+	//PWM_Servo_SetDutyUS(20000-(2500-value*20/18));		// dutysicle is between 17.5ms to 19.5ms
+	PWM_Servo_SetDutyUS(17500 + value*0.988);
 }
 
 /*

@@ -1,4 +1,4 @@
-!SESSION 2017-05-04 11:12:25.860 -----------------------------------------------
+!SESSION 2017-05-08 16:25:41.261 -----------------------------------------------
 eclipse.buildId=I20070613-1755
 java.version=1.6.0_15
 java.vendor=Sun Microsystems Inc.
@@ -6,453 +6,9 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
 This is a continuation of log file C:\Eigene_Dateien\Schule\HSLU\Semester_4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_3.log
-Created Time: 2017-05-04 11:29:30.183
+Created Time: 2017-05-08 17:14:58.098
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.183
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_end.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.191
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Project_Settings/Startup_Code/__arm_end.o: ../Project_Settings/Startup_Code/__arm_end.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #11 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Project_Settings/Startup_Code/__arm_end.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Project_Settings/Startup_Code/__arm_end.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Project_Settings/Startup_Code/__arm_start.o: ../Project_Settings/Startup_Code/__arm_start.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #12 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.193
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Project_Settings/Startup_Code/__arm_start.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.233
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.234
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/AS1.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.238
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.239
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/ASerialLdd1.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.243
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.244
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/ASerialLdd2.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.248
-!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
-Generated_Code/AS1.o: ../Generated_Code/AS1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #13 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #14 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #15 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Generated_Code/BT1.o: ../Generated_Code/BT1.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #16 $<'
-	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
-
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.249
-!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BT1.c
-!STACK 0
-java.io.UnsupportedEncodingException: cp850.
-	at java.lang.StringCoding.encode(Unknown Source)
-	at java.lang.String.getBytes(Unknown Source)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
-	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
-	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
-	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.254
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.099
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -522,7 +78,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.255
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.101
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BTState1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -555,7 +111,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.259
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.106
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -633,7 +189,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.260
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.107
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BT_EN.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -666,7 +222,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.264
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.111
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -752,7 +308,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.266
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.112
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -785,7 +341,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.270
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.117
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -879,7 +435,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.271
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.118
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -912,7 +468,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.276
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.126
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1014,7 +570,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.277
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.127
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/BitIoLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1047,7 +603,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.280
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.132
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1157,7 +713,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.282
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.133
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1190,7 +746,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.286
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.137
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1308,7 +864,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.287
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.138
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CI2C2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1341,7 +897,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.290
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.142
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1467,7 +1023,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.291
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.143
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CLS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1500,7 +1056,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.299
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.148
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1634,7 +1190,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.300
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.149
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/CS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1667,7 +1223,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.304
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.154
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1809,7 +1365,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.305
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.155
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Cpu.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1842,7 +1398,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.310
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.159
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1992,7 +1548,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.311
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.159
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2025,7 +1581,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.315
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.165
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2183,7 +1739,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.316
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.166
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_LEFT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2216,7 +1772,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.320
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.170
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2382,7 +1938,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.321
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.171
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2415,7 +1971,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.325
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.176
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2589,7 +2145,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.327
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.177
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/DIR_RIGHT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2622,7 +2178,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.331
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.182
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2804,7 +2360,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.332
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.183
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/FRTOS1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2837,7 +2393,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.336
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.187
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3027,7 +2583,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.337
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.188
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3060,7 +2616,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.341
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.192
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3258,7 +2814,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.342
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.193
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/GI2C2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3291,7 +2847,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.346
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.198
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3497,7 +3053,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.347
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.199
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LED_GREEN.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3530,7 +3086,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.352
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.203
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3744,7 +3300,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.353
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.205
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3777,7 +3333,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.357
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.209
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3999,7 +3555,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.358
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.210
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/LEDpin4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4032,7 +3588,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.362
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.218
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4262,7 +3818,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.363
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.219
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/MCUC1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4295,7 +3851,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.367
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.223
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4533,7 +4089,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.368
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.225
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/MMA1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4566,7 +4122,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.373
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.229
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4812,7 +4368,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.375
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.230
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PE_LDD.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4845,7 +4401,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.379
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.234
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5099,7 +4655,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.380
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.236
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Gyro.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5132,7 +4688,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.387
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.240
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5394,7 +4950,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.389
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.242
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_LEFT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5427,7 +4983,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.392
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.246
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5697,7 +5253,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.393
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.247
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_RIGHT.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5730,7 +5286,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.397
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.251
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6008,7 +5564,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.399
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.252
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PWM_Servo.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6041,7 +5597,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.402
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.257
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6327,7 +5883,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.404
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.258
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6360,7 +5916,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.407
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.262
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6654,7 +6210,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.409
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.263
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6687,7 +6243,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.412
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.267
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6989,7 +6545,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.414
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.269
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7022,7 +6578,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.417
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.273
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7332,7 +6888,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.419
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.274
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/PwmLdd4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7365,7 +6921,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.423
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.279
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7683,7 +7239,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.424
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.280
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/RED.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7716,7 +7272,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.428
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.285
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8042,7 +7598,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.429
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.286
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Serial1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8075,7 +7631,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.433
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.290
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8409,7 +7965,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.434
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.291
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TMOUT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8442,7 +7998,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.438
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.296
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8784,7 +8340,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.440
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.298
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TSK1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8817,7 +8373,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.443
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.304
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9167,7 +8723,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.445
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.305
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9200,7 +8756,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.449
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.310
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9558,7 +9114,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.450
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.311
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TU2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9591,7 +9147,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.454
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.316
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9957,7 +9513,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.455
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.318
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9990,7 +9546,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.460
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.322
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -10364,7 +9920,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.461
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.323
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10397,7 +9953,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.468
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.328
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -10779,7 +10335,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.469
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.329
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10812,7 +10368,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.474
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.334
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -11202,7 +10758,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.475
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.335
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Toggle.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11235,7 +10791,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.479
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.340
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -11633,7 +11189,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.480
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.341
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -11666,7 +11222,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.484
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.345
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -12072,7 +11628,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.486
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.347
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Vectors.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12105,7 +11661,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.490
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.351
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -12519,7 +12075,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.491
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.353
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -12552,7 +12108,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.496
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.357
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -12974,7 +12530,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.496
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.358
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Watermark.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13007,7 +12563,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.501
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.363
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -13437,7 +12993,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.503
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.364
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/XF1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13470,7 +13026,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.507
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.369
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -13908,7 +13464,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.507
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.370
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/croutine.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -13941,7 +13497,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.512
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.374
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -14387,7 +13943,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.513
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.375
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -14420,7 +13976,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.517
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.381
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -14874,7 +14430,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.519
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.382
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -14907,7 +14463,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.523
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.390
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -15369,7 +14925,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.524
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.391
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -15402,7 +14958,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.528
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.395
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -15872,7 +15428,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.529
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.397
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -15905,7 +15461,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.534
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.401
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -16383,7 +15939,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.535
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.403
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -16416,7 +15972,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.539
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.407
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -16902,7 +16458,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.540
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.408
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_5.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -16935,7 +16491,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.547
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.412
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -17429,7 +16985,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.549
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.414
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/list.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17462,7 +17018,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.553
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.419
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -17964,7 +17520,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.554
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.420
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/mpu_wrappers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -17997,7 +17553,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.558
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.424
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -18507,7 +18063,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.559
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.425
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/port.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -18540,7 +18096,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.562
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.429
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -19058,7 +18614,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.563
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.430
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/portasm.s
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -19091,7 +18647,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.568
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.435
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -19617,7 +19173,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.569
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.436
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -19650,7 +19206,7 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-04 11:29:30.574
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.441
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -20151,6 +19707,581 @@ Generated_Code/queue.o: ../Generated_Code/queue.c
 Generated_Code/tasks.o: ../Generated_Code/tasks.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #75 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3804)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.442
+!MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/tasks.c
+!STACK 0
+java.io.UnsupportedEncodingException: cp850.
+	at java.lang.StringCoding.encode(Unknown Source)
+	at java.lang.String.getBytes(Unknown Source)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.isDifferentCodePage(CodePageCalculator.java:117)
+	at com.freescale.core.ide.cdt.toolchain.CodePageCalculator.updateCodePageFlag(CodePageCalculator.java:222)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addRuleForSource(CoreIDEMakefileGenerator.java:3806)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addFragmentMakefileEntriesForSource(CoreIDEMakefileGenerator.java:2949)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.addSources(CoreIDEMakefileGenerator.java:2830)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.populateFragmentMakefile(CoreIDEMakefileGenerator.java:1667)
+	at com.freescale.core.ide.cdt.toolchain.CoreIDEMakefileGenerator.generateMakefiles(CoreIDEMakefileGenerator.java:1238)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1815)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:1672)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:1122)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:732)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:643)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:812)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:289)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 17:14:58.447
+!MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
+Generated_Code/AS1.o: ../Generated_Code/AS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/AS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/AS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd1.o: ../Generated_Code/ASerialLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/ASerialLdd2.o: ../Generated_Code/ASerialLdd2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/ASerialLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/ASerialLdd2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BT1.o: ../Generated_Code/BT1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #16 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BTState1.o: ../Generated_Code/BTState1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #17 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BTState1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BTState1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BT_EN.o: ../Generated_Code/BT_EN.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #18 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BT_EN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BT_EN.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd1.o: ../Generated_Code/BitIoLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #19 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd3.o: ../Generated_Code/BitIoLdd3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #20 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/BitIoLdd4.o: ../Generated_Code/BitIoLdd4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #21 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/BitIoLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/BitIoLdd4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/CI2C1.o: ../Generated_Code/CI2C1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #22 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/CI2C2.o: ../Generated_Code/CI2C2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #23 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CI2C2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/CLS1.o: ../Generated_Code/CLS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #24 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CLS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CLS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/CS1.o: ../Generated_Code/CS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #25 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/CS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/CS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/Cpu.o: ../Generated_Code/Cpu.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #26 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Cpu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Cpu.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/DIR_LEFT.o: ../Generated_Code/DIR_LEFT.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #27 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/DIR_LEFT1.o: ../Generated_Code/DIR_LEFT1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #28 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_LEFT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_LEFT1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/DIR_RIGHT.o: ../Generated_Code/DIR_RIGHT.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #29 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/DIR_RIGHT1.o: ../Generated_Code/DIR_RIGHT1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #30 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/DIR_RIGHT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/DIR_RIGHT1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/FRTOS1.o: ../Generated_Code/FRTOS1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #31 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/FRTOS1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/FRTOS1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/GI2C1.o: ../Generated_Code/GI2C1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #32 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/GI2C2.o: ../Generated_Code/GI2C2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #33 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/GI2C2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/GI2C2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/LED_GREEN.o: ../Generated_Code/LED_GREEN.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #34 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LED_GREEN.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LED_GREEN.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/LEDpin3.o: ../Generated_Code/LEDpin3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #35 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/LEDpin4.o: ../Generated_Code/LEDpin4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #36 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/LEDpin4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/LEDpin4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/MCUC1.o: ../Generated_Code/MCUC1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #37 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MCUC1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MCUC1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/MMA1.o: ../Generated_Code/MMA1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #38 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/MMA1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/MMA1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #39 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PE_LDD.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PE_LDD.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PWM_Gyro.o: ../Generated_Code/PWM_Gyro.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #40 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Gyro.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Gyro.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PWM_LEFT.o: ../Generated_Code/PWM_LEFT.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #41 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_LEFT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_LEFT.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PWM_RIGHT.o: ../Generated_Code/PWM_RIGHT.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #42 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_RIGHT.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_RIGHT.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PWM_Servo.o: ../Generated_Code/PWM_Servo.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #43 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PWM_Servo.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PWM_Servo.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PwmLdd1.o: ../Generated_Code/PwmLdd1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #44 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PwmLdd2.o: ../Generated_Code/PwmLdd2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #45 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PwmLdd3.o: ../Generated_Code/PwmLdd3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #46 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/PwmLdd4.o: ../Generated_Code/PwmLdd4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #47 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/PwmLdd4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/PwmLdd4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/RED.o: ../Generated_Code/RED.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #48 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/RED.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/RED.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/Serial1.o: ../Generated_Code/Serial1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #49 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Serial1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Serial1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TMOUT1.o: ../Generated_Code/TMOUT1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #50 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TMOUT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TMOUT1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TSK1.o: ../Generated_Code/TSK1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #51 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TSK1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TSK1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TU1.o: ../Generated_Code/TU1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #52 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TU2.o: ../Generated_Code/TU2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #53 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TU2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TU2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TofCE1.o: ../Generated_Code/TofCE1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #54 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TofCE2.o: ../Generated_Code/TofCE2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #55 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/TofCE3.o: ../Generated_Code/TofCE3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #56 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/TofCE3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/TofCE3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/Toggle.o: ../Generated_Code/Toggle.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #57 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Toggle.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Toggle.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/UTIL1.o: ../Generated_Code/UTIL1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #58 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/UTIL1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/UTIL1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/Vectors.o: ../Generated_Code/Vectors.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #59 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Vectors.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Vectors.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/WAIT1.o: ../Generated_Code/WAIT1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #60 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/WAIT1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/WAIT1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/Watermark.o: ../Generated_Code/Watermark.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #61 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/Watermark.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/Watermark.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/XF1.o: ../Generated_Code/XF1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #62 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/XF1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/XF1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/croutine.o: ../Generated_Code/croutine.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #63 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/croutine.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/croutine.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/event_groups.o: ../Generated_Code/event_groups.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #64 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/event_groups.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/event_groups.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/heap_1.o: ../Generated_Code/heap_1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #65 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_1.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_1.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/heap_2.o: ../Generated_Code/heap_2.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #66 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_2.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_2.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/heap_3.o: ../Generated_Code/heap_3.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #67 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_3.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_3.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/heap_4.o: ../Generated_Code/heap_4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #68 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/heap_5.o: ../Generated_Code/heap_5.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #69 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/heap_5.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/heap_5.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/list.o: ../Generated_Code/list.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #70 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/list.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/list.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/mpu_wrappers.o: ../Generated_Code/mpu_wrappers.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #71 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/mpu_wrappers.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/mpu_wrappers.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/port.o: ../Generated_Code/port.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #72 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/port.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/port.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/portasm.o: ../Generated_Code/portasm.s
+	@echo 'Building file: $<'
+	@echo 'Executing target #73 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC Assembler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/portasm.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/portasm.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/queue.o: ../Generated_Code/queue.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #74 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/queue.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/queue.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/tasks.o: ../Generated_Code/tasks.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #75 $<'
+	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc" "$<" @"Generated_Code/tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Generated_Code/tasks.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/timers.o: ../Generated_Code/timers.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #76 $<'
 	@echo 'Invoking: ARM Ltd Windows GCC C Compiler'
 
 !STACK 0

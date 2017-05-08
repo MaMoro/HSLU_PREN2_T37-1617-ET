@@ -93,18 +93,8 @@ static portTASK_FUNCTION(GyroTask, pvParameters) {
 	uint8_t i;
 	uint8_t isfull;
 	uint8_t dataLevel, dataLevel1;
-	// Gyro Init
-	RED_Put(1);
-	res = L3Ginit();
-	while (res != ERR_OK) {
-		res = L3Ginit();
-		setErrorState(res, "L3Ginit in comunication");
-	}
-	res = calculateOffset();
-	while (res != ERR_OK) {
-		res = calculateOffset();
-		setErrorState(res, "calculateOffset in comunication");
-	}
+	
+
 	RED_Put(0);
 	gyroReady();
 	

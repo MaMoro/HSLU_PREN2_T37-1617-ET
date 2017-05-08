@@ -30,7 +30,7 @@ static bool ready;
 // Comunication values reads
 static bool hello = FALSE;		// kommunikation starten mit RPI3
 static bool start = FALSE;		// startbefehl
-static bool course = 1;			// fahrbanwahl	links->true rechts->false
+static bool course = 0;			// fahrbanwahl	links->true rechts->false
 static int16_t tof_l_s = 0;		// tof_links_sollwert
 static int16_t tof_r_s = 0;		// tof_rechts_sollwert
 static int16_t tof_f_s = 0;		// tof_front_sollwert
@@ -53,8 +53,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 16, kiT = 0, kdT = 0;		// 20, 0, 0
-static uint8_t kpG = 17, kiG = 1, kdG = 8;		// 15, 1, 5
+static uint8_t kpT = 12, kiT = 0, kdT = 0;		// default (alte Raupen) 16, 0, 0			// 20, 0, 0
+static uint8_t kpG = 15, kiG = 1, kdG = 6;		// default (alte Raupen) 17, 1, 8			// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -78,6 +78,8 @@ static CLS1_ConstStdIOType BT_stdio = {
 void startCommunication(void){
 	unsigned char RXbuffer[RXBUFSIZE];
 	unsigned char RXbufferBT[RXBUFSIZE];
+	uint8_t res;
+	
 	RXbufferBT[0] = '\0';
 	RXbuffer[0] = '\0';
 
@@ -87,15 +89,18 @@ void startCommunication(void){
 	//Init sensors
 	errState = initAllSensors();
 	
-	// Start GyroTask
-	CreateGyroTask();
+	
 	
 #if RASPISET
 	//Say hello to Raspberry Pi
 	while(!hello){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
-		refreshMovingOffset('x');
+		res = calculateOffset();
+		while (res != ERR_OK) {
+			res = calculateOffset();
+			setErrorState(res, "calculateOffset in comunication");
+		}
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 
@@ -104,12 +109,14 @@ void startCommunication(void){
 	while(!courseSet){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
-		refreshMovingOffset('x');
+		res = calculateOffset();
+		while (res != ERR_OK) {
+			res = calculateOffset();
+			setErrorState(res, "calculateOffset in comunication");
+		}
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 #endif
-
-	initDriving(kpT, kiT, kdT, kpG, kiG, kdG, course);
 	
 #if RASPISET
 	// Wait until start
@@ -117,7 +124,11 @@ void startCommunication(void){
 	while(!start){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
-		refreshMovingOffset('x');
+		res = calculateOffset();
+		while (res != ERR_OK) {
+			res = calculateOffset();
+			setErrorState(res, "calculateOffset in comunication");
+		}
 		vTaskDelay(pdMS_TO_TICKS(10));
 	}
 	LED_GREEN_Put(0);
@@ -136,13 +147,11 @@ void startCommunication(void){
 		CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 		vTaskDelay(pdMS_TO_TICKS(30));
 	}*/
-	
+	CreateGyroTask();
+	initDriving(kpT, kiT, kdT, kpG, kiG, kdG, course);
+	CreateDrivingTask();
 	L3GSetAngel(GEAR, 0);
 	L3GSetAngel(NICK, 0);
-	while(!ready){
-		vTaskDelay(pdMS_TO_TICKS(30));
-	}
-	CreateDrivingTask();
 	
 	//Loop
 	for(;;){
@@ -396,6 +405,18 @@ uint8_t initAllSensors(void){
 	while (err != ERR_OK) {
 		err = VL_Init();
 	setErrorState(err, "VL_init in comunication");
+	}
+	
+	// Gyro init
+	err = L3Ginit();
+	while (err != ERR_OK) {
+		err = L3Ginit();
+		setErrorState(err, "L3Ginit in comunication");
+	}
+	err = calculateOffset();
+	while (err != ERR_OK) {
+		err = calculateOffset();
+		setErrorState(err, "calculateOffset in comunication");
 	}
 	
 	//BT Init
