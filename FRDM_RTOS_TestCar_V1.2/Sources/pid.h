@@ -30,5 +30,6 @@ typedef struct {
 
 uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optValue, int16_t* corr);
 void setToZero(void);
+void setIntegToZero(uint8_t device);
 
 #endif /* PID_H */

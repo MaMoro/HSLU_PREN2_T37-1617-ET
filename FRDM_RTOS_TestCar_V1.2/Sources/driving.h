@@ -9,10 +9,10 @@
 #define DRIVING_H_
 
 
-#define PI 3.14159265
+#define PI 3.14159265f
 #define LEFT -1
 #define RIGHT 1
-#define MAXTIMEOUT 5000		// timeout = 2s
+#define MAXTIMEOUT 4000		// timeout = 2s
 
 
 /*

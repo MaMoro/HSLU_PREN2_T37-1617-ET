@@ -53,8 +53,8 @@ static uint8_t 	servo_i = 0;	// servo ist
 static uint8_t 	state = 1;		// status auf parcour
 static uint8_t 	errState = ERR_OK;	// errorStatus
 
-static uint8_t kpT = 12, kiT = 0, kdT = 0;		// default (alte Raupen) 16, 0, 0			// 20, 0, 0
-static uint8_t kpG = 15, kiG = 1, kdG = 6;		// default (alte Raupen) 17, 1, 8			// 15, 1, 5
+static uint8_t kpT = 24, kiT = 0, kdT = 0;		// default (alte Raupen) 16, 0, 0			// 20, 0, 0
+static uint8_t kpG = 22, kiG = 1, kdG = 7;		// default (alte Raupen) 17, 1, 8			// 15, 1, 5
 
 static uint8_t ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
@@ -136,17 +136,32 @@ void startCommunication(void){
 	
 /*	//ToF test
 	int16_t rangeL;
-	int16_t rangeR;
+	int16_t rangeR, rangeF;
 	for(;;){
-		VL_GetDistance(TOFLEFT, &rangeL);
-		VL_GetDistance(TOFRIGHT, &rangeR);
+		res = VL_GetDistance(TOFLEFT, &rangeL);
+		vTaskDelay(pdMS_TO_TICKS(10));
+		res = VL_GetDistance(TOFRIGHT, &rangeR);
+		vTaskDelay(pdMS_TO_TICKS(10));
+		res = VL_GetDistance(TOFFRONT, &rangeF);
+		vTaskDelay(pdMS_TO_TICKS(10));
+		// tof left
 		CLS1_SendNum16s(rangeL, CLS1_GetStdio()->stdOut);
 		CLS1_SendStr((uint8_t*)",\t", CLS1_GetStdio()->stdOut);
-		//pwm right
+		//tof right
 		CLS1_SendNum16s(rangeR, CLS1_GetStdio()->stdOut);
+		CLS1_SendStr((uint8_t*)", \t", CLS1_GetStdio()->stdOut);
+		// tof front
+		CLS1_SendNum16s(rangeF, CLS1_GetStdio()->stdOut);
 		CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
 		vTaskDelay(pdMS_TO_TICKS(30));
 	}*/
+/*	// Test servo
+	for(;;){
+		setServoPWM(450);
+		//x+= 100;
+		vTaskDelay(pdMS_TO_TICKS(10000));
+	}*/
+	
 	CreateGyroTask();
 	initDriving(kpT, kiT, kdT, kpG, kiG, kdG, course);
 	CreateDrivingTask();
@@ -159,9 +174,9 @@ void startCommunication(void){
 		(void)CLS1_ReadAndParseWithCommandTable(RXbuffer, sizeof(RXbuffer), CLS1_GetStdio(), CmdParserTable);
 		(void)CLS1_ReadAndParseWithCommandTable(RXbufferBT, sizeof(RXbufferBT), &BT_stdio, CmdParserTable);
 		readValues();
-		sendStatus();
+		//sendStatus();
 		sendStatusBT();
-		//sendTestStatus();
+		sendTestStatus();
 		
 		vTaskDelay(pdMS_TO_TICKS(300));
 	}
@@ -528,7 +543,11 @@ void sendTestStatus(void){
 	CLS1_SendStr((uint8_t*)",\t", CLS1_GetStdio()->stdOut);
 	//tof right
 	CLS1_SendNum16s(tof_r_i, CLS1_GetStdio()->stdOut);
+	CLS1_SendStr((uint8_t*)",\t", CLS1_GetStdio()->stdOut);
+	//tof front
+	CLS1_SendNum16s(tof_f_i, CLS1_GetStdio()->stdOut);
 	CLS1_SendStr((uint8_t*)"\n", CLS1_GetStdio()->stdOut);
+	
 }
 
 /*

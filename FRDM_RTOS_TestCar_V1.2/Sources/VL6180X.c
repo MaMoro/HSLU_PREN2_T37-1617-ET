@@ -35,7 +35,7 @@ static void VL_OnError(VL_Enum_Error error) {
 
 uint8_t VL_WriteReg8(uint8_t i2cDeviceAddress, uint16_t reg, uint8_t val) {
   uint8_t r[2];
-
+  //vTaskDelay(pdMS_TO_TICKS(10));
   r[0] = reg>>8;
   r[1] = reg&0xff;
   return GI2C1_WriteAddress(i2cDeviceAddress, &r[0], sizeof(r), &val, sizeof(val));
@@ -43,7 +43,7 @@ uint8_t VL_WriteReg8(uint8_t i2cDeviceAddress, uint16_t reg, uint8_t val) {
 
 uint8_t VL_WriteReg16(uint8_t i2cDeviceAddress, uint16_t reg, uint16_t val) {
   uint8_t r[2], v[2];
-
+  //vTaskDelay(pdMS_TO_TICKS(10));
   r[0] = reg>>8;
   r[1] = reg&0xff;
   v[0] = val>>8;
@@ -53,7 +53,7 @@ uint8_t VL_WriteReg16(uint8_t i2cDeviceAddress, uint16_t reg, uint16_t val) {
 
 uint8_t VL_ReadReg8(uint8_t i2cDeviceAddress, uint16_t reg, uint8_t *valP) {
   uint8_t tmp[2];
-
+  //vTaskDelay(pdMS_TO_TICKS(10));
   tmp[0] = reg>>8;
   tmp[1] = reg&0xff;
   return GI2C1_ReadAddress(i2cDeviceAddress, &tmp[0], sizeof(tmp), valP, 1);
@@ -61,7 +61,7 @@ uint8_t VL_ReadReg8(uint8_t i2cDeviceAddress, uint16_t reg, uint8_t *valP) {
 
 uint8_t VL_ReadReg16(uint8_t i2cDeviceAddress, uint16_t reg, uint16_t *valP) {
   uint8_t tmp[2];
-
+  //vTaskDelay(pdMS_TO_TICKS(10));
   tmp[0] = reg>>8;
   tmp[1] = reg&0xff;
   return GI2C1_ReadAddress(i2cDeviceAddress, &tmp[0], sizeof(tmp), (uint8_t*)valP, 2);
@@ -145,7 +145,7 @@ uint8_t VL_ReadRangeSingle(uint8_t i2cDeviceAddress, int16_t *rangeP) {
   uint8_t val;
 
   VL_WriteReg8(i2cDeviceAddress, SYSRANGE__START, 0x01);
-  //WAIT1_WaitOSms(8); /* logic analyzer shows it takes around 9 ms until the data is ready */
+  //WAIT1_WaitOSms(10); /* logic analyzer shows it takes around 9 ms until the data is ready */
   res = readRangeContinuous(i2cDeviceAddress, &val);
   if (res!=ERR_OK) {
     *rangeP = -1;

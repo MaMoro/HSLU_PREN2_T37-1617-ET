@@ -575,9 +575,9 @@ void angelCorrection(int16_t optAngel){
 	arrayCount++;
 	if(arrayCount >= GEARLISTSIZE){
 		qsort(&gearList[0], GEARLISTSIZE, sizeof(int32_t), (_compare_function) cmpfunc_32);
-		corrAngel = gyro.x + (optAngel*1000 - gearList[GEARLISTSIZE/2]);
-		if(abs(corrAngel)< 10000){
-			L3GSetAngel(GEAR,corrAngel);
+		corrAngel = (optAngel*1000 - gearList[GEARLISTSIZE/2]);
+		if(abs(corrAngel) < 10000){
+			L3GSetAngel(GEAR,(gyro.x + corrAngel));
 		}
 		arrayCount = 0;
 	}

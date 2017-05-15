@@ -1,4 +1,4 @@
-!SESSION 2017-05-08 19:21:12.720 -----------------------------------------------
+!SESSION 2017-05-15 15:49:34.507 -----------------------------------------------
 eclipse.buildId=I20070613-1755
 java.version=1.6.0_15
 java.vendor=Sun Microsystems Inc.
@@ -6,9 +6,9 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
 Command-line arguments:  -os win32 -ws win32 -arch x86
 
 This is a continuation of log file C:\Eigene_Dateien\Schule\HSLU\Semester_4\PREN2\Github\HSLU_PREN2_T37-1617-ET\.metadata\.bak_0.log
-Created Time: 2017-05-08 19:24:32.912
+Created Time: 2017-05-15 17:37:49.946
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.912
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.946
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/TofCE3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -33,15 +33,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.920
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.956
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -423,15 +428,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.920
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.958
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Toggle.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -456,15 +466,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.925
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.964
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -854,15 +869,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.927
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.966
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/UTIL1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -887,15 +907,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.931
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.970
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1293,15 +1318,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.932
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.971
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Vectors.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1326,15 +1356,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.936
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.975
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -1740,15 +1775,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.938
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.976
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/WAIT1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -1773,15 +1813,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.942
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.981
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2195,15 +2240,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.943
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.982
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/Watermark.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2228,15 +2278,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.947
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.988
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -2658,15 +2713,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.948
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:49.989
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/XF1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -2691,15 +2751,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.953
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.000
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3129,15 +3194,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.954
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.001
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/croutine.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3162,15 +3232,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.958
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.005
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -3608,15 +3683,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.960
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.007
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/event_groups.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -3641,15 +3721,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.964
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.012
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4095,15 +4180,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.966
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.014
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_1.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4128,15 +4218,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.970
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.020
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -4590,15 +4685,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.971
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.021
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_2.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -4623,15 +4723,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.975
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.027
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5093,15 +5198,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.977
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.029
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_3.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5126,15 +5236,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.981
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.039
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -5604,15 +5719,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.982
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.040
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_4.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -5637,15 +5757,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.986
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.044
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6123,15 +6248,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.988
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.046
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/heap_5.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6156,15 +6286,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.995
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.050
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -6650,15 +6785,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:32.996
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.051
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/list.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -6683,15 +6823,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.001
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.056
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7185,15 +7330,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.002
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.057
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/mpu_wrappers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7218,15 +7368,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.006
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.061
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -7728,15 +7883,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.008
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.063
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/port.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -7761,15 +7921,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.011
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.065
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8279,15 +8444,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.013
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.067
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/portasm.s
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8312,15 +8482,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.017
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.074
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -8838,15 +9013,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.019
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.075
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/queue.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -8871,15 +9051,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.023
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.079
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9405,15 +9590,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.024
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.081
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/tasks.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -9438,15 +9628,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.028
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.085
 !MESSAGE Cannot decode string # Each subdirectory must supply rules for building sources it contributes
 Generated_Code/AS1.o: ../Generated_Code/AS1.c
 	@echo 'Building file: $<'
@@ -9980,15 +10175,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.030
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.086
 !MESSAGE Cannot decode string /FRDM_RTOS_TestCar_V1.2/Generated_Code/timers.c
 !STACK 0
 java.io.UnsupportedEncodingException: cp850.
@@ -10013,15 +10213,20 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-08 19:24:33.365
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 17:37:50.396
 !MESSAGE Cannot decode string # Tool invocations
 FRDM_RTOS_TestCar_V1.2.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
 	@echo 'Building target: $@'
@@ -10051,10 +10256,57 @@ java.io.UnsupportedEncodingException: cp850.
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:378)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
 	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:381)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:437)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:460)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:444)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:306)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:480)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:649)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:628)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:132)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.buildForLaunch(AbstractCLaunchDelegate.java:619)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:830)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2017-05-15 18:24:50.512 -----------------------------------------------
+eclipse.buildId=I20070613-1755
+java.version=1.6.0_15
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 1 2017-05-15 18:24:53.348
+!MESSAGE NLS missing message: ContentTypes_errorDialogAlreadyExists in: org.eclipse.ui.internal.messages
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 18:25:01.588
+!MESSAGE Environment Variable Dependency not resolved for 'ARMGNUDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 18:25:01.609
+!MESSAGE Environment Variable Dependency not resolved for 'ARMSummonDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 18:25:01.610
+!MESSAGE Environment Variable Dependency not resolved for 'ARMYagartoDirEnv'.
+
+!ENTRY com.freescale.core.ide.cdt.toolchain 4 0 2017-05-15 18:25:01.610
+!MESSAGE Environment Variable Dependency not resolved for 'ARMdevkitProDirEnv'.
+
+!ENTRY com.freescale.processorexpert.core 1 0 2017-05-15 18:25:01.641
+!MESSAGE Plugin com.freescale.processorexpert.core.service ProcessorExpertServiceProvider
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-05-15 18:25:05.422
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.0/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-05-15 18:25:05.438
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.0/patches' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-05-15 18:25:05.755
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.1/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2017-05-15 18:25:05.755
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.6\eclipse\../MCU/lib/wizard_data/mqx/4.1/patches' does not exist
+
+!ENTRY org.eclipse.osgi 2 1 2017-05-15 18:25:24.269
+!MESSAGE NLS unused message: trace_trigger_dv_error_title in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY org.eclipse.osgi 2 1 2017-05-15 18:25:24.269
+!MESSAGE NLS unused message: trace_trigger_dv_error_message in: com.freescale.sa.mcu.analysispoints.nls.ui

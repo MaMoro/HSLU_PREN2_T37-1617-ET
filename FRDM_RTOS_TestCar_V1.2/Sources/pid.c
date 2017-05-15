@@ -57,7 +57,7 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 	case TOFLEFT:;
 	case TOFRIGHT:;
 		err = VL_GetDistance(device, &value);
-		if(value <= 0 || value == 255){
+		if(value <= 30 || value >= 255){
 			*corr = 0;
 			return ERR_OK;
 		}
@@ -88,10 +88,10 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
 		}else{
 			pid[device].integ += pid[device].dev;
 		}
-		if(pid[device].integ > 255){
-			pid[device].integ = 255;
-		}else if(pid[device].integ < -255){
-			pid[device].integ = -255;
+		if(pid[device].integ > 10000){					//\ todo antiwindup testen
+			pid[device].integ = 10000;
+		}else if(pid[device].integ < -10000){
+			pid[device].integ = -10000;
 		}
 	}else{
 		pid[device].integ = 0;
@@ -123,4 +123,8 @@ uint8_t calcPID(uint8_t device, uint8_t kP, uint8_t kI, uint8_t kD, int16_t optV
  */
 void setDeviceToZero(uint8_t device){
 	pid[device].dev = pid[device].devOld = pid[device].integ = 0;
+}
+
+void setIntegToZero(uint8_t device){
+	pid[device].integ = 0;
 }

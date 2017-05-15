@@ -1115,7 +1115,7 @@ PE_DEBUGHALT();
         <Interrupt_priority v="medium priority" />
         <Iterations_before_action_event v="1" />
       </boolgroup>
-      <Period v="20 ms" />
+      <Period v="12.5 ms" />
       <Starting_pulse_width v="0 &amp;#181;s" />
       <Initial_polarity v="low" />
       <Same_period_in_modes v="no" />
@@ -1143,7 +1143,7 @@ PE_DEBUGHALT();
               <Interrupt_priority v="medium priority" />
               <Iterations_before_action_event v="1" />
             </boolgroup>
-            <Period v="20 ms" />
+            <Period v="12.5 ms" />
             <Starting_pulse_width v="0 &amp;#181;s" />
             <Initial_polarity v="low" />
             <group name="Initialization">
@@ -1241,7 +1241,7 @@ PE_DEBUGHALT();
         <Interrupt_priority v="medium priority" />
         <Iterations_before_action_event v="1" />
       </boolgroup>
-      <Period v="20 ms" />
+      <Period v="12.5 ms" />
       <Starting_pulse_width v="0 &amp;#181;s" />
       <Initial_polarity v="low" />
       <Same_period_in_modes v="no" />
@@ -1269,7 +1269,7 @@ PE_DEBUGHALT();
               <Interrupt_priority v="medium priority" />
               <Iterations_before_action_event v="1" />
             </boolgroup>
-            <Period v="20 ms" />
+            <Period v="12.5 ms" />
             <Starting_pulse_width v="0 &amp;#181;s" />
             <Initial_polarity v="low" />
             <group name="Initialization">
@@ -1787,7 +1787,7 @@ PE_DEBUGHALT();
       </enumgroup>
       <enumgroup name="Counter restart" v="On-match">
         <Period_device v="TPM2_MOD" />
-        <Period v="20 ms" />
+        <Period v="12.5 ms" />
         <boolgroup name="Interrupt" v="Enabled">
           <Interrupt v="INT_TPM2" />
           <Interrupt_priority v="medium priority" />
